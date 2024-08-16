@@ -1,0 +1,115 @@
+name: Content Production Request
+description: Standard template for content production requests.
+title: 'Title: [Enter the title of the article]'
+labels: ['content', 'production']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Content Production Request
+
+  - type: input
+    id: title
+    attributes:
+      label: Article Title
+      description: Enter a brief and descriptive title for the article
+      placeholder: 'e.g., The Ultimate Guide to SEO in 2023'
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Article Description
+      description: Provide a detailed description of the article. What is the main topic? What points should be covered? What is the objective of this article?
+      placeholder: 'Describe the content topic and main points.'
+
+  - type: input
+    id: target_audience
+    attributes:
+      label: Target Audience
+      description: Describe who the target audience is. Age, profession, interests, etc.
+      placeholder: 'e.g., Digital Marketers, Small Business Owners, etc.'
+
+  - type: input
+    id: keywords
+    attributes:
+      label: Keywords
+      description: List primary and secondary keywords for SEO optimization
+      placeholder: 'e.g., SEO, content marketing, digital marketing'
+
+  - type: input
+    id: estimated_length
+    attributes:
+      label: Estimated Length
+      description: Provide an estimated word count for the article
+      placeholder: 'e.g., 1500-2000 words'
+
+  - type: input
+    id: tone_style
+    attributes:
+      label: Tone and Style
+      description: Specify the desired tone and style (e.g., formal, informal, technical, conversational)
+      placeholder: 'e.g., Conversational and engaging'
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References/Resources
+      description: Include any references or resources that should be used or cited in the article
+      placeholder: 'List any important resources or references.'
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide examples of similar articles or content for reference
+      placeholder: 'Include links or titles of similar content.'
+
+  - type: textarea
+    id: seo_requirements
+    attributes:
+      label: SEO Requirements
+      description: Detail any specific SEO requirements, such as keyword density, meta descriptions, etc.
+      placeholder: 'List SEO guidelines and requirements.'
+
+  - type: textarea
+    id: structure
+    attributes:
+      label: Structure and Sections
+      description: Outline the structure of the article and its main sections
+      placeholder: |
+        1. **Introduction**:
+           - Brief overview of the topic.
+           - Hook to draw the reader in.
+        2. **Main Section 1**:
+           - Detailed information about the first subsection.
+        3. **Main Section 2**:
+           - Detailed information about the second subsection.
+        4. **Main Section 3**:
+           - Detailed information about the third subsection.
+        5. **Conclusion**:
+           - Summary of key points.
+           - Call to action or closing thoughts.
+
+  - type: textarea
+    id: media_requirements
+    attributes:
+      label: Media Requirements
+      description: Specify any images, graphics, videos, or other media that should be included
+      placeholder: 'List any media requirements.'
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: Specify the due date for the first draft
+      placeholder: 'e.g., 2023-12-31'
+
+  - type: textarea
+    id: special_instructions
+    attributes:
+      label: Special Instructions
+      description: Any additional notes or instructions for the content writer
+      placeholder: 'Provide any additional information or special instructions.'
