@@ -9,7 +9,7 @@ body:
       value: |
         ### Content Production Request
 
-  - type: select
+  - type: dropdown
     id: content_type
     attributes:
       label: Content Type
