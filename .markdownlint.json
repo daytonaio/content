@@ -1,0 +1,28 @@
+{
+    "default": true,
+    "MD001": { "level": 1 },      // Header levels should only increment by one level at a time
+    "MD002": { "level": 1 },      // First header should be a top-level header
+    "MD003": { "style": "atx" },  // Header style (atx or setext)
+    "MD004": { "style": "dash" }, // Unordered list style (asterisk, plus, or dash)
+    "MD005": false,               // Inconsistent indentation for list items at the same level
+    "MD022": true,                // Headings should be surrounded by blank lines
+    "MD023": true,                // Headings must start at the beginning of the line
+    "MD026": false,               // Trailing punctuation in header
+    "MD031": false,               // Fenced code blocks should be surrounded by blank lines
+    "MD032": false,               // Lists should be surrounded by blank lines
+    "MD033": false,               // Allow inline HTML
+    "MD034": true,                // Bare URL used
+    "MD035": { "style": "---" },  // Horizontal rule style
+    "MD036": true,                // Emphasis used instead of a header
+    "MD037": true,                // Spaces inside emphasis markers
+    "MD038": true,                // Spaces inside code span elements
+    "MD039": true,                // Spaces inside link text
+    "MD040": false,               // Fenced code blocks should have a language specified
+    "MD041": { "level": 1 },      // First line in file should be a top-level header
+    "MD042": false,               // No empty links
+    "MD043": false,               // Required heading structure
+    "MD045": false,               // Images should have alternate text
+    "MD046": false,               // Code block style
+    "MD047": false,               // Files should end with a single newline character
+    "MD048": false                // Code fence style
+  }

@@ -1,0 +1,10 @@
+{
+    "name": "content-repo",
+    "version": "1.0.0",
+    "scripts": {
+      "lint": "markdownlint '**/*.md'"
+    },
+    "devDependencies": {
+      "markdownlint-cli": "^0.29.0"
+    }
+  }
