@@ -114,7 +114,7 @@ We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run
 
 ## How to Propose a New Content
 
-We welcome new ideas and contributions from our community. If you have a suggestion for a new article or guide, here's how you can propose it:
+We welcome new ideas and contributions from our community. If you have a suggestion for a new article or guide, or maybe a significant improvement of the existing content, here's how you can propose it:
 
 1. **Check Existing Issues**: Before creating a new issue, please check the [existing issues](https://github.com/daytonaio/content/issues) and Daytona Dotfiles Insider blog to avoid duplicates.
 
