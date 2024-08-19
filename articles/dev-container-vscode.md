@@ -110,3 +110,4 @@ Feel free to ask if you have any questions or need further assistance!
 
 - [Ultimate Guide to Dev Containers](https://www.daytona.io/dotfiles/ultimate-guide-to-dev-containers)
 - [Creating a Development Container](https://www.daytona.io/dotfiles/creating-a-development-container)
+- [Demo | Run the server in VS-Code](https://www.youtube.com/watch?v=uL-TaEhvVwk)
