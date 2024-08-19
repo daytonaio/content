@@ -37,6 +37,7 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Editing Process](#editing-process)
     - [Publication](#publication)
     - [Quality Assurance](#quality-assurance)
+    - [First Time Contributor](#first-time-contributor)
   - [How to Propose a New Content](#how-to-propose-a-new-content)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
@@ -111,6 +112,16 @@ Upon approval, you'll be informed of the publication date.
 ### Quality Assurance
 We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run lint` before submitting your PR to check for any style issues.
 
+### First Time Contributor
+If you're contributing to the Daytona Content Programme for the first time, we require you to create a short author profile. This profile will be used to credit you for your work and provide readers with information about your background and expertise. Follow these steps to create and submit your author profile:
+
+1. Create a new Markdown file in the `authors` folder.
+2. Name the file using the format `firstname-lastname.md` (e.g., `jane-doe.md`).
+3. Use the provided template in the `authors` folder to fill out your profile information.
+4. Fill in all the fields with your information.
+5. Place your author image and company logos in the `authors/assets` folder, using clear and descriptive filenames.
+6. In your profile, reference the image and logo files using relative paths from the `authors` folder.
+7. Once you've completed your profile, include it in the same pull request as your first content contribution.
 
 ## How to Propose a New Content
 
