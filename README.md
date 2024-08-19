@@ -14,12 +14,13 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Interlinking](#interlinking)
     - [Glossary/Definitions](#glossarydefinitions)
     - [Evergreen Content](#evergreen-content)
+    - [AI-Generated Content](#ai-generated-content)
   - [Contribution Process](#contribution-process)
     - [Editing Process](#editing-process)
     - [Publication](#publication)
-  - [Quality Assurance](#quality-assurance)
+    - [Quality Assurance](#quality-assurance)
   - [Licensing and Copyright](#licensing-and-copyright)
-    - [Payment](#payment)
+  - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
 
 ## Introduction
@@ -58,6 +59,18 @@ Mark new terms that could be added to the Daytona Definitions page with a commen
 ### Evergreen Content
 Focus on creating long-lasting content. Avoid referencing specific versions of technology that may quickly become outdated.
 
+### AI-Generated Content
+We recognize the potential of AI-assisted writing tools. However, all content must meet our high standards for quality, readability, and originality:
+
+- AI-generated content is acceptable if it's well-integrated, natural-sounding, and indistinguishable from human-written text.
+- Avoid generic AI-generated phrases like "in the ever-growing age" or "in the dynamic world of..."
+- Focus on clear, concise, and engaging writing, regardless of whether AI tools are used.
+- All content will be evaluated based on its quality. Lazy or poorly written content will be rejected, whether AI-generated or not.
+- Writers are responsible for fact-checking, editing, and refining any AI-generated content to ensure it meets our standards.
+
+Remember, good writing is good writing, regardless of how it's produced. Our goal is to provide valuable, well-crafted content for our readers.
+
+
 ## Contribution Process
 
 1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
@@ -73,8 +86,9 @@ Focus on creating long-lasting content. Avoid referencing specific versions of t
 ### Publication
 Upon approval, you'll be informed of the publication date.
 
-## Quality Assurance
+### Quality Assurance
 We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run lint` before submitting your PR to check for any style issues.
+
 
 ## Licensing and Copyright
 
@@ -92,7 +106,7 @@ By contributing to this repository, you agree that all content you submit is sub
 
 These terms ensure that Daytona can freely use and manage the contributed content while acknowledging the valuable work of our contributors.
 
-### Payment
+## Payment
 - Compensation is provided for accepted and published content.
 - Payment can be made directly or through bounties (if assigned to the issue).
 - Payment can also be made directly if you can submit an invoice including:
