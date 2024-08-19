@@ -14,8 +14,3 @@ author: "Author Name"
 ## Context and Usage
 
 [Explain the context in which this term is typically used and how it's applied in practice]
-
-## Examples
-
-1. [Example 1]
-2. [Example 2]
