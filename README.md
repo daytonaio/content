@@ -163,6 +163,6 @@ These terms ensure that Daytona can freely use and manage the contributed conten
 
 ## Contact and Support
 - For questions or assistance, open an issue or contact the repo maintainers.
-- Join our [Slack community](https://go.daytona.io/slack) for discussions and support.
+- Join `#content` channel in our [Slack community](https://go.daytona.io/slack) for discussions and support.
 
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
