@@ -21,4 +21,8 @@ Python is widely used in various fields, including web development, data science
 
 - **Community Support:** Python has a large and active community, offering extensive resources for learning and problem-solving.
 
+### Use in Daytona:
+
+Python is often used for scripting, automation, and developing applications within the Daytona platform. Its ease of use and powerful libraries make it ideal for tasks such as managing infrastructure, data processing, and integrating with other tools and services.
+
 In a Devcontainer, Python is frequently used to install packages, manage environments, and automate setup processes, making it an essential part of the development workflow.
