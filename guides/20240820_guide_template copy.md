@@ -9,13 +9,19 @@ author: "Vamshi Maskuri"
 
 ## Introduction
 
-Devcontainer features are essential for standardizing development environments across various teams and projects. This guide provides a comprehensive, step-by-step walkthrough on creating a Devcontainer feature focusing on the Hugging Face feature for machine learning and natural language processing (NLP) tasks. By the end of this guide, you will have developed a fully functional and improved Devcontainer feature that can be seamlessly integrated into any development workflow.
+Devcontainer features are essential for standardizing development environments across various teams and projects. They allow developers to easily share and reuse environment setups, ensuring consistency and reducing the time spent on configuring environments. In this guide, we will walk you through the process of creating a Devcontainer feature, using Hugging Face as an example. Hugging Face is a leading library for machine learning (ML) and natural language processing (NLP) tasks, making it an excellent choice for demonstrating how to create a feature that can be widely beneficial. By the end of this guide, you will have developed a fully functional and Devcontainer feature that can be seamlessly integrated into any development workflow.
+
+## Why Create a Devcontainer Feature?
+
+Creating a Devcontainer feature is essential for teams that need to ensure a consistent development environment across different projects. It allows developers to quickly spin up environments that are pre-configured with the necessary tools and dependencies. This is particularly useful in complex projects involving ML and NLP, where setting up environments can be time-consuming and error-prone.
+
+Using Hugging Face as an example highlights the importance of having a pre-configured environment tailored for ML and NLP tasks. This feature can save developers time and reduce the potential for setup errors, enabling them to focus more on development and less on configuration.
 
 ### Prerequisites
 
-Prerequisites for this guide include basic familiarity with [Python](definitions\20240820_defintion_python.md), [shell scripting](definitions\20240820_definition_shell_scripting.md) and [containerization](definitions/20240819_definition_containerization.md).
+o follow along with this guide, you should have a basic understanding of[Python](definitions\20240820_defintion_python.md), [shell scripting](definitions\20240820_definition_shell_scripting.md) and [containerization](definitions/20240819_definition_containerization.md).
 
-You will also need the following tools installed: Docker, Visual Studio Code, and the Remote - Containers extension.
+You will also need the following tools installed: [Docker](https://www.docker.com/),  [Visual Studio Code](https://code.visualstudio.com/), and the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
 
 - **Docker**: Used for containerizing applications, ensuring consistency across different environments.
 - **Visual Studio Code**: An Integrated Development Environment (IDE) that supports Devcontainer development.
@@ -230,6 +236,26 @@ Ensure that the package visibility is set to public in the repository's `Package
 
 **Solution:** _[Make sure Python is installed and accessible in your system's `PATH`]_
 
+**Problem:** _[CUDA is not available after installation.]_
+
+**Solution:** _[Verify that your GPU supports CUDA and that the correct drivers are installed.]_
+
+## Examples of Great Devcontainer Features
+
+To inspire your work, here are a few examples of highly effective Devcontainer features:
+
+1. **[Github CLI](https://github.com/devcontainers/features/src/kubectl-helm-minikube):** A feature that sets up the GitHub CLI in Devcontainer, making it easy to manage GitHub repositories from within your containerized environment.
+
+2. **[Kubectl-Helm-Minikube](https://github.com/devcontainers/features/src/kubectl-helm-minikube):** This feature installs latest version of kubectl, Helm, and optionally minikube. Auto-detects latest versions and installs needed dependencies.
+
+3. **[Docker-in-Docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker):** This feature enables Docker to run inside a container, allowing you to test Dockerized applications from within your Devcontainer.
+
+4. **[Node.js](https://github.com/devcontainers/features/tree/main/src/node):** A feature that installs Node.js along with npm or Yarn, enabling JavaScript and TypeScript development in a consistent environment.
+
+5. **[Python](https://github.com/devcontainers/features/tree/main/src/python):** Sets up Python with popular tools like pip, Poetry, and venv, ensuring a reliable Python environment for development.
+
+For more features available refer [here](https://containers.dev/features)
+
 ## Conclusion
 
 By following this guide, you've successfully created and improved a `devcontainer` feature for setting up a Hugging Face environment. This feature is now ready for use in any development container, providing a consistent environment for ML and NLP tasks.
@@ -237,4 +263,6 @@ By following this guide, you've successfully created and improved a `devcontaine
 ## References
 
 - [Dev Container Features Documentation](https://containers.dev/overview)
+- [Microsoft Devcontainer Features Marketplace](https://containers.dev/features)
 - [GitHub Feature Starter Repository](https://github.com/devcontainers/feature-starter)
+- [Devcontainer JSON Schema](https://github.com/devcontainers/spec/blob/main/schemas/devContainerFeature.schema.json)
