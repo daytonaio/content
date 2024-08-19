@@ -182,6 +182,7 @@ We encourage you to experiment with nanoGPT in Daytona, explore advanced configu
 - **[NVIDIA Documentation](https://docs.nvidia.com/)**: Official guides on setting up NVIDIA GPUs with Docker.
 - **[CUDA Toolkit Documentation](https://developer.nvidia.com/cuda-toolkit)**: For understanding CUDA setup and GPU programming.
 - **[Docker Documentation](https://docs.docker.com/)**: General containerization practices and GPU support.
+- **[Docker High Memory Usage Debug](https://www.benjaminrancourt.ca/how-to-debug-high-memory-usage-in-docker/)**: Troubleshooting High Memory Usage in Docker.
 - **[nanoGPT GitHub Repository](https://github.com/karpathy/nanoGPT)**: The nanoGPT project by Andrej Karpathy.
 - **[Daytona Documentation](https://daytona.readthedocs.io/)**: For running and optimizing containerized applications in Daytona.
 
