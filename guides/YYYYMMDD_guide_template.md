@@ -9,7 +9,7 @@ author: "Author Name"
 
 ## Introduction
 
-*[Write at least two paragraphs introducing the topic and what the guide will help the reader accomplish. Include any prerequisites.]*
+*[Write at least two paragraphs introducing the topic and what the guide will help the reader accomplish. Include any prerequisites. Use inline links for definitions where appropriate, e.g., [term](/definitions/term.md).]*
 
 ### TL;DR
 
@@ -19,7 +19,7 @@ author: "Author Name"
 
 ### Subheading (if needed)
 
-*[Detail any preparatory steps the reader needs to take before starting the main guide.]*
+*[Detail any preparatory steps the reader needs to take before starting the main guide. Continue to use inline links for definitions and sitemap articles where appropriate.]*
 
 **Example:**
 
@@ -67,5 +67,7 @@ sudo apt-get update
 
 *[Add links to related guides or further reading that might interest the reader.]*
 
-<!-- Glossary/Definitions -->
-<!-- Add comments with definitions for new keywords encountered. -->
+<!-- Note on Definitions -->
+<!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
+<!-- Format: [term](/definitions/term.md) -->
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->

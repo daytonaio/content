@@ -1,6 +1,6 @@
 # Daytona Content Programme for Technical Writers
 
-Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo is dedicated to managing external technical writers who contribute articles and guides. Here, you'll find details on how to participate, contribute, and get paid for your work.
+Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo is dedicated to managing external technical writers who contribute articles and guides. Here, you'll find details on how to participate, contribute, and get compensated for your work.
 
 ## Table of Contents
 - [Daytona Content Programme for Technical Writers](#daytona-content-programme-for-technical-writers)

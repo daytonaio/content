@@ -9,7 +9,7 @@ author: "Author Name"
 
 ## Introduction
 
-*[Write at least two paragraphs introducing the topic. Provide some background and explain why this topic is important.]*
+*[Write at least two paragraphs introducing the topic. Provide some background and explain why this topic is important. Use inline links for definitions where appropriate, e.g., [term](/definitions/term.md).]*
 
 ### TL;DR
 
@@ -17,7 +17,7 @@ author: "Author Name"
 
 ## Subtitle 1
 
-*[Write the content of the first section here. Use clear and concise language, and ensure that each paragraph flows logically to the next.]*
+*[Write the content of the first section here. Use clear and concise language, and ensure that each paragraph flows logically to the next. Continue to use inline links for definitions and sitemap articles where appropriate.]*
 
 **Key Point:** *[Highlight key information here.]*
 
@@ -61,5 +61,7 @@ print("Hello, World!")
 
 *[Add links to related articles or further reading that might interest the reader.]*
 
-<!-- Glossary/Definitions -->
-<!-- Add comments with definitions for new keywords encountered. -->
+<!-- Note on Definitions -->
+<!-- Throughout this article, link relevant terms to their definitions using inline Markdown links. -->
+<!-- Format: [term](/definitions/term.md) -->
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
