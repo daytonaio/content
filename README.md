@@ -54,7 +54,7 @@ Link relevant keywords to:
 - [Daytona Definitions Sitemap](https://www.daytona.io/sitemap-definitions.xml)
 
 ### Glossary/Definitions
-Mark new terms that could be added to the Daytona Definitions page with a comment containing a concise description.
+Each article should ideally contribute one new definition to the Daytona Definitions page. Please submit this in the designated directory for definitions, using the provided template. This falls within the scope of producing a content piece.
 
 ### Evergreen Content
 Focus on creating long-lasting content. Avoid referencing specific versions of technology that may quickly become outdated.
