@@ -1,8 +1,8 @@
 ---
 title: "Containerized Development: Revolutionizing Developer Workflows"
 description: "An in-depth exploration of containerized development, its benefits, challenges, and impact on modern software engineering practices."
-date: 2024-03-27
-author: "Tech Insights Team"
+date: 2024-08-19
+author: "David Anyatonwu"
 ---
 
 # Containerized Development: Revolutionizing Developer Workflows
