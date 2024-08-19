@@ -231,7 +231,7 @@ You can continue experimenting with different [embedding](/definitions/d/embeddi
 ## References
 
 - [ChromaDB Documentation](https://chromadb.com/docs)
-- [Daytona Installation Guide](https://daytona.io/docs/installation)
+- [Daytona Installation Guide](https://daytona.io/docs/installation/installation/)
 - [Export Chrome History Extension](https://chrome.google.com/webstore/detail/export-chrome-history/)
 
 For further reading, consider exploring guides on data [embedding](/definitions/d/embedding) techniques and using alternative [embedding](/definitions/d/embedding) models for specialized tasks.
