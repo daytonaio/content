@@ -17,9 +17,9 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
   - [Contribution Process](#contribution-process)
     - [Editing Process](#editing-process)
     - [Publication](#publication)
-    - [Payment](#payment)
   - [Quality Assurance](#quality-assurance)
   - [Licensing and Copyright](#licensing-and-copyright)
+    - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
 
 ## Introduction
@@ -60,25 +60,18 @@ Focus on creating long-lasting content. Avoid referencing specific versions of t
 
 ## Contribution Process
 
-1. Choose an open issue (proposed article idea).
+1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
 4. Submit a pull request for review.
 
 ### Editing Process
 - Articles undergo up to two rounds of editing.
-- Use tools like [Grammarly](https://grammarly.com) for initial proofreading.
+- Use tools like [Grammarly](https://grammarly.com), [Hemingway App](https://hemingwayapp.com/) and [LanguageTool](https://languagetool.org/) for initial proofreading.
 - Respond promptly to editorial feedback and make necessary revisions.
 
 ### Publication
 Upon approval, you'll be informed of the publication date.
-
-### Payment
-- Compensation is provided for accepted and published content.
-- Payment can be made directly or through bounties (if assigned to the issue).
-- Submit an invoice including:
-  - Date, Title of Article/Guide, Amount
-  - Payment details (Bank Name, Account Number/IBAN, Routing Number/SWIFT Code/ABA)
 
 ## Quality Assurance
 We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run lint` before submitting your PR to check for any style issues.
@@ -98,6 +91,14 @@ By contributing to this repository, you agree that all content you submit is sub
 5. **Warranty**: By submitting content, you warrant that you have the right to assign copyright as described above and that the content does not infringe upon the rights of any third party.
 
 These terms ensure that Daytona can freely use and manage the contributed content while acknowledging the valuable work of our contributors.
+
+### Payment
+- Compensation is provided for accepted and published content.
+- Payment can be made directly or through bounties (if assigned to the issue).
+- Payment can also be made directly if you can submit an invoice including:
+  - Date, Title of Article/Guide, Amount
+  - Payment details (Bank Name, Account Number/IBAN, Routing Number/SWIFT Code/ABA)
+  - Address invoice to: Daytona Platforms Inc., 224 W 35th St Ste 500#297, New York, NY 10001, USA
 
 ## Contact and Support
 - For questions or assistance, open an issue or contact the repo maintainers.
