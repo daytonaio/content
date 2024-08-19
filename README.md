@@ -2,6 +2,7 @@
 
 Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo is dedicated to managing external technical writers who contribute articles and guides. Here, you'll find details on how to participate, contribute, and get compensated for your work.
 
+
 ## Table of Contents
 - [Daytona Content Programme for Technical Writers](#daytona-content-programme-for-technical-writers)
   - [Table of Contents](#table-of-contents)
@@ -19,9 +20,11 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Editing Process](#editing-process)
     - [Publication](#publication)
     - [Quality Assurance](#quality-assurance)
+  - [How to Propose a New Content](#how-to-propose-a-new-content)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
+
 
 ## Introduction
 The `content` repository is a platform where technical writers can contribute articles to the [Daytona Dotfiles Insider](https://www.daytona.io/dotfiles/) blog by "solving" posted issues (proposed article ideas) through pull requests. Merged PRs are eligible for compensation.
@@ -90,6 +93,31 @@ Upon approval, you'll be informed of the publication date.
 We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run lint` before submitting your PR to check for any style issues.
 
 
+## How to Propose a New Content
+
+We welcome new ideas and contributions from our community. If you have a suggestion for a new article or guide, here's how you can propose it:
+
+1. **Check Existing Issues**: Before creating a new issue, please check the [existing issues](https://github.com/daytonaio/content/issues) and Daytona Dotfiles Insider blog to avoid duplicates.
+
+2. **Create a New Issue**:
+   - Go to the [Issues tab](https://github.com/daytonaio/content/issues) of this repository.
+   - Click on the "New Issue" button.
+   - Choose the "Content Production Request" issue template.
+
+3. **Fill in the Details**:
+   - Title: Provide a clear, concise title for your proposed article or guide.
+   - Description: Include a brief overview of what the article should cover.
+   - Please ensure that all other fields are filled out completely without omitting any.
+
+4. **Add Labels**: Add relevant labels to your issue to help categorize it (e.g., "article", "guide", "enhancement").
+
+5. **Submit the Issue**: Click "Submit new issue" to create your proposal.
+
+6. **Engage in Discussion**: Once submitted, maintainers or other community members might comment on your issue. Be prepared to engage in constructive discussion to refine the proposal.
+
+Remember, creating an issue is just the first step. If you're interested in writing the article yourself, please indicate this in your issue. Otherwise, another writer may pick up the topic.
+
+
 ## Licensing and Copyright
 
 By contributing to this repository, you agree that all content you submit is subject to the following terms:
@@ -106,6 +134,7 @@ By contributing to this repository, you agree that all content you submit is sub
 
 These terms ensure that Daytona can freely use and manage the contributed content while acknowledging the valuable work of our contributors.
 
+
 ## Payment
 - Compensation is provided for accepted and published content.
 - Payment can be made directly or through bounties (if assigned to the issue).
@@ -113,6 +142,7 @@ These terms ensure that Daytona can freely use and manage the contributed conten
   - Date, Title of Article/Guide, Amount
   - Payment details (Bank Name, Account Number/IBAN, Routing Number/SWIFT Code/ABA)
   - Address invoice to: Daytona Platforms Inc., 224 W 35th St Ste 500#297, New York, NY 10001, USA
+
 
 ## Contact and Support
 - For questions or assistance, open an issue or contact the repo maintainers.
