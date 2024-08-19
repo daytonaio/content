@@ -97,8 +97,10 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
 4. Submit a pull request for review.
+5. In the event that multiple PRs are made from different people, we will generally accept those with the clearest writing.
 
 ### Editing Process
+- If the PR meets our standards, the issue will be assigned, and the editing process will commence.
 - Articles undergo up to two rounds of editing.
 - Use tools like [Grammarly](https://grammarly.com), [Hemingway App](https://hemingwayapp.com/) and [LanguageTool](https://languagetool.org/) for initial proofreading.
 - Respond promptly to editorial feedback and make necessary revisions.
