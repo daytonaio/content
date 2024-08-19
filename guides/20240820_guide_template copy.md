@@ -9,13 +9,13 @@ author: "Vamshi Maskuri"
 
 ## Introduction
 
-Devcontainer features are essential tools for standardizing development environments across various teams and projects. This guide provides a comprehensive, step-by-step walkthrough on how to create a Devcontainer feature focusing on Hugging Face feature for machine learning and natural language processing (NLP) tasks. By the end of this guide, you will have developed a fully functional and improved Devcontainer feature that can be seamlessly integrated into any development workflow.
+Devcontainer features are essential for standardizing development environments across various teams and projects. This guide provides a comprehensive, step-by-step walkthrough on creating a Devcontainer feature focusing on the Hugging Face feature for machine learning and natural language processing (NLP) tasks. By the end of this guide, you will have developed a fully functional and improved Devcontainer feature that can be seamlessly integrated into any development workflow.
 
 ### Prerequisites
 
 Prerequisites for this guide include basic familiarity with [Python](definitions\20240820_defintion_python.md), [shell scripting](definitions\20240820_definition_shell_scripting.md) and [containerization](definitions/20240819_definition_containerization.md).
 
-You will also need the following tools installed: Docker, Visual Studio Code and the Remote - Containers extension.
+You will also need the following tools installed: Docker, Visual Studio Code, and the Remote - Containers extension.
 
 - **Docker**: Used for containerizing applications, ensuring consistency across different environments.
 - **Visual Studio Code**: An Integrated Development Environment (IDE) that supports Devcontainer development.
@@ -69,7 +69,8 @@ mkdir -p src/huggingface
 
 ### Configure `devcontainer-feature.json`
 
-The `devcontainer-feature.json` file defines the metadata and options for Hugging face feature. Below is an example configuration:
+The `devcontainer-feature.json` file defines the metadata and options for the Hugging face feature. For a detailed guide on devcontainer-feature json file see the [Create Devcontainer JSON File Guide](https://www.daytona.io/dotfiles/guide-create-devcontainer-json-file).
+Below is an example configuration:
 
 ```json
 {
@@ -110,7 +111,7 @@ The `devcontainer-feature.json` file defines the metadata and options for Huggin
 
 ### Implement `install.sh`
 
-The `install.sh` script is the core of feature’s installation process. Below is an optimized version of the script that incorporates modular functions and error handling.
+The `install.sh` script is the core of the feature’s installation process. Below is an optimized version of the script that incorporates modular functions and error handling.
 
 ```bash
 #!/bin/bash
@@ -136,7 +137,7 @@ else
     echo "Python3 is already installed."
 fi
 
-# Set up virtual environment if not present
+# Set up a virtual environment if not present
 VENV_PATH="/opt/huggingface-venv"
 if [ ! -d "$VENV_PATH" ]; then
     python3 -m venv $VENV_PATH
@@ -185,7 +186,7 @@ After implementing the feature, confirm that everything works as expected by tes
 devcontainer features test -f huggingface -i mcr.microsoft.com/devcontainers/base:ubuntu .
 ```
 
-Ensure all installations complete successfully and that the Hugging Face environment is functional.
+Ensure all installations are completed successfully and that the Hugging Face environment is functional.
 
 ## Step 4: Automated Testing
 
@@ -199,7 +200,7 @@ Once you have completed the feature and tested it, publish it to your repository
 
 ### Push Changes to GitHub
 
-Use following commands to push the developed feature in to your local repository.
+Use the following commands to push the developed feature into your local repository.
 
 ```bash
 git add .
