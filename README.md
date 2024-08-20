@@ -26,7 +26,26 @@ compensated for your work.
 - [Daytona Content Programme for Technical Writers](#daytona-content-programme-for-technical-writers)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+<<<<<<< HEAD
   - [Where to Start](#where-to-start)
+=======
+  - [Writing Guidelines](#writing-guidelines)
+    - [Content Types](#content-types)
+    - [Writing Structure](#writing-structure)
+    - [Assets](#assets)
+    - [Fact Checking](#fact-checking)
+    - [Interlinking](#interlinking)
+    - [Glossary/Definitions](#glossarydefinitions)
+    - [Evergreen Content](#evergreen-content)
+    - [AI-Generated Content](#ai-generated-content)
+  - [Contribution Process](#contribution-process)
+    - [Editing Process](#editing-process)
+    - [Publication](#publication)
+    - [Quality Assurance](#quality-assurance)
+    - [First Time Contributor](#first-time-contributor)
+    - [Parallel Submissions](#parallel-submissions)
+  - [How to Propose a New Content](#how-to-propose-a-new-content)
+>>>>>>> 8f88bf0 (Parallel Submissions)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
@@ -44,9 +63,6 @@ Merged PRs are eligible for compensation.
 > not directly related to the project or for general clarifications, join the
 > designated `content` channel on the Daytona Community Slack.
 
-<<<<<<< HEAD
-## Where to Start
-=======
 ### Content Types
 - **Articles**: In-depth explorations of topics, at least 800 words.
 - **Guides**: Step-by-step instructions for specific tasks or processes, at least 1500 words.
@@ -98,7 +114,7 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
 4. Submit a pull request for review.
-5. In the event that multiple PRs are made from different people, we will generally accept those with the clearest writing.
+5. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
 
 ### Editing Process
 - If the PR meets our standards, the issue will be assigned, and the editing process will commence.
@@ -123,6 +139,19 @@ If you're contributing to the Daytona Content Programme for the first time, we r
 6. In your profile, reference the image and logo files using relative paths from the `authors` folder.
 7. Once you've completed your profile, include it in the same pull request as your first content contribution.
 
+### Parallel Submissions
+
+To ensure fairness and efficiency in our content creation process, we have implemented the following policy regarding parallel submissions:
+
+- An individual author may only have one active attempt (PR) at a time.
+- Parallel attempts on several issues from the same author will not be considered until the first attempt is cleared.
+- Once an author's initial submission is cleared (either approved or not), they may then proceed to work on another issue.
+
+This policy helps us maintain a balanced workload among contributors and ensures that each submission receives the necessary attention and review. It also allows us to provide timely feedback and support to authors throughout the content creation process.
+
+We encourage authors to focus on producing high-quality content for one issue at a time, rather than attempting to work on multiple submissions simultaneously. This approach typically results in better-crafted articles and a more streamlined review process.
+
+
 ## How to Propose a New Content
 
 We welcome new ideas and contributions from our community. If you have a suggestion for a new article or guide, or maybe a significant improvement of the existing content, here's how you can propose it:
@@ -146,7 +175,6 @@ We welcome new ideas and contributions from our community. If you have a suggest
 6. **Engage in Discussion**: Once submitted, maintainers or other community members might comment on your issue. Be prepared to engage in constructive discussion to refine the proposal.
 
 Remember, creating an issue is just the first step. If you're interested in writing the article yourself, please indicate this in your issue. Otherwise, another writer may pick up the topic.
->>>>>>> 098472b (added rules for imgs and tables)
 
 Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed
 information on how to contribute to this project.
