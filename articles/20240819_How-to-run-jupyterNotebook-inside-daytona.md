@@ -85,3 +85,150 @@ def square(x):
     return x ** 2
 
 square(4)
+
+```
+# Getting Started with Jupyter Notebook
+
+## Installation Guide
+
+### System Requirements
+
+Before setting up Jupyter Notebook in Daytona, ensure your system meets the following requirements:
+
+- **Operating System**: Windows, macOS, or Linux
+- **Docker**: Docker Desktop or an equivalent tool installed
+- **Visual Studio Code**: With the Remote - Containers extension installed
+- **Internet Access**: For pulling the Docker image and dependencies
+
+### Step-by-Step Installation in Daytona
+
+1. **Create a `devcontainer.json` File**:
+   - Inside your project directory, create a `.devcontainer` folder.
+   - In this folder, create a `devcontainer.json` file with the following content:
+
+     ```json
+     {
+       "name": "Jupyter Notebook Dev Container",
+       "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+       "extensions": [
+         "ms-python.python",
+         "ms-toolsai.jupyter"
+       ],
+       "postCreateCommand": "pip install notebook",
+       "portsAttributes": {
+         "8888": {
+           "label": "Jupyter Notebook",
+           "onAutoForward": "notify"
+         }
+       },
+       "forwardPorts": [8888],
+       "remoteUser": "vscode"
+     }
+     ```
+
+2. **Open the Project in Visual Studio Code**:
+   - Open your project directory in Visual Studio Code.
+   - When prompted, reopen the project in a container. This will set up the development environment based on the `devcontainer.json` file.
+
+3. **Verify Installation**:
+   - Once the container is running, open a terminal in VS Code and verify the Jupyter Notebook installation by running:
+     ```bash
+     jupyter --version
+     ```
+   - This command should display the version of Jupyter Notebook installed inside the container.
+
+4. **Launch Jupyter Notebook**:
+   - In the terminal, run:
+     ```bash
+     jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
+     ```
+   - Jupyter Notebook will start, and you will see a message in the terminal with the URL to access the notebook.
+
+5. **Access Jupyter Notebook**:
+   - Open your web browser and navigate to the forwarded port (usually `localhost:8888`), where you can start using Jupyter Notebook.
+
+
+
+### **Creating a New Notebook**
+- In the Jupyter Notebook dashboard, click on the New button on the right-hand side.
+From the dropdown menu, select Python 3 (or another kernel, depending on your setup).
+A new notebook will open in a new tab, ready for you to start coding.
+### Basic Operations
+#### Adding a Cell:
+
+- Click the + button in the toolbar or use the Insert menu to add a new cell.
+#### Running a Cell:
+
+- Write your code in the cell and press Shift + Enter to execute it.
+### Example:
+
+```
+# Importing Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Loading Data
+df = pd.read_csv('data.csv')
+
+# Display the first few rows of the dataframe
+print(df.head())
+
+# Data Exploration
+print(df.describe())
+print(df.isnull().sum())
+
+# Convert the 'Date' column to datetime
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Set 'Date' as the index
+df.set_index('Date', inplace=True)
+
+# Plot Sales over time
+plt.figure(figsize=(10, 6))
+plt.plot(df.index, df['Sales'], marker='o', linestyle='-', color='b')
+plt.title('Sales Over Time')
+plt.xlabel('Date')
+plt.ylabel('Sales')
+plt.grid(True)
+plt.show()
+```
+
+## Key Features and Differences
+
+### Unique Features of Jupyter Notebook
+
+- **Interactive Output**: Jupyter Notebook allows for interactive data exploration and visualization. Users can see the results of their code immediately below the code cell.
+- **Rich Media Integration**: Notebooks support the inclusion of rich media such as images, videos, and interactive widgets. This makes it possible to create highly engaging and informative documents.
+- **Live Code Execution**: Code cells can be executed independently, which allows for iterative development and testing of code snippets.
+- **Markdown and LaTeX Support**: Users can write text, explanations, and equations using Markdown and LaTeX, providing a versatile environment for creating well-documented and educational content.
+
+### Comparison with JupyterLab
+
+JupyterLab is a more recent and advanced interface compared to Jupyter Notebook. Here’s a comparison of the two:
+
+| Feature               | Jupyter Notebook                                    | JupyterLab                                         |
+|-----------------------|------------------------------------------------------|----------------------------------------------------|
+| **Interface**         | Single document view                                | Multi-document interface with tabs and panels     |
+| **File Management**   | Limited file management                             | Enhanced file browser and management               |
+| **Code Execution**    | Single document execution                           | Supports multiple documents and consoles in one view |
+| **Customization**     | Limited customization options                       | Highly customizable with extensions and layouts    |
+| **Rich Media**        | Supports images, videos, and interactive widgets    | Enhanced support for rich media with improved layout options |
+
+### Examples and Visuals
+
+#### Interface
+JupyterLab provides a more advanced workspace compared to Jupyter Notebook. Its workspace includes a main work area where you can open and manage multiple documents and activities, along with a collapsible left sidebar. This sidebar offers access to the file browser, running kernels and terminals, command palette, and notebook cell tools.
+
+In JupyterLab, the main work area features a tab-based layout that allows for easy switching between multiple open documents. You can also drag and drop tabs to rearrange them, split the view to display multiple documents side-by-side, or create new windows for a more customized workspace experience.
+
+### Jupyter Lab
+![jupyter Lab](./assets/jupyterLab.png)
+
+### Jupyter Notebook
+![jupyter workflow](./assets/jupyterNotebook.png)
+
+### Which One Should You Choose?
+
+Both Jupyter Notebook and JupyterLab are outstanding tools for data science, and the choice between them depends on your specific needs and preferences.
+
+If you are comfortable with Jupyter Notebook and appreciate its straightforward user interface, it may be the right choice for you. On the other hand, if you seek a more advanced and versatile environment with enhanced support for extensions and integrated tools like terminals and text editors, JupyterLab might be a better fit.
