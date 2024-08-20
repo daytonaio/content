@@ -62,9 +62,11 @@ The `content` repository is a platform where technical writers can contribute ar
 - Incorporate notes, quotes, TL;DR sections, and key points for enhanced readability.
 
 ### Assets
+- Every article should include at least one image or illustration. If you are using someone else's work, please ensure you have permission to do so (copyright) and properly credit the author. You can utilize tools like Excalidraw and Tldraw to create basic illustrations of concepts. While the logic is crucial, aesthetics can be refined later by a designer.
 - Store images in the `/assets` folder within the respective content type folder.
 - Name images consistently: `YYYYMMDD_title_of_the_content_img1.png`.
-- Reference images using relative paths from the `/assets` folder.
+- Reference images using relative paths from the `/assets` folder using Markdown `![Alt text for the image](URL_to_image)`.
+- If any comparisons or quantifiable work are included, they should be presented in tables formatted in Markdown.
 
 ### Fact Checking
 Ensure all information is accurate and up-to-date. Verify facts and cite sources where necessary.
