@@ -1,6 +1,6 @@
 ---
 title: "Embedding and Searching Browser History with ChromaDB"
-description: "A step-by-step guide to embedding and searching your browser history using ChromaDB using Azure or a local environment."
+description: "A step-by-step guide to embedding and searching your browser history with ChromaDB using OpenAI or a local environment."
 date: 2024-08-19
 author: "Jacob Gaffke"
 ---
@@ -9,9 +9,9 @@ author: "Jacob Gaffke"
 
 ## Introduction
 
-[Embedding](/definitions/d/embedding) your browser history using ChromaDB allows you to transform vast amounts of web activity data into structured, searchable formats. By converting URLs and their associated metadata into numerical representations known as [embedding](/definitions/d/embedding)s, you can efficiently search, filter, and analyze your browsing history. This guide walks you through the process of setting up a development environment, [embedding](/definitions/d/embedding) your browser history, and conducting advanced searches using ChromaDB, whether you’re leveraging a local model or the power of Azure’s cloud-based [embedding](/definitions/d/embedding) services.
+[Embedding](/definitions/d/embedding) your browser history with ChromaDB is a great way to dive into the world of machine learning. In this guide, you'll learn how to transform your web activity into structured, searchable formats by converting URLs and metadata into numerical representations. You’ll be guided through setting up a development environment, [embedding](/definitions/d/embedding) your browser history, and running advanced searches using ChromaDB, whether you’re using a local model or an OpenAI compatible service.
 
-This guide is designed for users who want to gain deeper insights into their browsing habits or need a more powerful way to sift through large amounts of history data. From setting up the necessary tools to executing detailed search queries with various filters, you'll gain the knowledge to fully utilize ChromaDB’s capabilities. Whether you’re a developer looking to integrate this functionality into a larger project or simply someone who wants to better manage their digital footprint, these step-by-step instructions will help you achieve your goals.
+This guide is perfect for those eager to understand [embeddings](/definitions/d/embedding) and explore their various applications. From setting up the necessary tools to crafting detailed search queries with filters, you’ll gain practical experience that will lay the foundation for future projects. Whether you’re a developer starting your journey into [embeddings](/definitions/d/embedding) or someone looking to better manage their digital footprint, these step-by-step instructions will help you create a functional project with ChromaDB.
 
 ### TL;DR
 
@@ -19,6 +19,8 @@ This guide is designed for users who want to gain deeper insights into their bro
 - **Set Up Environment**: Install Daytona and create a [workspace](/definitions/d/daytona-workspace).
 - **Embed History**: Run the `search.py` script to embed your history data.
 - **Search History**: Perform searches using various filters and options.
+
+## What Are Embeddings?
 
 ## Preparations
 
@@ -39,7 +41,7 @@ Daytona creates a controlled [development environment](/definitions/d/developmen
 To work with your browser history, you'll need to export it from your browser:
 
 1. **Install the Export Chrome History Extension**: Download and install the [Export Chrome History](https://chrome.google.com/webstore/detail/export-chrome-history/) Chrome extension.
-2. **Export to CSV**: Use the extension to export your browser history as a CSV file. Save it to a convenient location, like `~/Downloads/history.csv`.
+2. **Export to CSV**: Use the extension to export your browser history as a CSV file. Save it to a convenient location, such as `~/Downloads/history.csv`.
 
 Example CSV snippet:
 
@@ -61,9 +63,38 @@ daytona create https://github.com/nkkko/history --code
 
 This command clones the [repository](/definitions/r/repository) and sets up the necessary environment. Daytona manages dependencies and configurations, ensuring that your environment is set up correctly for running the project scripts.
 
-### Set Up Environment Variables (Optional for Azure)
+### Set Up OpenAI Service (Optional)
 
-If you plan to use Azure's [embedding](/definitions/d/embedding) services instead of the local model, you need to configure the environment variables. Create a `.env` file in the root directory of the [repository](/definitions/r/repository) and add the following:
+There are many hosted models compatible with the OpenAI API. Here's a basic rundown of available services:
+
+|                             | **Azure**                   | **OpenAI**                   | **Cohere**                  | **Anthropic**                | **Jurassic-2**              |
+|-----------------------------|-----------------------------|------------------------------|-----------------------------|------------------------------|-----------------------------|
+| **Model Size**              | 175B+ parameters            | 1B-175B+ parameters          | 6B-12B parameters           | 100B+ parameters             | 20B-178B parameters         |
+| **Context Length**          | 4,000-32,000 tokens         | 4,000-32,000 tokens          | Up to 2,048 tokens          | Up to 100,000 tokens         | Up to 2,048 tokens          |
+| **Vector Size**             | 1,536 dimensions            | 1,536 dimensions             | 512-768 dimensions          | 768-1,024 dimensions         | 1,024-2,048 dimensions      |
+| **Time for Embedding**      | 0.5 - 6 seconds (varies)    | 0.5 - 6 seconds (varies)     | 0.2 - 4 seconds (varies)    | 0.5 - 6 seconds (varies)     | 1 - 5 seconds (varies)      |
+| **API Cost**                | $0.0004-$0.0120 per token   | $0.0004-$0.0120 per token    | $0.0001-$0.0005 per token   | $0.0005-$0.0030 per token    | $0.0005-$0.0020 per token   |
+
+#### Key Notes
+
+1. **Model Size:**
+  - **Azure & OpenAI:** The sizes refer to GPT-3 and GPT-4 models. GPT-3 has 175B parameters; GPT-4 is larger but the exact size is proprietary.
+  - **Anthropic:** Claude models are estimated to be in the 100B+ range, but exact figures are not officially confirmed.
+
+2. **Context Length:**
+  - **OpenAI and Anthropic:** Both platforms offer models with larger context lengths, particularly in newer versions.
+  - **Cohere & Jurassic-2:** Smaller context lengths compared to OpenAI's latest models.
+
+3. **Time for Embedding:**
+  - This is highly variable and depends on multiple factors, such as the specific model, server load, and input length. The provided ranges should be taken as rough estimates rather than definitive benchmarks.
+
+4. **API Cost:**
+  - **Azure & OpenAI:** The cost can vary significantly based on the model, with GPT-4 generally costing more per token than GPT-3.
+  - **Cohere, Anthropic, and Jurassic-2:** These ranges are more general and reflect common usage scenarios. Always check the latest pricing from providers as it can change.
+
+#### Environment Variables
+
+Ensure you have the necessary environment variables configured in a local `.env` file. For example, this is how you would configure Azure:
 
 ```env
 AZURE_API_VERSION=<your_azure_api_version>
@@ -71,42 +102,26 @@ AZURE_ENDPOINT=<your_azure_endpoint>
 AZURE_OPENAI_API_KEY=<your_azure_api_key>
 ```
 
-**Example**:
-```env
-AZURE_API_VERSION=2021-06-01-preview
-AZURE_ENDPOINT=https://your-resource-name.openai.azure.com/
-AZURE_OPENAI_API_KEY=your-secret-key
-```
-
-**Why Azure?**  
-Using Azure's [embedding](/definitions/d/embedding) service can be beneficial if you need higher performance or better semantic accuracy in your [embedding](/definitions/d/embedding)s, especially when dealing with large datasets.
-
 ## Embedding and Searching Your Browser History
 
 ### Embedding
 
 With your [development environment](/definitions/d/development-environment) ready, you can now embed your browser history into ChromaDB.
 
-To embed using the local model (all-MiniLM-L6-v2), run:
+To embed using the local model (multi-qa-distilbert-cos-v1), run:
 
 ```bash
-python search.py --embed path/to/your/history.csv
+python search.py --embed path/to/your/history.csv  # Ex: ~/Downloads/history.csv
 ```
 
-**Practical Example**:
-If your history CSV is located at `~/Downloads/history.csv`, the command would be:
+This command reads each entry from the CSV, processes it into an [embedding](/definitions/d/embedding), and stores it in ChromaDB. The local model `multi-qa-distilbert-cos-v1` is lightweight and works well for most purposes.
+
+#### Using Azure Embeddings
+
+If you’re leveraging Azure for [embeddings](/definitions/d/embedding), use the `--azure` flag:
 
 ```bash
-python search.py --embed ~/Downloads/history.csv
-```
-
-This command reads each entry from the CSV, processes it into an [embedding](/definitions/d/embedding), and stores it in ChromaDB. The local model `all-MiniLM-L6-v2` is lightweight and works well for most purposes.
-
-**Using Azure [Embedding](/definitions/d/embedding)s**:
-If you’re leveraging Azure for [embedding](/definitions/d/embedding)s, use the `--azure` flag:
-
-```bash
-python search.py --embed ~/Downloads/history.csv --azure
+python search.py --embed path/to/your/history.csv --azure
 ```
 
 ### Searching
@@ -136,11 +151,6 @@ When searching your embedded browser history, using filters can help you narrow 
 5. **Transition Type (`--transition`)**: Filter by how you arrived at a URL (e.g., link, typed, reload). Useful for distinguishing between different browsing actions.
    - *Example*: `python search.py "specific content" --transition typed`
 
-**Comprehensive Example**:
-```bash
-python search.py "search query" --domain example.com --newest --visit-count 5 --typed-count 2 --transition typed
-```
-
 #### Practical Scenario
 
 Imagine you frequently visit a research site. You want to find the latest article you visited on that site. You would run:
@@ -151,7 +161,7 @@ python search.py "latest research" --domain researchsite.com --newest
 
 ## Real-world Use Cases
 
-Understanding how to apply the concepts in this guide to real-world scenarios can help you better appreciate the power of [embedding](/definitions/d/embedding) and searching your browser history using ChromaDB. Below are some practical examples of how this tool can be used in various contexts:
+Understanding how to apply the concepts in this guide to real-world scenarios can help you better appreciate the power of [embedding](/definitions/d/embedding) your browser history. Below are some practical examples of how this tool can be used in various contexts:
 
 ### Personal Productivity Tracking
 
@@ -168,7 +178,7 @@ If you're a content creator or curator, keeping track of all the resources you c
 
 **Example**:
 ```bash
-python search.py "cool facts" --typed-count 3 --newest
+python search.py "python" --typed-count 3 --newest
 ```
 
 ### Academic Research
@@ -180,25 +190,18 @@ Researchers often sift through vast amounts of online material during literature
 python search.py "machine learning" --domain arxiv.org --visit-count 2
 ```
 
-### Corporate Compliance and Monitoring
+### Personalized Content Recommendations
 
-In a corporate setting, understanding employee browsing patterns can be important for both productivity and compliance reasons. By using this tool, IT departments can [embed](/definitions/d/embedding) and search the browser histories of employees to ensure they are adhering to company policies regarding internet use. For instance, a company could filter for visits to non-work-related sites during working hours or monitor the typed count for specific unauthorized websites.
-
-**Example**:
-```bash
-python search.py "social media" --transition typed --visit-count 5
-```
-
-### Improving Personalized Recommendations
-
-For companies involved in e-commerce or online services, understanding user behavior is key to delivering personalized experiences. By analyzing embedded browsing histories, businesses can better understand customer interests and preferences, leading to more accurate recommendations. For example, a retailer could analyze customer visits to various product pages to refine their recommendation algorithms, ensuring that users see products most relevant to their interests.
+[Embedding](/definitions/d/embedding) your browser history can enhance personalized content recommendations by allowing you to track and retrieve relevant content easily. For example, if you frequently visit sites like Medium for articles on data science, embedding this history lets you quickly find similar content or revisit specific posts, ensuring your recommendations are more aligned with your interests.
 
 **Example**:
 ```bash
-python search.py "review" --domain amazon.com --newest
+python search.py "data science" --domain medium.com --newest
 ```
 
 ## Common Issues and Troubleshooting
+
+### CSV Embedding Failure
 
 **Problem:**  
 The script fails to embed the CSV file.
@@ -206,21 +209,21 @@ The script fails to embed the CSV file.
 **Solution:**  
 Ensure that the CSV file is correctly formatted and accessible from the path provided. Double-check your Python environment and dependencies.
 
----
+### Hosted Embeddings Not Applied
 
 **Problem:**  
-Azure [embedding](/definitions/d/embedding)s are not being used despite setting environment variables.
+Hosted [embedding](/definitions/d/embedding) model is not being used despite setting environment variables.
 
 **Solution:**  
-Verify that the `.env` file is correctly configured and located in the root directory. Ensure that the Azure keys and endpoints are correct and match the required format.
+Verify that the `.env` file is correctly configured and located in the root directory. Ensure that the keys and endpoints are correct and match the required format.
 
----
+### Inaccurate Search Results
 
 **Problem:**  
 Search results don’t seem to match your query.
 
 **Solution:**  
-Check if the correct [embedding](/definitions/d/embedding) model is being used. If the local model is inadequate, try using Azure's [embedding](/definitions/d/embedding) service for more accurate results. Also, review your filters and search query for specificity.
+Check if the correct [embedding](/definitions/d/embedding) model is being used. If the local model is inadequate, try using a hosted [embedding](/definitions/d/embedding) service for more accurate results. Also, review your filters and search query for specificity.
 
 ## Conclusion
 
