@@ -9,7 +9,7 @@ tags: ["Dev Containers", "Traditional Environments", "Development Setup", "Onboa
 
 ### Dev Containers vs. Traditional Development Environments: Pros and Cons
 
-In today's software development landscape, choosing the right development environment is more crucial than ever. As containerization gains popularity, many developers are considering a shift from traditional development setups to Dev Containers. This article provides an in-depth comparison of Dev Containers versus traditional development environments, highlighting their benefits, drawbacks, and offering guidance on which might be the best fit for your workflow.
+In today's software development landscape, choosing the right development environment is more crucial than ever. As containerization gains popularity, many developers are considering a shift from traditional development setups to Dev Containers. This article provides an in-depth comparison of Dev Containers versus conventional development environments, highlighting their benefits, and drawbacks, and offering guidance on which might be the best fit for your workflow.
 
 ### TL;DR
 
@@ -19,7 +19,7 @@ In today's software development landscape, choosing the right development enviro
 
 #### What Are Dev Containers?
 
-Dev Containers are development environments packaged within containers, offering a consistent and isolated setup that runs across various platforms. Powered by tools like Docker and orchestrated through integrated development environments (IDEs) like Visual Studio Code (VSCode), these containers encapsulate all dependencies, tools, and configurations needed for a project.
+Dev Containers are development environments packaged within containers, offering a consistent and isolated setup across various platforms. Powered by tools like Docker and orchestrated through integrated development environments (IDEs) like Visual Studio Code (VSCode), these containers encapsulate all dependencies, tools, and configurations needed for a project.
 
 #### Traditional Development Environments
 
@@ -39,7 +39,7 @@ Traditional development environments involve setting up the necessary tools, lib
 
 <img src='authors/assets/illustrations.png'/>
 
-Here's the illustration showing the contrast between Dev Containers and traditional development environments:
+Illustration showing the contrast between Dev Containers and traditional development environments:
 
 - **Right side**: Dev Containers as isolated boxes.
 - **Left side**: A cluttered traditional environment with overlapping dependencies.
@@ -48,11 +48,11 @@ Here's the illustration showing the contrast between Dev Containers and traditio
 
 #### 1. **Environment Consistency**
 
-One of the most significant advantages of using Dev Containers is the consistency they provide across different machines. Since the environment is defined within a container, every developer working on the project operates in the same environment, regardless of their host system. This eliminates the classic "works on my machine" problem, ensuring that the code behaves the same way in development, testing, and production. For more on environment consistency refer to this article [on standardized developement environment](https://www.daytona.io/definitions/s/standardized-development-environment-sde).
+One of the most significant advantages of using Dev Containers is their consistency across different machines. Since the environment is defined within a container, every developer working on the project operates in the same environment, regardless of their host system. This eliminates the classic "works on my machine" problem, ensuring that the code behaves the same way in development, testing, and production. For more on environment consistency refer to this article [on standardized development environment](https://www.daytona.io/definitions/s/standardized-development-environment-sde).
 
 #### 2. **Streamlined Onboarding**
 
-Setting up a traditional development environment can be a time-consuming process, especially for complex projects with many dependencies. Dev Containers simplify onboarding by providing a pre-configured environment. New developers can get started quickly by pulling the container image and launching it with a few commands. This efficiency reduces the time spent on setup and allows developers to focus on writing code. Refer to this article to know about the benefits and key components of [onboarding](https://www.daytona.io/definitions/o/onboarding)
+Setting up a traditional development environment can be a time-consuming process, especially for complex projects with many dependencies. Dev Containers simplify onboarding by providing a pre-configured environment. New developers can get started quickly by pulling the container image and launching it with a few commands. This efficiency reduces the time spent on setup and allows developers to focus on writing code. Refer to this article to learn about the benefits and key components of [onboarding](https://www.daytona.io/definitions/o/onboarding)
 
 #### 3. **Host System Cleanliness**
 
@@ -66,7 +66,7 @@ While Dev Containers offer many benefits, they also introduce complexity. Develo
 
 #### 2. **Potential Performance Issues**
 
-Containers run on a virtualized environment, which can introduce performance overhead compared to running applications directly on the host machine. Although the overhead is generally minimal, it can become noticeable in resource-intensive applications. Developers working on high-performance tasks may experience slower build times or reduced application performance within a container.
+Containers run in a virtualized environment, which can introduce performance overhead compared to running applications directly on the host machine. Although the overhead is generally minimal, it can become noticeable in resource-intensive applications. Developers working on high-performance tasks may experience slower build times or reduced application performance within a container.
 
 ### Pros of Traditional Development Environments
 
