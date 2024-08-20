@@ -126,38 +126,61 @@ python search.py --embed path/to/your/history.csv --azure
 
 ### Searching
 
-Once your history is embedded, you can perform searches using the `search.py` script. Here's how to use it effectively:
+Once your history is embedded, you can perform targeted searches using the `search.py` script.
+
+To start a basic search, simply use:
 
 ```bash
 python search.py "search query"
 ```
 
-#### Refining Searches
-
-When searching your embedded browser history, using filters can help you narrow down results and make your searches more effective:
-
-1. **Domain (`--domain`)**: Restrict results to a specific website. Useful when you remember the site but not the exact URL.
-   - *Example*: `python search.py "article title" --domain example.com`
-
-2. **Newest (`--newest`)**: Sort results by the most recent entries. Ideal for finding pages you visited recently.
-   - *Example*: `python search.py "recent topic" --newest`
-
-3. **Visit Count (`--visit-count`)**: Filter results by a minimum number of visits. Helps focus on frequently visited pages.
-   - *Example*: `python search.py "important page" --visit-count 5`
-
-4. **Typed Count (`--typed-count`)**: Filter by how often you manually typed the URL. Targets pages you intentionally visited.
-   - *Example*: `python search.py "favorite site" --typed-count 3`
-
-5. **Transition Type (`--transition`)**: Filter by how you arrived at a URL (e.g., link, typed, reload). Useful for distinguishing between different browsing actions.
-   - *Example*: `python search.py "specific content" --transition typed`
-
-#### Practical Scenario
-
-Imagine you frequently visit a research site. You want to find the latest article you visited on that site. You would run:
+To refine your results, consider using filters. For example, if you recently read an article on "AI ethics" on `example.com` but can’t recall the exact URL or title, you can narrow your search to that specific domain:
 
 ```bash
-python search.py "latest research" --domain researchsite.com --newest
+python search.py "AI ethics" --domain example.com
 ```
+
+This command restricts the search to `example.com`, making it easier to locate the specific page.
+
+If you want to find the most recent page you visited about "quantum computing," you can sort the results by the latest entries:
+
+```bash
+python search.py "quantum computing" --newest
+```
+
+This will display the most recent pages related to "quantum computing," which is useful for quickly revisiting the latest content.
+
+For frequently visited pages, such as those related to a project management tool, you can filter by the number of visits:
+
+```bash
+python search.py "project tasks" --visit-count 10
+```
+
+This filter highlights pages you’ve visited at least ten times, likely indicating their importance.
+
+If you’re trying to locate a specific coding tutorial site that you’ve manually typed the URL for multiple times, use:
+
+```bash
+python search.py "python tutorial" --typed-count 3
+```
+
+This focuses on pages where you’ve intentionally typed the URL, helping you find the exact tutorial.
+
+To find a document where you remember directly typing the URL, use:
+
+```bash
+python search.py "project proposal" --transition typed
+```
+
+This command searches for pages accessed by typing the URL directly, excluding those reached through links.
+
+For a more complex search, such as finding the most recent paper on "deep learning" that you’ve visited multiple times on `researchsite.com`, you can combine multiple filters:
+
+```bash
+python search.py "deep learning" --domain researchsite.com --newest --visit-count 5
+```
+
+This command combines domain restriction, recent sorting, and visit count filtering, allowing you to quickly locate the most relevant content.
 
 ## Real-world Use Cases
 
