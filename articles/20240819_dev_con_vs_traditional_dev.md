@@ -1,9 +1,8 @@
 ---
 title: "Dev Containers vs. Traditional Development Environments: Pros and Cons"
-description: "An in-depth comparison between containerized and traditional development environments, exploring the benefits of consistency, streamlined onboarding, and potential challenges like complexity and performance overhead. Contextualized with examples, including Daytona."
+description: "Compare containerized vs. traditional dev environments: explore consistency, onboarding ease, and challenges like complexity and performance. Includes examples like Daytona."
 author: "Johnnie Oduro Jnr"
 date: "2024-08-19"
-categories: ["Development", "Containers", "DevOps"]
 tags: ["Dev Containers", "Traditional Environments", "Development Setup", "Onboarding", "Daytona"]
 ---
 
@@ -37,8 +36,6 @@ Traditional development environments involve setting up the necessary tools, lib
 | **Performance**                 | Possible overhead due to virtualization           | Direct access to hardware, faster        |
 | **Flexibility with Multiple Projects** | Easy to manage isolated environments          | Can lead to conflicts between dependencies|
 | **Tooling & Maintenance**       | Additional effort to maintain container images    | Easier to manage without containers      |
-
-### Illustration
 
 <img src='authors/assets/illustrations.png'/>
 
