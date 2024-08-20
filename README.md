@@ -29,11 +29,13 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Evergreen Content](#evergreen-content)
     - [AI-Generated Content](#ai-generated-content)
   - [Contribution Process](#contribution-process)
+    - [How To Contribute](#how-to-contribute)
     - [Editing Process](#editing-process)
-    - [Publication](#publication)
+    - [Code Contributions](#code-contributions)
     - [Quality Assurance](#quality-assurance)
     - [First Time Contributor](#first-time-contributor)
     - [Parallel Submissions](#parallel-submissions)
+    - [Publication](#publication)
   - [How to Propose a New Content](#how-to-propose-a-new-content)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
@@ -93,6 +95,8 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 
 ## Contribution Process
 
+### How To Contribute
+
 1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
@@ -105,8 +109,30 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 - Use tools like [Grammarly](https://grammarly.com), [Hemingway App](https://hemingwayapp.com/) and [LanguageTool](https://languagetool.org/) for initial proofreading.
 - Respond promptly to editorial feedback and make necessary revisions.
 
-### Publication
-Upon approval, you'll be informed of the publication date.
+### Code Contributions
+
+If your article includes code examples or projects, please follow these steps:
+
+1. **Create a New Repository**:
+   - Create a new public repository on your GitHub account.
+   - Name it appropriately, related to the article's topic.
+
+2. **Add Code to the Repository**:
+   - Upload all relevant code, scripts, or project files to this new repository.
+   - Ensure the repository includes a README with clear instructions on how to use or run the code.
+
+3. **Link the Repository in Your Article**:
+   - In your article, include a link to this new repository.
+   - Example: "The complete code for this project can be found in `[this GitHub repository](link-to-your-repo)`."
+
+4. **Maintain the Repository**:
+   - Keep the repository updated with any changes or improvements mentioned in your article.
+   - Respond to issues or pull requests from readers who might have questions or suggestions.
+
+5. **License**:
+   - Include an appropriate open-source license in your repository to clarify how others can use or contribute to your code.
+
+By following these steps, you ensure that readers have access to the full code examples and can easily follow along with your article. It also provides a way for the community to engage with your work and potentially contribute improvements.
 
 ### Quality Assurance
 We use `markdownlint` to ensure consistency in Markdown formatting. Run `npm run lint` before submitting your PR to check for any style issues.
@@ -133,6 +159,9 @@ To ensure fairness and efficiency in our content creation process, we have imple
 This policy helps us maintain a balanced workload among contributors and ensures that each submission receives the necessary attention and review. It also allows us to provide timely feedback and support to authors throughout the content creation process.
 
 We encourage authors to focus on producing high-quality content for one issue at a time, rather than attempting to work on multiple submissions simultaneously. This approach typically results in better-crafted articles and a more streamlined review process.
+
+### Publication
+Upon approval, you'll be informed of the publication date.
 
 
 ## How to Propose a New Content
