@@ -1,6 +1,6 @@
 ---
 title: "Embedding"
-description: "Embedding is the process of converting complex data, such as text, images, or URLs, into numerical representations (vectors) that capture the essential meaning of the data. This transformation allows for efficient processing, comparison, and retrieval by machine learning models and databases."
+description: "Embedding converts complex data (text, images, URLs) into numerical vectors, capturing essential meanings for efficient processing, comparison, and retrieval by ML models."
 date: 2024-08-19
 author: "Jacob Gaffke"
 ---
