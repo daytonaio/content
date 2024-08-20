@@ -9,9 +9,9 @@ author: "Viaksh Prem Sharma"
 
 ## Introduction
 
-In the fast-paced world of technology startups, the choice of software infrastructure can be as critical as the product itself. Open-source solutions like CockroachDB, a distributed SQL database designed for cloud environments, have become the backbone of scalable and reliable systems for many companies. However, recent changes in Cockroach Labs' licensing model have sparked discussions about the sustainability and future of open-source software (OSS).
+Cockroach Labs, the original developer behind the distributed SQL database CockroachDB, has announced a major change to its licensing model. The new system ensures that businesses only pay for things they really need. In particular, customers with annual revenues over $10 million now have to pay by the number of CPUs or CPU cores in their server system In contrast, startups and small businesses who annual revenue below of $10 million may continue to use the enterprise version for free.
 
-Understanding these changes is crucial for startup CEOs. They not only affect your immediate operations but also raise broader questions about the viability and risks of depending on OSS. This article explores CockroachDB's licensing shift, why it matters to your business, and how you can navigate similar challenges in the future.
+Understanding these changes is important for startup CEOs. The updated licensing policy directly impacts how your business can use CockroachDB, especially if your company is in the development phase. This article explores CockroachDB license changes, what they mean for your business, and the processes for managing such changes in an open-source software environment
 
 ### TL;DR
 
@@ -21,7 +21,7 @@ Understanding these changes is crucial for startup CEOs. They not only affect yo
 
 ## The Shift in CockroachDB's Licensing
 
-Cockroach Labs, the company behind CockroachDB, has recently made a significant change to its licensing model. Starting with version 24.3, the company will consolidate its self-hosted product under a single enterprise license, a move designed to ensure that larger companies contribute financially for using their software.
+Cockroach Labs, the company behind CockroachDB, has recently made a significant change to its licensing model. Starting with version 24.3 on Nov. 18, the company will consolidate its self-hosted product under a single enterprise license, a move designed to ensure that larger companies contribute financially for using their software.
 
 ### Key Changes:
 
@@ -33,7 +33,7 @@ This licensing change is aimed at preventing larger businesses from using the so
 
 ## Why This Matters to Startup CEOs
 
-For startup CEOs, the implications of CockroachDB’s licensing changes extend far beyond the immediate impact on their tech stack. Open-source software is often seen as a cost-effective solution for startups, providing powerful tools without the hefty price tags of commercial alternatives. However, the recent shift in CockroachDB’s licensing highlights the potential risks associated with relying on OSS.
+`Is it possible to consider how CockroachDB’s licensing changes affect the lives and businesses of startup CEOs?` Startups usually prefer open-source software because it allows them to obtain robust technology without spending money on expensive proprietary options. Yet, this move made by CockroachDB also showcases a risk that comes with relying on OSS.
 
 ### Key Considerations:
 
@@ -41,35 +41,19 @@ For startup CEOs, the implications of CockroachDB’s licensing changes extend f
 - **Licensing Awareness**: The CockroachDB example underscores the importance of understanding the motivations behind open-source projects and the potential for licensing changes.
 - **Contribution to OSS**: Startups may need to consider contributing financially to the OSS projects they depend on, not just to support those projects but to ensure their continued availability.
 
-## Learning from CockroachDB
+## Future of Open Source
 
-The situation with CockroachDB offers several lessons for startups navigating the complex world of open-source software:
+As all these license changes accumulate, it may be tempting to believe that open source is dead. `is it really?`
 
-1. **Conduct Thorough Due Diligence**: Regularly review the licensing terms of the open-source tools you use, and stay updated on any potential changes.
-2. **Understand the Business Behind the Software**: Know who controls the project and their long-term goals, which can provide insights into potential future changes.
-3. **Plan for Licensing Changes**: Have a contingency plan in place for critical software components, including budgeting for license fees as your startup grows.
-4. **Consider Contributing Back**: If your startup heavily relies on a particular open-source project, consider contributing back to support its sustainability.
-5. **Be Prepared to Pivot**: Ensure your team is flexible and capable of adapting to new tools or changes in licensing models without significant disruption.
+See the matter isn’t quite so simple, Most of the software world is permeated with open source components, including CockroachDB itself, which relies on many third-party libraries, languages and toolkits and it's own internal technology [Pebble key-value store](https://github.com/cockroachdb/pebble) is also and open source.
 
-### Code Example
-
-```python
-# Example of due diligence in checking licensing
-# This is a conceptual example and not specific to any language
-
-def check_oss_license(software):
-    # Check the current license of the software
-    license_info = get_license_info(software)
-    print(f"Current License for {software}: {license_info}")
-
-check_oss_license("CockroachDB")
-```
+So, `open source is far from dead`, but its foundation is becoming increasingly uncertain—especially when it comes to commercial, vendor-driven projects, as recent developments over the past five years have shown.
 
 ## Conclusion
 
-The recent changes in CockroachDB’s licensing model serve as a reminder of the evolving nature of open-source software. As a startup CEO, it's crucial to recognize the importance of understanding and planning for these changes. Open-source software can offer tremendous value, but it also comes with its own set of risks and responsibilities.
+Recent changes to CockroachDB’s licensing model are a reminder of the growth of open-source software. As a startup CEO, it’s important to understand the importance of understanding and planning for this change. Open-source software can provide great benefits, but it also comes with its own set of risks and responsibilities.
 
-By staying informed, conducting thorough due diligence, and being proactive in managing your software stack, you can ensure that your startup remains agile and prepared for whatever changes come your way. In doing so, you'll not only protect your business but also contribute to the broader open-source community, ensuring that these valuable tools continue to thrive.
+By keeping you informed, conducting due diligence, and being proactive in managing your software stack, you can ensure that your startup stays agile and ready for any changes that come your way and by doing so so you're not only protecting your business but you're protecting wider open source - also contributing to the community, ensuring that these valuable resources continue to thrive.
 
 ## References
 
@@ -77,3 +61,5 @@ By staying informed, conducting thorough due diligence, and being proactive in m
 - [Peter Zaitsev's Twitter Discussion on Licensing](https://x.com/PeterZaitsev/status/1824088154795802642)
 - [TechCrunch Article on Cockroach Labs' Licensing Change](https://techcrunch.com/2024/08/15/cockroach-labs-shakes-up-its-licensing-to-force-bigger-companies-to-pay/)
 - [Hacker News Discussion on CockroachDB Licensing](https://news.ycombinator.com/item?id=41256222)
+
+- [SiliconANGLE: Cockroach Labs changes](https://siliconangle.com/2024/08/15/cockroach-labs-changes-self-hosting-license-single-enterprise-model/)
