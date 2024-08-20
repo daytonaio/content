@@ -9,9 +9,9 @@ author: "Viaksh Prem Sharma"
 
 ## Introduction
 
-Cockroach Labs, the original developer behind the distributed SQL database CockroachDB, has announced a major change to its licensing model. The new system ensures that businesses only pay for things they really need. In particular, customers with annual revenues over $10 million now have to pay by the number of CPUs or CPU cores in their server system In contrast, startups and small businesses who annual revenue below of $10 million may continue to use the enterprise version for free.
+Cockroach Labs, the original developer behind the distributed SQL database CockroachDB, In August 2024 he has announced a major change to its licensing model. The new system ensures that businesses only pay for things they really need. In particular, customers with annual revenues over $10 million now have to pay by the number of CPUs or CPU cores in their server system In contrast, startups and small businesses who annual revenue below of $10 million may continue to use the enterprise version for free.
 
-Understanding these changes is important for startup CEOs. The updated licensing policy directly impacts how your business can use CockroachDB, especially if your company is in the development phase. This article explores CockroachDB license changes, what they mean for your business, and the processes for managing such changes in an open-source software environment
+Understanding these changes is important particularly for startup CEOs. The updated licensing policy directly impacts how your business can use CockroachDB, especially if your company is in the development phase. This article explores CockroachDB license changes, what they mean for your business, and the processes for managing such changes in an open-source software environment
 
 ### TL;DR
 
