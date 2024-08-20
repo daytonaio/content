@@ -31,8 +31,7 @@ Jupyter Notebook is an open-source web application that allows you to create and
 - **Cells**: Individual units in a notebook that can contain code, text, or other content.
 - **[Kernel](/definitions/kernel.md)**: The computational engine that executes the code contained in a notebook.
 
-![Jupyter Notebook Interface](/assets/20240315_jupyter_notebook_interface.png)
-*[Placeholder for an image showing the Jupyter Notebook interface with labeled components]*
+![Jupyter Notebook Interface](/assets/20240819_jupyter_notebook_guide_img1.png)
 
 ## How Does Jupyter Notebook Work?
 
@@ -66,12 +65,10 @@ Daytona makes it easy to set up Jupyter Notebook in your development environment
 
 2. **Installation Steps**:
    - Log in to your Daytona account
+   - Create a repo with the .devcontainer folder and the devcontainer.json file
    - Create a new project or open an existing one
-   - In the project settings, enable Jupyter Notebook support
-   - Daytona will automatically set up the necessary environment
-
-![Daytona Jupyter Setup](/assets/20240315_daytona_jupyter_setup.png)
-*[Placeholder for an image showing the Daytona interface for enabling Jupyter Notebook]*
+   - Daytona will automatically pull and set up the dev container
+   - Voila! You have a Jupyter Notebook environment in Daytona
 
 ### Dev Container Configuration for Jupyter Notebook in Daytona
 
@@ -180,8 +177,7 @@ plt.show()
 
 After running this cell, you should see the output and a sine wave plot directly below it.
 
-![First Jupyter Notebook](/assets/20240315_first_jupyter_notebook.png)
-*[Placeholder for an image showing a simple Jupyter Notebook with code, output, and a plot]*
+![First Jupyter Notebook](/assets/20240819_jupyter_notebook_guide_img2.png)
 
 ## Key Features and Differences
 
@@ -194,8 +190,7 @@ Jupyter Notebook offers several unique features that set it apart from other cod
 
 Compared to alternatives like [JupyterLab](/definitions/jupyterlab.md), Jupyter Notebook provides a more traditional interface and is generally more lightweight. JupyterLab, on the other hand, offers a more modern interface with additional features like a file browser and terminal.
 
-![Jupyter Notebook vs JupyterLab](/assets/20240315_jupyter_notebook_vs_jupyterlab.png)
-*[Placeholder for an image comparing Jupyter Notebook and JupyterLab interfaces]*
+![Jupyter Notebook vs JupyterLab](/assets/20240819_jupyter_notebook_guide_img3.png)
 
 ## Best Practices for Using Jupyter Notebook
 
