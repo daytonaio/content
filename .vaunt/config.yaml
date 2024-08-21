@@ -9,7 +9,7 @@ achievements:
         - trigger:
             actor: author
             action: pull_request
-            condition: merged = true AND count() = 1
+            condition: merged = true & count() = 1
 
   - achievement:
       name: Parable Crafter
@@ -19,7 +19,7 @@ achievements:
         - trigger:
             actor: author
             action: pull_request
-            condition: merged = true AND count() >= 5
+            condition: merged = true & count() >= 5
 
   - achievement:
       name: Koan Master
@@ -29,7 +29,7 @@ achievements:
         - trigger:
             actor: author
             action: pull_request
-            condition: merged = true AND count() >= 10
+            condition: merged = true & count() >= 10
 
   - achievement:
       name: Ummon's Disciple
@@ -39,7 +39,7 @@ achievements:
         - trigger:
             actor: author
             action: pull_request
-            condition: merged = false AND closed = true AND count() >= 3
+            condition: merged = false & closed = true & count() >= 3
 
   - achievement:
       name: Cosmic Observer
