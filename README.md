@@ -48,6 +48,7 @@ compensated for your work.
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
   - [Showcase Your Contributions](#showcase-your-contributions)
+    - [Available Awards](#available-awards)
     - [Top Contributors](#top-contributors)
 
 # Introduction
@@ -244,6 +245,7 @@ way:
 <<<<<<< HEAD
 <<<<<<< HEAD
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
+<<<<<<< HEAD
 =======
 You can showcase your achievement badges on your GitHub profile in the following way:
 =======
@@ -279,3 +281,42 @@ Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
 blog!
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
 >>>>>>> 6a73653 (fixed linting issues and changes some rules)
+=======
+
+## Showcase Your Contributions
+
+Highlight your contributions to this repository and display your achievements with pride!
+
+To see all badge holders for this repo, check out the [Vaunt.dev community board](https://community.vaunt.dev/board/daytonaio/repository/content).
+
+You can add your own achievements to your profile or README by using the following code snippet:
+
+```html
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/YOUR_GITHUB_USERNAME/achievements?format=svg&limit=3" width="350" />
+</p>
+```
+
+Make sure to replace `YOUR_GITHUB_USERNAME` with your actual GitHub username.
+
+We encourage all contributors to proudly display their achievements and inspire others to get involved!
+
+Your contributions, big or small, are valued and recognized.
+
+### Available Awards
+
+| Name | Icon | Description |
+| ---- | ---- | ----------- |
+| Tech Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Penned first Daytona Dotfiles Insider article |
+| Parable Crafter | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | 5 Daytona tales of tech insight! Your wisdom grows! |
+| Koan Master | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles! A fount of profound tech wisdom! |
+| Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark thought like Ummon's cryptic teachings! |
+| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Stargazing the Daytona cosmos! Your journey awakens! |
+| Quantum Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Idea proposed! Daytona multiverse feels your ripples! |
+
+
+### Top Contributors
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
+</p>
+>>>>>>> f2efc13 (added vaunt section)
