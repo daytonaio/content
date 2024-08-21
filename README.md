@@ -48,6 +48,7 @@ compensated for your work.
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
   - [Showcase Your Contributions](#showcase-your-contributions)
+    - [Available Awards](#available-awards)
     - [Top Contributors](#top-contributors)
 
 # Introduction
@@ -217,42 +218,41 @@ subject to the terms outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Contact and Support
 
-- For questions or assistance, open an issue or contact the repo maintainers.
-- Join `#content` channel in our [Slack community](https://go.daytona.io/slack)
-  for discussions and support.
+Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
 
 ## Showcase Your Contributions
 
-Along with the chance to earn bounties, each engagement comes with an
-achievement badge.
+Highlight your contributions to this repository and display your achievements with pride!
 
-Showcase your contributions in your GitHub profile and display your achievements
-with pride! For more information, check the
-[CONTRIBUTING.md](CONTRIBUTING.md#showcase-your-contributions) file.
+To see all badge holders for this repo, check out the [Vaunt.dev community board](https://community.vaunt.dev/board/daytonaio/repository/content).
 
-### Top Contributors
-
-<p>
-  <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
-</p>
-
-You can showcase your achievement badges on your GitHub profile in the following
-way:
-
-<p>
-  <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
-</p>
-
-Simply add the following code to your GitHub profile README file:
+You can add your own achievements to your profile or README by using the following code snippet:
 
 ```html
 <p>
-  <img
-    src="https://api.vaunt.dev/v1/github/entities/USERNAME/achievements?format=svg&limit=3"
-    width="400"
-  />
+  <img src="https://api.vaunt.dev/v1/github/entities/YOUR_GITHUB_USERNAME/achievements?format=svg&limit=3" width="350" />
 </p>
 ```
 
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
-blog!
+Make sure to replace `YOUR_GITHUB_USERNAME` with your actual GitHub username.
+
+We encourage all contributors to proudly display their achievements and inspire others to get involved!
+
+Your contributions, big or small, are valued and recognized.
+
+### Available Awards
+
+| Name | Icon | Description |
+| ---- | ---- | ----------- |
+| Tech Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Penned first Daytona Dotfiles Insider article |
+| Parable Crafter | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | 5 Daytona tales of tech insight! Your wisdom grows! |
+| Koan Master | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles! A fount of profound tech wisdom! |
+| Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark thought like Ummon's cryptic teachings! |
+| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Stargazing the Daytona cosmos! Your journey awakens! |
+| Quantum Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Idea proposed! Daytona multiverse feels your ripples! |
+
+
+### Top Contributors
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
+</p>
