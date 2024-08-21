@@ -1,3 +1,12 @@
+---
+title: "How to Contribute devcontainer.json to the repo"
+description: "Learn how to create a devcontainer.json file for the groq-api-cookbook repository, set up a consistent development environment, and contribute your work back to the community. This step-by-step guide covers everything from forking the repository to submitting a pull request, ensuring a smooth experience for open-source contributors."
+date: 2024-08-21
+author: "Dheeraj Singh"
+tags: ["Dev Container", "Groq API Cookbook", "Daytona Workspace", "Software Development","Open Source Contribution"]
+---
+
+
 # How to Set Up and Contribute a `devcontainer.json` to the `groq-api-cookbook` Repository
 
 ## Introduction
