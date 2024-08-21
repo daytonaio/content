@@ -1,3 +1,12 @@
+---
+title: "Running Omni Engineer in Daytona: A Step-by-Step Guide for AI Engineers"
+description: "Learn to run Omni Engineer in Daytona, create a devcontainer.json, and contribute to repositories with this comprehensive guide."
+date: 2024-08-21
+author: "Dheeraj Singh"
+tags: ["Omni Engineer", "Daytona", "Devcontainer", "Docker"]
+---
+
+
 # Running Omni Engineer in Daytona: A Step-by-Step Guide for AI Engineers
 
 In this guide, we'll demonstrate how to run Omni Engineer inside Daytona and effectively use it. We'll also walk through creating a `devcontainer.json` file, contributing it to existing repositories, and making a pull request to the Groq repository. By the end, you'll know how to set up a development environment that streamlines your AI engineering workflows.
