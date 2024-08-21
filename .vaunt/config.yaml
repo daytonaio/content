@@ -4,7 +4,7 @@ achievements:
   - achievement:
       name: Tech Scribe
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png
-      description: You've penned your first Daytona Dotfiles Insider chronicle! One article that shares valuable insights.
+      description: Penned first Daytona Dotfiles Insider article
       triggers:
         - trigger:
             actor: author
@@ -14,7 +14,7 @@ achievements:
   - achievement:
       name: Parable Crafter
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png
-      description: Your wisdom grows. You've created 5 Daytona Dotfiles Insider pieces, each a story of technical insight.
+      description: 5 Daytona tales of tech insight! Your wisdom grows!
       triggers:
         - trigger:
             actor: author
@@ -24,7 +24,7 @@ achievements:
   - achievement:
       name: Koan Master
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png
-      description: True enlightenment! Your 10+ Daytona Dotfiles Insider articles you wrote have become a source of profound tech wisdom.
+      description: 10+ Daytona articles! A fount of profound tech wisdom!
       triggers:
         - trigger:
             actor: author
@@ -34,7 +34,7 @@ achievements:
   - achievement:
       name: Ummon's Disciple
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png
-      description: Like Ummon's cryptic teachings, your unmerged PRs spark thought. 3+ closed but unmerged PRs show your dedication to improvement.
+      description: Unmerged PRs spark thought like Ummon's cryptic teachings!
       triggers:
         - trigger:
             actor: author
@@ -44,7 +44,7 @@ achievements:
   - achievement:
       name: Cosmic Observer
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png
-      description: You've gazed into the Daytona universe by starring our repository. The first step on a journey of discovery!
+      description: Stargazing the Daytona cosmos! Your journey awakens!
       triggers:
         - trigger:
             actor: author
@@ -54,7 +54,7 @@ achievements:
   - achievement:
       name: Quantum Proposer
       icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png
-      description: You've introduced a new possibility to the Daytona Dotfiles multiverse by proposing an issue. Your idea may shape future realities!
+      description: Idea proposed! Daytona multiverse feels your ripples!
       triggers:
         - trigger:
             actor: author
