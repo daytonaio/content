@@ -9,7 +9,7 @@ achievements:
         - trigger:
             actor: author
             action: pull_request
-            condition: count(merged = true) = 1
+            condition: count(merged = true) >= 1
 
   - achievement:
       name: Parable Crafter
