@@ -11,7 +11,7 @@ author: "Jacob Gaffke"
 
 [Large Language Models (LLMs)](/definitions/20240820_definition_large language model.md) such as GPT-2 and GPT-3 have significantly pushed the boundaries of [natural language processing (NLP)](/definitions/20240820_definition_natural language processing.md), enabling a wide range of applications from complex text generation to translation and summarization. However, deploying these models efficiently requires substantial computational power, particularly for tasks like real-time text generation. GPUs are indispensable for handling these operations effectively, and [containerization](20240819_definition_containerization.md) offers a streamlined solution for managing and scaling such workloads.
 
-This guide will take you through setting up and configuring [Docker](20240819_definition_docker.md) containers specifically for GPU-accelerated tasks. We'll cover everything from initial setup to optimizing performance and troubleshooting common issues. By the end of this guide, you'll be equipped to deploy and manage [LLMs](/definitions/20240820_definition_large language model.md) in a GPU-enabled [containerized environment](20240819_definition_containerization.md).
+This guide will take you through setting up and configuring [Docker](/definitions/20240819_definition_docker.md) containers specifically for GPU-accelerated tasks. We'll cover everything from initial setup to optimizing performance and troubleshooting common issues. By the end of this guide, you'll be equipped to deploy and manage [LLMs](/definitions/20240820_definition_large language model.md) in a GPU-enabled [containerized environment](20240819_definition_containerization.md).
 
 ### TL;DR
 
@@ -26,11 +26,15 @@ This guide will take you through setting up and configuring [Docker](20240819_de
 Before setting up your environment for GPU-intensive tasks, ensure that you have the following prerequisites:
 
 - A machine with a CUDA-compatible GPU (e.g., NVIDIA GPUs).
-- [Docker](20240819_definition_docker.md) installed on your system, along with the NVIDIA Container Toolkit for GPU support.
+- [Docker](/definitions/20240819_definition_docker.md) installed on your system, along with the NVIDIA Container Toolkit for GPU support.
 
 ### Docker Installation
 
-If [Docker](20240819_definition_docker.md) isn't already installed on your system, follow these steps:
+[Docker](/definitions/20240819_definition_docker.md) is a platform that allows you to automate the deployment of applications inside lightweight, portable containers. These containers include everything needed to run the application, such as the code, runtime, libraries, and dependencies, ensuring consistency across different environments.
+
+![docker diagram](/assets/images/20240820_gpu_utilization_img1.jpg)
+
+If [Docker](/definitions/20240819_definition_docker.md) isn't already installed on your system, follow these steps:
 
 ```bash
 # Update package lists and install Docker
@@ -41,7 +45,11 @@ sudo systemctl start docker
 
 ### NVIDIA Container Toolkit Installation
 
-To enable GPU support in [Docker](20240819_definition_docker.md) containers, you need to install the NVIDIA Container Toolkit:
+The NVIDIA Container Toolkit is essential for enabling GPU support in [Docker](/definitions/20240819_definition_docker.md) containers. It provides the necessary libraries and tools to seamlessly access NVIDIA GPUs from within [Docker](/definitions/20240819_definition_docker.md) containers, allowing you to leverage GPU acceleration for your applications.
+
+![nvidia diagram](/assets/images/20240820_gpu_utilization_img2.jpg)
+
+To enable GPU support in [Docker](/definitions/20240819_definition_docker.md) containers, you need to install the NVIDIA Container Toolkit:
 
 ```bash
 # Configure the production repository
@@ -63,17 +71,17 @@ sudo systemctl restart docker
 
 ### Verify GPU Configuration
 
-To verify that your [Docker](20240819_definition_docker.md) setup can access the GPU, run the following command:
+To verify that your [Docker](/definitions/20240819_definition_docker.md) setup can access the GPU, run the following command:
 
 ```bash
 sudo docker run --rm --runtime=nvidia --gpus all nvidia/cuda:12.6.0-base-ubuntu24.04 nvidia-smi
 ```
 
-If your setup is correct, the `nvidia-smi` command will display information about your GPU, confirming that the GPU is accessible inside [Docker](20240819_definition_docker.md) containers.
+If your setup is correct, the `nvidia-smi` command will display information about your GPU, confirming that the GPU is accessible inside [Docker](/definitions/20240819_definition_docker.md) containers.
 
 ## Running LLM Inference in a Docker Container
 
-With your GPU-enabled [Docker](20240819_definition_docker.md) environment ready, the next step is to develop a text generation script using an [LLM](/definitions/20240820_definition_large language model.md) and run it inside a [Docker](20240819_definition_docker.md) container.
+With your GPU-enabled [Docker](/definitions/20240819_definition_docker.md) environment ready, the next step is to develop a text generation script using an [LLM](/definitions/20240820_definition_large language model.md) and run it inside a [Docker](/definitions/20240819_definition_docker.md) container.
 
 ### Create the Initial Script
 
@@ -115,7 +123,7 @@ The script loads a pre-trained GPT-2 model and tokenizer from the Hugging Face l
 
 ### Create a Docker Container with Dependencies
 
-To run this script in a [Docker](20240819_definition_docker.md) container, create a `Dockerfile` that includes all necessary dependencies, such as PyTorch and the Transformers library:
+To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, create a `Dockerfile` that includes all necessary dependencies, such as PyTorch and the Transformers library:
 
 ```Dockerfile
 FROM nvidia/cuda:12.6.0-base-ubuntu24.04
@@ -274,7 +282,7 @@ if __name__ == "__main__":
 
 ### Implementing These Techniques in Docker
 
-To use the updated script in a [Docker](20240819_definition_docker.md) container, replace the content of your `inference.py` script with the updated code and rebuild the container:
+To use the updated script in a [Docker](/definitions/20240819_definition_docker.md) container, replace the content of your `inference.py` script with the updated code and rebuild the container:
 
 ```bash
 # Build the container
@@ -361,7 +369,7 @@ Even with a well-configured setup, issues can arise. Below are some common probl
 
 #### GPU Access Issues
 
-**Problem**: [Docker](20240819_definition_docker.md) cannot access the GPU inside the container.
+**Problem**: [Docker](/definitions/20240819_definition_docker.md) cannot access the GPU inside the container.
 
 **Solution**: Ensure that the NVIDIA Container Toolkit is correctly installed and that you are using the `--gpus all` flag when running the container.
 
@@ -379,7 +387,7 @@ Even with a well-configured setup, issues can arise. Below are some common probl
 
 ## Conclusion
 
-This guide has walked you through setting up a [Docker](20240819_definition_docker.md) environment for GPU-accelerated [LLM](/definitions/20240820_definition_large language model.md) inference. By following these steps, you can efficiently deploy and manage [LLMs](/definitions/20240820_definition_large language model.md), fully leveraging the power of GPUs for [natural language processing](/definitions/20240820_definition_natural language processing.md) tasks. Whether you're developing models for research or deploying them in production, [containerization](20240819_definition_containerization.md) with [Docker](20240819_definition_docker.md) provides the scalability and efficiency needed to maximize your hardware resources.
+This guide has walked you through setting up a [Docker](/definitions/20240819_definition_docker.md) environment for GPU-accelerated [LLM](/definitions/20240820_definition_large language model.md) inference. By following these steps, you can efficiently deploy and manage [LLMs](/definitions/20240820_definition_large language model.md), fully leveraging the power of GPUs for [natural language processing](/definitions/20240820_definition_natural language processing.md) tasks. Whether you're developing models for research or deploying them in production, [containerization](20240819_definition_containerization.md) with [Docker](/definitions/20240819_definition_docker.md) provides the scalability and efficiency needed to maximize your hardware resources.
 
 By mastering these techniques, you'll ensure that your AI and machine learning projects are both powerful and efficiently deployed in any environment.
 
@@ -390,4 +398,4 @@ By mastering these techniques, you'll ensure that your AI and machine learning p
 - [PyTorch CUDA Integration](https://pytorch.org/get-started/locally/)
 - [Transformers Documentation](https://huggingface.co/docs/transformers/)
 
-Mastering [Docker](20240819_definition_docker.md) for GPU-based workloads will elevate your AI and machine learning projects, ensuring they run efficiently and effectively, regardless of the deployment environment.
+Mastering [Docker](/definitions/20240819_definition_docker.md) for GPU-based workloads will elevate your AI and machine learning projects, ensuring they run efficiently and effectively, regardless of the deployment environment.
