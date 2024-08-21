@@ -211,6 +211,8 @@ By contributing to this repository, you agree that all content you submit is
 subject to the terms outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Payment
+- Compensation is provided for accepted and published content.
+- Payment can be made through Algora as bounties (if assigned to the issue and your PR gets merged).
 
 - Compensation is provided for accepted and published content.
 - Payment can be made through Algora as bounties (if assigned to the issue and
