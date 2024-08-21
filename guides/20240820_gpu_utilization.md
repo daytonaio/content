@@ -242,9 +242,7 @@ def generate_text(prompt, max_length=50, model_name='gpt2', top_k=50, top_p=0.9,
     model = GPT2LMHeadModel.from_pretrained(model_name)
     tokenizer = GPT2Tokenizer.from_pretrained(model_name, clean_up_tokenization_spaces=True)
     
-    # Move model to
-
- the GPU
+    # Move model to the GPU
     model.to(device)
 
     # Encode the input prompt
