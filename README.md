@@ -215,11 +215,7 @@ These terms ensure that Daytona can freely use and manage the contributed conten
 
 ## Payment
 - Compensation is provided for accepted and published content.
-- Payment can be made directly or through bounties (if assigned to the issue).
-- Payment can also be made directly if you can submit an invoice including:
-  - Date, Title of Article/Guide, Amount
-  - Payment details (Bank Name, Account Number/IBAN, Routing Number/SWIFT Code/ABA)
-  - Address invoice to: Daytona Platforms Inc., 224 W 35th St Ste 500#297, New York, NY 10001, USA
+- Payment can be made through Algora as bounties (if assigned to the issue and your PR gets merged).
 
 
 ## Contact and Support
