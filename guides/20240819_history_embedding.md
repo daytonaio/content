@@ -20,8 +20,6 @@ This guide is perfect for those eager to understand [embeddings](/definitions/d/
 - **Embed History**: Run the `search.py` script to embed your history data.
 - **Search History**: Perform searches using various filters and options.
 
-## What Are Embeddings?
-
 ## Preparations
 
 ### Installing Prerequisites
@@ -41,9 +39,12 @@ Daytona creates a controlled [development environment](/definitions/d/developmen
 To work with your browser history, you'll need to export it from your browser:
 
 1. **Install the Export Chrome History Extension**: Download and install the [Export Chrome History](https://chrome.google.com/webstore/detail/export-chrome-history/) Chrome extension.
+
+![export chrome history extension](/assets/images/20240819_history_embedding_img1.jpg)
+
 2. **Export to CSV**: Use the extension to export your browser history as a CSV file. Save it to a convenient location, such as `~/Downloads/history.csv`.
 
-Example CSV snippet:
+Example:
 
 ```csv
 visit_time,url,title,visit_count,typed_count
@@ -188,6 +189,8 @@ Understanding how to apply the concepts in this guide to real-world scenarios ca
 
 ### Personal Productivity Tracking
 
+![person using laptop](/assets/images/20240819_history_embedding_img2.jpg)
+
 For individuals looking to optimize their time online, this tool can be invaluable. By [embedding](/definitions/d/embedding) your browser history and using the search functionality, you can analyze how much time you spend on work-related sites versus leisure activities. For example, you could filter your history by domains associated with productivity tools (like Google Docs or Trello) and compare them against social media or entertainment sites. Over time, this data can reveal patterns in your online behavior, helping you make more informed decisions about time management.
 
 **Example**:
@@ -196,6 +199,8 @@ python search.py "to do" --domain trello.com --newest
 ```
 
 ### Content Curation and Management
+
+![man doing a blog](/assets/images/20240819_history_embedding_img3.jpg)
 
 If you're a content creator or curator, keeping track of all the resources you come across online can be challenging. Using this guide, you can [embed](/definitions/d/embedding) and index your browsing history, allowing you to quickly retrieve articles, videos, or research papers you’ve encountered. For instance, if you're writing a blog post and need to revisit a source you found weeks ago, a quick search using relevant keywords or filters like visit count can bring it up immediately.
 
@@ -206,6 +211,8 @@ python search.py "python" --typed-count 3 --newest
 
 ### Academic Research
 
+![classroom with whiteboard](/assets/images/20240819_history_embedding_img4.jpg)
+
 Researchers often sift through vast amounts of online material during literature reviews or while gathering data. By [embedding](/definitions/d/embedding) and searching your browser history, you can easily retrieve previously visited papers, articles, or datasets. This is particularly useful for ongoing projects where you may need to reference multiple sources over time. Additionally, you can filter results by the domain of academic databases or journals to focus solely on credible sources.
 
 **Example**:
@@ -214,6 +221,8 @@ python search.py "machine learning" --domain arxiv.org --visit-count 2
 ```
 
 ### Personalized Content Recommendations
+
+![man giving thumb up](/assets/images/20240819_history_embedding_img5.jpg)
 
 [Embedding](/definitions/d/embedding) your browser history can enhance personalized content recommendations by allowing you to track and retrieve relevant content easily. For example, if you frequently visit sites like Medium for articles on data science, embedding this history lets you quickly find similar content or revisit specific posts, ensuring your recommendations are more aligned with your interests.
 
