@@ -86,4 +86,4 @@
 - [ ] Read the article out loud to catch any awkward phrasing.
 - [ ] Run the draft through [Grammarly](https://grammarly.com) or a similar grammar tool.
 - [ ] Double-check adherence to the style guide and repository guidelines.
->>>>>>> 2767914 (updates to templates)
+- [ ] Use the name of the article for the title of the PR.
