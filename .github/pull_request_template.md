@@ -16,7 +16,6 @@
 - [ ] Save images in the `/assets` folder.
 - [ ] Follow naming conventions: `YYYYMMDD_title_of_the_article_IMG_NAME_NO.png`.
 - [ ] (Optional) Create a GitHub repo for the code referenced in the article and share it.
-- [ ] (Optional) Include a link to this Loom video in the PR comments.
 
 ### Interlinking
 - [ ] Use `CTRL+F` to search for relevant keywords in:
@@ -32,4 +31,3 @@
 - [ ] Read the article out loud to catch any awkward phrasing.
 - [ ] Run the draft through [Grammarly](https://grammarly.com) or a similar grammar tool.
 - [ ] Double-check adherence to the style guide and repository guidelines.
-- [ ] Use the name of the article for the title of the PR.
