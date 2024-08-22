@@ -17,8 +17,6 @@ body:
       options:
         - Article
         - Guide
-        - News
-        - Ghostwriting
 
   - type: textarea
     id: description
