@@ -111,7 +111,7 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 5. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
 
 ### Editing Process
-- If the PR meets our standards, the issue will be assigned, and the editing process will commence.
+- If the PR meets our standards, the issue will be assigned to you, and the editing process will commence.
 - Articles undergo up to two rounds of editing.
 - Use tools like [Grammarly](https://grammarly.com), [Hemingway App](https://hemingwayapp.com/) and [LanguageTool](https://languagetool.org/) for initial proofreading.
 - Respond promptly to editorial feedback and make necessary revisions.
