@@ -109,7 +109,7 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
-4. Submit a pull request for review.
+4. Submit a pull request for review and use the name of the article for the title.
 5. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
 
 ### Editing Process
