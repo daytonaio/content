@@ -66,13 +66,8 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
-4. Run the following command to check for markdown linting issues:
-   ```bash
-   npx markdownlint '**/*.md'
-   ```
-5. Submit a pull request for review and use the name of the article for the title. Link the relevant issue to the PR.
-6. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
-7. Don't forget to star the `daytonaio/content` repo.
+4. Submit a pull request for review and use the name of the article for the title.
+5. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
 
 ### Editing Process
 - If the PR meets our standards, the issue will be assigned to you, and the editing process will commence.
@@ -120,7 +115,11 @@ If you're contributing to the Daytona Content Programme for the first time, we r
 2. Name the file using the format `firstname-lastname.md` (e.g., `jane-doe.md`).
 3. Use the provided template in the `authors` folder to fill out your profile information.
 4. Fill in all the fields with your information.
+<<<<<<< HEAD
 5. Place your author image and company logos in the `authors/assets` folder, using clear and descriptive filenames (e.g. name-surname-logo.png).
+=======
+5. Place your author image and company logos in the `authors/assets` folder, using clear and descriptive filenames.
+>>>>>>> ecef784 (readme splitted into 3 files)
 6. In your profile, reference the image and logo files using relative paths from the `authors` folder.
 7. Once you've completed your profile, include it in the same pull request as your first content contribution.
 
@@ -203,9 +202,18 @@ Your contributions, big or small, are valued and recognized.
 
 | Name | Icon | Description |
 | ---- | ---- | ----------- |
+<<<<<<< HEAD
 | Daytona Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scribe.png" width="150" /> | Authored first Daytona Dotfiles Insider article |
 | Daytona Scholar | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scholar.png" width="150" /> | Crafted 5 insightful Daytona developer guides. Your expertise grows! |
 | Daytona Sage | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_sage.png" width="150" /> | 10+ Daytona articles published! A beacon of developer experience wisdom! |
 | Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark innovation like Ummon's cryptic teachings! |
 | Daytona Explorer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_explorer.png" width="150" /> | Starred the Daytona repo. Your development journey accelerates! |
 | Daytona Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_proposer.png" width="150" /> | Feature idea proposed! Shaping the future of Daytona's development ecosystem! |
+=======
+| Tech Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Penned first Daytona Dotfiles Insider article |
+| Parable Crafter | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | 5 Daytona tales of tech insight! Your wisdom grows! |
+| Koan Master | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles! A fount of profound tech wisdom! |
+| Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark thought like Ummon's cryptic teachings! |
+| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" />| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Stargazing the Daytona cosmos! Your journey awakens! |
+| Quantum Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Idea proposed! Daytona multiverse feels your ripples! |
+>>>>>>> ecef784 (readme splitted into 3 files)
