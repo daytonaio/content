@@ -63,8 +63,10 @@ Merged PRs are eligible for compensation.
 ## Writing Guidelines
 
 ### Content Types
-- **Articles**: In-depth explorations of topics, at least 800 words.
-- **Guides**: Step-by-step instructions for specific tasks or processes, at least 1500 words.
+- **Articles**: 1000-2000 words. In-depth topic exploration with expert quotes, statistics, and subheadings. Informative yet conversational tone.
+- **Guides**: 1500-3000 words. Step-by-step instructions with screenshots, troubleshooting tips, and materials checklist. Clear, concise language.
+- **News**: 500 words. Concise and fluent updates focusing on the 5 W's and H (Who, What, Where, When, Why, and How).
+- **Ghostwriting:** Variable length. Content written in another's voice, matching their style, tone, and expertise.
 
 ### Writing Structure
 - Use the provided templates in `articles` and `guides` folders.
