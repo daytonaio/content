@@ -143,7 +143,12 @@ If your article includes code examples or projects, please follow these steps:
    - In your article, include a link to this new repository.
    - Example: "The complete code for this project can be found in `[this GitHub repository](link-to-your-repo)`."
 
-4. **Maintain the Repository**:
+4. **Create a Loom Video**:
+   - Record a short Loom video (less than 5 minutes) demonstrating that your solution runs correctly.
+   - The video should showcase the key steps and results described in your guide or article.
+   - Include a link to this Loom video in the PR comments.
+
+5. **Maintain the Repository**:
    - Keep the repository updated with any changes or improvements mentioned in your article.
    - Respond to issues or pull requests from readers who might have questions or suggestions.
 
