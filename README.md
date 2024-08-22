@@ -53,6 +53,8 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
 ## Introduction
 The `content` repository is a platform where technical writers can contribute articles to the [Daytona Dotfiles Insider](https://www.daytona.io/dotfiles/) blog by "solving" posted issues (proposed article ideas) through pull requests. Merged PRs are eligible for compensation.
 
+> **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
+
 ## Writing Guidelines
 
 ### Content Types
