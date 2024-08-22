@@ -63,6 +63,8 @@ The `content` repository is a platform where technical writers can contribute ar
 - **News**: 500 words. Concise and fluent updates focusing on the 5 W's and H (Who, What, Where, When, Why, and How).
 - **Ghostwriting:** Variable length. Content written in another's voice, matching their style, tone, and expertise.
 
+> **Note:** When writing content, always keep the Daytona context in mind. Code samples should be run in Daytona workspaces/projects, screenshots should showcase Daytona when applicable, and described workflows are designed for Daytona's ecosystem. This context is crucial for the work to be considered.
+
 ### Writing Structure
 - Use the provided templates in `articles` and `guides` folders.
 - Follow the naming convention: `YYYYMMDD_title_of_the_content.md`.
