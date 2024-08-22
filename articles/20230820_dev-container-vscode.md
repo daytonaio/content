@@ -23,6 +23,8 @@ Some of the main benefits of using dev containers include:
 - **Less Setup Time**: Starting a new project with dev containers means you can skip the lengthy setup and configuration process. Just open your project in the container and everything is ready to go.
 - **Flexibility**: You can choose a base image with the software and tools you want or build your own custom base image, meeting your specific needs.
 
+  ![Alt text](../authors/assets/devcontainer.png)
+
 Dev containers revolutionize the developer experience by providing pre-configured, isolated environments that can supercharge your productivity. If you haven't tried them yet, you owe it to yourself as a developer to give dev containers a shot. They may just change the way you work! The future is containerized!
 
 ## Prerequisites
@@ -33,68 +35,82 @@ Before you begin, ensure you have the following:
 - **VSCode**: Installed with the Remote - Containers extension.
 - **Basic Familiarity**: With Docker and VSCode.
 
-## Step 1: Create a `Dockerfile`
-
-A Dockerfile specifies the instructions to create the image for your development environment. Follow these steps:
-
 1. **Create a Directory**: For your project and navigate into it.
 
    ```sh
    mkdir my-dev-container && cd my-dev-container
-
    ```
 
 2. **Create a Dockerfile**: Inside the directory, create a file named Dockerfile with the following content:
 
    ```sh
-   FROM ubuntu:20.04
+   FROM mcr.microsoft.com/devcontainers/go:1-${templateOption:imageVariant}
 
-   # Avoid warnings by switching to noninteractive
-   ENV DEBIAN_FRONTEND=noninteractive
+    # [Optional] Uncomment this section to install additional OS packages.
+    # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-   # Use the default user 'developer'
-   ARG USERNAME=developer
-   ARG USER_UID=1001
-   ARG USER_GID=$USER_UID
+    # [Optional] Uncomment the next lines to use go get to install anything else you need
+    # USER vscode
+    # RUN go get -x <your-dependency-or-tool>
+    # USER root
 
-   # Create the user 'developer' with sudo access
-   RUN groupadd --gid $USER_GID $USERNAME \
-       && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-       && apt-get update \
-       && apt-get install -y sudo \
-       && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-       && chmod 0440 /etc/sudoers.d/$USERNAME
-
-   # Install development tools
-   RUN apt-get install -y git build-essential
-
-   # Switch back to the dialog frontend for any additional apt-get installations
-   ENV DEBIAN_FRONTEND=dialog
+    # [Optional] Uncomment this line to install global node packages.
+    # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
    ```
+
+   This Dockerfile sets up a Go development environment using Microsoft's `go:1` image, with options to install additional OS packages, Go dependencies, and global Node.js packages.
+
+   Source: [Dockerfile Configuration `Dockerfile`](https://github.com/devcontainers/templates/blob/main/src/go-postgres/.devcontainer/Dockerfile)
 
 ## Step 1: Create a `devcontainer.json` File
 
 The devcontainer.json file describes how VSCode should interact with the development container. In the same directory, create a file named devcontainer.json with the following content:
 
-    ```sh
-    {
-    "name": "My Development Container",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-        "USER_UID": "1001",
-        "USER_GID": "1001"
-        }
-    },
-    "remoteUser": "developer"
-    }
+```sh
+{
+    "name": "Go & PostgreSQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+
+    // Configure tool-specific properties.
+    // "customizations": {},
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [5432],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "go version",
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}
+```
 
 This file tells VSCode to build the development container image using the Dockerfile in the current directory and set the remote user to `developer`.
 
-### Step 3: Open the Project in VSCode
+Source: [DevContainer Configuration `devcontainer.json`](https://github.com/devcontainers/templates/blob/main/src/go-postgres/.devcontainer/devcontainer.json)
+
+### Step 3a: Open the Project in VSCode
 
 1. **Open the Directory**: You created in VSCode.
 2. **Reopen in Container**: Press `F1` to open the command palette and select `Remote-Containers: Reopen in Container`. This will build the Docker image if it's not already built and start a container with your development environment, attaching VSCode to it.
+
+### Step 3b: Open the Project in Daytona
+
+**Why Daytona?**  
+Daytona automates environment setup, manages containers, and handles SSH and port forwarding, ensuring a stable, consistent development environment with minimal setup time and no drift.
+
+**How to Setup?**
+
+1. **Start Daytona**: Run `daytona server` to launch the server.
+2. **Create DevContainer**: Use `daytona create test -r <repo> --skip-ide` to set up your container.
+3. **Open in VSCode**: Run `daytona code` to open the project in VSCode.
+4. **Rebuild in Container**: Press `Cmd + Shift + P` or `Ctrl + Shift + P` in VSCode and select "_Rebuild and Reopen in Container._"
 
 ### Step 4: Develop Inside the Container
 
@@ -111,3 +127,5 @@ Feel free to ask if you have any questions or need further assistance!
 - [Ultimate Guide to Dev Containers](https://www.daytona.io/dotfiles/ultimate-guide-to-dev-containers)
 - [Creating a Development Container](https://www.daytona.io/dotfiles/creating-a-development-container)
 - [Demo | Run the server in VS-Code](https://www.youtube.com/watch?v=uL-TaEhvVwk)
+
+- [Development with DevContainer](https://medium.com/cwan-engineering/reproducible-local-development-with-dev-containers-0ed5fa850b36)
