@@ -2,8 +2,8 @@ version: 0.0.1
 
 achievements:
   - achievement:
-      name: Tech Scribe
-      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png
+      name: Daytona Scribe
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scribe.png
       description: Penned first Daytona Dotfiles Insider article
       triggers:
         - trigger:
@@ -12,8 +12,8 @@ achievements:
             condition: count(merged = true) >= 1
 
   - achievement:
-      name: Parable Crafter
-      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png
+      name: Daytona Scholar
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scholar.png
       description: 5 Daytona tales of tech insight! Your wisdom grows!
       triggers:
         - trigger:
@@ -22,8 +22,8 @@ achievements:
             condition: count(merged = true) > 4
 
   - achievement:
-      name: Koan Master
-      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png
+      name: Daytona Sage
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_sage.png
       description: 10+ Daytona articles! A fount of profound tech wisdom!
       triggers:
         - trigger:
@@ -42,8 +42,8 @@ achievements:
             condition: count(merged = false & closed = true) > 2
 
   - achievement:
-      name: Cosmic Observer
-      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png
+      name: Daytona Explorer
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_explorer.png
       description: Stargazing the Daytona cosmos! Your journey awakens!
       triggers:
         - trigger:
@@ -52,8 +52,8 @@ achievements:
             condition: starred = true
 
   - achievement:
-      name: Quantum Proposer
-      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png
+      name: Daytona Proposer
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_proposer.png
       description: Idea proposed! Daytona multiverse feels your ripples!
       triggers:
         - trigger:
