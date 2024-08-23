@@ -11,6 +11,14 @@ author: "David Anyatonwu"
 
 [Jupyter Notebook](/definitions/jupyter_notebook.md) has revolutionized the way programmers, data scientists, and researchers work with code and data. This powerful tool combines the ability to write and execute code with the flexibility to add rich text explanations, making it an ideal environment for [data analysis](/definitions/data_analysis.md), [scientific computing](/definitions/scientific_computing.md), and interactive storytelling.
 
+The combination of Jupyter Notebook and Daytona offers several key advantages:
+
+1. **Consistent Environments**: Daytona's dev container support ensures that all team members work in identical Jupyter environments, eliminating "works on my machine" issues.
+2. **Easy Setup**: Daytona automates the process of setting up Jupyter Notebook, reducing configuration time and complexity.
+3. **Version Control Integration**: Seamlessly use Git for version control of your Jupyter notebooks within the Daytona platform.
+4. **Collaborative Features**: Daytona's built-in collaboration tools enhance team productivity when working with Jupyter notebooks.
+5. **Cloud-based Access**: Access your Jupyter notebooks from anywhere through Daytona's cloud-based interface, without local installation requirements.
+
 In this guide, we'll explore what Jupyter Notebook is, how it works, and how you can start using it in your projects. We'll also cover how to set up Jupyter Notebook using [dev containers](/definitions/dev_container.md), ensuring a consistent and reproducible development environment. Whether you're a beginner looking to learn coding or an experienced developer seeking a more interactive environment, Jupyter Notebook has something to offer.
 
 ### TL;DR
@@ -57,11 +65,11 @@ You can share your notebooks in two main ways:
 
 ### Installation Guide
 
-Daytona makes it easy to set up Jupyter Notebook in your development environment. Here's how to get started:
+Daytona makes it easy to set up Jupyter Notebook in your development environment. Here's a detailed guide on how to get started:
 
 1. **System Requirements**:
-   - Daytona account
-   - Web browser (Chrome, Firefox, or Safari recommended)
+   - Web browser.
+   - Docker installed on your machine.
 
 2. **Installation Steps**:
    - Log in to your Daytona account
@@ -69,13 +77,49 @@ Daytona makes it easy to set up Jupyter Notebook in your development environment
    - Create a new project or open an existing one
    - Daytona will automatically pull and set up the dev container
    - Voila! You have a Jupyter Notebook environment in Daytona
+Daytona supports multiple IDEs, including Visual Studio Code and JetBrains IDEs. While this guide focuses on Jupyter Notebook, you can use these other IDEs with Jupyter extensions for a more integrated development experience.
+
+### Workspace Management for Jupyter Notebook Projects
+
+Daytona's workspace management features enhance your Jupyter Notebook workflow:
+
+1. **Persistent Workspaces**: Your Jupyter Notebook environment persists between sessions, allowing you to pick up right where you left off.
+2. **Resource Management**: Easily adjust computational resources allocated to your Jupyter environment as your project needs change.
+3. **Environment Replication**: Quickly replicate your Jupyter setup for team members or different branches of your project.
+
+### Version Control Integration
+
+Daytona seamlessly integrates with various Git providers (GitHub, GitLab, and Bitbucket), offering robust version control for your Jupyter notebooks:
+
+1. **Automatic Syncing**: Changes in your notebooks are automatically tracked and can be committed directly from the Daytona interface.
+2. **Branch Management**: Create and switch between branches to manage different versions of your notebooks.
+3. **Collaboration**: Easily share your notebook changes with team members through pull requests and code reviews.
+
+### Sharing and Collaboration
+
+Daytona enhances the sharing capabilities of Jupyter Notebook:
+
+1. **Team Access**: Grant team members access to your Jupyter environment, allowing for real-time collaboration.
+2. **Shareable Links**: Generate secure, shareable links to your notebooks for easy distribution to stakeholders.
+3. **Environment Consistency**: Ensure that shared notebooks run in identical environments, eliminating "works on my machine" issues.
+
+### Cloud-Based Accessibility
+
+Daytona's cloud-based nature significantly impacts how you use and access Jupyter Notebook:
+
+1. **Access Anywhere**: Work on your Jupyter notebooks from any device with an internet connection.
+2. **No Local Setup**: Eliminate the need for local Jupyter installations and environment management.
+3. **Scalability**: Easily scale your computational resources as needed for demanding notebooks.
+
+### Custom Docker Images
 
 ### Dev Container Configuration for Jupyter Notebook in Daytona
 
-Daytona leverages dev containers to provide a consistent and reproducible development environment for Jupyter Notebook. This integration ensures that your Jupyter setup is identical across different machines and team members. Here's how to configure it:
+Daytona leverages dev containers to provide a consistent and reproducible development environment that enables you to start up a Jupyter Notebook environment without going through the process of installing all the dependencies manually and other hassles that come with managing different python versions and libraries. This integration ensures that your Jupyter setup is identical across different machines and team members. Here's how to configure it:
 
 1. In your Daytona project, navigate to the `.devcontainer` folder (or create it if it doesn't exist).
 2. Add or modify the `devcontainer.json` file with the following content:
+3. To use a custom Docker image, modify the `image` field in your `devcontainer.json`:
 
 ```json
 {
@@ -92,8 +136,9 @@ Daytona leverages dev containers to provide a consistent and reproducible develo
     }
 }
 ```
+You can find a complete example of this setup in our [Jupyter Notebook Template Repository](https://github.com/onyedikachi-david/my_jupyter_project). This repository includes the `.devcontainer` configuration, a sample notebook, and other necessary files to get you started quickly.
 
-3. Create a `requirements.txt` file in your project root to specify any additional Python packages you need.
+1. Create a `requirements.txt` file in your project root to specify any additional Python packages you need.
 
 Here's an example of what your `requirements.txt` might look like for this basic setup:
 
@@ -115,7 +160,7 @@ This configuration does the following:
 
 By using this dev container setup in Daytona, you ensure that everyone working on the project has the same Jupyter environment, reducing "it works on my machine" issues and streamlining collaboration.
 
-**Note**: Daytona handles the process of building and running the dev container, so you don't need to manually manage Docker. Simply push these configuration files to your project repository, and Daytona will take care of the rest when you or your team members access the project.
+**Note**: Daytona handles the process of building and running the dev container.
 
 ### Creating and Running Your First Notebook
 
@@ -181,16 +226,14 @@ After running this cell, you should see the output and a sine wave plot directly
 
 ## Key Features and Differences
 
-Jupyter Notebook offers several unique features that set it apart from other coding environments:
+Jupyter Notebook integrates well with Daytona's development environment management capabilities. When using Jupyter Notebook through Daytona, you benefit from:
 
-- **Interactive Output**: Execute code and see the results immediately, allowing for rapid experimentation and iteration.
-- **Rich Media Support**: Include images, videos, equations, and other media to enhance your notebooks and make them more engaging.
-- **Easy Sharing**: Share notebooks with others by sending them a link or exporting them to various formats (e.g., PDF, HTML).
-- **[Literate Programming](/definitions/literate_programming.md)**: Combine code, documentation, and results in a single document, promoting clear and reproducible research.
+1. Consistent environments across team members, thanks to Daytona's dev container support([1](https://www.daytona.io/docs/about/what-is-daytona)).
+2. Easy setup and configuration of Jupyter Notebook environments([2](https://www.daytona.io/docs/usage/workspaces)).
+3. Seamless version control integration for your Jupyter notebooks([3](https://www.daytona.io/docs/configuration/git-providers)).
+4. The ability to access your Jupyter notebooks from anywhere through Daytona's cloud-based interface([4](https://www.daytona.io/docs/usage/ide)).
 
-Compared to alternatives like [JupyterLab](/definitions/jupyterlab.md), Jupyter Notebook provides a more traditional interface and is generally more lightweight. JupyterLab, on the other hand, offers a more modern interface with additional features like a file browser and terminal.
-
-![Jupyter Notebook vs JupyterLab](/assets/20240819_jupyter_notebook_guide_img3.png)
+While Daytona supports various IDEs, including Visual Studio Code and JetBrains IDEs([5](https://www.daytona.io/docs/usage/ide)), you can configure your dev container to include Jupyter Notebook for interactive coding and data analysis tasks.
 
 ## Best Practices for Using Jupyter Notebook
 
