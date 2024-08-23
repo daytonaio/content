@@ -7,8 +7,7 @@
 
 <div align="center">
 
-[![Issues - Content](https://img.shields.io/github/issues/daytonaio/content)](https://github.com/daytonaio/content/issues)
-[![Vaunt Community](https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/badges/community)](https://community.vaunt.dev/board/daytonaio/repository/content)
+[![Issues - Content](https://img.shields.io/github/issues/daytonaio/content)](https://github.com/daytonaio/content/issues) [![Vaunt Community](https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/badges/community)](https://community.vaunt.dev/board/daytonaio/repository/content)
 
 </div>
 
