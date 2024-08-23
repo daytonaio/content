@@ -9,7 +9,7 @@ author: "David Anyatonwu"
 
 ## Introduction
 
-[Jupyter Notebook](/definitions/jupyter_notebook.md) has revolutionized the way programmers, data scientists, and researchers work with code and data. This powerful tool combines the ability to write and execute code with the flexibility to add rich text explanations, making it an ideal environment for [data analysis](/definitions/data_analysis.md), [scientific computing](/definitions/scientific_computing.md), and interactive storytelling.
+[Jupyter Notebook](/definitions/20240819_definition_jupyter_notebook.md) has revolutionized the way programmers, data scientists, and researchers work with code and data. This powerful tool combines the ability to write and execute code with the flexibility to add rich text explanations, making it an ideal environment for [data analysis](/definitions/20240819_definition_data_analysis.md), scientific computing, and interactive storytelling.
 
 The combination of Jupyter Notebook and Daytona offers several key advantages:
 
@@ -19,7 +19,7 @@ The combination of Jupyter Notebook and Daytona offers several key advantages:
 4. **Collaborative Features**: Daytona's built-in collaboration tools enhance team productivity when working with Jupyter notebooks.
 5. **Cloud-based Access**: Access your Jupyter notebooks from anywhere through Daytona's cloud-based interface, without local installation requirements.
 
-In this guide, we'll explore what Jupyter Notebook is, how it works, and how you can start using it in your projects. We'll also cover how to set up Jupyter Notebook using [dev containers](/definitions/dev_container.md), ensuring a consistent and reproducible development environment. Whether you're a beginner looking to learn coding or an experienced developer seeking a more interactive environment, Jupyter Notebook has something to offer.
+In this guide, we'll explore what Jupyter Notebook is, how it works, and how you can start using it in your projects. We'll also cover how to set up Jupyter Notebook using [dev containers](/definitions/20240819_definition_development%20container.md), ensuring a consistent and reproducible development environment. Whether you're a beginner looking to learn coding or an experienced developer seeking a more interactive environment, Jupyter Notebook has something to offer.
 
 ### TL;DR
 
@@ -31,13 +31,13 @@ In this guide, we'll explore what Jupyter Notebook is, how it works, and how you
 
 ## What is Jupyter Notebook?
 
-Jupyter Notebook is an open-source web application that allows you to create and share documents (called [notebooks](/definitions/notebook.md)) that contain live code, equations, visualizations, and narrative text. It supports multiple programming languages, with [Python](/definitions/python.md) being the most popular.
+Jupyter Notebook is an open-source web application that allows you to create and share documents (called [notebooks](/definitions/20240819_definition_notebook.md)) that contain live code, equations, visualizations, and narrative text. It supports multiple programming languages, with Python being the most popular.
 
 ### Key Components of Jupyter Notebook
 
 - **Notebook Interface**: Where you write and execute code, view outputs, and add explanations.
 - **Cells**: Individual units in a notebook that can contain code, text, or other content.
-- **[Kernel](/definitions/kernel.md)**: The computational engine that executes the code contained in a notebook.
+- **[Kernel](/definitions/20240819_definition_kernel.md)**: The computational engine that executes the code contained in a notebook.
 
 ![Jupyter Notebook Interface](/assets/20240819_jupyter_notebook_guide_img1.png)
 
@@ -237,7 +237,7 @@ While Daytona supports various IDEs, including Visual Studio Code and JetBrains 
 
 ## Best Practices for Using Jupyter Notebook
 
-1. **Version Control**: Use [Git](/definitions/git.md) for version control of your notebooks. Consider using nbdime for better diff and merge support for .ipynb files.
+1. **Version Control**: Use [Git](/definitions/20240819_definition_git.md) for version control of your notebooks. Consider using nbdime for better diff and merge support for .ipynb files.
 2. **Organize Your Notebooks**: Use a clear structure and naming convention for your notebooks.
 3. **Regular Checkpoints**: Save your work frequently and create checkpoints to avoid losing progress.
 4. **Clean Code**: Despite the interactive nature, maintain clean and well-documented code in your notebooks.
