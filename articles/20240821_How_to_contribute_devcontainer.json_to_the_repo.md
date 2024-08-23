@@ -115,6 +115,8 @@ Now that your changes are committed, you can contribute them back to the origina
 
 Be sure to explain what your dev container does and why it’s useful for the project.
 
+![workflow](assets/20240821_How_to_contribute_devcontainer.json_to_the_repo_IMG_01.png)
+
 ## Step 6: Using Daytona Workspace
 Daytona is a cloud-based environment that can integrate with your devcontainer.json setup. Here's how you can get started:
 
