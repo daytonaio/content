@@ -199,9 +199,9 @@ Your contributions, big or small, are valued and recognized.
 
 | Name | Icon | Description |
 | ---- | ---- | ----------- |
-| Tech Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Penned first Daytona Dotfiles Insider article |
-| Parable Crafter | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | 5 Daytona tales of tech insight! Your wisdom grows! |
-| Koan Master | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles! A fount of profound tech wisdom! |
-| Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark thought like Ummon's cryptic teachings! |
-| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" />| Cosmic Observer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Stargazing the Daytona cosmos! Your journey awakens! |
-| Quantum Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Idea proposed! Daytona multiverse feels your ripples! |
+| Daytona Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Authored first Daytona Dotfiles Insider article |
+| Daytona Scholar | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | Crafted 5 insightful Daytona developer guides. Your expertise grows! |
+| Daytona Sage | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles published! A beacon of developer experience wisdom! |
+| Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark innovation like Ummon's cryptic teachings! |
+| Daytona Explorer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Starred the Daytona repo. Your development journey accelerates! |
+| Daytona Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Feature idea proposed! Shaping the future of Daytona's development ecosystem! |
