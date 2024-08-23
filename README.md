@@ -115,7 +115,7 @@ blog!
 ## Showcase Your Contributions
 Along with the chance to earn bounties, each engagement comes with an achievement badge.
 
-Showcase your contributions in your GitHub profile and display your achievements with pride! For more information, check the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+Showcase your contributions in your GitHub profile and display your achievements with pride! For more information, check the [CONTRIBUTING.md](CONTRIBUTING.md#showcase-your-contributions) file.
 
 ### Top Contributors
 <p>
