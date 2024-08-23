@@ -52,7 +52,7 @@ A development container (or a devcontainer for short) allows you to use a docker
 
 For this guide we're going to create a devcontainer for PostgreSQL using a config file. The file is always named `devcontainer.json` with code syntax in it following the correct config specifications. Its a norm to keep the file in an hidden directory call `.devcontainer`
 
-Let's get started. I will use the terminal to set up mine but the commands should work fine on Mac terminal or Windows powershell. You can also follow along with the GUI using any OS.
+Let's get started. I will use the terminal to create mine in linux PC but the commands should work fine on Mac terminal or the Windows powershell. You can also follow along with the GUI using any OS.
 
 **Step 1**: Create a directory with any name of your choice and go into it. I use the name `postgresql-playground` and move into the directory.
 
@@ -74,15 +74,44 @@ Code explanation
 
 **Step 4**: While still in the same directory, create another file named `docker-compose.yml` and paste the code below into it. Save it
 
-[CODE]
+```yml
+services:
+ postgres:
+    container_name: postgres
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
 
-Code explanation
+volumes:
+  postgres-data
+```
+
+The `docker-compose.yml` code content defines a service named `postgres` that runs a PostgreSQL database container. Here is the breakdown:
+
+- **container_name:** Sets the name of the container to "postgres".
+- **image:** Specifies the PostgreSQL image to use which is the latest version in here.
+- **volumes:** Mounts a local directory named `postgres-data` to the container's data directory.
+- **env_file:** Loads environment variables from the `.env` file.
+- **ports:** Exposes port 5432 on the host machine to port 5432 inside the container.
+- **restart:** Restarts the container unless it's manually stopped.
+
+The "volumes" section at the end defines the local directory `postgres-data` for data persistence.
+
 
 **Step 5**: In the same directory, create the last file named `.env` and paste code below. Save the file.
 
-[CODE]
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+```
 
-Code explanation
+**POSTGRES_USER**: Set the database username to `postgres`
+**POSTGRES_PASSWORD**: SEt the database password to `postgres`
 
 Your directory structure should look like mine if you follow along using the same directory name as I did.
 
