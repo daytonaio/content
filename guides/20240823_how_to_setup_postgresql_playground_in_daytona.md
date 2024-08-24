@@ -225,7 +225,7 @@ CREATE TABLE users (
   **Example**: The SQL codes insert different records into the table `users` that was created by us above
 
 ```sql
-INSERT INTO users (name, email) VALUES ('Mark Zuckerberg’, 'zuck@fb.com');
+INSERT INTO users (name, email) VALUES ('Mark Zuckerberg', 'zuck@fb.com');
 INSERT INTO users (name, email) VALUES ('Elon Musk', 'info@telsa.com');
 INSERT INTO users (name, email) VALUES ('Bill Gates', 'bill.gates@gatesfoundation.org');
 INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
