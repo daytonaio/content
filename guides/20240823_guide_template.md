@@ -111,9 +111,10 @@ POSTGRES_PASSWORD=postgres
 ```
 
 **POSTGRES_USER**: Set the database username to `postgres`
-**POSTGRES_PASSWORD**: SEt the database password to `postgres`
 
-Your directory structure should look like mine if you follow along using the same directory name as I did.
+**POSTGRES_PASSWORD**: Set the database password to `postgres`
+
+Your directory structure should look like mine below if you follow along using the same directory name as I did earlier.
 
 ```
 postgresql-playground/
