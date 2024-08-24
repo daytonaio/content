@@ -245,10 +245,10 @@ Before starting this section be sure `daytona` is installed in your PC
 
 - ### Step 4
 
-  Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona`
+  Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona.git`
 
   ```bash
-  daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
+  daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
   ```
 
 - ### Step 5
