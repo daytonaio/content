@@ -227,40 +227,42 @@ Before starting this section be sure daytona is installed in your PC
   
 - ### Step 2
 
-Run the command below to add your git provider if you haven't setup one
+  Run the command below to add your git provider if you haven't setup one
 
-```bash
-daytona git provider add
-```
+  ```bash
+  daytona git provider add
+  ```
 
-Follow the prompts after running the command to setup your provider. In our case it's GitHub
+  Follow the prompts after running the command to setup your provider. In our case it's GitHub
 
 - ### Step 3
 
-Run this command in terminal to add your preferred IDE.
+  Run this command in terminal to add your preferred IDE.
 
-```bash
-daytona ide
-```
+  ```bash
+  daytona ide
+  ```
 
 - ### Step 4
 
-Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona`
-```
-daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
-```
+  Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona`
+
+  ```bash
+  daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
+  ```
 
 - ### Step 5
 
-Run this command to open in the IDE you selected when setting up your preferred one
+  Run this command to open in the IDE you selected when setting up your preferred one
 
-```bash
-daytona code
-```
+  ```bash
+  daytona code
+  ```
 
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
 
 - ### Login to PostgreSQL using `psql` and username `postgres`
+
   ```bash
   psql -U postgres
   ```
