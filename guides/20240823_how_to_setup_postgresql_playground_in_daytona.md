@@ -14,7 +14,12 @@ This guide will walk you through on how to set up PostgresQL database playground
 
 ### TL;DR
 
-- **Bullet Point Summary**: *[Summarize the key points in a few bullet points for quick reference.]*
+- What is needed to get started in this hands-on learning
+- Overviews of both PostgreSQL and Daytona
+- How to create a PostgreSQL devcontainer file
+- Setup PostgreSQL playground workspace in Daytona
+- Hands-on practice with PostgreSQL commands in the workspace
+- Conclusion
 
 ## Prerequisities
 
