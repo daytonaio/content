@@ -199,11 +199,11 @@ git branch -M main
 git push -u origin main
 ```
 
-After pasting the code, you'll be prompted to input your GitHub username and password.
+After you run the code, you'll be prompted to input your GitHub username and password.
 
 You can find the GitHub repository where my devcontainer config is located which I used for this guide [here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later added a README and LICENSE files which wasn't neccessary to follow along with this guide.
 
-Now, we have successfully created a repository needed to spin up a devcontainer for PostgreSQL using Daytona.
+Now, we have successfully created a GitHub repository needed to spin up a devcontainer for PostgreSQL using Daytona.
 
 ## Setting Up PostgreSQL in Daytona
 
