@@ -89,6 +89,7 @@ Python is widely used in various fields, including web development, data science
 
 - **Community Support:** Python has a large and active community, offering extensive resources for learning and problem-solving.
 
+<<<<<<< HEAD
 >>>>>>> 95e8408 (add devcontainer feature guide)
 ### Use in Daytona:
 
@@ -114,3 +115,6 @@ development workflow.
 =======
 In a Devcontainer, Python is frequently used to install packages, manage environments, and automate setup processes, making it an essential part of the development workflow.
 >>>>>>> 95e8408 (add devcontainer feature guide)
+=======
+In a Devcontainer, Python is frequently used to install packages, manage environments, and automate setup processes, making it an essential part of the development workflow.
+>>>>>>> 0fe2061 (add review comments)
