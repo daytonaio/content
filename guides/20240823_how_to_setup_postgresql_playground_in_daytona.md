@@ -34,7 +34,7 @@ PostgreSQL has some much benefits on to why one should use it some are highlight
 
 ## Overview of Daytona
 
-Daytona is a self hosted and secure open source development environment manager that use configurations from a project's repository to build workspace and provision the workspace in a platform of your choice. It's innovative and incredibly easy for all levels including beginners to get started with it.
+Daytona is a self hosted and secure open source development environment manager that uses configurations from a project's repository to build workspace and provision the workspace in a platform of your choice. It's innovative and incredibly easy for all levels including beginners to get started with it.
 
 Daytona provides some interesting features which make it one the best products in the area of simplifying development environments for both enterprise and individual levels.
 
@@ -93,8 +93,8 @@ volumes:
 
 The `docker-compose.yml` code content defines a service named `postgres` that runs a PostgreSQL database container. Here is the breakdown:
 
-- **container_name:** Sets the name of the container to "postgres".
-- **image:** Specifies the PostgreSQL image to use which is the latest version in here.
+- **container_name:** Set the name of the container to "postgres".
+- **image:** Specifies the PostgreSQL image to use, which is the latest version here.
 - **volumes:** Mounts a local directory named `postgres-data` to the container's data directory.
 - **env_file:** Loads environment variables from the `.env` file.
 - **ports:** Exposes port 5432 on the host machine to port 5432 inside the container.
@@ -103,7 +103,7 @@ The `docker-compose.yml` code content defines a service named `postgres` that ru
 The "volumes" section at the end defines the local directory `postgres-data` for data persistence.
 
 
-**Step 5**: In the same directory, create the last file named `.env` and paste code below. Save the file.
+**Step 5**: In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
 
 ```
 POSTGRES_USER=postgres
