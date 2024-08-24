@@ -72,36 +72,36 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
 
 - ### **Step 3**: Create `devcontainer.json` file
 
-Now, create a file called `devcontainer.json` and paste the following code into it and then save it.
+  Now, create a file called `devcontainer.json` and paste the following code into it and then save it.
 
-```json
-{
-    "name": "PostgreSQL Dev Container Playground",
-    "dockerComposeFile": "docker-compose.yml",
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-    "service": "postgres",
-    "forwardPorts": [5432],
-    "customizations": {
-      "vscode": {
-          "extensions": ["streetsidesoftware.code-spell-checker"]
-      }
-    },
-    "postCreateCommand": "psql -U ${POSTGRES_USER} -c 'SELECT 1;'"
+  ```json
+  {
+      "name": "PostgreSQL Dev Container Playground",
+      "dockerComposeFile": "docker-compose.yml",
+      "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+      "service": "postgres",
+      "forwardPorts": [5432],
+      "customizations": {
+        "vscode": {
+            "extensions": ["streetsidesoftware.code-spell-checker"]
+        }
+      },
+      "postCreateCommand": "psql -U ${POSTGRES_USER} -c 'SELECT 1;'"
   }
-```
+  ```
 
-The `devcontainer.json` code content defines a configuration for a PostgreSQL development container environment using Docker Compose
+  The `devcontainer.json` code content defines a configuration for a PostgreSQL development container environment using Docker Compose
 
-- **`name`:** Set the name of the development container environment to ``PostgreSQL Dev Container Playground``.
-- **`dockerComposeFile`:** Specifies the Docker Compose file (`docker-compose.yml`) that defines the services and their configurations.
-- **`workspaceFolder`:** Determine the location of the workspace folder within the container, using the base name of the local workspace folder.
-- **`service`:** Indicate that the development container will primarily interact with the ``postgres`` service defined in the Docker Compose file.
-- **`forwardPorts`:** Forwards the container's port ``5432`` to the host machine, allowing local access to the PostgreSQL database.
-- **`customizations`:** Defines additional customizations for the development environment:
-    - **`vscode`:** Specifies customizations for Visual Studio Code:
-        - **`extensions`:** Installs the ``streetsidesoftware.code-spell-checker`` extension to enable spell checking within the code editor.
-- **`postCreateCommand`:** Executes the specified command after the development container is created:
-    - `psql -U ${POSTGRES_USER} -c 'SELECT 1;'`: Connects to the PostgreSQL database using the environment variable `POSTGRES_USER` and executes a simple query to verify the database connection.
+  - **`name`:** Set the name of the development container environment to ``PostgreSQL Dev Container Playground``.
+  - **`dockerComposeFile`:** Specifies the Docker Compose file (`docker-compose.yml`) that defines the services and their configurations.
+  - **`workspaceFolder`:** Determine the location of the workspace folder within the container, using the base name of the local workspace folder.
+  - **`service`:** Indicate that the development container will primarily interact with the ``postgres`` service defined in the Docker Compose file.
+  - **`forwardPorts`:** Forwards the container's port ``5432`` to the host machine, allowing local access to the PostgreSQL database.
+  - **`customizations`:** Defines additional customizations for the development environment:
+      - **`vscode`:** Specifies customizations for Visual Studio Code:
+          - **`extensions`:** Installs the ``streetsidesoftware.code-spell-checker`` extension to enable spell checking within the code editor.
+  - **`postCreateCommand`:** Executes the specified command after the development container is created:
+      - `psql -U ${POSTGRES_USER} -c 'SELECT 1;'`: Connects to the PostgreSQL database using the environment variable `POSTGRES_USER` and executes a simple query to verify the database connection.
 
 - ### **Step 4**: Create `docker-compose.yml` file
 
