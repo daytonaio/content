@@ -1,6 +1,6 @@
 ---
 title: "How to Setup PostgreSQL Playground in Daytona."
-description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
+description: "Learn how to create PostgreSQL playground in Daytona and interact with the it hands-on in your favourite IDE terminal"
 date: 2024-08-23
 author: "Jeffrey Whewhetu"
 tags: ["daytona", "postgresql", "devcontainer"]
