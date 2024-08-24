@@ -53,16 +53,9 @@ Now, let's create a Daytona workspace for our DuckDB playground. You may use thi
 1. Open your terminal and run the following command:
 
 ```bash
-daytona create https://github.com/onyedikachi-david/playground-duckdb.git
+daytona create https://github.com/onyedikachi-david/playground-duckdb.git --code
 ```
-
-2. Follow the prompts to complete the workspace creation process.
-
-3. Once the workspace is created, open it in your preferred IDE using the following command:
-
-```bash
-daytona code playground-duckdb
-```
+2. This both creates the repository and opens the workspace in your preferred IDE.
 
 ## Step 3: Configuring the DevContainer
 
