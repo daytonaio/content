@@ -93,14 +93,14 @@ volumes:
 
 The `docker-compose.yml` code content defines a service named `postgres` that runs a PostgreSQL database container. Here is the breakdown:
 
-- **container_name:** Set the name of the container to "postgres".
+- **container_name:** Set the name of the container to `postgres`.
 - **image:** Specifies the PostgreSQL image to use, which is the latest version here.
 - **volumes:** Mounts a local directory named `postgres-data` to the container's data directory.
 - **env_file:** Loads environment variables from the `.env` file.
-- **ports:** Exposes port 5432 on the host machine to port 5432 inside the container.
+- **ports:** Exposes port `5432` on the host machine to port `5432` inside the container.
 - **restart:** Restarts the container unless it's manually stopped.
 
-The "volumes" section at the end defines the local directory `postgres-data` for data persistence.
+The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
 
 
 **Step 5**: In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
@@ -123,6 +123,8 @@ postgresql-playground/
 │   ├── docker-compose.yml
 │   └── devcontainer.json
 ```
+
+You can find the GitHub repository where my devcontainer config is located which I used for this guide [here](https://github.com/c0d33ngr/postgresql-playground-in-daytona)
 
 Now, we have successfully created the files needed to spin up a devcontainer for PostgreSQL using Daytona.
 
