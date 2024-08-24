@@ -56,19 +56,19 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
 
 - ### **Step 1**: Create a Directory
 
-Create a directory with any name of your choice and go into it. I use the name `postgresql-playground-in-daytona` and move into the directory.
+  Create a directory with any name of your choice and go into it. I use the name `postgresql-playground-in-daytona` and move into the directory.
 
-```bash
-mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
-```
+  ```bash
+  mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
+  ```
 
 - ### **Step 2**: Create the `.devcontainer` directory
 
-Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
+  Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
 
-```bash
-mkdir .devcontainer && cd .devcontainer
-```
+  ```bash
+  mkdir .devcontainer && cd .devcontainer
+  ```
 
 - ### **Step 3**: Create `devcontainer.json` file
 
@@ -138,70 +138,70 @@ The `volumes` section at the end defines the local directory `postgres-data` for
 
 - ### **Step 5**: Create `.env` file
 
-In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
+  In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
 
-```
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-```
+  ```
+  POSTGRES_USER=postgres
+  POSTGRES_PASSWORD=postgres
+  ```
 
-**POSTGRES_USER**: Set the database username to `postgres`
+  **POSTGRES_USER**: Set the database username to `postgres`
 
-**POSTGRES_PASSWORD**: Set the database password to `postgres`
+  **POSTGRES_PASSWORD**: Set the database password to `postgres`
 
-Your directory structure should look like mine below if you follow along using the same directory name as I did earlier.
+  Your directory structure should look like mine below if you follow along using the same directory name as I did earlier.
 
-```
-postgresql-playground-in-daytona/
-├── .devcontainer/
-│   ├── .env
-│   ├── docker-compose.yml
-│   └── devcontainer.json
-```
+  ```
+  postgresql-playground-in-daytona/
+  ├── .devcontainer/
+  │   ├── .env
+  │   ├── docker-compose.yml
+  │   └── devcontainer.json
+  ```
 
 - ### **Step 6:** Go back to the top level
 
-Paste the code below to go back to the top level of the directory you created
+  Paste the code below to go back to the top level of the directory you created
 
-```bash
-cd ..
-ls -al
-```
+  ```bash
+  cd ..
+  ls -al
+  ```
 
-and you should see this output in the terminal:
-```
-├── .
-├── ..
-├── .devcontainer
-├── .git
-```
+  and you should see this output in the terminal:
+  
+  ```
+  ├── .
+  ├── ..
+  ├── .devcontainer
+  ├── .git
+  ```
 
 - ### **Step 7:** Initialize and make commit
 
-Paste the code below to initialize git and commit the changes you made to your directory.
+  Paste the code below to initialize git and commit the changes you made to your directory.
 
-```bash
-git init
-git add .
-git commit -m "inital commit"
-```
-
+  ```bash
+  git init
+  git add .
+  git commit -m "inital commit"
+  ```
 
 - ### **Step 8:** Create a repository in GitHub
 
-Create a repository without README, LICENSE or .gitignore files from GitHub web using the name of the directory you created. Mine is `postgresql-playground-in-daytona`.
+  Create a repository without README, LICENSE or .gitignore files from GitHub web using the name of the directory you created. Mine is `postgresql-playground-in-daytona`.
 
-You should see a code block similar to this from your GitHub web. Copy it and paste in your terminal or Windows Powershell for Windows PC users(Git must be installed in it)
+  You should see a code block similar to this from your GitHub web. Copy it and paste in your terminal or Windows Powershell for Windows PC users(Git must be installed in it)
 
-```bash
-git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME.git
-git branch -M main
-git push -u origin main
-```
+  ```bash
+  git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME.git
+  git branch -M main
+  git push -u origin main
+  ```
 
-After you run the code, you'll be prompted to input your GitHub username and password.
+  After you run the code, you'll be prompted to input your GitHub username and password.
 
-You can find the GitHub repository where my devcontainer config is located which I used for this guide [here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later added a README and LICENSE files which wasn't neccessary to follow along with this guide.
+  You can find the GitHub repository where my devcontainer config is located which I used for this guide [here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later added a README and LICENSE files which wasn't neccessary to follow along with this guide.
 
 Now, we have successfully created a GitHub repository needed to spin up a devcontainer for PostgreSQL using Daytona.
 
