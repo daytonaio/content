@@ -54,10 +54,10 @@ For this guide we're going to create a devcontainer for PostgreSQL using a confi
 
 Let's get started. I will use the terminal to create mine in linux PC but the commands should work fine on Mac terminal or the Windows powershell. You can also follow along with the GUI using any OS.
 
-**Step 1**: Create a directory with any name of your choice and go into it. I use the name `postgresql-playground` and move into the directory.
+**Step 1**: Create a directory with any name of your choice and go into it. I use the name `postgresql-playground-in-daytona` and move into the directory.
 
 ```bash
-mkdir postgresql-playground && cd postgresql-playground
+mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
 ```
 
 **Step 2**: Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
@@ -117,7 +117,7 @@ POSTGRES_PASSWORD=postgres
 Your directory structure should look like mine below if you follow along using the same directory name as I did earlier.
 
 ```
-postgresql-playground/
+postgresql-playground-in-daytona/
 ├── .devcontainer/
 │   ├── .env
 │   ├── docker-compose.yml
