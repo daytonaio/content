@@ -105,35 +105,35 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
 
 - ### **Step 4**: Create `docker-compose.yml` file
 
-While still in the same directory, create another file named `docker-compose.yml` and paste the code below into it. Save it
+  While still in the same directory, create another file named `docker-compose.yml` and paste the code below into it. Save it
 
-```yml
-services:
- postgres:
-    container_name: postgres
-    image: postgres:latest
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    env_file:
-      - .env
-    ports:
-      - "5432:5432"
-    restart: unless-stopped
+  ```yml
+  services:
+   postgres:
+      container_name: postgres
+      image: postgres:latest
+      volumes:
+        - postgres-data:/var/lib/postgresql/data
+      env_file:
+        - .env
+      ports:
+        - "5432:5432"
+      restart: unless-stopped
 
-volumes:
-  postgres-data
-```
+  volumes:
+    postgres-data
+  ```
 
-The `docker-compose.yml` code content defines a service named `postgres` that runs a PostgreSQL database container. Here is the breakdown:
+  The `docker-compose.yml` code content defines a service named `postgres` that runs a PostgreSQL database container. Here is the breakdown:
 
-- **container_name:** Set the name of the container to `postgres`.
-- **image:** Specifies the PostgreSQL image to use, which is the latest version here.
-- **volumes:** Mounts a local directory named `postgres-data` to the container's data directory.
-- **env_file:** Loads environment variables from the `.env` file.
-- **ports:** Exposes port `5432` on the host machine to port `5432` inside the container.
-- **restart:** Restarts the container unless it's manually stopped.
+  - **container_name:** Set the name of the container to `postgres`.
+  - **image:** Specifies the PostgreSQL image to use, which is the latest version here.
+  - **volumes:** Mounts a local directory named `postgres-data` to the container's data directory.
+  - **env_file:** Loads environment variables from the `.env` file.
+  - **ports:** Exposes port `5432` on the host machine to port `5432` inside the container.
+  - **restart:** Restarts the container unless it's manually stopped.
 
-The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
+  The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
 
 
 - ### **Step 5**: Create `.env` file
