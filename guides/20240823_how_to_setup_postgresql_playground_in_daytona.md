@@ -54,7 +54,7 @@ For this guide we're going to create a devcontainer for PostgreSQL using a confi
 
 Let's get started. I will use the terminal to create mine in my linux PC but the commands should work fine on Mac terminal or the Windows powershell.
 
-### **Step 1**: Create a Directory
+- ### **Step 1**: Create a Directory
 
 Create a directory with any name of your choice and go into it. I use the name `postgresql-playground-in-daytona` and move into the directory.
 
@@ -62,7 +62,7 @@ Create a directory with any name of your choice and go into it. I use the name `
 mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
 ```
 
-### **Step 2**: Create the `.devcontainer` directory
+- ### **Step 2**: Create the `.devcontainer` directory
 
 Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
 
@@ -70,7 +70,7 @@ Create a hidden directory called `.devcontainer` and enter it. This is where our
 mkdir .devcontainer && cd .devcontainer
 ```
 
-### **Step 3**: Create `devcontainer.json` file
+- ### **Step 3**: Create `devcontainer.json` file
 
 Now, create a file called `devcontainer.json` and paste the following code into it and then save it.
 
@@ -103,7 +103,7 @@ The `devcontainer.json` code content defines a configuration for a PostgreSQL de
 - **`postCreateCommand`:** Executes the specified command after the development container is created:
     - `psql -U ${POSTGRES_USER} -c 'SELECT 1;'`: Connects to the PostgreSQL database using the environment variable `POSTGRES_USER` and executes a simple query to verify the database connection.
 
-### **Step 4**: Create `docker-compose.yml` file
+- ### **Step 4**: Create `docker-compose.yml` file
 
 While still in the same directory, create another file named `docker-compose.yml` and paste the code below into it. Save it
 
@@ -136,7 +136,7 @@ The `docker-compose.yml` code content defines a service named `postgres` that ru
 The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
 
 
-### **Step 5**: Create `.env` file
+- ### **Step 5**: Create `.env` file
 
 In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
 
@@ -159,7 +159,7 @@ postgresql-playground-in-daytona/
 │   └── devcontainer.json
 ```
 
-### **Step 6:** Go back to the top level
+- ### **Step 6:** Go back to the top level
 
 Paste the code below to go back to the top level of the directory you created
 
@@ -176,7 +176,7 @@ and you should see this output in the terminal:
 ├── .git
 ```
 
-### **Step 7:** Initialize and make commit
+- ### **Step 7:** Initialize and make commit
 
 Paste the code below to initialize git and commit the changes you made to your directory.
 
@@ -187,7 +187,7 @@ git commit -m "inital commit"
 ```
 
 
-### **Step 8:** Create a repository in GitHub
+- ### **Step 8:** Create a repository in GitHub
 
 Create a repository without README, LICENSE or .gitignore files from GitHub web using the name of the directory you created. Mine is `postgresql-playground-in-daytona`.
 
