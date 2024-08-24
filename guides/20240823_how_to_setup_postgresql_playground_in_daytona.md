@@ -62,7 +62,7 @@ Create a directory with any name of your choice and go into it. I use the name `
 mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
 ```
 
-### **Step 2**: Create the `.devcontainer` folder
+### **Step 2**: Create the `.devcontainer` directory
 
 Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
 
