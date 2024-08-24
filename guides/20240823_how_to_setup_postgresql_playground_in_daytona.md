@@ -213,6 +213,10 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
   ```bash
   psql -U postgres
   ```
+
+  Your output should look this
+
+  ![screenshot of logging in via psql](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_3.jpg)
   
 - ### Create a Table
   **Example**: The SQL code below creates a table named `users`.
@@ -226,6 +230,11 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
   );
   ```
 
+  Your output should display similar one as mine
+
+  ![screenshoot of creating a database](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_4.jpg)
+
+
 - ### Insert a Record
   **Example**: The SQL codes insert different records into the table `users` that was created by us above
 
@@ -236,12 +245,20 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
   INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
   ```
 
+  You should have similar screen like this below
+
+  ![screenshot of inserting records to table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_5.jpg)
+
 - ### Read Data from Table
   **Example**: This SQL query selects all records in the table `users` and return them.
 
   ```sql
   SELECT * FROM users WHERE name = 'Mark Zuckerberg';
   ```
+
+  Your output should display something similar
+
+  ![screenshot of selecting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_6.jpg)
 
 - ### Update a Table Record
   **Example**: This SQL query updates the table `users` record where `id` is 1.
@@ -250,12 +267,30 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
   UPDATE users SET email = 'johndoe@email.com' WHERE id = 2;
   ```
 
+  You output should be similar
+
+  ![screenshot of updating a record in the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_7.jpg)
+
 - ### Delete a Table Record
   **Example**: This SQL code deletes the record where `id` is 2.
 
   ```sql
   DELETE FROM users WHERE id = 2;
   ```
+
+  You should have similar output
+
+  ![screenshot of deleting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_8.jpg)
+
+  Run the SQL code below to check the table
+
+  ```sql
+  SELECT * FROM users;
+  ```
+
+  You should now see the deleted record is gone
+
+  ![screenshot of querying the table for all records](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_9.jpg)
 
 ## Conclusion
 
