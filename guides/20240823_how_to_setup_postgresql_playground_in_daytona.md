@@ -209,48 +209,53 @@ Now, we have successfully created a repository needed to spin up a devcontainer 
 
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
 
+- ### Login to PostgreSQL using `psql` and username `postgres`
+  ```bash
+  psql -U postgres
+  ```
+  
 - ### Create a Table
   **Example**: The SQL code below creates a table named `users`.
 
-```sql
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+  ```sql
+  CREATE TABLE users (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(100) NOT NULL,
+      email VARCHAR(255) UNIQUE NOT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
 
 - ### Insert a Record
   **Example**: The SQL codes insert different records into the table `users` that was created by us above
 
-```sql
-INSERT INTO users (name, email) VALUES ('Mark Zuckerberg', 'zuck@fb.com');
-INSERT INTO users (name, email) VALUES ('Elon Musk', 'info@telsa.com');
-INSERT INTO users (name, email) VALUES ('Bill Gates', 'bill.gates@gatesfoundation.org');
-INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
-```
+  ```sql
+  INSERT INTO users (name, email) VALUES ('Mark Zuckerberg', 'zuck@fb.com');
+  INSERT INTO users (name, email) VALUES ('Elon Musk', 'info@telsa.com');
+  INSERT INTO users (name, email) VALUES ('Bill Gates', 'bill.gates@gatesfoundation.org');
+  INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
+  ```
 
 - ### Read Data from Table
   **Example**: This SQL query selects all records in the table `users` and return them.
 
-```sql
+  ```sql
   SELECT * FROM users WHERE name = 'Mark Zuckerberg';
-```
+  ```
 
 - ### Update a Table Record
   **Example**: This SQL query updates the table `users` record where `id` is 1.
 
-```sql
+  ```sql
   UPDATE users SET email = 'johndoe@email.com' WHERE id = 2;
-```
+  ```
 
 - ### Delete a Table Record
   **Example**: This SQL code deletes the record where `id` is 2.
 
-```sql
+  ```sql
   DELETE FROM users WHERE id = 2;
-```
+  ```
 
 ## Conclusion
 
