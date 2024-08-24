@@ -207,11 +207,11 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
 
 ## Setting Up PostgreSQL in Daytona
 
-Before starting this section be sure daytona is installed in your PC
+Before starting this section be sure `daytona` is installed in your PC
 
 - ### Step 1
 
-  Run the code below to setup daytona server
+  Run the code below to setup `daytona` server
 
   ```bash
   daytona server
