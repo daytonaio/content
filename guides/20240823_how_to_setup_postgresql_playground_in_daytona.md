@@ -259,6 +259,10 @@ Before starting this section be sure `daytona` is installed in your PC
   daytona code
   ```
 
+Now, your preferred IDE should be open and you'll be prompted to open in it in a devcontainer. Click it and you should see PostgreSQL prompt in your IDE terminal.
+
+Follow the set of instructions in the next section to interact with the PostgreSQL development environment.
+
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
 
 - ### Login to PostgreSQL using `psql` and username `postgres`
