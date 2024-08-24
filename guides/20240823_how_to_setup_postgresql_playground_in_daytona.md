@@ -10,7 +10,7 @@ tags: ["daytona", "postgresql", "devcontainer"]
 
 ## Introduction
 
-This guide will walk you through on how to set up PostgresQL database playground in a Daytona environment which is a development environment management platform.
+This guide will walk you through on how to set up PostgresQL database playground in a Daytona workspace which is a development environment management platform. In a world where companies what to increase development productivity and individual developers want to start coding right away, Daytona is the best option.
 
 ### TL;DR
 
