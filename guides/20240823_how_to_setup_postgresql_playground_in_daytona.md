@@ -19,7 +19,7 @@ This guide will walk you through on how to set up PostgresQL database playground
 ## Prerequisities
 
 In order to follow this guide, you’ll need the software installations below on your PC or Mac.
-- VS Code, link to install it [here](https://code.visualstudio.com/download)
+- An IDE like VS Code, link to install it [here](https://code.visualstudio.com/download)
 - Docker, link to it [here](https://docs.docker.com/engine/install/)
 - Daytona, link to install it [here](https://github.com/daytonaio/daytona#installing-daytona)
 
@@ -206,6 +206,57 @@ You can find the GitHub repository where my devcontainer config is located which
 Now, we have successfully created a GitHub repository needed to spin up a devcontainer for PostgreSQL using Daytona.
 
 ## Setting Up PostgreSQL in Daytona
+
+Before starting this section be sure daytona is installed in your PC
+
+- ### Step 1
+
+  Run the code below to setup daytona server
+
+  ```bash
+  daytona server
+  ```
+
+  Your output should be similar to the screenshot below
+
+  ![screenshot of running daytona server](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_1.jpg)
+
+  Choose yes and should see similar output in the screenshot below
+
+  ![screenshot of successfully running daytona](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_2.jpg)
+  
+- ### Step 2
+
+Run the command below to add your git provider if you haven't setup one
+
+```bash
+daytona git provider add
+```
+
+Follow the prompts after running the command to setup your provider. In our case it's GitHub
+
+- ### Step 3
+
+Run this command in terminal to add your preferred IDE.
+
+```bash
+daytona ide
+```
+
+- ### Step 4
+
+Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona`
+```
+daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
+```
+
+- ### Step 5
+
+Run this command to open in the IDE you selected when setting up your preferred one
+
+```bash
+daytona code
+```
 
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
 
