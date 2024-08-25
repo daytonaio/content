@@ -59,7 +59,7 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 ## Community Announcements
 
-- If you are using Daytona and encounter any bugs please feel free to open an issue.
+- If you are using Daytona and encounter any bugs please feel free to open an issue [here](https://github.com/daytonaio/content/issues).
 - We are happy to welcome new contributors.
 - We will help you solve the issue, so feel free to ask questions inside of the issue or PRs.
 - Also, don't forget to star the repo and follow social handles.
