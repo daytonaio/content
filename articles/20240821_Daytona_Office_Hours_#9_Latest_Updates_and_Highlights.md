@@ -8,8 +8,6 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 # Latest Updates and Highlights
 
-## Introduction
-
 *Hello, Daytona community! welcome back to another episode of Daytona Office Hours.* 
 
 *In this "office hours", we deep dive into a detailed demo of our new pre-builds feature. Updates on project configurations and how they speed up development. Recent fixes and improvements on the repo.*
@@ -26,13 +24,11 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
      - **[Version mismatch](https://github.com/daytonaio/daytona/pull/941)**: We have fixed version mismatch warning displaying wrong versions.
 
 
-## New features
-
-### 1. Project-configs
+## 1. Project-configs
 *As we introduced in the last release. The introduction of **project-configs** allows users to create reusable templates, streamlining the project setup process. Project configurations ease the definition of key parameters such as repository settings, environment variables, and build configurations, making it easier for new and existing users to initialize their projects efficiently.*
 
 
-### 2. Pre-builds
+##  2. Pre-builds
 
 *This new release introduces prebuilds. The project configurations are **pre-builds**, which are designed to enhance efficiency further. This feature enables users to set up automatic builds that are triggered by specific Git events, such as commits or pushes. The caching of builds significantly reduces setup time and helps maintain consistency across development environments.*
 
@@ -61,7 +57,7 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 *The launch of project configurations and prebuilds marks significant steps toward streamlined development practices.*
 
-## community announcements
+## Community Announcements
 
 - If you are using Daytona and encounter any bugs please feel free to open an issue.
 - We are happy to welcome new contributors.
