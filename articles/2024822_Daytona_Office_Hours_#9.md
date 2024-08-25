@@ -5,12 +5,18 @@ date: 2024-8-22
 author: "Daytona"
 tags: ["Office Hours", "Prebuilds"]
 ---
-
+Daytona-Office-Hours-%239
 # Daytona Office Hours #9 - Pre-Builds Demo & Latest Fixes!
 
 ## Introduction
 
 In our recent office hours, we discussed the latest development news on Daytona. Even though we haven't had a new release yet, there are some interesting features and fixes we are working on, and looking forward to merging them.
+
+### TL;DR
+
+- **Pre-Builds demo**
+- **Recent fixes and future releases**
+- **Contributions and bounties**
 
 ## Pre-Builds
 
