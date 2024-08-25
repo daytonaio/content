@@ -22,7 +22,7 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 - **Fixes**
      - **[.devcontainer.json detection](https://github.com/daytonaio/daytona/pull/943)**: Fixed the `devcontainer.json` file detection.
-     - **[Binary Download Interruptions](https://github.com/daytonaio/daytona/pull/942)**: binary download interruptions are now fixed by use `wget` instead of `curl` to download the binary.
+     - **[Binary Download Interruptions](https://github.com/daytonaio/daytona/pull/942)**: binary download interruptions are now fixed by using `wget` instead of `curl` to download the binary.
      - **[Version mismatch](https://github.com/daytonaio/daytona/pull/941)**: We have fixed version mismatch warning displaying wrong versions.
 
 
@@ -53,7 +53,7 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 ![pre-builds demo](/articles/assets/20240821_Daytona_Office_Hour_Latest_Updates_and_Highlights_img3.png)
 
-*The prebuilds work by registering a listener to webhook event from the Git provider by sending a public API endpoint that the Git provider will send requests to. Currently only GitHub is supported, but more options are coming soon.*
+*The prebuilds work by registering a listener to the webhook event from the Git provider by sending a public API endpoint to the Git provider will send requests to. Currently, only GitHub is supported, but more options are coming soon.*
 
 ![pre-builds demo](/articles/assets/20240821_Daytona_Office_Hour_Latest_Updates_and_Highlights_img4.png)
 
@@ -65,11 +65,11 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 - If you are using Daytona and encounter any bugs please feel free to open an issue.
 - We are happy to welcome new contributors.
-- We will help you solve the issue, so feel free to ask questions inside of the issue or PRs.
+- We will help you solve the issue, so feel free to ask questions about the issue or PRs.
 - Also, don't forget to star the repo and follow social handles.
 - Currently, there are [19 open bounties](https://github.com/daytonaio/daytona/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%8E+Bounty%22).    
-- Few of them are assigned to someone already but most of them open to anyone.
-- Some of the priority issues we really love to be solved immeditely are 
+A few of them are assigned to someone already but most of them are open to anyone.
+- Some of the priority issues we love to be solved immediately are 
     - [charm.sh integration](https://github.com/daytonaio/daytona/issues/513)
     - [the TUI breaking under pressure](https://github.com/daytonaio/daytona/issues/668)
     - [TUI breaks on Daytona create](https://github.com/daytonaio/daytona/issues/665)
@@ -77,7 +77,7 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 ## Conclusion
 
-*The recent developments related project configurations, prebuilds, and bug resolutions all contribute to creating a more efficient user experience. As the project continues to evolve, user engagement and contribution will remain crucial. We Ensure that the Daytona project will always strive to meets the diverse needs of its community.*
+*The recent developments related to project configurations, prebuilds, and bug resolutions all contribute to creating a more efficient user experience. As the project continues to evolve, user engagement and contribution will remain crucial. We Ensure that the Daytona Project will always strive to meets the diverse needs of its community.*
 
 ## References
 
