@@ -74,7 +74,7 @@ sudo systemctl restart docker
 To verify that your [Docker](/definitions/20240819_definition_docker.md) setup can access the GPU, run the following command:
 
 ```bash
-sudo docker run --rm --runtime=nvidia --gpus all nvidia/cuda:12.6.0-base-ubuntu24.04 nvidia-smi
+docker run --rm --gpus all nvidia/cuda:12.6.0-base-ubuntu24.04 nvidia-smi
 ```
 
 If your setup is correct, the `nvidia-smi` command will display information about your GPU, confirming that the GPU is accessible inside [Docker](/definitions/20240819_definition_docker.md) containers.
