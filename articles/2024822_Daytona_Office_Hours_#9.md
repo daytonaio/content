@@ -25,8 +25,7 @@ We discussed some of the recent bug fixes:
 - **[Handle Binary Download Interruptions](https://github.com/daytonaio/daytona/pull/942)**: *Prefers to use wget instead of curl to download the binary because it automatically handles interruptions. Additionally, add a retry policy if the download fails.*
 - **[Fix Version Mismatch Warning](https://github.com/daytonaio/daytona/pull/941)**: *Fixes the version mismatch warning message.*
 
-Furthermore, there are various minor fixes and optimizations that are going to be in the next release. There are some other open pull requests that we are not sure if they are going to be merged right away. 
-
+Furthermore, there are various minor fixes and optimizations that are going to be in the next release. There are some other open pull requests that we are not sure if they are going to be merged right away.
 
 ## Contribute and Win Bounties
 
