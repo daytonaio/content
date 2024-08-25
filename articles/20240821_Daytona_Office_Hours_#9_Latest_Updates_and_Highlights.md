@@ -8,8 +8,6 @@ tags: ["pre-builds", "project-configs", "latest", "update", "highlights"]
 
 # Latest Updates and Highlights
 
-## Introduction
-
 *Hello, Daytona community! welcome back to another episode of Daytona Office Hours.* 
 
 *In this "office hours", we deep dive into a detailed demo of our new pre-builds feature. Updates on project configurations and how they speed up development. Recent fixes and improvements on the repo.*
