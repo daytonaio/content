@@ -99,7 +99,7 @@ model.save_pretrained("./gpt2_model")
 tokenizer.save_pretrained("./gpt2_tokenizer")
 ```
 
-This script downloads and saves the GPT-2 model and tokenizer into `./gpt2_model` and `./gpt2_tokenizer` directories.
+This script downloads and saves the GPT-2 model and tokenizer.
 
 Run the script with:
 
