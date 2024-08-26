@@ -199,9 +199,9 @@ Your contributions, big or small, are valued and recognized.
 
 | Name | Icon | Description |
 | ---- | ---- | ----------- |
-| Daytona Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/tech_scribe.png" width="150" /> | Authored first Daytona Dotfiles Insider article |
-| Daytona Scholar | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/parable_crafter.png" width="150" /> | Crafted 5 insightful Daytona developer guides. Your expertise grows! |
-| Daytona Sage | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/koan_master.png" width="150" /> | 10+ Daytona articles published! A beacon of developer experience wisdom! |
+| Daytona Scribe | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scribe.png" width="150" /> | Authored first Daytona Dotfiles Insider article |
+| Daytona Scholar | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scholar.png" width="150" /> | Crafted 5 insightful Daytona developer guides. Your expertise grows! |
+| Daytona Sage | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_sage.png" width="150" /> | 10+ Daytona articles published! A beacon of developer experience wisdom! |
 | Ummon's Disciple | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png" width="150" /> | Unmerged PRs spark innovation like Ummon's cryptic teachings! |
-| Daytona Explorer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/cosmic_observer.png" width="150" /> | Starred the Daytona repo. Your development journey accelerates! |
-| Daytona Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/quantum_proposer.png" width="150" /> | Feature idea proposed! Shaping the future of Daytona's development ecosystem! |
+| Daytona Explorer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_explorer.png" width="150" /> | Starred the Daytona repo. Your development journey accelerates! |
+| Daytona Proposer | <img src="https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_proposer.png" width="150" /> | Feature idea proposed! Shaping the future of Daytona's development ecosystem! |
