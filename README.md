@@ -125,5 +125,22 @@ Showcase your contributions in your GitHub profile and display your achievements
 >>>>>>> f2efc13 (added vaunt section)
 =======
 
+<<<<<<< HEAD
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
 >>>>>>> ecef784 (readme splitted into 3 files)
+=======
+You can showcase your achievement badges on your GitHub profile in the following way:
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
+</p>
+
+Simply add the following code to your GitHub profile README file:
+```html
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/USERNAME/achievements?format=svg&limit=3" width="400" />
+</p>
+
+```
+
+Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
+>>>>>>> de0091a (added example)
