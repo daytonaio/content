@@ -54,4 +54,17 @@ Showcase your contributions in your GitHub profile and display your achievements
   <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
 </p>
 
+You can showcase your achievement badges on your GitHub profile in the following way:
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
+</p>
+
+Simply add the following code to your GitHub profile README file:
+```html
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/USERNAME/achievements?format=svg&limit=3" width="400" />
+</p>
+
+```
+
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
