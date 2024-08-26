@@ -1,3 +1,10 @@
+
+| **Title**                                    | **CDEs Recognized in Gartner Hype Cycle for 3rd Year**                                                                |
+|----------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| **Description**                              | This article commemorates CDE's third consecutive recognition in the Gartner Hype Cycle report. It explores the significance of this achievement and its implications for enterprise customers, CTOs, and CEOs. |
+| **Date**                                     | 2024-08-26                                                                                                           |
+| **Author**                                   | MohammedLuthfi                                                                                                       |
+
 # **CDEs Recognized in Gartner Hype Cycle for 3rd Year**
 
 [Cloud Development Environments (CDEs)](https://www.daytona.io/definitions/c/cloud-based-development-environment-cde) have been highlighted in [Gartner's Hype Cycle for Emerging Technologies](https://www.gartner.com/en/articles/what-s-new-in-the-2023-gartner-hype-cycle-for-emerging-technologies) for the third year in a row. This recognition shows how important CDEs have become in helping companies improve their IT systems and speed up software development.
