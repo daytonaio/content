@@ -83,28 +83,62 @@ If your setup is correct, the `nvidia-smi` command will display information abou
 
 With your GPU-enabled [Docker](/definitions/20240819_definition_docker.md) environment ready, the next step is to develop a text generation script using an [LLM](/definitions/20240820_definition_large language model.md) and run it inside a [Docker](/definitions/20240819_definition_docker.md) container.
 
-### Create the Initial Script
+### Download the GPT-2 Model
 
-Start by developing a basic Python script that performs text generation using the GPT-2 model:
+To download the GPT-2 model and tokenizer, use the following script:
 
 ```python
+# download.py
+
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+model_name = "gpt2"
+model = GPT2LMHeadModel.from_pretrained(model_name)
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+model.save_pretrained("./gpt2_model")
+tokenizer.save_pretrained("./gpt2_tokenizer")
+```
+
+This script downloads and saves the GPT-2 model and tokenizer into `./gpt2_model` and `./gpt2_tokenizer` directories.
+
+Run the script with:
+
+```bash
+python3 download.py
+```
+
+You should see `gpt2_model` and `gpt2_tokenizer` directories.
+
+### Create the Initial Script
+
+Now, create a script to generate text using the downloaded GPT-2 model:
+
+```python
+# inference.py
+
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-def generate_text(prompt, max_length=50, model_name='gpt2'):
-    # Load pre-trained GPT-2 model and tokenizer
-    model = GPT2LMHeadModel.from_pretrained(model_name)
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name, clean_up_tokenization_spaces=True)
+def generate_text(prompt, max_length=50):
+    # Check if GPU is available and set device accordingly
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
+    # Load downloaded GPT-2 model and tokenizer
+    model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
+    tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
+    
+    # Move model to the GPU
+    model.to(device)
 
     # Encode the input prompt
-    inputs = tokenizer.encode(prompt, return_tensors='pt')
+    inputs = tokenizer.encode(prompt, return_tensors="pt").to(device)
 
     # Create attention mask
     attention_mask = torch.ones(inputs.shape, device=inputs.device)
 
     # Generate text
     outputs = model.generate(
-        inputs, 
+        inputs,
         max_length=max_length, 
         attention_mask=attention_mask,
         pad_token_id=tokenizer.eos_token_id
@@ -119,7 +153,7 @@ if __name__ == "__main__":
     print(generated_text)
 ```
 
-The script loads a pre-trained GPT-2 model and tokenizer from the Hugging Face library. It encodes the input text prompt, generates a continuation of the text using the model, and then decodes the generated text back into a human-readable format.
+This script loads the model and tokenizer, performs text generation, and prints the output.
 
 ### Create a Docker Container with Dependencies
 
@@ -145,6 +179,12 @@ WORKDIR /workspace
 
 # Copy your script into the container
 COPY inference.py /workspace
+
+# Copy local GPT-2 model into the container
+COPY ./gpt2_model /workspace/gpt2_model
+
+# Copy local GPT-2 tokenizer into the container
+COPY ./gpt2_tokenizer /workspace/gpt2_tokenizer
 
 # Specify the command to run
 CMD ["/workspace/bin/python", "inference.py"]
@@ -174,50 +214,6 @@ Once upon a time in a land far, far away, the world was a land of the dead, wher
 
 As you may have noticed, the initial output is repetitive and low quality. We will fix this in the following sections.
 
-### Enhancing the Script for GPU Utilization
-
-To fully leverage the power of the GPU, modify the script to ensure all computations are performed on the GPU:
-
-```python
-import torch
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-
-def generate_text(prompt, max_length=50, model_name='gpt2'):
-    # Check if GPU is available and set device accordingly
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    
-    # Load pre-trained GPT-2 model and tokenizer
-    model = GPT2LMHeadModel.from_pretrained(model_name)
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name, clean_up_tokenization_spaces=True)
-    
-    # Move model to the GPU
-    model.to(device)
-
-    # Encode the input prompt
-    inputs = tokenizer.encode(prompt, return_tensors='pt').to(device)
-
-    # Create attention mask
-    attention_mask = torch.ones(inputs.shape, device=inputs.device)
-
-    # Generate text
-    outputs = model.generate(
-        inputs,
-        max_length=max_length, 
-        attention_mask=attention_mask,
-        pad_token_id=tokenizer.eos_token_id
-    )
-
-    # Decode the generated text
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-if __name__ == "__main__":
-    prompt = "Once upon a time in a land far, far away"
-    generated_text = generate_text(prompt)
-    print(generated_text)
-```
-
-This updated script checks for GPU availability, moves both the model and input data to the GPU, and ensures that all operations utilize GPU acceleration.
-
 ## Implementing Advanced Text Generation Techniques
 
 When generating text using [LLMs](/definitions/20240820_definition_large language model.md), advanced sampling methods can significantly improve the quality and diversity of the output. This section will introduce top-k sampling, nucleus sampling (top-p sampling), and temperature scaling.
@@ -242,19 +238,19 @@ Here's how to integrate these techniques into the text generation script:
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-def generate_text(prompt, max_length=50, model_name='gpt2', top_k=50, top_p=0.9, temperature=0.8):
+def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
     # Check if GPU is available and set device accordingly
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Load pre-trained GPT-2 model and tokenizer
-    model = GPT2LMHeadModel.from_pretrained(model_name)
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name, clean_up_tokenization_spaces=True)
+    model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
+    tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
     
     # Move model to the GPU
     model.to(device)
 
     # Encode the input prompt
-    inputs = tokenizer.encode(prompt, return_tensors='pt').to(device)
+    inputs = tokenizer.encode(prompt, return_tensors="pt").to(device)
 
     # Create attention mask
     attention_mask = torch.ones(inputs.shape, device=inputs.device)
