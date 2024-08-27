@@ -95,7 +95,6 @@ Here is the step-by-step guide:
   {
     "name": "MongoDB Dev Container Playground",
     "dockerComposeFile": "docker-compose.yml",
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "service": "mongodb",
     "forwardPorts": [27017],
     "customizations": {
@@ -111,7 +110,6 @@ Here is the step-by-step guide:
 
   - **name:** Sets the name of the development container environment.
   - **dockerComposeFile:** Specifies the Docker Compose file to be used.
-  - **workspaceFolder:** Defines the workspace location within the container.
   - **service:** Points to the MongoDB service defined in the Docker Compose file.
   - **forwardPorts:** Forwards the container’s port 27017 to the host machine.
   - **customizations:** Adds the MongoDB extension for VS Code.
@@ -141,22 +139,12 @@ Here is the step-by-step guide:
   - **container_name:** Set the name of the container to `mongodb`.
   - **image:** Specifies the MongoDB image to use, which is the latest version here.
   - **volumes:** Mounts a local directory named `mongo-data` to the container's data directory.
-  - **env_file:** Loads environment variables from the `.env` file.
   - **ports:** Exposes port `27017` on the host machine to port `27017` inside the container.
   - **restart:** Restarts the container unless it's manually stopped.
 
-  The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
+  The `volumes` section at the end defines the local directory `mongodb-data` for data persistence.
 
-- ### **Step 5: Create .env file**
-
-  In the same directory, create the `.env` file and paste the environment variables below into it. Save the file.
-
-  ```
-  MONGO_INITDB_ROOT_USERNAME=root
-  MONGO_INITDB_ROOT_PASSWORD=example
-  ```
-
-- ### **Step 6: Initialize and make commit**
+- ### **Step 5: Initialize and make commit**
 
   Now initialize git and commit all the changes you made to your directory.
 
@@ -166,7 +154,7 @@ Here is the step-by-step guide:
   git commit -m "inital commit"
   ```
 
-- ### **Step 7: Create a repository in GitHub**
+- ### **Step 6: Create a repository in GitHub**
 
   Create a new repository in GitHub. I created `mongodb-playground-using-daytona` repository.
 
@@ -239,16 +227,17 @@ Before starting this section, make sure that `daytona` is installed in your PC.
   daytona code
   ```
 
-Now, your preferred IDE should be open and you'll be prompted to open in it in a devcontainer. Click it and you should see MongoDB prompt in your IDE terminal.
+Now, your preferred IDE should be open and you'll be prompted to open in it in a devcontainer. Click it.
 
 Follow the set of instructions in the next section to interact with the MongoDB development environment.
 
 ## Basic MongoDB operations and queries within the playground
 
-- ### Login to mongoDB using username `root` and password `example`
+- ### Start mongoDB
+  Start the mongo shell using the below command
 
   ```bash
-  mongo -u root -p example
+  mongo
   ```
 
   Your output should look this
