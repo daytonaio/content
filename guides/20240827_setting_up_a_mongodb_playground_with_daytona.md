@@ -1,7 +1,7 @@
 ---
 title: "Setting Up a MongoDB Playground with Daytona"
 description: "Learn how to setup MongoDB playground with Daytona and DevContainers, interact with the it hands-on in your favourite IDE terminal"
-date: 2024-08-26
+date: 2024-08-27
 author: "Kiran Naragund"
 tags: ["mongodb", "daytona", "devcontainer"]
 ---
@@ -24,7 +24,7 @@ To follow this guide, you'll need to have the following software installed on yo
 
 - An IDE (like [VS Code](https://code.visualstudio.com/))
 - Docker (download from [here](https://www.docker.com/))
-- Daytona (install it from [here](https://www.daytona.io/docs/installation/installation/)
+- Daytona (install it from [here](https://www.daytona.io/docs/installation/installation/))
 
 ## Overview of MongoDB
 MongoDB is a popular open-source NoSQL database known for its flexibility, scalability, and ease of use. It's widely used for building modern applications, allowing developers to store and query data in a JSON-like format.
@@ -187,11 +187,9 @@ Before starting this section, make sure that `daytona` is installed in your PC.
 
   Your output should be similar to the screenshot below
 
-  ![screenshot of running daytona server](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_1.jpg)
+  ![screenshot of running daytona server](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_1.png)
 
-  Choose yes and should see similar output in the screenshot below
-
-  ![screenshot of successfully running daytona](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_2.jpg)
+  Choose **yes** and it will start the server.
   
 - ### Step 2
 
@@ -200,8 +198,13 @@ Before starting this section, make sure that `daytona` is installed in your PC.
   ```bash
   daytona git-provider add
   ```
+  Your output should be similar to the screenshot below
+
+  ![screenshot of adding git](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_2.png)
 
   Follow the prompts after running the command to setup your provider. In our case it's GitHub
+
+  ![screenshot of adding git](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_3.png)
 
 - ### Step 3
 
@@ -210,6 +213,10 @@ Before starting this section, make sure that `daytona` is installed in your PC.
   ```bash
   daytona ide
   ```
+
+  Your output should be similar to the screenshot below, I've selected VS Code
+
+  ![screenshot of adding vscode](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_4.png)
 
 - ### Step 4
 
@@ -240,39 +247,47 @@ Follow the set of instructions in the next section to interact with the MongoDB 
   mongo
   ```
 
-  Your output should look this
+  Your output should look like this
 
-  ![screenshot of logging in via psql](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_3.jpg)
+  ![screenshot of mongo shell](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_5.png)
 
 - ## Create a Database and Collection:
-  create a newdatabase, I named it as `myDatabase` and collection `users`
+  create a newdatabase, I named it as `daytona` and collection `users`
 
   ```javascript
-  use myDatabase
+  use daytona
   db.createCollection("users")
   ```
-  You output should be similar
+  Your output:
+
+  ![screenshot of Create Database and Collection](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_6.png)
 
 - ## Insert a Document:
   Insert documents to users collection
   ```javascript
   db.users.insert({ name: "Kiran Naragund", email: "kirannaragund197@gmail.com" })
   ```
-  You output should be similar
+  Your output:
   
+  ![screenshot of inserting data](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_7.png)
+
 - ## Read Documents:
   Read the inserted documents by running
   ```javascript
   db.users.find({ name: "Kiran Naragund" })
   ```
-  You output should be similar
+  Your output:
+
+  ![screenshot of reading data](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_8.png)
   
 - ## Update a Document:
   Update any document by running
   ```javascript
   db.users.update({ name: "Kiran Naragund" }, { $set: { email: "kiran@daytona.io" } })
   ```
-  You output should be similar
+  Your output:
+
+  ![screenshot of updating data](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_9.png)
   
 - ## Delete a Document:
   Delete any document by running
@@ -280,13 +295,17 @@ Follow the set of instructions in the next section to interact with the MongoDB 
   ```javascript
   db.users.remove({ name: "Kiran Naragund" })
   ```
-  You output should be similar
+  Your output:
+
+  ![screenshot of deleting data](assets/20240827_setting_up_a_mongodb_playground_with_daytona_img_10.png)
 
 ## Conclusion
 By following this guide, you’ve set up a MongoDB playground in Daytona and learned how to perform basic CRUD operations. Explore further to see how Daytona can streamline your development process.
 
 ## References
-[MongoDB Documentation](https://docs.mongodb.com/)
-[Daytona Documentation](https://daytona.io/docs)
-[DevContainer Specification](https://containers.dev/)
+- [MongoDB Documentation](https://docs.mongodb.com/)
+
+- [Daytona Documentation](https://daytona.io/docs)
+
+- [DevContainer Specification](https://containers.dev/)
   
