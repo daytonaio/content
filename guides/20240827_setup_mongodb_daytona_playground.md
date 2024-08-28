@@ -126,10 +126,7 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
                 dockerfile: Dockerfile
                 volumes:
                     -../..:/workspaces:cached
-        # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json    ```bash
-     
                 network_mode: service:db
-            # Overrides default command so things don't shut down after the process ends.
                 command: sleep infinity
 
         db:
@@ -139,15 +136,6 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
             - "27017:27017"
             volumes:
             - mongodb-data:/data/db
-
-    # Uncomment to change startup options if you want to have authentication on your db
-    # environment:
-    #  MONGO_INITDB_ROOT_USERNAME: root
-    #  MONGO_INITDB_ROOT_PASSWORD: example
-    #  MONGO_INITDB_DATABASE: your-database-here
-
-    # Add "forwardPorts": ["27017"] to **devcontainer.json** to forward MongoDB locally.
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
     volumes:
          mongodb-data:
     ```
