@@ -9,12 +9,12 @@ tags: ["daytona", "devcontainer", "mongoDB"]
 # Setting Up a MongoDB Playground with Daytona
 
 ## Introduction
-This guide will show you how to set up a MongoDB playground in Daytona. Thi
+Developer playgrounds are isolated environments where developers can safely experiment, test code, and explore new technologies without impacting their main projects or production environments. They offer a controlled space for prototyping, learning, and debugging.
 
 ## TL;DR
 
 - Prerequisites
--  Overviews of MongoDB, DevContainers and Daytona.
+-  Overviews of MongoDB and Daytona.
 -  How to setup a DevContainer configuration for MongoDB.
 - Creating the MongoDB playground in Daytona.
 - Interacting with the playground using the Shell
@@ -27,14 +27,13 @@ This guide will show you how to set up a MongoDB playground in Daytona. Thi
 - An IDE like VS Code can be gotten [here](https://code.visualstudio.com/download) or JetBrains [here](https://www.jetbrains.com/idea/download/)
 - Daytona can be installed from [here](https://www.daytona.io/docs/installation/installation/)
 
+You can find the Github repository where my devcontainer configuration files which i used for this guide [here](https://github.com/stdthoth/daytona-mongodb-playground).
+      
 ## Overview of MongoDB 
 MongoDB is a popular NoSQL database that is designed for storing and retrieving large amounts of unstructured or semi-structured data. Unlike traditional relational databases (SQL databases) that store data in tables with fixed schemas (rows and columns), MongoDB stores data in a more flexible, JSON-like format called BSON (Binary JSON). You can find out more about MongoDB and its core features [here](https://docs.mongodb.com/)
 
-## Overview of DevContainer
-A DevContainer is a development environment defined by a configuration file called **devcontainer.json** that uses Docker to create a consistent and reproducible workspace with all necessary dependencies, tools, and settings. It's primarily used with Visual Studio Code's Remote - Containers extension to provide portable, containerized development setups across different machines and teams. You can learn more about Dev Containers [here](https://www.containeers.dev/).
-
 ## Overview of Daytona
-Daytona is a platform that simplifies the development environment setup by offering cloud-based dev environments for software developers. It enables users to create and share fully configured development environments in the cloud, allowing for faster onboarding, collaboration, and consistent setups across teams.
+Daytona is a platform that simplifies the development environment setup by offering dev environments for software developers. It enables users to create and share fully configured development environments in the cloud, allowing for faster onboarding, collaboration, and consistent setups across teams.Daytona enables you to manage and deploy Workspaces, which are reproducible development environments built on standard OCI containers, and it includes native support for the Dev Container standard. The architecture of Daytona is designed to potentially support other configuration standards in the future, such as Dockerfiles, Docker Compose, Nix, and Devfile.
 
 **Features of Daytona**
 - **Pre-configured Environments**: You can create environments with all dependencies, tools, and configurations pre-installed, so developers can start coding immediately without having to spend time configuring their setups.
@@ -44,18 +43,17 @@ Daytona is a platform that simplifies the development environment setup by offer
 For more information about Daytona check out its [docs](https://daytona.io/docs)
 
 
-## Step 1: Setup a DevContainer Configuration for MongoDB
+## Setup a Dev Container Configuration for MongoDB
 
-Here, you're going to create a dev container using a `devcontainer.json` file, a `Dockerfile` and a `docker-compose.yml` file.
-
-- **Step 1.1**: Create a new directory
+Here, you're going to create a dev container using a `devcontainer.json` file, a `Dockerfile` and a `docker-compose.yml` file. One of Daytona's remarkable qualities is the ability to a build a project image according to the dev container standard. You can find out more about Daytona Builders [here](https://www.daytona.io/docs/usage/builders/)
+- **Step 1**: Create a new directory
 
     You will create a file directory with any name and move inside of it.
 
     ```bash
     mkdir daytona-mongodb-playground && cd daytona-mongodb-playground
     ```
-- **Step 1.2**: Create a .devcontainer directory
+- **Step 2**: Create a .devcontainer directory
 
     This is where your devcontainer.json and dockerfiles will live
 
@@ -63,7 +61,7 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
     mkdir .devcontainer && cd .devcontainer
     ```
 
-- **Step 1.3**: Create a `devcontainer.json` file
+- **Step 3**: Create a `devcontainer.json` file
     
     You are going to create a `devcontainer.json` file with the following code. This is the configuration file for the dev environment specifying settings and dependencies.
     ```json
@@ -93,7 +91,7 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
     - **customizations**:Allows customization of the development environment, specifically for VS Code.
     - **vscode**: Automatically installs the MongoDB extension for VS Code, enabling MongoDB-related features (e.g., interacting with MongoDB directly from VS Code).
      Declares a persistent volume for storing MongoDB data.
-- **Step 1.4**: Create a `Dockerfile`
+- **Step 4**: Create a `Dockerfile`
     
     You will create a `Dockerfile` in the same directory
 
@@ -112,7 +110,7 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
     - `RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`: Configures the system to use MongoDB’s official repository for version 4.4. This allows `apt-get` to retrieve MongoDB packages for installation.
     - `RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get install -y mongodb-org`: Updates the package list and installs MongoDB.
 
-- **Step 1.5** Create a docker-compose.yml file:
+- **Step 5** Create a docker-compose.yml file:
 
     You are going to create `docker-compose.yml` file in the same directory
 
@@ -159,7 +157,7 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
 
     - **volumes**: This volume is used by the db service to store its database files.
 
-- **Step 1.6** Initialize,Commmit and Create a GitHub repository:
+- **Step 6** Initialize,Commmit and Create a GitHub repository:
     You will initialize and commit the code in your current directory 
 
     ```bash
@@ -174,13 +172,12 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
     git branch -M main
     git push -u origin main
   ```
-  You can find the Github repository where my devcontainer files which i used for this guide [here](https://github.com/stdthoth/daytona-mongodb-playground).
-
-## Step 2 Creating the MongoDB playground in Daytona
+  
+## Creating the MongoDB playground in Daytona
 
 Here you are going to use Daytona to build the playground using Github as a Provider and open a workspace in VS Code. You should ensure `daytona` is installed on you machine before proceeding.
 
-- **Step 2.1** Start the Daytona Server daemon :
+- **Step 1** Start the Daytona Server daemon :
 
     Execute the command provided below to start the `daytona` server daemon. when prompted to start the server in the current terminal session click `yes`
     ```bash
@@ -192,7 +189,7 @@ Here you are going to use Daytona to build the playground using Github as a Prov
 
     ![image of running daytona server](assets/20240827_setup_mongodb_daytona_playground_img_1.png) the container.
     
-- **Step 2.1** Setup your Git Provider :
+- **Step 2** Setup your Git Provider :
     Execute the command provided below to add your git provider
 
     ```bash
@@ -204,13 +201,13 @@ Here you are going to use Daytona to build the playground using Github as a Prov
     
     Select GitHub and provide your personal access token.
 
-- **Step 2.2** Choose your preferred IDE :
+- **Step 3** Choose your preferred IDE :
      
     Run this command in terminal to choose your  IDE.
      ```bash
     daytona ide
     ```
-- **Step 2.3** Create a Daytona Workspace :
+- **Step 4** Create a Daytona Workspace :
     
     Substitute the `USERNAME/REPO-NAME` from the code below with the Github username and the repository where the devcontainer is stored. 
 
@@ -231,7 +228,7 @@ Here you are going to use Daytona to build the playground using Github as a Prov
     ![image of creating daytona workspace_3](assets/20240827_setup_mongodb_daytona_playground_img_5.png)
    
 
-# Step 3 Interacting with the MongoDB playground using Mongo Shell.
+# Interacting with the MongoDB playground using Mongo Shell.
 
 Your Preferred IDE should have opened up, you will be instructed to open a Remote SSH connection.You should see that your `devcontainer.json`, `Dockerfile` and `docker-compose.yml` files have been downloaded.Navigate to your terminal after creating the connection by clicking `Ctrl + Shift + ` ` . In the terminal execute the following code to start a mongo shell and carry out operations in .
 
@@ -239,14 +236,14 @@ Your Preferred IDE should have opened up, you will be instructed to open a Remot
         mongo
     ```
     
-- **Step 3.2** Create a MongoDB Database: 
+- **Step 1** Create a MongoDB Database: 
 
     ```bash
         use test
     ```
 
 
-- **Step 3.2** Create MongoDB Collection:
+- **Step 2** Create MongoDB Collection:
 
      Create a new Mongo Collection
 Creating the MongoDB playground in Daytona
@@ -254,7 +251,7 @@ Creating the MongoDB playground in Daytona
      db.createCollection("collection")
     ```
 
-- **Step 3.3**: Create a document into test collection:
+- **Step 3**: Create a document into test collection:
 
   ```bash
   db.collection.insertOne({ name: "John", age: 25, city: "New York" });
@@ -263,7 +260,7 @@ Creating the MongoDB playground in Daytona
   
   ![image of creating a document](assets/20240827_setup_mongodb_daytona_playground_img_6.png)
 
-- **Step 3.4**: Read (Query) a document from the collection:
+- **Step 4**: Read (Query) a document from the collection:
     ```bash
     db.collection.findOne({ name: "John" })
     ```
@@ -271,7 +268,7 @@ Creating the MongoDB playground in Daytona
 
     ![image of reading a document](assets/20240827_setup_mongodb_daytona_playground_img_7.png)
 
-- **Step 3.5**: Update a document:
+- **Step 5**: Update a document:
     ```bash
     db.collection.updateOne(
     { name: "John" },  // Filter
@@ -282,7 +279,7 @@ Creating the MongoDB playground in Daytona
   
   ![image of updating a document](assets/20240827_setup_mongodb_daytona_playground_img_8.png)
 
-- **Step 3.6**: Delete the Collection
+- **Step 6**: Delete the Collection
     ```bash
     db.collection.deleteOne({ name: "John" });
     ```
@@ -290,7 +287,7 @@ Creating the MongoDB playground in Daytona
     
     ![image of deleting a document](assets/20240827_setup_mongodb_daytona_playground_img_9.png)
 
-## Step 4 Using the MongoDB playground extension (Optional)
+## Using the MongoDB playground extension (Optional)
 
 Alternatively you can use the official MongoDB extensions playground since you provided `"mongodb.mongodb-vscode"` as a extension in the `devcontainer.json` file.
 
