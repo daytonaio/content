@@ -9,23 +9,18 @@ tags: ["daytona", "devcontainer", "mongoDB"]
 # Setting Up a MongoDB Playground with Daytona
 
 ## Introduction
-Developer playgrounds are isolated environments where developers can safely experiment, test code, and explore new technologies without impacting their main projects or production environments. They offer a controlled space for prototyping, learning, and debugging.
+Developer playgrounds are isolated environments where developers can safely experiment, test code, and explore new technologies without impacting their main projects or production environments. They offer a controlled space for prototyping, learning, and debugging. While creating a basic developer playground is usually straightforward, the complexity increases with the level of customization and specific requirements. However, with the right tools and platforms, even more complex playgrounds can be made relatively easy to set up and manage. This is where Daytona shines. 
+
+Daytona's Workspaces are isolated, meaning developers can experiment freely without the risk of affecting their main projects or production environments. This isolation is crucial for safe testing and debugging. Daytona. simplifies the management of development environments, making it easy to spin up, tear down, or share playgrounds. This convenience enhances productivity and collaboration among teams.
+
+In this guide, you will find out how to build a playground using Daytona to set up a MongoDB environment. We will walk you through the steps to create a reproducible and isolated development workspace, configure it with MongoDB, and customize it to suit your project needs. Before getting started, make sure you have [Docker](https://docs.docker.com/get-started/get-docker/) installed, an IDE like [VS Code](https://code.visualstudio.com/download) or [JetBrains](https://www.jetbrains.com/idea/download/), and [Daytona](https://www.daytona.io/docs/installation/installation/) set up on your system. By the end of this guide, you'll have a fully functional MongoDB playground ready for testing, experimentation, and development.
 
 ## TL;DR
 
-- Prerequisites
--  Overviews of MongoDB and Daytona.
--  How to setup a DevContainer configuration for MongoDB.
-- Creating the MongoDB playground in Daytona.
-- Interacting with the playground using the Shell
-- Using the MongoDB official extension.
-- Common Issues and Troubleshooting.
-- Conclusions.
-
-### Prerequisites
-- Docker download [here](https://docs.docker.com/get-started/get-docker/)
-- An IDE like VS Code can be gotten [here](https://code.visualstudio.com/download) or JetBrains [here](https://www.jetbrains.com/idea/download/)
-- Daytona can be installed from [here](https://www.daytona.io/docs/installation/installation/)
+- Developer playgrounds are isolated environments where developers can safely experiment, test code, and explore new technologies without impacting their main projects.
+- Developer playgrounds boost software development by providing a risk-free space to test, learn, and innovate without affecting main projects.
+- Daytona simplifies setting up developer playgrounds by providing reproducible, isolated environments with easy management and flexible configuration options.
+- Prerequisites to follow this guide: Docker, IDE(VS Code or JetBrains) and Daytona.
 
 You can find the Github repository where my devcontainer configuration files which i used for this guide [here](https://github.com/stdthoth/daytona-mongodb-playground).
       
@@ -33,17 +28,20 @@ You can find the Github repository where my devcontainer configuration files whi
 MongoDB is a popular NoSQL database that is designed for storing and retrieving large amounts of unstructured or semi-structured data. Unlike traditional relational databases (SQL databases) that store data in tables with fixed schemas (rows and columns), MongoDB stores data in a more flexible, JSON-like format called BSON (Binary JSON). You can find out more about MongoDB and its core features [here](https://docs.mongodb.com/)
 
 ## Overview of Daytona
-Daytona is a platform that simplifies the development environment setup by offering dev environments for software developers. It enables users to create and share fully configured development environments in the cloud, allowing for faster onboarding, collaboration, and consistent setups across teams.Daytona enables you to manage and deploy Workspaces, which are reproducible development environments built on standard OCI containers, and it includes native support for the Dev Container standard. The architecture of Daytona is designed to potentially support other configuration standards in the future, such as Dockerfiles, Docker Compose, Nix, and Devfile.
+Daytona is a platform that simplifies the development environment setup by offering dev environments for software developers. It enables users to create and share fully configured development environments, allowing for faster onboarding, collaboration, and consistent setups across teams.Daytona enables you to manage and deploy Workspaces, which are reproducible development environments built on standard OCI containers, and it includes native support for the Dev Container standard. The architecture of Daytona is designed to potentially support other configuration standards in the future, such as Dockerfiles, Docker Compose, Nix, and Devfile.
 
 **Features of Daytona**
 - **Pre-configured Environments**: You can create environments with all dependencies, tools, and configurations pre-installed, so developers can start coding immediately without having to spend time configuring their setups.
 - **Collaborative Workspaces**:The platform enables team collaboration by allowing multiple developers to work on the same environment. This can be particularly useful for pair programming, code reviews, or troubleshooting.
 - **Containerized Environments**:Each development environment can be containerized, ensuring that the setup is consistent, reproducible, and isolated from other environments. This helps avoid the common "works on my machine" problem.
+- **Reverse Proxy Support**:Daytona integrates a reverse proxy allowing you to access a workspace on a public or restricted network.
+
+
 
 For more information about Daytona check out its [docs](https://daytona.io/docs)
 
 
-## Setup a Dev Container Configuration for MongoDB
+## Setup a Daytona configuration for MongoDB
 
 Here, you're going to create a dev container using a `devcontainer.json` file, a `Dockerfile` and a `docker-compose.yml` file. One of Daytona's remarkable qualities is the ability to a build a project image according to the dev container standard. You can find out more about Daytona Builders [here](https://www.daytona.io/docs/usage/builders/)
 - **Step 1**: Create a new directory
@@ -190,7 +188,12 @@ Here you are going to use Daytona to build the playground using Github as a Prov
     ![image of running daytona server](assets/20240827_setup_mongodb_daytona_playground_img_1.png) the container.
     
 - **Step 2** Setup your Git Provider :
-    Execute the command provided below to add your git provider
+
+   Daytona integrates with your preferred Git provider, streamlining your workflow by allowing direct access to 
+   repositories, and simplifying workspace creation from existing projects.
+   Execute the command provided below to add your git provider. Github is one of the most popular developer 	 
+   tools. Daytona also has support for other git providers like Bitbucker and Gitlab. You can learn more about 
+   Daytona Providers [here]()
 
     ```bash
     daytona git-provider add
@@ -203,7 +206,7 @@ Here you are going to use Daytona to build the playground using Github as a Prov
 
 - **Step 3** Choose your preferred IDE :
      
-    Run this command in terminal to choose your  IDE.
+    Run this command in terminal to choose your  [IDE](https://www.daytona.io/docs/usage/ide/).
      ```bash
     daytona ide
     ```
@@ -232,9 +235,9 @@ Here you are going to use Daytona to build the playground using Github as a Prov
 
 Your Preferred IDE should have opened up, you will be instructed to open a Remote SSH connection.You should see that your `devcontainer.json`, `Dockerfile` and `docker-compose.yml` files have been downloaded.Navigate to your terminal after creating the connection by clicking `Ctrl + Shift + ` ` . In the terminal execute the following code to start a mongo shell and carry out operations in .
 
-    ```bash
-        mongo
-    ```
+	```bash
+ 	mongo
+ 	```
     
 - **Step 1** Create a MongoDB Database: 
 
@@ -245,8 +248,6 @@ Your Preferred IDE should have opened up, you will be instructed to open a Remot
 
 - **Step 2** Create MongoDB Collection:
 
-     Create a new Mongo Collection
-Creating the MongoDB playground in Daytona
      ```bash
      db.createCollection("collection")
     ```
@@ -291,18 +292,18 @@ Creating the MongoDB playground in Daytona
 
 Alternatively you can use the official MongoDB extensions playground since you provided `"mongodb.mongodb-vscode"` as a extension in the `devcontainer.json` file.
 
-- **Step 4.1** Create a connection:
+- **Step 1** Create a connection:
 
     Click on the **Connect to MongoDB** in the MongoDB view, then enter the connection string below 
 
     ```bash
     mongodb://localhost:27017
     ```
-- **Step 4.2** Connect to Playground:
+- **Step 2** Connect to Playground:
 
     Connect to the MongoDB playground, which is a built-in interactive environment for running MongoDB queries. Navigate to the MongoDB extension and click on the **Create MongoDB Playground**. 
 
-- **Step 4.3** Run Queries :
+- **Step 3** Run Queries :
     Inside the playground you can write queries just like you did in the MongoDB Shell. For example
 
     ```javascript
@@ -322,7 +323,8 @@ Alternatively you can use the official MongoDB extensions playground since you p
 **IDE doesn't open after building Workspace** : If your IDE doesnt start immediately after building the devcontainer, open your terminal and type the `daytona list` command,select your running workspace and you're good to go.
 
 ## Conclusion
-After following this guide you should be comfortable setting up your own devcontainer configuration and running on Daytona. From here, you should explore other features of Daytona such as the Registry, Prebuilds e.t.c
+
+In conclusion, by following this guide, you've successfully set up a MongoDB playground using Daytona. With a reproducible and isolated environment at your disposal, you can now experiment, test, and develop, knowing your main projects remain unaffected. This setup not only streamlines your workflow but also allows you to explore new ideas and technologies.
 
 ## References
 
