@@ -20,6 +20,7 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
 <<<<<<< HEAD
+<<<<<<< HEAD
   - [Where to Start](#where-to-start)
 =======
   - [Writing Guidelines](#writing-guidelines)
@@ -38,6 +39,9 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [First Time Contributor](#first-time-contributor)
   - [How to Propose a New Content](#how-to-propose-a-new-content)
 >>>>>>> 1f697c3 (author added)
+=======
+  - [Where to Start](#where-to-start)
+>>>>>>> c22a553 (revert: README.md)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
@@ -47,6 +51,7 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
 ## Introduction
 The `content` repository is a platform where technical writers can contribute articles to the [Daytona Dotfiles Insider](https://www.daytona.io/dotfiles/) blog by "solving" posted issues (proposed article ideas) through pull requests. Merged PRs are eligible for compensation.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 > **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
 =======
@@ -150,6 +155,9 @@ We welcome new ideas and contributions from our community. If you have a suggest
 
 Remember, creating an issue is just the first step. If you're interested in writing the article yourself, please indicate this in your issue. Otherwise, another writer may pick up the topic.
 >>>>>>> 1f697c3 (author added)
+=======
+> **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
+>>>>>>> c22a553 (revert: README.md)
 
 ## Where to Start
 Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed information on how to contribute to this project.
