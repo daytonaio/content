@@ -9,9 +9,9 @@ author: "Vamshi Maskuri"
 
 ## Introduction
 
-Development Container Features (Devcontainer Features) are essential for standardizing development environments across various teams and projects. They allow developers to easily share and reuse environment setups, ensuring consistency and reducing the time spent on configuring environments. Devcontainer features can be customized to meet the specific needs of a project, making them highly versatile and effective for various development scenarios.
+Development Container Features (Devcontainer Features) are essential for standardizing development environments across various teams and projects. They allow developers to easily share and reuse environment setups, ensuring consistency and reducing the time spent configuring environments. Devcontainer features can be customized to meet the specific needs of a project, making them highly versatile and effective for various development scenarios.
 
-In this guide, we will walk you through the process of creating a Devcontainer feature, using Hugging Face as an example. Hugging Face is a leading library for machine learning (ML) and natural language processing (NLP) tasks, making it an excellent choice for demonstrating how to create a feature that can be widely beneficial. By the end of this guide, you will have developed a fully functional and Devcontainer feature that can be seamlessly integrated into any development workflow.
+In this guide, we will walk you through creating a Devcontainer feature, using Hugging Face as an example. Hugging Face is a leading library for machine learning (ML) and natural language processing (NLP) tasks, making it an excellent choice for demonstrating how to create a feature that can be widely beneficial. By the end of this guide, you will have developed a fully functional Devcontainer feature that can be seamlessly integrated into any development workflow.
 
 ## Why Create a Devcontainer Feature?
 
@@ -30,12 +30,22 @@ You will also need the following tools installed: [Docker](https://www.docker.co
 - **Docker**: Used for containerizing applications, ensuring consistency across different environments.
 - **Visual Studio Code**: An Integrated Development Environment (IDE) that supports Devcontainer development.
 - **Remote - Containers Extension**: A VS Code extension that allows you to open any folder inside a container and take advantage of Visual Studio Code’s full feature set.
+- **Dev Container CLI**: A command-line tool used for working with Devcontainer features, enabling you to test and manage your Devcontainer setups.
+
+#### Installing the Dev Container CLI
+
+To install the Dev Container CLI, you can use npm:
+
+```bash
+npm install -g @devcontainers/cli
+```
+This command installs the CLI globally, making it available for use in testing and managing Devcontainer features throughout this guide.
 
 ### TL;DR
 
 This guide helps you:
 
-- **Create a Devcontainer Feature**: Start by forking and cloning a starter repository..
+- **Create a Devcontainer Feature**: Start by forking and cloning a starter repository.
 - **Set Up Your Feature**: Define metadata in `devcontainer-feature.json` and implement the feature installation script.
 - **Test and Publish**: Validate your feature locally and then publish it using GitHub Actions.
 
@@ -190,7 +200,56 @@ echo "Hugging Face setup completed successfully."
 
 ## Step 3: Confirmation
 
-After implementing the feature, confirm that everything works as expected by testing the feature locally. For testing use GitHub Actions to automatically test the feature. You can also test locally using the Dev Container CLI:
+After implementing the feature, confirm that everything works as expected by testing the feature locally. For testing use GitHub Actions to automatically test the feature.
+
+### Adding a Basic Test Script
+
+To ensure that the feature installs the correct versions of the Hugging Face libraries, create a basic test script. This test will validate the installation by checking the versions of the installed packages.
+
+Create a new directory named `test` inside the feature root directory:
+
+```bash
+mkdir -p src/huggingface/test
+cd test
+```
+
+Inside this directory, create a test script `version_check.sh`:
+
+```bash
+#!/bin/bash
+set -e
+
+check_version() {
+    local package_name=$1
+    local expected_version=$2
+    local installed_version=$(python -c "import $package_name; print($package_name.__version__)")
+
+    if [ "$installed_version" == "$expected_version" ]; then
+        echo "$package_name version is correct: $installed_version"
+    else
+        echo "$package_name version is incorrect: $installed_version (expected: $expected_version)"
+        exit 1
+    fi
+}
+
+# Example checks
+check_version "transformers" "$VERSION"
+check_version "torch" "$TORCH_VERSION"
+```
+This script will ensure that the versions of `transformers`, `torch`, and any other critical packages match the expected versions.
+
+### Integrate the Test Script into the Devcontainer
+
+In the `devcontainer-feature.json` file, which you have configured earlier in Step 2, add the following `postCreateCommand` at the end of the file to run the test automatically after the container is created:
+
+```json
+"postCreateCommand": "bash /workspaces/src/huggingface/test/version_check.sh"
+```
+This configuration will automatically run the version_check.sh script after the Devcontainer is created, ensuring that all installations are correct and up-to-date.
+
+### Running the Test
+
+You can also test locally using the Dev Container CLI:
 
 ```bash
 devcontainer features test -f huggingface -i mcr.microsoft.com/devcontainers/base:ubuntu .
@@ -244,7 +303,7 @@ To inspire your work, here are a few examples of highly effective Devcontainer f
 
 1. **[Github CLI](https://github.com/devcontainers/features/src/kubectl-helm-minikube):** A feature that sets up the GitHub CLI in Devcontainer, making it easy to manage GitHub repositories from within your containerized environment.
 
-2. **[Kubectl-Helm-Minikube](https://github.com/devcontainers/features/src/kubectl-helm-minikube):** This feature installs latest version of kubectl, Helm, and optionally minikube. Auto-detects latest versions and installs needed dependencies.
+2. **[Kubectl-Helm-Minikube](https://github.com/devcontainers/features/src/kubectl-helm-minikube):** This feature installs the latest version of kubectl, Helm, and optionally minikube. Auto-detects latest versions and installs needed dependencies.
 
 3. **[Docker-in-Docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker):** This feature enables Docker to run inside a container, allowing you to test Dockerized applications from within your Devcontainer.
 
@@ -256,7 +315,7 @@ For more features available refer [here](https://containers.dev/features)
 
 ## Conclusion
 
-Tn this guide, we have walked through the essential steps to create a Devcontainer feature, focusing on setting up a Hugging Face environment,emphasizing the importance of automating and simplifying the setup process for complex tools used in ML and NLP. From forking the starter repository to implementing the `install.sh` script, we have covered how to define metadata, configure options, and test the feature locally. These steps ensure that your feature is both robust and flexible, meeting the needs of various development scenarios.
+In this guide, we have walked through the essential steps to create a Devcontainer feature, focusing on setting up a Hugging Face environment and emphasizing the importance of automating and simplifying the setup process for complex tools used in ML and NLP. From forking the starter repository to implementing the `install.sh` script, we have covered how to define metadata, configure options, and test the feature locally. These steps ensure that your feature is both robust and flexible, meeting the needs of various development scenarios.
 
 One of the key takeaways from this guide is the importance of customization and testing. By providing users with configurable options, such as selecting specific versions of libraries or enabling CUDA support, you are making the feature adaptable to different project requirements. Moreover, testing your feature both locally and through automated CI pipelines ensures reliability and helps catch potential issues early, contributing to a smoother development experience for your users.
 
