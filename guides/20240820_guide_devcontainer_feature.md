@@ -287,16 +287,6 @@ git push origin main
 
 Ensure that the package visibility is set to public in the repository's `Packages` settings. This step is essential for making your feature accessible to the community.
 
-## Common Issues and Troubleshooting
-
-**Problem:** _[Installation of dependencies fails due to network issues]_
-
-**Solution:** _[Ensure your network connection is stable and consider using a proxy if necessary]_
-
-**Problem:** _[CUDA is not available after installation.]_
-
-**Solution:** _[Verify that your GPU supports CUDA and that the correct drivers are installed.]_
-
 ## Examples of Great Devcontainer Features
 
 To inspire your work, here are a few examples of highly effective Devcontainer features:
