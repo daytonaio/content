@@ -1,0 +1,90 @@
+version: 0.0.1
+
+achievements:
+  - achievement:
+      name: Daytona Scribe
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scribe.png
+      description: Penned first Daytona Dotfiles Insider article
+      triggers:
+        - trigger:
+            actor: author
+            action: pull_request
+            condition: count(merged = true) >= 1
+
+  - achievement:
+      name: Daytona Scholar
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_scholar.png
+      description: 5 Daytona tales of tech insight! Your wisdom grows!
+      triggers:
+        - trigger:
+            actor: author
+            action: pull_request
+            condition: count(merged = true) > 4
+
+  - achievement:
+      name: Daytona Sage
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_sage.png
+      description: 10+ Daytona articles! A fount of profound tech wisdom!
+      triggers:
+        - trigger:
+            actor: author
+            action: pull_request
+            condition: count(merged = true) > 9
+
+  - achievement:
+      name: Ummon's Disciple
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/ummons_disciple.png
+      description: Unmerged PRs spark thought like Ummon's cryptic teachings!
+      triggers:
+        - trigger:
+            actor: author
+            action: pull_request
+            condition: count(merged = false & closed = true) > 2
+
+  - achievement:
+      name: Daytona Explorer
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_explorer.png
+      description: Stargazing the Daytona cosmos! Your journey awakens!
+      triggers:
+        - trigger:
+            actor: author
+            action: star
+            condition: starred = true
+
+  - achievement:
+      name: Daytona Proposer
+      icon: https://raw.githubusercontent.com/daytonaio/content/main/.vaunt/daytona_proposer.png
+      description: Idea proposed! Daytona multiverse feels your ripples!
+      triggers:
+        - trigger:
+            actor: author
+            action: issue
+            condition: count() >= 1
+
+webhooks:
+  - webhook:
+      name: achievements
+      type: github
+      metadata:
+        discussion:
+          repository: daytonaio/content
+          title: The Wisdom Path of Daytona Content Creation
+      events:
+        - event:
+            type: achievement
+            value: Tech Scribe
+        - event:
+            type: achievement
+            value: Parable Crafter
+        - event:
+            type: achievement
+            value: Koan Master
+        - event:
+            type: achievement
+            value: Ummon's Disciple
+        - event:
+            type: achievement
+            value: Cosmic Observer
+        - event:
+            type: achievement
+            value: Quantum Proposer

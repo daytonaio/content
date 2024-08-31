@@ -1,5 +1,3 @@
-<br>
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-white.png">
@@ -7,18 +5,15 @@
   </picture>
 </div>
 
-<br>
-
 <div align="center">
 
-[![Issues - Content](https://img.shields.io/github/issues/daytonaio/content)](https://github.com/daytonaio/content/issues)
+[![Issues - Content](https://img.shields.io/github/issues/daytonaio/content)](https://github.com/daytonaio/content/issues) [![Vaunt Community](https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/badges/community)](https://community.vaunt.dev/board/daytonaio/repository/content)
 
 </div>
 
 # Daytona Content Programme for Technical Writers
 
 Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo is dedicated to managing external technical writers who contribute articles and guides. Here, you'll find details on how to participate, contribute, and get compensated for your work.
-
 
 ## Table of Contents
 - [Daytona Content Programme for Technical Writers](#daytona-content-programme-for-technical-writers)
@@ -39,10 +34,12 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Quality Assurance](#quality-assurance)
     - [First Time Contributor](#first-time-contributor)
   - [How to Propose a New Content](#how-to-propose-a-new-content)
+  - [Where to Start](#where-to-start)
   - [Licensing and Copyright](#licensing-and-copyright)
   - [Payment](#payment)
   - [Contact and Support](#contact-and-support)
-
+  - [Showcase Your Contributions](#showcase-your-contributions)
+    - [Top Contributors](#top-contributors)
 
 ## Introduction
 The `content` repository is a platform where technical writers can contribute articles to the [Daytona Dotfiles Insider](https://www.daytona.io/dotfiles/) blog by "solving" posted issues (proposed article ideas) through pull requests. Merged PRs are eligible for compensation.
@@ -146,36 +143,31 @@ We welcome new ideas and contributions from our community. If you have a suggest
 6. **Engage in Discussion**: Once submitted, maintainers or other community members might comment on your issue. Be prepared to engage in constructive discussion to refine the proposal.
 
 Remember, creating an issue is just the first step. If you're interested in writing the article yourself, please indicate this in your issue. Otherwise, another writer may pick up the topic.
+> **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
 
+
+## Where to Start
+Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed information on how to contribute to this project.
 
 ## Licensing and Copyright
-
-By contributing to this repository, you agree that all content you submit is subject to the following terms:
-
-1. **Copyright Assignment**: You assign all rights, title, and interest in and to the copyright of your contributed content to Daytona.
-
-2. **Exclusive Rights**: Daytona retains exclusive, worldwide, royalty-free, perpetual, and irrevocable rights to use, reproduce, modify, adapt, publish, distribute, and display the contributed content in any form or medium.
-
-3. **No Reuse Without Permission**: Contributors may not reuse, republish, or redistribute the content they've submitted without explicit written permission from Daytona.
-
-4. **Attribution**: While Daytona owns the copyright, we will provide attribution to contributors as the original authors of the content, unless requested otherwise.
-
-5. **Warranty**: By submitting content, you warrant that you have the right to assign copyright as described above and that the content does not infringe upon the rights of any third party.
-
-These terms ensure that Daytona can freely use and manage the contributed content while acknowledging the valuable work of our contributors.
-
+By contributing to this repository, you agree that all content you submit is subject to the terms outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Payment
 - Compensation is provided for accepted and published content.
-- Payment can be made directly or through bounties (if assigned to the issue).
-- Payment can also be made directly if you can submit an invoice including:
-  - Date, Title of Article/Guide, Amount
-  - Payment details (Bank Name, Account Number/IBAN, Routing Number/SWIFT Code/ABA)
-  - Address invoice to: Daytona Platforms Inc., 224 W 35th St Ste 500#297, New York, NY 10001, USA
-
+- Payment can be made through Algora as bounties (if assigned to the issue and your PR gets merged).
 
 ## Contact and Support
 - For questions or assistance, open an issue or contact the repo maintainers.
 - Join `#content` channel in our [Slack community](https://go.daytona.io/slack) for discussions and support.
+
+## Showcase Your Contributions
+Along with the chance to earn bounties, each engagement comes with an achievement badge.
+
+Showcase your contributions in your GitHub profile and display your achievements with pride! For more information, check the [CONTRIBUTING.md](CONTRIBUTING.md#showcase-your-contributions) file.
+
+### Top Contributors
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
+</p>
 
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!

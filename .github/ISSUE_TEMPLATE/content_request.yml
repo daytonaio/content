@@ -1,6 +1,6 @@
 name: Content Production Request
 description: Standard template for content production requests.
-title: 'Title: [Enter the title of the article]'
+title: 'Title: [Enter the tentative title of the article]'
 labels: ['content', 'production']
 
 body:
@@ -17,6 +17,8 @@ body:
       options:
         - Article
         - Guide
+        - News
+        - Ghostwriting
 
   - type: textarea
     id: description
@@ -31,6 +33,26 @@ body:
       label: Target Audience
       description: Describe who the target audience is. Age, profession, interests, etc.
       placeholder: 'e.g., Digital Marketers, Small Business Owners, etc.'
+
+  - type: textarea
+    id: search_intent_objective
+    attributes:
+      label: Search Intent Objective
+      description: Outline the reader's goals and what they should be able to do after reading the content. Include the primary search intent (e.g., informational, transactional, navigational) and specific learning outcomes.
+      placeholder: |
+        Reader's goals:
+        1. To [primary goal, e.g., gain a comprehensive understanding of the topic]
+        2. To [secondary goal, e.g., learn practical applications]
+        3. To [tertiary goal, e.g., understand how to measure results]
+
+        By the end of the article, the reader should be able to:
+        1. [Key learning outcome, e.g., Define key concepts and explain their importance]
+        2. [Key learning outcome, e.g., Apply specific strategies or techniques]
+        3. [Key learning outcome, e.g., Evaluate and implement best practices]
+        4. [Key learning outcome, e.g., Measure and track relevant metrics]
+        5. [Key learning outcome, e.g., Develop an action plan for implementation]
+
+        Primary search intent: [e.g., Informational, to educate readers on the topic and its practical applications]
 
   - type: textarea
     id: references
