@@ -21,8 +21,11 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
   - [Introduction](#introduction)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - [Where to Start](#where-to-start)
 =======
+=======
+>>>>>>> 7e3ac22 (revert: README.md)
   - [Writing Guidelines](#writing-guidelines)
     - [Content Types](#content-types)
     - [Writing Structure](#writing-structure)
@@ -38,7 +41,10 @@ Welcome to the [Daytona](https://www.daytona.io) `content` repository! This repo
     - [Quality Assurance](#quality-assurance)
     - [First Time Contributor](#first-time-contributor)
   - [How to Propose a New Content](#how-to-propose-a-new-content)
+<<<<<<< HEAD
 >>>>>>> 1f697c3 (author added)
+=======
+>>>>>>> 7e3ac22 (revert: README.md)
 =======
   - [Where to Start](#where-to-start)
 >>>>>>> c22a553 (revert: README.md)
@@ -53,8 +59,11 @@ The `content` repository is a platform where technical writers can contribute ar
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 > **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
 =======
+=======
+>>>>>>> 7e3ac22 (revert: README.md)
 ## Writing Guidelines
 
 ### Content Types
@@ -159,8 +168,17 @@ Remember, creating an issue is just the first step. If you're interested in writ
 > **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
 >>>>>>> c22a553 (revert: README.md)
 
+<<<<<<< HEAD
 ## Where to Start
 Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed information on how to contribute to this project.
+=======
+=======
+> **Note:** Always use GitHub as the main communication channel. For questions not directly related to the project or for general clarifications, join the designated `content` channel on the Daytona Community Slack.
+
+## Where to Start
+Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed information on how to contribute to this project.
+>>>>>>> c22a553 (revert: README.md)
+>>>>>>> 7e3ac22 (revert: README.md)
 
 ## Licensing and Copyright
 By contributing to this repository, you agree that all content you submit is subject to the terms outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
