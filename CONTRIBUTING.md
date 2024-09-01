@@ -66,9 +66,13 @@ Remember, good writing is good writing, regardless of how it's produced. Our goa
 1. Choose an open [issue](https://github.com/daytonaio/content/issues) (proposed article idea).
 2. Fork the repository and create a new branch for your content.
 3. Write your article or guide following the provided templates and guidelines.
-4. Submit a pull request for review and use the name of the article for the title. Link the relevant issue to the PR.
-5. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
-6. Don't forget to star the `daytonaio/content` repo.
+4. Run the following command to check for markdown linting issues:
+   ```bash
+   npx markdownlint '**/*.md'
+   ```
+5. Submit a pull request for review and use the name of the article for the title. Link the relevant issue to the PR.
+6. If multiple PRs are submitted by different individuals, we will typically prioritize those that demonstrate the clearest and most well-crafted writing.
+7. Don't forget to star the `daytonaio/content` repo.
 
 ### Editing Process
 - If the PR meets our standards, the issue will be assigned to you, and the editing process will commence.
