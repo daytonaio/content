@@ -1,6 +1,6 @@
 ---
 title: "Daytona AWS Provider"
-description: "This article provides an overview of the newly introduced Daytona AWS Provider, which allows Daytona to create and manage workspace projects on Amazon EC2 instances. It covers the necessary steps for setting up and configuring this provider, including prerequisites such as ensuring the AWS programmatic access user has the AmazonEC2FullAccess permissions. The article also details the target options available for customization and provides troubleshooting tips for common issues."
+description: "This article outlines how to set up the Daytona AWS Provider for managing EC2 instances, including prerequisites, configuration steps, customization options, and troubleshooting tips."
 date: 2024-08-28
 author: "Abraham Dahunsi"
 tags: ["daytona", "aws", "ec2", "workspace", "devops"]
