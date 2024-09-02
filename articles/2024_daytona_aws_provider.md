@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with the Daytona AWS Provider"
-description: "This article outlines how to set up the Daytona AWS Provider for managing EC2 instances, including prerequisites, configuration steps, customization options, and troubleshooting tips."
+description: "This article outlines how to set up the Daytona AWS Provider for managing EC2 instances, including prerequisites, configuration steps, customization options, and troubleshooting tips"
 date: 2024-08-28
 author: "Abraham Dahunsi"
 tags: ["daytona", "aws", "ec2", "workspace", "devops"]
