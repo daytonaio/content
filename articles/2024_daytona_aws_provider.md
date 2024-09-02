@@ -12,6 +12,7 @@ The Daytona AWS Provider is a significant addition to the Daytona ecosystem, ena
 
 This guide will walk you through the process of setup and configuring the Daytona AWS Provider, discuss the available customization options, and provide troubleshooting tips for some of the issues that you might encounter.
 
+> [!Note]
 > Please note that the AWS Provider is currently in alpha release, and there may be limitations and caveats to consider. Check [here](https://github.com/daytonaio/daytona-provider-aws) for more details.
 
 ### TL;DR
@@ -49,7 +50,7 @@ daytona server configure
 
 An interactive prompt will appear. Navigate to the `Registry URL` field by pressing `Enter` and change the default url to `https://download.daytona.io/daytona-providers-pre-release`.
 
-![20240902_change_repo_url](authors/assets/20240902_change_repo_url.png)
+![20240902_change_repo_url](../authors/assets/20240902_change_repo_url.png)
 
 Press `ctrl + s` to save your change.
 
@@ -76,7 +77,7 @@ daytona provider install
 
 In the interacive prompt, use the arrow keys to select the `aws-provider` from the list.
 
-![20240902_select_aws_provider](authors/assets/20240902_select_aws_provider.png)
+![20240902_select_aws_provider](../authors/assets/20240902_select_aws_provider.png)
 
 If the installation is successful, you should expect the following output:
 
@@ -94,19 +95,19 @@ daytona target set
 
 In the interactive prompt, select `aws-provider`.
 
-![20240902_choose_provider_to_set_target](authors/assets/20240902_choose_provider_to_set_target.png)
+![20240902_choose_provider_to_set_target](../authors/assets/20240902_choose_provider_to_set_target.png)
 
 Then select `+ New target`.
 
-![20240902_select_+_New_target](authors/assets/20240902_select_+_New_target.png)
+![20240902_select_+_New_target](../authors/assets/20240902_select_+_New_target.png)
 
 Enter a name for your target, such as `aws-provider-target` for example.
 
-![20240902_Enter_a_new_name_for_config](authors/assets/20240902_Enter_a_new_name_for_config.png)
+![20240902_Enter_a_new_name_for_config](../authors/assets/20240902_Enter_a_new_name_for_config.png)
 
 In the next interactive prompt, you will be prompted to configure the AWS provider target settings. You can either adjust them to your preferred values or press `Enter` to accept the default options.
 
-![20240902_select_options_for_new_config](authors/assets/20240902_select_options_for_new_config.png)
+![20240902_select_options_for_new_config](../authors/assets/20240902_select_options_for_new_config.png)
 
 If you have set the provider target options correctly you should expect the following output:
 
@@ -124,7 +125,7 @@ daytona provider list
 
 Expected Output:
 
-![20240902_verify_aws_provider](authors/assets/20240902_verify_aws_provider.png)
+![20240902_verify_aws_provider](../authors/assets/20240902_verify_aws_provider.png)
 
 ## Customizing Target Options
 
