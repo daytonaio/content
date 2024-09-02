@@ -8,36 +8,30 @@ tags: ["one", "two", "three"]
 
 # Title of the Article
 
-# Introduction
+## Introduction
 
-_[Write at least two paragraphs introducing the topic. Provide some background
-and explain why this topic is important. Use inline links for definitions where
-appropriate, e.g., [term](/definitions/term.md).]_
+*[Write at least two paragraphs introducing the topic. Provide some background and explain why this topic is important. Use inline links for definitions where appropriate, e.g., [term](/definitions/term.md).]*
 
-## TL;DR
+### TL;DR
 
-- **Bullet Point Summary**: _[Summarize the key points in a few bullet points
-  for quick reference.]_
+- **Bullet Point Summary**: *[Summarize the key points in a few bullet points for quick reference.]*
 
 ## Subtitle 1
 
-_[Write the content of the first section here. Use clear and concise language,
-and ensure that each paragraph flows logically to the next. Continue to use
-inline links for definitions and sitemap articles where appropriate.]_
+*[Write the content of the first section here. Use clear and concise language, and ensure that each paragraph flows logically to the next. Continue to use inline links for definitions and sitemap articles where appropriate.]*
 
-**Key Point:** _[Highlight key information here.]_
+**Key Point:** *[Highlight key information here.]*
 
 ### Subheading (if needed)
 
-_[Additional details or subtopics related to the main heading.]_
+*[Additional details or subtopics related to the main heading.]*
 
 ## Subtitle 2
 
-_[Write the content for the second major section of your article.]_
+*[Write the content for the second major section of your article.]*
 
-- **Bullet Point 1**: _[Use bullet points to list key points or steps if
-  applicable.]_
-- **Bullet Point 2**: _[Continue listing key points here.]_
+- **Bullet Point 1**: *[Use bullet points to list key points or steps if applicable.]*
+- **Bullet Point 2**: *[Continue listing key points here.]*
 
 ### Code Example
 
@@ -48,32 +42,30 @@ print("Hello, World!")
 
 ### Image or Diagram
 
-_[If you reference images, note them here but store the actual image in the
-/assets folder]_
+*[If you reference images, note them here but store the actual image in the /assets folder]*
 
 ![Description of Image](/assets/YYYYMMDD_title_of_the_article_img1.png)
 
 ## Subtitle 3
 
-_[Continue with more sections as needed.]_
+*[Continue with more sections as needed.]*
 
-**Note:** _[Include any relevant notes or tips here.]_
+**Note:** *[Include any relevant notes or tips here.]*
 
 ## Conclusion
 
-_[Summarize the key points discussed in the article. Optionally, propose next
-steps or further reading.]_
+*[Summarize the key points discussed in the article. Optionally, propose next steps or further reading.]*
 
 ## References
 
-_"[Cite any sources or references used in the article.]"_
+*[Cite any sources or references used in the article.]*
 
-_[Add links to related articles or further reading that might interest the
-reader.]_
+*[Add links to related articles or further reading that might interest the reader.]*
 
 <!-- Note on Definitions -->
 <!-- Throughout this article, link relevant terms to their definitions using inline Markdown links. -->
 <!-- Format: [term](/definitions/term.md) -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -114,3 +106,6 @@ reader.]_
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
 >>>>>>> 6a73653 (fixed linting issues and changes some rules)
+=======
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+>>>>>>> 6b0448e (restore deleted files)
