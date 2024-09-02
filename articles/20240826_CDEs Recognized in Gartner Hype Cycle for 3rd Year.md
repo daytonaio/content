@@ -133,8 +133,8 @@ To get the most out of CDEs, companies should adopt them with a clear strategy i
 
 ## References
 
-*[Gartner's Hype Cycle](https://www.gartner.com/en/articles/what-s-new-in-the-2023-gartner-hype-cycle-for-emerging-technologies)
+* [Gartner's Hype Cycle](https://www.gartner.com/en/articles/what-s-new-in-the-2023-gartner-hype-cycle-for-emerging-technologies)
 
-*[The Rise of Cloud Development Environments](https://www.daytona.io/dotfiles/the-rise-of-cloud-development-environments)
+* [The Rise of Cloud Development Environments](https://www.daytona.io/dotfiles/the-rise-of-cloud-development-environments)
 
-*[2024: The Year CDEs Go Mainstream](https://www.daytona.io/dotfiles/2024-the-year-cdes-go-mainstream)
+* [2024: The Year CDEs Go Mainstream](https://www.daytona.io/dotfiles/2024-the-year-cdes-go-mainstream)
