@@ -1,0 +1,6 @@
+Author: [Hunain Ahmed]
+Title: [Backend enthusiast, freelance developer]
+Description: [Interested in backend concepts like asynchronous processing and systems orchestration. Sometimes code cool forntends.]
+Company Name: [Self employed]
+Company Description: []
+Author Image: [https://avatars.githubusercontent.com/u/89797440?v=4]
