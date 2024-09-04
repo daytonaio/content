@@ -1,7 +1,7 @@
 ---
 title: "Setting Up Daytona AWS Provider"
 description: "A step-by-step guide to setting up and configuring the Daytona AWS Provider for managing workspace projects on Amazon EC2 instances."
-date: 2024-09-03
+date: 2024-09-0
 author: "Kiran Naragund"
 tags: ["aws", "ec2", "daytona"]
 ---
@@ -10,19 +10,26 @@ tags: ["aws", "ec2", "daytona"]
 
 ## Introduction
 
-The AWS Provider allows Daytona to create and manage Workspace projects on Amazon EC2 instances. The Provider integrates Daytona with AWS, enabling you to manage Workspaces in a scalable and flexible cloud environment. To use the AWS Provider, we need AWS programmatic access user with `AmazonEC2FullAccess` permissions. This policy grants the necessary permissions to manage EC2 instances, which is crucial for Daytona’s Workspace project creation and management.
+The AWS Provider allows Daytona to create and manage workspace projects on Amazon EC2 instances. The provider integrates Daytona with AWS, enabling you to manage workspaces in a scalable and flexible cloud environment. To use the AWS Provider, you need an AWS programmatic access user with AmazonEC2FullAccess permissions. This policy grants the necessary permissions to manage EC2 instances, which is crucial for Daytona’s workspace project creation and management.
 
-In this guide, we will walk you through the setup and configuration of the Daytona AWS Provider also, creating IAM user with the necessary permissions.
+In this guide, we will walk you through the setup and configuration of the Daytona AWS Provider, as well as creating an IAM user with the necessary permissions.
 
 ### Prerequisites
 
-To follow along with this guide, you should have a basic understanding of [AWS](https://aws.amazon.com/), [AWS IAM](https://aws.amazon.com/iam/) and [EC2 Instances](https://aws.amazon.com/ec2/). 
-- You'll need access to an AWS account with programmatic access and appropriate permissions to follow along.
-- You have installed Daytona [install from [here](https://www.daytona.io/docs/installation/installation/)]
+To follow along with this guide, you should have:
+- A basic understanding of [AWS](../definitions/20240904_definition_aws.md), [AWS IAM](../definitions/20240904_definition_aws_iam.md) and [EC2 Instances](../definitions/20240904_definition_ec2_instances.md). 
+- Access to an AWS account with programmatic access and appropriate permissions.
+- installed Daytona [install from [here](https://www.daytona.io/docs/installation/installation/)]
  
 ### TL;DR
 
-- Set up an AWS IAM user with AmazonEC2FullAccess.
+- Create an AWS IAM user with AmazonEC2FullAccess permissions.
+
+- Install and configure the Daytona AWS Provider for managing EC2 workspaces.
+
+- Set up AWS targets, including configuring access keys, instance type, region, and more.
+
+- Troubleshooting tips for common issues like invalid AWS credentials, IAM permission errors, and EC2 instance launch failures.
 
 ## Step 1: Preparations
 
@@ -31,24 +38,40 @@ To follow along with this guide, you should have a basic understanding of [AWS](
 Before configuring the Daytona AWS Provider, create an IAM user in AWS with programmatic access and assign the `AmazonEC2FullAccess` permission. This user will allow Daytona to manage EC2 instances. Follow the below steps to create
 
 - **Step 1.1**: Go to the IAM Management Console.
+
+  ![IAM Management Console](assets/20240904_setting_up_daytona_aws_provider_img_1.png)
   
 - **Step 1.2**: Click on Users on the left-hand menu and then Create user.
 
-- **Step 1.3**: Enter a username of your wish and click Next.
+  ![Users](assets/20240904_setting_up_daytona_aws_provider_img_2.png)
 
-- **Step 1.4**: Under Permission options choose attach policies directly and Under Permission policies search and select `AmazonEC2FullAccess`, click Next.
+- **Step 1.3**: Enter a username of your choice and click Next.
 
-- **Step 1.5**: Review and click create user.
+  ![username](assets/20240904_setting_up_daytona_aws_provider_img_3.png)
+
+- **Step 1.4**:  Under Permission options, choose "Attach policies directly". Under Permission policies, search and select `AmazonEC2FullAccess`, then click Next.
+
+  ![policies](assets/20240904_setting_up_daytona_aws_provider_img_4.png)
+
+- **Step 1.5**: Review the details and click "Create user."
+
+  ![create user](assets/20240904_setting_up_daytona_aws_provider_img_5.png)
 
 You successfully create a user. Now, You need to create ACCESS_KEY and SECRET for that user.
 
+  ![Security credentials](assets/20240904_setting_up_daytona_aws_provider_img_6.png)
+
 - **Step 1.6**: Click on the username and Go to Security credentials
 
-- **Step 1.7**: Scroll down and click Create access key
+  ![Security credentials](assets/20240904_setting_up_daytona_aws_provider_img_7.png)
 
-- **Step 1.7**: Copy your credentials or you can download the csv file.
+- **Step 1.7**: Scroll down and click "Create access key."
 
-Now, you are ready to Daytona AWS Provider.
+  ![Create access key](assets/20240904_setting_up_daytona_aws_provider_img_8.png)
+
+- **Step 1.8**: Copy your credentials or you can download the csv file.
+
+Now, you are ready to setup Daytona AWS Provider.
 
 ## Step 2: Main Process
 
@@ -59,17 +82,23 @@ Start the daytona server by running the command
 daytona server
 ```
 
+![Start Daytona Server](assets/20240904_setting_up_daytona_aws_provider_img_9.png)
+
 ### Step 2.2: Configure Daytona Server
-Run the below command to configure the server and change Registry URL to `https://download.daytona.io/daytona-providers-pre-release`. 
+Run the command below to configure the server and change the Registry URL to `https://download.daytona.io/daytona-providers-pre-release`. 
 
 ```bash
 daytona server configure
 ```
 
+![server configure](assets/20240904_setting_up_daytona_aws_provider_img_10.png)
+
 ```bash
 #Restart the server
 daytona server
 ```
+
+![server restart](assets/20240904_setting_up_daytona_aws_provider_img_11.png)
 
 ### Step 2.3: Install the AWS Provider
 Run the below command, You will be prompted to choose a provider. Select `aws-provider` from the list
@@ -79,6 +108,8 @@ Run the below command, You will be prompted to choose a provider. Select `aws-pr
 ```bash
 daytona provider install
 ```
+
+![aws provider install](assets/20240904_setting_up_daytona_aws_provider_img_12.png)
 
 ### Step 2.4: Set the AWS Target
 Run the following command to initiate the target setup process:
@@ -91,9 +122,13 @@ daytona target set
     
   You will be prompted to choose a provider. Select aws-provider from the list
 
+  ![aws-provider](assets/20240904_setting_up_daytona_aws_provider_img_13.png)
+
   #### Step 2.4.2 :Create a New Target
     
-  After selecting the aws-provider, choose to create a new Target and enter the unique and descriptive name for your AWS Target.(eg. aws-target)
+  After selecting the AWS provider, choose to create a new target and enter a unique and descriptive name for your AWS target (e.g., `daytona-aws-target`).
+
+  ![New Target](assets/20240904_setting_up_daytona_aws_provider_img_14.png)
 
   #### Step 2.4.3: Configure AWS target options
 
@@ -135,9 +170,19 @@ daytona target set
     
     The type of volume. Default is gp3. Get the list of available volume types [here](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
 
+  ![AWS target options](assets/20240904_setting_up_daytona_aws_provider_img_15.png)
+
 Click enter after filling all the details.
 
 Congratulations, You have successfully setup and configured Daytona AWS Provider to create and manage workspace on your AWS EC2 instance.
+
+To verify daytona AWS provider has been successfully installed or not, run the below command you will get provider and target  configuration information you have configured.
+
+```bash
+daytona provider list
+```
+
+![provider list](assets/20240904_setting_up_daytona_aws_provider_img_16.png)
     
 ## Common Issues and Troubleshooting
 While setting up and configuring the AWS Provider with Daytona, you may encounter some common issues. Below are troubleshooting tips to help resolve them:
