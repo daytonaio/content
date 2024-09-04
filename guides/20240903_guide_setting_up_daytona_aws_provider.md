@@ -18,12 +18,11 @@ In this guide, we will walk you through the setup and configuration of the Dayto
 
 To follow along with this guide, you should have a basic understanding of [AWS](https://aws.amazon.com/), [AWS IAM](https://aws.amazon.com/iam/) and [EC2 Instances](https://aws.amazon.com/ec2/). 
 - You'll need access to an AWS account with programmatic access and appropriate permissions to follow along.
-- You have installed Daytona 
+- You have installed Daytona [install from [here](https://www.daytona.io/docs/installation/installation/)]
  
 ### TL;DR
 
 - Set up an AWS IAM user with AmazonEC2FullAccess.
-- 
 
 ## Step 1: Preparations
 
@@ -92,17 +91,14 @@ daytona target set
     
   You will be prompted to choose a provider. Select aws-provider from the list
 
-  #### Step 2.4.2: Create a New Target
-    
-  After selecting the aws-provider, choose to create a new Target:
-
-  #### Step 2.4.3 :Create a New Target
+  #### Step 2.4.2 :Create a New Target
     
   After selecting the aws-provider, choose to create a new Target and enter the unique and descriptive name for your AWS Target.(eg. aws-target)
 
-  #### Step 2.4.4: Configure AWS target options
+  #### Step 2.4.3: Configure AWS target options
 
-  You will be prompted to enter several configuration options specific to AWS. Daytona AWS Provider offers a range of target options that can be customized according to your requirements. Here’s a detailed overview:
+  You will be prompted to enter several configuration options specific to AWS. Daytona AWS Provider offers a range of target options that can be customized 
+  according to your requirements. Here’s a detailed overview:
 
   - **Access Key Id**:
     
@@ -112,7 +108,8 @@ daytona target set
 
   - **Device Name**:
     
-    The device name for the volume. This is typically the root device name for specified AMI, you can either adjust this to your preferred values or press `Enter` to accept the default options. Get list of device names [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html)
+    The device name for the volume. This is typically the root device name for specified AMI, you can either adjust this to your preferred values or press `Enter` 
+    to accept the default options. Get list of device names [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html)
     
   - **Image Id**:
     
@@ -139,9 +136,11 @@ daytona target set
     The type of volume. Default is gp3. Get the list of available volume types [here](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
 
 Click enter after filling all the details.
+
+Congratulations, You have successfully setup and configured Daytona AWS Provider to create and manage workspace on your AWS EC2 instance.
     
 ## Common Issues and Troubleshooting
-While setting up the AWS Provider with Daytona, you may encounter some common issues. Below are troubleshooting tips to help resolve them:
+While setting up and configuring the AWS Provider with Daytona, you may encounter some common issues. Below are troubleshooting tips to help resolve them:
 1. **Problem:** Daytona Provider Errors
 
    **Solution:** If Daytona encounters errors while interacting with the AWS Provider, it could be due to bugs or limitations in the current alpha release. Checking the [Daytona AWS Provider GitHub repository](https://github.com/daytonaio/daytona-provider-aws) for any known issues or updates can help resolve these problems. Additionally, consider updating to the latest version if you're using an outdated release.
@@ -164,14 +163,17 @@ While setting up the AWS Provider with Daytona, you may encounter some common is
 
 
 ## Conclusion
+By following this guide, you have successfully set up and configured the Daytona AWS Provider to manage EC2 workspaces. This setup allows you to leverage AWS’s powerful infrastructure for your development and deployment tasks. 
 
-*[Summarize what was accomplished by following the guide. Optionally, suggest further actions or related guides.]*
+As you explore this integration, be mindful of its `alpha` status and the potential for updates or changes in future releases. For the latest information, refer to the official Daytona [documentation](https://www.daytona.io/docs/).
 
 ## References
 
-*[Cite any sources or references used in the guide.]*
-
-*[Add links to related guides or further reading that might interest the reader.]*
+- [Daytona Docs - Configuration Providers](https://www.daytona.io/docs/configuration/providers/#officially-supported-providers)
+  
+- [Daytona.io AWS Provider Repository](https://github.com/daytonaio/daytona-provider-aws)
+  
+- [Daytona Releases - v0.25.2](https://github.com/daytonaio/daytona/releases/tag/v0.25.2)
 
 <!-- Note on Definitions -->
 <!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
