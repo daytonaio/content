@@ -1,14 +1,10 @@
 ---
 title: "Daytona Office Hours 8 - Updates, Fixes And Future Plans"
-description: "The latest updates, major fixes, upcoming developments, and highlights discussed during Daytona Office Hours #8 YouTube video."
+description: "The latest updates, major fixes, upcoming developments, and highlights discussed during Daytona Office Hours 8 YouTube video."
 date: 2024-08-21
 author: "Team Daytona"
-tags: ["Server", "Port", "Notification", "Update", "Highlight"]
+tags: ["Update", "Highlight"]
 ---
-
-# Daytona Office Hours 8 - Server Port Notifications, Major Fixes, And Future Plans
-
-## Introduction
 
 During the latest office hours, we discussed what we worked on the previous week and our plans for the next week's release. We reviewed our progress on **server port notifications** and **builds runner**, as well as some quality-of-life fixes we have been working on.
 
@@ -20,7 +16,7 @@ During the latest office hours, we discussed what we worked on the previous week
 
 ## Features: Server Port Notifications And  Builds Runner (Stealth Mode)
 
-In our latest Daytona Office Hours, we showcased two significant features: server port notifications and builds runner.
+We had two significant features to hightlight: server port notifications and builds runner.
 
 **Server port notifications**, a subtle addition, automatically checks for port conflicts with the API server, SQL server, and local registry. If any of the ports are occupied, Daytona will alert you, allowing you to either free up the port or adjust the corresponding service settings.
 
@@ -51,7 +47,7 @@ We also introduced a new feature **builds runner**, that will eventually enable 
 
 ## Conclusion
 
-To conclude this episode of Daytona Office Hours, we explored the latest updates and exciting developments, from essential quality-of-life improvements to new features like *server port notifications* and the upcoming *builds runner*. As we look ahead, we're excited about the potential of pre-builds and multi-GitHub account support.
+To conclude, we explored *server port notifications* and *builds runner(stealth mode)* features, major fixes such as *allow users to submit the form earlier* and *proper API JSON validation*. Also, discussed upcoming *pre-builds* and *multi-GitHub account support* features.  Join our [slack](https://go.daytona.io/slack) to ask your questions.
 
 ## References
 
