@@ -1,9 +1,8 @@
 ---
-title: "Title of the Article. The title should be a max. of 55 characters."
-description: "A brief description of what the article covers. The description should be a maximum of 160 characters."
+title: "Title of the Article"
+description: "A brief description of what the article covers."
 date: YYYY-MM-DD
 author: "Author Name"
-tags: ["one", "two", "three"]
 ---
 
 # Title of the Article
@@ -68,6 +67,7 @@ print("Hello, World!")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
@@ -78,3 +78,6 @@ print("Hello, World!")
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 >>>>>>> 6b0448e (restore deleted files)
+=======
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+>>>>>>> 4453748 (fixed merge conflict)
