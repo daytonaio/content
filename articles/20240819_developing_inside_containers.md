@@ -14,11 +14,11 @@ Containerization packages your app and its dependencies into a single, portable 
 
 ### Introduction
 
-Containerization is a game-changer for development, ensuring your app runs the same everywhere. If you're new to this, don't worry—VSCode makes it simple. In this guide, we'll cover setting up a containerized development environment in VSCode, highlight common pitfalls, and share how Daytona does it.
+Containerization has transformed how developers build and deploy software, ensuring applications run consistently across different environments. For those new to this approach, VSCode offers a user-friendly way to dive in. This guide will walk you through setting up a containerized development environment in VSCode, covering key concepts, common pitfalls, and how tools like Daytona can simplify and enhance the process by automating and standardizing your container setup.
 
 ### What is Containerization?
 
-**Containerization** lets you bundle your application and its dependencies into a single, portable container. This container can run consistently in any environment, from local development to production. Read more about [containerizatoin here](https://www.daytona.io/definitions/c/containerization)
+**[Containerization](https://www.daytona.io/definitions/c/containerization)** lets you bundle your application and its dependencies into a single, portable container. This container can run consistently in any environment, from local development to production.
 
 **Why use it?**
 1. **Consistency:** Your app behaves the same in every environment.
@@ -139,55 +139,58 @@ Your app will be accessible via `http://localhost:3000`.
    RUN apt-get update && apt-get install -y git
  ```
 
-### How Daytona Does It
+### How Daytona Simplifies Containerized Development
 
-At Daytona, we've streamlined our development with VSCode containers.
+Daytona provides a streamlined approach to containerized development, making it easier for teams to work in consistent, reliable environments. Here’s how Daytona’s tools can enhance your workflow:
 
-1. **Standardized Environments:** We use a `devcontainer.json` to ensure every developer works in the same environment.
+1. **Standardized Environments:** Daytona uses a `devcontainer.json` file for every project to ensure that all developers work in the same environment, regardless of their local machine setup. This standardization reduces configuration issues and speeds up onboarding.
 
    **Example:**
 
- ```json
+   ```json
    {
      "name": "Daytona Dev Container",
-     "image": "daytona/base-image:latest",
+     "image": "mcr.microsoft.com/devcontainers/base:alpine-3.18",
      "extensions": [
        "dbaeumer.vscode-eslint",
        "ms-python.python"
      ],
-     "postCreateCommand": "npm ci"
+     "postCreateCommand": "npm ci" //Installs a package and all its dependencies.
    }
- ```
+   ```
 
-2. **Custom Docker Images:** We build custom images with all the tools our projects need, avoiding "works on my machine" issues.
+2. **Custom Docker Images:** Daytona allows teams to create custom Docker images tailored to their project needs. By including all necessary tools, libraries, and configurations in these images, developers can avoid the common "works on my machine" problems.
 
    **Steps to Create:**
    - Build the image:
 
- ```bash
-     docker build -t daytona/base-image:latest .
- ```
+     ```bash
+     docker build -t mcr.microsoft.com/devcontainers/base:alpine-3.18
+     ```
 
    - Push to a registry:
 
- ```bash
-     docker push daytona/base-image:latest
- ```
+     ```bash
+     docker push mcr.microsoft.com/devcontainers/base:alpine-3.18
+     ```
 
-3. **Automated Setup:** Our `devcontainer.json` automates setup, so developers can start coding immediately.
+3. **Automated Setup:** Daytona's `devcontainer.json` configurations are designed to automate much of the setup process. This includes commands that run automatically after the container is built, such as installing dependencies, so developers can start coding immediately.
 
    **Example:**
 
- ```json
+   ```json
    "postCreateCommand": "npm ci && npm run setup"
- ```
+   ```
 
- This ensures dependencies are installed, and the environment is configured.
+4. **Consistency Across Platforms:** Daytona’s approach ensures a consistent development experience across different operating systems, making it easier for teams to collaborate without worrying about environment discrepancies.
 
-4. **Consistency Across Platforms:** VSCode’s Remote - Containers extension keeps our development experience the same, whether on Windows, macOS, or Linux.
+By incorporating Daytona’s tools into your workflow, you can achieve a more efficient and reliable containerized development process, enabling your team to focus on writing code rather than managing environments.
 
 ### Conclusion
 
-Setting up a containerized development environment in VSCode is a great way to ensure consistency, portability, and isolation in your workflow. With these steps, you'll be up and running quickly, and you can take inspiration from Daytona's approach to streamline your process. Happy coding!
+Containerization is essential for modern development, ensuring your app runs consistently across different environments. It simplifies your workflow by isolating dependencies and configurations, making your development process smoother and more reliable.
 
+VSCode, with its Remote - Containers extension, makes it easy to set up a containerized environment that mirrors production. This approach minimizes the "works on my machine" issue and streamlines development, testing, and deployment.
+
+Daytona enhances this process by standardizing environments and automating setups, so your team can focus more on coding and less on environment management. By using tools like Daytona, you're embracing a more efficient and consistent way to develop, ultimately making your work easier and more productive.
 ---
