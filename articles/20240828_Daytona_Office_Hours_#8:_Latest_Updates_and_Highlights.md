@@ -1,12 +1,12 @@
 ---
-title: "Daytona Office Hours 8 - Updates, Fixes And Future Plans"
+title: "Daytona Ecosystem: Server Port Notifications, Latest Developments And Improvements "
 description: "The latest updates, major fixes, upcoming developments, and highlights discussed during Daytona Office Hours 8 YouTube video."
 date: 2024-08-21
 author: "Team Daytona"
-tags: ["Update", "Highlight"]
+tags: ["Update", "News", "Release", "DOH"]
 ---
 
-During the latest office hours, we discussed what we worked on the previous week and our plans for the next week's release. We reviewed our progress on **server port notifications** and **builds runner**, as well as some quality-of-life fixes we have been working on.
+At Daytona, we're excited to announce that this week's release includes progress on *server port notifications* and *builds runner* features. Quality-of-life fixes we have been working on and much more. Let's dive in and see what's new, and get a glimpse of what's ahead.
 
 ### TL;DR
 
@@ -14,13 +14,17 @@ During the latest office hours, we discussed what we worked on the previous week
 - **Server Configuration Form Submission:** Early form submission with `Ctrl+S` for easier server configuration.
 - **API JSON validation:** Introduction of proper required properties in the Swagger documentation and API validation.
 
-## Features: Server Port Notifications And  Builds Runner (Stealth Mode)
+## What's New in This Release
 
-We had two significant features to hightlight: server port notifications and builds runner.
+We have two significant features to hightlight this week: server port notifications and builds runner.
+
+### Server Port Notifications
 
 **Server port notifications**, a subtle addition, automatically checks for port conflicts with the API server, SQL server, and local registry. If any of the ports are occupied, Daytona will alert you, allowing you to either free up the port or adjust the corresponding service settings.
 
-We also introduced a new feature **builds runner**, that will eventually enable pre-builds. While currently in stealth mode and not yet integrated into Daytona, this build runner feature is a crucial component of our pre-builds functionality. We anticipate releasing it within the next few weeks.
+### Builds Runner
+
+We have also introduced a new feature **builds runner**, that will eventually enable pre-builds. While currently in stealth mode and not yet integrated into Daytona, this build runner feature is a crucial component of our pre-builds functionality. We anticipate releasing it within the next few weeks.
 
 ## Major Fixes And Progress
 
@@ -39,15 +43,19 @@ We also introduced a new feature **builds runner**, that will eventually enable 
 - **Different Config Directory:** To avoid conflicts when working on Daytona within a Daytona project, we now use a different configuration directory in development mode. This allows you to have distinct settings for development and production environments.
 - **Purge Command Enhancement:** We've simplified the purge command. Now, instead of manually stopping and starting the Daytona server, the command automatically handles these steps and efficiently deletes all workspaces. Additionally, we've fixed an issue that prevented the local container registry volume from being wiped clean.
 
-## Announcing Pre-Builds and Multiple IDs Support For Git Providers and More!
+## Coming Soon: Pre-Builds and Multiple IDs Support For Git Providers
 
-- **Pre-Builds Feature:** Ability to configure pre-builds for quicker startup times. Accelerates project startup with pre-built images or dev containers. This feature eliminates the need for lengthy build processes, allowing you to dive into your projects more quickly.
-- **Multiple Identities Support for Git Providers:** Support users with multiple GitHub accounts. This will provide greater flexibility and convenience for users working with multiple accounts.
-- **Commit URL Clone Fix:** Ensures successful cloning of repositories from non-main branches.
+We're not slowing down! Here's what we're working on for the near future:
+
+1. **Pre-Builds Feature:** Ability to configure pre-builds for quicker startup times. Accelerates project startup with pre-built images or dev containers. This feature eliminates the need for lengthy build processes, allowing you to dive into your projects more quickly.
+2. **Multiple Identities Support for Git Providers:** Support users with multiple GitHub accounts. This will provide greater flexibility and convenience for users working with multiple accounts.
+3. **Commit URL Clone Fix:** Ensures successful cloning of repositories from non-main branches.
 
 ## Conclusion
 
-To conclude, we explored *server port notifications* and *builds runner(stealth mode)* features, major fixes such as *allow users to submit the form earlier* and *proper API JSON validation*. Also, discussed upcoming *pre-builds* and *multi-GitHub account support* features.  Join our [slack](https://go.daytona.io/slack) to ask your questions.
+We hope these updates excite you as much as they do us. Excited to see how you'll use them to streamline your work. We are commited to offer the best possible experience for Daytona users and developers. Stay tuned for more updates as we continue to innovate.
+
+Want to learn more or have questions? Join our Slack community: [Daytona Community Slack](https://go.daytona.io/slack).
 
 ## References
 
