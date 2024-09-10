@@ -83,7 +83,6 @@ Now, open the `devcontainer.json` file and add the following configuration:
 }
 ```
 
-- **Image**: The TypeScript and Node.js development container.
 - **Post Commands**: Automatically install necessary packages and start Srcbook after the container is created.
 - **Forward Ports**: Ensures Srcbook runs on `localhost:3000`.
 

@@ -5,3 +5,7 @@ Description: [I am a passionate Full Stack Developer on a mission to leverage te
 Author Image: ![oreoluwa-ajayi](./assets/oreoluwa-ajayi.JPG)
 Author LinkedIn: [LinkedIn](https://www.linkedin.com/in/oreoluwaajayi)
 Author Twitter: [Twitter](https://twitter.com/oreoluwa_ruth)
+Company Name: [Swarmauri]
+Company Description: [Swarmauri is all about power your AI by providing open-source tools to build, test, and deploy Artificial Intelligence]
+Company Logo Dark: [URL or path to your company logo in .png format, min width 512px for dark background]
+Company Logo White: ![company-logo](../authors/assets/oreoluwa-ajayi-logo.PNG)
