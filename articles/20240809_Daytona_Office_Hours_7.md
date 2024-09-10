@@ -20,7 +20,7 @@ As always, in our recent community hours, we reviewed the latest developments an
 
 This release introduced a major feature, Project Configs feature that allows you to streamline the project creation process. This new feature will enable users to save project details like repository information, build settings, and environment variables. Also, lets users pre-configure your projects and quickly create new workspaces. Project Configs are a stepping stone towards prebuilds, a feature that will let you set up ready-to-use development environments even faster.
 
-#### How it works
+#### How It Works
 
 - Create Configs: Use the `daytona project-config` command to define your project configurations.
 - Reuse Configs: When creating a new workspace, simply specify the desired project config.
