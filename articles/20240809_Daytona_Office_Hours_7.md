@@ -44,5 +44,4 @@ Have questions? Need more details? Don't hesitate to reach out. Join our Slack [
 ## References
 
 - To learn more about the `Project Configs` refer to our recent release [notes](https://github.com/daytonaio/daytona/releases/tag/v0.24.0)
-
 - Watch our office hours video on YouTube: [Daytona Office Hours #7](https://www.youtube.com/watch?v=nVQWa4jmwLc)
