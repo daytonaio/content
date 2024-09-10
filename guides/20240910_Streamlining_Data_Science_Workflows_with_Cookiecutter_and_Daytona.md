@@ -6,14 +6,13 @@ author: "Busayo Samuel"
 tags: ["Datascience", "devcontainer", "cookiecutter"]
 ---
 
-# Title of the Article
+# Streamlining Data Science Workflows with Cookiecutter and Daytona
 
 ## Introduction
 
-Have you ever felt like you're spending more time setting up projects than actually coding and analyzing data? You're not alone. Tools like Cookiecutter Data Science and Daytona were created so that you don't have to create projects from scratch and reinvent the wheel each time you want to jump into a new project.
+Have you ever felt like you're spending more time setting up projects than actually coding and analyzing data? You're not alone. Tools like [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/) and Daytona were created so that you don't have to create projects from scratch and reinvent the wheel each time you want to jump into a new project.
 
-Cookiecutter gives you a solid starting point for your data science projects. Daytona, on the other hand, ensures everyone on your team is working with the same tools and setup, no matter where they are. The devcontainer feature supported by Daytona makes sure your models work the same way in testing as they do in the real world, especially when you are working with a team. Essentially, these tools will make your life easier when it comes to deploying and scaling data science projects.
-
+Cookiecutter gives you a solid starting point for your data science projects. Daytona, on the other hand, ensures everyone on your team is working with the same tools and setup, no matter where they are. The [Dev Container feature](/definitions/20240910_definition_dev_container_feature.md) supported by Daytona makes sure your models work the same way in testing as they do in the real world, especially when you are working with a team. Essentially, these tools will make your life easier when it comes to deploying and scaling data science projects.
 
 ### TL;DR
 
@@ -32,38 +31,31 @@ Before starting this tutorial, you need to have the following:
 - A basic understanding of command-line interfaces
 - Familiarity with Git and version control concepts
 
-The following need to also be installed:
+Along with Python, the following need to also be installed:
 
-- Visual Studio Code
-- Docker
-- Python
-- Remote - Containers extension for VS Code
+- **Visual Studio Code**: An free source-code editor developed by Microsoft.
+- **Docker**: An open-source platform that enables developers to build, deploy, run, update, and manage applications in containers.
+- **Remote - Containers**: An extension for Visual Studio Code allows developers to use a Docker container as a full-featured development environment,
 
 ### Installation Guide:
 
-1.  Install Visual Studio Code:
-
-Download and install VS Code from the [official website](https://code.visualstudio.com/)
+1. Download and install VS Code from the [official website](https://code.visualstudio.com/)
 
 2. Install Docker:
 
-- For Windows and Mac: Download Docker Desktop [here](https://www.docker.com/products/docker-desktop)
-- For Linux: Follow [this installation instructions](https://docs.docker.com/engine/install/) for your specific distribution.
+    - For Windows and Mac: Download Docker Desktop [here](https://www.docker.com/products/docker-desktop)
+    - For Linux: Follow [this installation instructions](https://docs.docker.com/engine/install/) for your specific distribution.
 
 3. Install the Remote - Containers extension in VS Code:
 
-- Open VS Code
-- Go to the Extensions view (Ctrl+Shift+X)
-- Search for "Remote - Containers"
-- Click "Install"
+    - Open VS Code
+    - Go to the Extensions view (Ctrl+Shift+X)
+    - Search for "Remote - Containers"
+    - Click "Install"
 
-4. Install Git:
+4. Download and install Git [here](https://git-scm.com/downloads)
 
-Download and install Git [here](https://git-scm.com/downloads)
-
-5. Install Python:
-
-- Install the [latest version of python](https://www.python.org/downloads/) from their website.
+5. Install the [latest version of python](https://www.python.org/downloads/) from their website.
 
 Now that you have the necessary tools installed, let's proceed with the step-by-step guide to add a Dev Container to your project.
 
@@ -181,10 +173,10 @@ Your `devcontainer.json` file should look like this:
     "postCreateCommand": "pip install -r requirements.txt"
 }
 ```
+
 ### Step 7: Create a requirements file
 
 At the root of your project, create a `requirements.txt` file. List any additional packages you want to include in your project (e.g., Flask) by adding the package names to the file. These packages will automatically be installed via the `postCreateCommand`.
-
 
 ### Step 8: Rebuild and Test
 
@@ -213,9 +205,9 @@ By using this feature, you'll be able to:
 
 To use this feature in your Daytona cloud development environment, follow these steps:
 
-1. Install Daytona. You can follow these [installation steps](https://www.daytona.io/docs/installation/installation/) to install daytona for you operating system.
+- Install Daytona. You can follow these [installation steps](https://www.daytona.io/docs/installation/installation/) to install daytona for you operating system.
 
-1. After you have successfully installed Daytona, start a new server and create a new Daytona workspace.
+- After you have successfully installed Daytona, start a new server and create a new Daytona workspace.
 
 ```bash
 daytona server
@@ -227,22 +219,20 @@ daytona create --code
 The command above creates a new Daytona workspace and opens the workspace in VSCode.
 When prompted to either enter a **custom Repository URL** or **Create from sample**, select the latter. Then select Python from the options of sample workspaces.
 
-
-2. Navigate to the `.devcontainer/devcontainer.json` file and edit the file by adding a new feature:
+- Navigate to the `.devcontainer/devcontainer.json` file and edit the file by adding a new feature.
 
 ```json
   "features": {
     "ghcr.io/bellatrick/feature-starter/cookiecutter:latest": {}
-  },
-
+  }
 ```
 The feature in the json file will install Cookiecutter Datascience into your workspace along with required packages.
 
-3. Commit this file to your repository.
+- Commit this file to your repository.
 
-4. Open the Command Palette (F1 or Ctrl+Shift+P). Type and select **Remote-Containers: Rebuild Container**.
+- Open the Command Palette (F1 or Ctrl+Shift+P). Type and select **Remote-Containers: Rebuild Container**.
 
-6. Once the workspace is rebuilt, you can now use the `ccds` command to create a new data science project structure:
+- Once the workspace is rebuilt, you can now use the `ccds` command to create a new data science project structure.
 
 ```bash
 ccds
@@ -250,8 +240,7 @@ ccds
 
 This will prompt you for project details and create a new data science project structure based on the cookiecutter-data-science template.
 
-Note: If the `ccds` command is not recognized, try running `source /usr/local/bin/activate-cookiecutter-ds` first to activate the environment.
-
+Note: If the `ccds` command is not recognized, try running `source /usr/local/bin/activate-cookiecutter-ds` first to activate the environment then run `ccds` again.
 
 ## Step 3: Confirmation
 
@@ -280,7 +269,9 @@ Remember, the goal is to spend less time on setup and more time on solving data 
 
 ## References
 
-[Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/#with-pip)
-[Daytona Documentation](https://www.daytona.io/docs/)
-[VS Code Remote - Containers](https://code.visualstudio.com/docs/devcontainers/containers)
-[Dev Containers Features](https://containers.dev/features)
+The code for the dev container feature is available on [Github](https://github.com/bellatrick/feature-starter). You should also check out these resources:
+
+- [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/#with-pip)
+- [Daytona Documentation](https://www.daytona.io/docs/)
+- [VS Code Remote - Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+- [Dev Containers Features](https://containers.dev/features)
