@@ -19,7 +19,9 @@ In this guide, we will walk you through the setup and configuration of the Dayto
 To follow along with this guide, you should have:
 - A basic understanding of [AWS](../definitions/20240904_definition_aws.md), [AWS IAM](../definitions/20240904_definition_aws_iam.md) and [EC2 Instances](../definitions/20240904_definition_ec2_instances.md). 
 - Access to an AWS account with programmatic access and appropriate permissions.
-- installed Daytona [install from [here](https://www.daytona.io/docs/installation/installation/)]
+- installed Daytona latest version [install from [here](https://www.daytona.io/docs/installation/installation/)]
+
+**Note:** *[In this guide, Daytona v0.29.1 is used]*
  
 ### TL;DR
 
@@ -84,53 +86,36 @@ daytona server
 
 ![Start Daytona Server](assets/20240904_setting_up_daytona_aws_provider_img_9.png)
 
-### Step 2.2: Configure Daytona Server
-Run the command below to configure the server and change the Registry URL to `https://download.daytona.io/daytona-providers-pre-release`. 
-
-```bash
-daytona server configure
-```
-
-![server configure](assets/20240904_setting_up_daytona_aws_provider_img_10.png)
-
-```bash
-#Restart the server
-daytona server
-```
-
-![server restart](assets/20240904_setting_up_daytona_aws_provider_img_11.png)
-
-### Step 2.3: Install the AWS Provider
+### Step 2.2: Install the AWS Provider
 Run the below command, You will be prompted to choose a provider. Select `aws-provider` from the list
 
-**Note:** *[AWS Provider is still in alpha release state]*
 
 ```bash
 daytona provider install
 ```
 
-![aws provider install](assets/20240904_setting_up_daytona_aws_provider_img_12.png)
+![aws provider install](assets/20240904_setting_up_daytona_aws_provider_img_10.png)
 
-### Step 2.4: Set the AWS Target
+### Step 2.3: Set the AWS Target
 Run the following command to initiate the target setup process:
 
 ```bash
 daytona target set
 ```
 
-  #### Step 2.4.1: Select the AWS Provider
+  #### Step 2.3.1: Select the AWS Provider
     
   You will be prompted to choose a provider. Select aws-provider from the list
 
-  ![aws-provider](assets/20240904_setting_up_daytona_aws_provider_img_13.png)
+  ![aws-provider](assets/20240904_setting_up_daytona_aws_provider_img_11.png)
 
-  #### Step 2.4.2 :Create a New Target
+  #### Step 2.3.2 :Create a New Target
     
   After selecting the AWS provider, choose to create a new target and enter a unique and descriptive name for your AWS target (e.g., `daytona-aws-target`).
 
-  ![New Target](assets/20240904_setting_up_daytona_aws_provider_img_14.png)
+  ![New Target](assets/20240904_setting_up_daytona_aws_provider_img_12.png)
 
-  #### Step 2.4.3: Configure AWS target options
+  #### Step 2.3.3: Configure AWS target options
 
   You will be prompted to enter several configuration options specific to AWS. Daytona AWS Provider offers a range of target options that can be customized 
   according to your requirements. Here’s a detailed overview:
@@ -170,7 +155,7 @@ daytona target set
     
     The type of volume. Default is gp3. Get the list of available volume types [here](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
 
-  ![AWS target options](assets/20240904_setting_up_daytona_aws_provider_img_15.png)
+  ![AWS target options](assets/20240904_setting_up_daytona_aws_provider_img_13.png)
 
 Click enter after filling all the details.
 
@@ -182,13 +167,13 @@ To verify daytona AWS provider has been successfully installed or not, run the b
 daytona provider list
 ```
 
-![provider list](assets/20240904_setting_up_daytona_aws_provider_img_16.png)
+![provider list](assets/20240904_setting_up_daytona_aws_provider_img_14.png)
     
 ## Common Issues and Troubleshooting
 While setting up and configuring the AWS Provider with Daytona, you may encounter some common issues. Below are troubleshooting tips to help resolve them:
 1. **Problem:** Daytona Provider Errors
 
-   **Solution:** If Daytona encounters errors while interacting with the AWS Provider, it could be due to bugs or limitations in the current alpha release. Checking the [Daytona AWS Provider GitHub repository](https://github.com/daytonaio/daytona-provider-aws) for any known issues or updates can help resolve these problems. Additionally, consider updating to the latest version if you're using an outdated release.
+   **Solution:** If Daytona encounters errors while interacting with the AWS Provider, it could be due to bugs or limitations in the recent release. Checking the [Daytona AWS Provider GitHub repository](https://github.com/daytonaio/daytona-provider-aws) for any known issues or updates can help resolve these problems. Additionally, consider updating to the latest version if you're using an outdated release.
 
 2. **Problem:** Invalid AWS Credentials
 
@@ -210,7 +195,7 @@ While setting up and configuring the AWS Provider with Daytona, you may encounte
 ## Conclusion
 By following this guide, you have successfully set up and configured the Daytona AWS Provider to manage EC2 workspaces. This setup allows you to leverage AWS’s powerful infrastructure for your development and deployment tasks. 
 
-As you explore this integration, be mindful of its `alpha` status and the potential for updates or changes in future releases. For the latest information, refer to the official Daytona [documentation](https://www.daytona.io/docs/).
+For the latest information, refer to the official Daytona [documentation](https://www.daytona.io/docs/).
 
 ## References
 
@@ -218,7 +203,6 @@ As you explore this integration, be mindful of its `alpha` status and the potent
   
 - [Daytona.io AWS Provider Repository](https://github.com/daytonaio/daytona-provider-aws)
   
-- [Daytona Releases - v0.25.2](https://github.com/daytonaio/daytona/releases/tag/v0.25.2)
 
 <!-- Note on Definitions -->
 <!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
