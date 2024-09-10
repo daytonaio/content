@@ -3,7 +3,7 @@ title: "Daytona Community Hours #7"
 description: " A detailed summary of the new releases, patches, or updates that were mentioned during the Daytona Community Hours #7 YouTube video."
 date: 2024-08-09
 author: "Team Daytona"
-tags: ["News", "Update"]
+tags: ["News", "Update", "Project Configs"]
 ---
 
 As always, in our recent community hours, we reviewed the latest developments and improvements at Daytona. We're excited to walk you through our latest release and give you a sneak peek at what's coming next. Let's dive right in!
