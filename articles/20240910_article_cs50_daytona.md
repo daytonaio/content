@@ -1,6 +1,3 @@
-Absolutely! Here's the updated `.md` file that includes the process for setting up the CS50 devcontainer environment:
-
-```markdown
 ---
 title: "CS50 DevBox: A Local Development Environment for CS50"
 description: "How to set up a local development environment for CS50 using devcontainers as an alternative to Codespaces."
@@ -25,7 +22,7 @@ This guide will help you create a local development environment for CS50 using V
 
 ## Problems with Local Development Setup
 
-Learners often face issues when setting up a local environment for CS50, such as:
+Software Engineers often face issues when setting up a local environment for CS50, such as:
 
 - **Dependency Conflicts**: Installing necessary tools can cause issues, especially on Windows.
 - **Cross-Platform Inconsistencies**: Getting CS50 tools like `check50` and `submit50` to work can be challenging on different operating systems.
@@ -125,57 +122,11 @@ This configuration ensures:
      python3 hello.py
      ```
 
-### Step 6: Push the Setup to GitHub (Optional)
-
-1. **Create a GitHub repository**.
-2. **Add a remote and push your code**:
-   ```bash
-   git remote add origin <your-repository-url>
-   git add .
-   git commit -m "Initial commit with DevBox setup"
-   git push -u origin master
-   ```
-
-### Step 7: Document Your Setup
-
-1. **Create a README.md**:
-   In the root of your project, create a README.md file:
-
-   ```markdown
-   # CS50 DevBox
-
-   This repository contains a devcontainer setup for creating a consistent development environment for the CS50 course using Docker and VS Code.
-
-   ## Setup Instructions
-
-   1. **Install Prerequisites**:
-      - [VS Code](https://code.visualstudio.com/)
-      - [Docker Desktop](https://www.docker.com/products/docker-desktop)
-      - [Remote - Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-
-   2. **Clone the Repository**:
-      ```bash
-      git clone <repository-url>
-      cd cs50-devbox
-      ```
-
-   3. **Open in VS Code and Reopen in Container**:
-      - Open the project in VS Code.
-      - VS Code will prompt you to reopen in the container. Accept this prompt.
-
-   4. **Build and Run Code**:
-      - Use the integrated terminal to compile and run C or Python code.
-
-   ## Contributing
-
-   Feel free to contribute by opening issues or submitting pull requests.
-   ```
-
 ---
 
 ## Conclusion
 
-By following this guide, you have set up a **DevBox** for working on the CS50 course using devcontainers. This approach ensures that all necessary tools and dependencies are available in an isolated environment, making it easier to focus on learning and coding without worrying about system configuration issues.
+By following this guide, you have set up a **DevBox** for working on the CS50 course using devcontainers. This approach ensures that all necessary tools and dependencies are available in an isolated environment, making it easier to focus on coding without worrying about system configuration issues.
 
 This setup can serve as a reliable alternative to Codespaces, allowing you to customize your own environment and share it with others.
 
