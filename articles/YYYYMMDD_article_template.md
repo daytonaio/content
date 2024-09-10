@@ -1,8 +1,9 @@
 ---
-title: "Title of the Article"
-description: "A brief description of what the article covers."
+title: "Title of the Article. The title should be a max. of 55 characters."
+description: "A brief description of what the article covers. The description should be a maximum of 160 characters."
 date: YYYY-MM-DD
 author: "Author Name"
+tags: ["one", "two", "three"]
 ---
 
 # Title of the Article
@@ -64,4 +65,8 @@ print("Hello, World!")
 <!-- Note on Definitions -->
 <!-- Throughout this article, link relevant terms to their definitions using inline Markdown links. -->
 <!-- Format: [term](/definitions/term.md) -->
+<<<<<<< HEAD
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+=======
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+>>>>>>> 49d2e46 (fixed merge conflict)
