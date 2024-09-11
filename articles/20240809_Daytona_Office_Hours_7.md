@@ -1,6 +1,6 @@
 ---
 title: "Daytona Community Hours #7"
-description: " A detailed summary of the new releases, patches, or updates that were mentioned during the Daytona Community Hours #7 YouTube video."
+description: " A detailed summary of the new releases, patches, and updates that were mentioned during the Daytona Community Hours #7 YouTube video."
 date: 2024-08-09
 author: "Team Daytona"
 tags: ["News", "Update", "Project Configs"]
