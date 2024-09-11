@@ -1,7 +1,7 @@
 ---
 title: "Interactive TypeScript Notebooks in Daytona with Srcbook"
-description: "This guide will demonstrate how to integrate Srcbook, an interactive TypeScript notebook environment, with Daytona, a development env management tool."
-date: 2024-09-10
+description: "This guide will demonstrate how to integrate Srcbook, an interactive TypeScript notebook environment, with Daytona, allowing you to manage and deploy Workspaces — reproducible development environments based on standard OCI containers, with built-in support for the Dev Container standard."
+date: 2024-09-11
 author: "Oreoluwa Ajayi"
 ---
 
@@ -64,22 +64,11 @@ touch .devcontainer/devcontainer.json
 Now, open the `devcontainer.json` file and add the following configuration:
 ```json
 {
-  "name": "Srcbook Development Environment",
-  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-12",
-  "features": {
-    "docker-in-docker": "latest"
-  },
-  "postCreateCommand": "npm install",
-  "postStartCommand": "srcbook start",
-  "forwardPorts": [3000],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.vscode-typescript-next",
-        "srcbook.srcbook-extension"
-      ]
-    }
-  }
+  "name": "Srcbook Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20",
+  "postCreateCommand": "npm install -g srcbook",
+  "postAttachCommand": "srcbook start",
+  "forwardPorts": [2150]
 }
 ```
 
@@ -93,30 +82,28 @@ Now, open the `devcontainer.json` file and add the following configuration:
 2. **Start Daytona**:
    Once inside the development container, start Daytona by running:
    ```bash
-   daytona server -y
+   daytona serve
    ```
    Daytona will now be ready to manage the Srcbook project.
 
 
 ### Step 2.4: Creating a New Srcbook Project
 
-With Daytona running and the environment set up, you can now create a new Srcbook project:
+With Daytona running and the environment set up, you can now create a repository with a devcontainer for Srcbook:
 
+# Example
 ```bash
-srcbook new my-first-notebook
+daytona create https://github.com/oreoluwa212/srcbooks-devcontainer
 ```
+`![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_create.png)` 
 
 This command will generate a new TypeScript notebook for interactive coding.
 
 ### Step 2.5: Running Srcbook
 
-Once your notebook is created, Daytona will manage the project lifecycle, and Srcbook will be available at `localhost:3000`. To access your interactive environment, open your browser and navigate to `http://localhost:3000`.
+Once your interactive TypeScript notebook environment, Daytona will manage the project lifecycle.
+`![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_running.png)` 
 
-```bash
-daytona start my-first-notebook
-```
-
-This command will ensure your Srcbook project is running inside the Daytona-managed container.
 
 ### Code Snippet Example
 
@@ -128,21 +115,18 @@ const greet = (name: string) => {
 greet('TypeScript Developer');
 ```
 
-Run the above code interactively within Srcbook. The result will be displayed directly in your browser.
-
 ---
 
 ## Step 3: Confirmation
 
 To confirm that your setup is correct, ensure the following:
-
-- Srcbook is running, and you can access it at `localhost:3000`.
-- Daytona is managing the development environment seamlessly.
-- Your interactive notebook is able to execute TypeScript code.
+- Docker engine is up and running.
+- Daytona server is running, and you can check status at `localhost:3986/health`
+- Your interactive notebook is up and ready for use.
 
 **Tip**: If you see any errors, review your `devcontainer.json` for misconfigurations, or restart Daytona using:
 ```bash
-daytona restart
+daytona serve
 ```
 
 ## Common Issues and Troubleshooting
@@ -155,18 +139,18 @@ daytona restart
 
 **Solution**: Check that Daytona is running correctly by using:
 ```bash
-daytona status
+daytona
 ```
 
 ## Conclusion
 
 By following this guide, you’ve successfully integrated Srcbook with Daytona, creating an efficient cloud-based TypeScript notebook environment. This setup allows for seamless interactive coding, project management, and environment control.
 
-Explore more advanced Srcbook features by visiting the [Srcbook Documentation](https://srcbook.github.io) and continue to refine your Daytona setup by reading through the [Daytona Documentation](https://daytona.dev/docs).
+Explore more advanced Srcbook features by visiting the [Srcbook Documentation](https://srcbook.com) and continue to refine your Daytona setup by reading through the [Daytona Documentation](https://www.daytona.io/docs).
 
 ## References
 
-- [Srcbook GitHub Repository](https://github.com/srcbook/srcbook)
-- [Srcbook Website](https://srcbook.github.io)
-- [Daytona Documentation](https://daytona.dev/docs)
+- [Srcbook GitHub Repository](https://github.com/srcbookdev/srcbook)
+- [Srcbook Website](https://srcbook.com)
+- [Daytona Documentation](https://www.daytona.io/docs)
 ```
