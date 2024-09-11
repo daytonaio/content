@@ -10,36 +10,34 @@ tags: ["Data Science", "dev container", "cookiecutter"]
 
 ## Introduction
 
-Have you ever felt like you're spending more time setting up projects than coding and analyzing data? You're not alone. Tools like [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/) and Daytona were created so that you don't have to create projects from scratch and reinvent the wheel each time you want to jump into a new project.
+Have you ever felt like you're spending more time setting up projects than coding and analyzing data? You're not alone. Tools like [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/) and [Daytona](https://www.daytona.io/docs/about/what-is-daytona/) were created so that you don't have to create projects from scratch and reinvent the wheel each time you want to jump into a new project.
 
 Cookiecutter gives you a solid starting point for your data science projects. On the other hand, Daytona ensures everyone on your team is working with the same tools and setup, no matter where they are. The [Dev Container feature](/definitions/20240910_definition_dev_container_feature.md) supported by Daytona makes sure your models work the same way in testing as they do in the real world, especially when you are working with a team. Essentially, these tools will make your life easier when it comes to deploying and scaling data science projects.
 
-![Flow Chart of Daytona, Dev container feature and CookieCutter ](/assets/20240910_Streamlining_Data_Science_Workflows_with_Cookiecutter_and_Daytona.png)
-
 ### TL;DR
 
-- **Standardized Project Structure**: Cookiecutter Data Science provides a flexible template to organize data science projects.
+- This article provides a step-by-step guide for setting up a [dev container](https://www.daytona.io/definitions/d/development-container) with specific features for data science projects.
+- Integration of Cookiecutter Data Science with Daytona's dev containers creates a powerful workflow for data scientists.
+- Cookiecutter provides standardized project templates, while Daytona ensures consistent development environments.
+- The process involves installing Daytona, creating a [workspace](https://www.daytona.io/definitions/d/daytona-workspace), adding Cookiecutter feature, and using the 'ccds' command to generate project structures.
+- This setup aims to reduce time spent on project configuration and increase focus on actual data analysis and modeling.
 
-- **Reproducible Environments**: By using Cookiecutter with Daytona’s devcontainer feature, you can create consistent and reproducible development environments.
-
-- **Improved Workflow**: Combining Cookiecutter and Daytona automates the setup of project structures and environments. This allows data scientists to spend more time on analysis and modeling.
-
-- **Enhanced Collaboration**: Standardized templates and reproducible environments help data scientists, machine learning engineers, and DevOps professionals work better together and share knowledge more effectively.
+![Flow Chart of Daytona, Dev container feature and CookieCutter ](assets/20240910_Streamlining_Data_Science_Workflows_with_Cookiecutter_and_Daytona.png)
 
 ### Prerequisites
 
 Before starting this tutorial, you need to have the following:
 
 - A basic understanding of command-line interfaces
-- Familiarity with Git and version control concepts
+- Familiarity with [Git](definitions/20240819_definition_git.md) and [version control](https://www.daytona.io/definitions/v/version-control) concepts
 
-Along with Python, the following need to also be installed:
+Along with [Python](definitions/20240820_defintion_python.md), the following need to also be installed:
 
 - **Visual Studio Code**: A free source code editor developed by Microsoft.
 - **Docker**: An open-source platform that enables developers to build, deploy, run, update, and manage applications in containers.
 - **Remote - Containers**: An extension for Visual Studio Code allows developers to use a Docker container as a full-featured development environment,
 
-### Installation Guide:
+### Installation Guide
 
 1. Download and install VS Code from the [official website](https://code.visualstudio.com/)
 
@@ -63,9 +61,9 @@ Now that you have the necessary tools installed, let's proceed with the step-by-
 
 ## What are Dev Container Features?
 
-Dev container features are pre-built, shareable components that can be easily added to your development container. They allow you to modularize and customize your dev container setup, making adding tools, runtimes, or libraries to your environment easier.
+Dev Container features are pre-built, shareable components that can be easily added to your development container. They allow you to modularize and customize your Dev Container setup, making adding tools, runtimes, or libraries to your environment easier.
 
-Benefits of using dev container features include:
+Benefits of using Dev Container features include:
 - Simplified configuration
 - Improved consistency across team environments
 - Easier maintenance and updates
@@ -106,7 +104,6 @@ To add features, include a `features` object in your `devcontainer.json`:
 ```json
 {
     "name": "Python Data Science",
-    "dockerFile": "Dockerfile",
     "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
     "features": {
         "ghcr.io/devcontainers/features/python:1": {},
@@ -119,7 +116,7 @@ To add features, include a `features` object in your `devcontainer.json`:
 
 ### Step 4: Add VS Code Extensions
 
-While not strictly part of dev container features, adding relevant VS Code extensions enhances your development experience:
+While not strictly part of Dev Container features, adding relevant VS Code extensions enhances your development experience:
 
 ```json
 "extensions": [
@@ -184,18 +181,18 @@ At the root of your project, create a `requirements.txt` file. List any addition
 
 After making changes:
 - Press F1 or Ctrl+Shift+P.
-- Type and select Remote-Containers: Reopen in Container.
-- Alternatively, click the blue button at the bottom-left corner of VS Code and select Reopen in Container from the modal.
+- Type and select **Remote-Containers: Reopen in Container**.
+- Alternatively, click the blue button at the bottom-left corner of VS Code and select **Reopen in Container** from the modal.
 
 VS Code will then build the container based on the configuration in your `devcontainer.json` file and open your project inside the container. This process might take a few minutes the first time, as it needs to download and set up the container environment.
 
 Once the container is running, you can start coding and running your application within this isolated environment.
 
-You can find other lists of useful dev container features [here](https://containers.dev/features)
+You can find other lists of useful Dev Container features at [containers.dev/features](https://containers.dev/features)
 
 ## Using Cookiecutter Data Science Feature in Daytona
 
-Combining Cookiecutter Data Science with Daytona's dev container features creates a powerful synergy for data science workflows. This integration allows you to leverage the standardized project structure of Cookiecutter Data Science within the reproducible environment provided by Daytona's dev containers.
+Combining Cookiecutter Data Science with Daytona's Dev Container features creates a powerful synergy for data science workflows. This integration allows you to leverage the standardized project structure of Cookiecutter Data Science within the reproducible environment provided by Daytona's Dev Containers.
 
 By using this feature, you'll be able to:
 
@@ -209,13 +206,10 @@ To use this feature in your Daytona cloud development environment, follow these 
 
 - Install Daytona. You can follow these [installation steps](https://www.daytona.io/docs/installation/installation/) to install Daytona for your operating system.
 
-- After you have successfully installed Daytona, start a new server and create a new Daytona workspace.
+- After you have successfully installed Daytona, start a new server and create a new [Daytona workspace](https://www.daytona.io/definitions/d/daytona-workspace).
 
 ```bash
 daytona server
-```
-
-```bash
 daytona create --code
 ```
 The command above creates a new Daytona workspace and opens the workspace in VSCode.
@@ -255,27 +249,57 @@ To confirm that you've successfully set up your Daytona workspace with Cookiecut
 
 If you can complete these steps without errors, you've successfully set up your Daytona workspace with Cookiecutter Data Science!
 
+## Maximizing Your New Setup: Best Practices
+
+Now that you've set up your environment, let's explore some best practices. These will help you make the most of your Cookiecutter and Daytona setup.
+
+1. **USE VERSION CONTROL**
+Always use version control (like Git) for your projects. This allows you to track changes, collaborate with others, and roll back if needed. Remember to:
+
+    - Create a .gitignore file to exclude large data files, sensitive information, and environment-specific files.
+    - Commit early and often with meaningful commit messages.
+
+2. **DOCUMENT YOUR WORK**
+    - Maintain a comprehensive README.md file that explains the project's purpose, setup        instructions, and usage guidelines.
+    - Use docstrings in your Python functions and classes.
+    - Keep a change log to track major updates to your project.
+
+3. **MANAGE DEPENDENCIES**
+    - Use virtual environments (like venv or conda) to isolate project dependencies.
+    - Maintain a requirements.txt file or use tools like Poetry or Pipenv for more advanced dependency management.
+
+4. **FOLLOW CODING BEST PRACTICES**
+    - Follow PEP 8 style guidelines for Python code.
+    - Use meaningful variable and function names.
+    - Write modular, reusable code.
+    - Include unit tests for your functions.
+
+5. **ENSURE REPRODUCIBILITY**
+    - Use random seeds when necessary to ensure consistent results.
+    - Document the steps to reproduce your analysis, including data preprocessing.
+    - Consider using tools like DVC (Data Version Control) for managing large datasets.
+
+6. **SECURE SENSITIVE INFORMATION**
+    - Never commit sensitive information (like API keys or passwords) to version control.
+    - Use environment variables or dedicated config files for managing secrets.
+
 ## Common Issues and Troubleshooting
 
-**Unable to run daytona code**: If you are using WSL2, you might run into issues while trying to run the command, `daytona code`.
-
-**Solution:**: Follow the instructions in [this Github issue](https://github.com/daytonaio/daytona/issues/282).
+**Unable to run daytona code**: If you are using WSL2, you might run into issues while trying to run the command, `daytona code`. Follow the instructions in [this Github issue](https://github.com/daytonaio/daytona/issues/282).
 
 ## Conclusion
 
-By integrating Cookiecutter Data Science templates with Daytona's dev container features, you've set up a powerful, reproducible environment for your data science projects. As your projects grow or as you onboard new team members, this setup makes it easy to maintain best practices and consistent workflows.
+By integrating Cookiecutter Data Science templates with Daytona's Dev Container features, you've set up a powerful, reproducible environment for your data science projects. As your projects grow or as you onboard new team members, this setup makes it easy to maintain best practices and consistent workflows.
 
-Moving forward, consider exploring more advanced features of both Cookiecutter and Daytona. You might want to customize the Cookiecutter template to better fit your needs or explore additional dev container features to further enhance your development environment.
+Moving forward, consider exploring more advanced features of both Cookiecutter and Daytona. You might want to customize the Cookiecutter template to better fit your needs or explore additional Dev Container features to further enhance your development environment.
 
 Remember, the goal is to spend less time on setup and more time on solving data science problems. With this workflow in place, you're well-equipped to do just that. Happy coding!
 
 ## References
 
-The code for the dev container feature is available on [Github](https://github.com/bellatrick/feature-starter). You should also check out these resources:
+The code for the Dev Container feature is available on [Github](https://github.com/bellatrick/feature-starter). You should also check out these resources:
 
 - [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/#with-pip)
 - [Daytona Documentation](https://www.daytona.io/docs/)
 - [VS Code Remote - Containers](https://code.visualstudio.com/docs/devcontainers/containers)
 - [Dev Containers Features](https://containers.dev/features)
-
-
