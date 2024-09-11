@@ -6,7 +6,7 @@ author: "Musab Habeeb"
 tags: ["Daytona", "GitLab", "DevOps", "Continuous Integration", "Cloud Development"]
 ---
 
-# Building a Codespace-like Experience with Daytona and GitLab
+# Building a Codespace-Like Experience With Daytona and GitLab
 
 ## Introduction
 
