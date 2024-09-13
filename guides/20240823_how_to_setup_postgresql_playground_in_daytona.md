@@ -10,7 +10,7 @@ tags: ["daytona", "postgresql", "devcontainer"]
 
 ## Introduction
 
-This guide will walk you through on how to set up [PostgresQL] database playground in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md) which is a development environment management platform. In a world where companies what to increase development [productivity](definitions/20240819_definition_productivity.md) and individual developers want to start coding right away, Daytona is the best option.
+This guide will walk you through on how to set up [PostgresQL](definitions/20240823_definitions_postgresql.md) database playground in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md) which is a development environment management platform. In a world where companies what to increase development [productivity](definitions/20240819_definition_productivity.md) and individual developers want to start coding right away, Daytona is the best option.
 
 ### TL;DR
 
@@ -30,7 +30,7 @@ In order to follow this guide, you’ll need the software installations below on
 
 ## Overview of PostgreSQL
 
-[PostgreSQL] or also known as Postgres is the world’s most advanced open source relational database system that has been in use by the developer community for over 35 years with so much great love shown to it because of its strong reputation for reliability, feature robustness and performance.
+[PostgreSQL](definitions/20240823_definitions_postgresql.md) or also known as Postgres is the world’s most advanced open source relational database system that has been in use by the developer community for over 35 years with so much great love shown to it because of its strong reputation for reliability, feature robustness and performance.
 
 PostgreSQL has some much benefits on to why one should use it some are highlighted below:
 - [Open Source](definitions/20240819_definition_open source.md) and Free: It’s a completely free software to install and use and also its source code is freely available online to see how it’s implemented under the hood. You don’t have to spend more to purchase license which might be very expensive
