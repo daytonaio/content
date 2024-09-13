@@ -59,7 +59,7 @@ For this guide we're going to create a devcontainer for PostgreSQL using a confi
 
 Let's get started. I will use the terminal to create mine in my linux PC but the commands should work fine on Mac terminal or the Windows powershell.
 
-- ### **Step 1**: Create a Directory
+### **Step 1**: Create a Directory
 
   Create a directory with any name of your choice and go into it. I use the name `postgresql-playground-in-daytona` and move into the directory.
 
@@ -67,7 +67,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
   ```
 
-- ### **Step 2**: Create the `.devcontainer` directory
+### **Step 2**: Create the `.devcontainer` directory
 
   Create a hidden directory called `.devcontainer` and enter it. This is where our devcontainer config file will be stored.
 
@@ -75,7 +75,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   mkdir .devcontainer && cd .devcontainer
   ```
 
-- ### **Step 3**: Create `devcontainer.json` file
+### **Step 3**: Create `devcontainer.json` file
 
   Now, create a file called `devcontainer.json` and paste the following code into it and then save it.
 
@@ -108,7 +108,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   - **`postCreateCommand`:** Executes the specified command after the development container is created:
       - `psql -U ${POSTGRES_USER} -c 'SELECT 1;'`: Connects to the PostgreSQL database using the environment variable `POSTGRES_USER` and executes a simple query to verify the database connection.
 
-- ### **Step 4**: Create `docker-compose.yml` file
+### **Step 4**: Create `docker-compose.yml` file
 
   While still in the same directory, create another file named `docker-compose.yml` and paste the code below into it. Save it
 
@@ -141,7 +141,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   The `volumes` section at the end defines the local directory `postgres-data` for data persistence.
 
 
-- ### **Step 5**: Create `.env` file
+### **Step 5**: Create `.env` file
 
   In the same directory, create the last file named `.env` and paste the environment variables below into the new file being created by you. Save the file.
 
@@ -164,7 +164,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   │   └── devcontainer.json
   ```
 
-- ### **Step 6:** Go back to the top level
+### **Step 6:** Go back to the top level
 
   Paste the code below to go back to the top level of the directory you created
 
@@ -182,7 +182,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   ├── .git
   ```
 
-- ### **Step 7:** Initialize and make commit
+### **Step 7:** Initialize and make commit
 
   Paste the code below to initialize git and commit the changes you made to your directory.
 
@@ -192,7 +192,7 @@ Let's get started. I will use the terminal to create mine in my linux PC but the
   git commit -m "inital commit"
   ```
 
-- ### **Step 8:** Create a repository in GitHub
+### **Step 8:** Create a repository in GitHub
 
   Create a repository without README, LICENSE or .gitignore files from GitHub web using the name of the directory you created. Mine is `postgresql-playground-in-daytona`.
 
@@ -214,7 +214,7 @@ Now, we have successfully created a GitHub repository needed to spin up a devcon
 
 Before starting this section be sure `daytona` is installed in your PC
 
-- ### Step 1
+### Step 1
 
   Run the code below to setup `daytona` server
 
@@ -230,7 +230,7 @@ Before starting this section be sure `daytona` is installed in your PC
 
   ![screenshot of successfully running daytona](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_2.jpg)
   
-- ### Step 2
+### Step 2
 
   Run the command below to add your git provider if you haven't setup one
 
@@ -240,7 +240,7 @@ Before starting this section be sure `daytona` is installed in your PC
 
   Follow the prompts after running the command to setup your provider. In our case it's GitHub
 
-- ### Step 3
+### Step 3
 
   Run this command in terminal to add your preferred IDE.
 
@@ -248,7 +248,7 @@ Before starting this section be sure `daytona` is installed in your PC
   daytona ide
   ```
 
-- ### Step 4
+### Step 4
 
   Modified the terminal command below to create the dev environment of the repository you created in GitHub and follow the prompts after you run it. Don't forget to use the correct GitHub URL, in my case it's `https://github.com/c0d33ngr/postgresql-playground-in-daytona.git`
 
@@ -256,7 +256,7 @@ Before starting this section be sure `daytona` is installed in your PC
   daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
   ```
 
-- ### Step 5
+### Step 5
 
   Run this command to open in the IDE you selected when setting up your preferred one
 
@@ -270,7 +270,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
 
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
 
-- ### Login to PostgreSQL using `psql` and username `postgres`
+### Login to PostgreSQL using `psql` and username `postgres`
 
   ```bash
   psql -U postgres
@@ -280,7 +280,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
 
   ![screenshot of logging in via psql](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_3.jpg)
   
-- ### Create a Table
+### Create a Table
   **Example**: The SQL code below creates a table named `users`.
 
   ```sql
@@ -297,7 +297,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
   ![screenshoot of creating a database](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_4.jpg)
 
 
-- ### Insert a Record
+### Insert a Record
   **Example**: The SQL codes insert different records into the table `users` that was created by us above
 
   ```sql
@@ -311,7 +311,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
 
   ![screenshot of inserting records to table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_5.jpg)
 
-- ### Read Data from Table
+### Read Data from Table
   **Example**: This SQL query selects all records in the table `users` and return them.
 
   ```sql
@@ -322,7 +322,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
 
   ![screenshot of selecting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_6.jpg)
 
-- ### Update a Table Record
+### Update a Table Record
   **Example**: This SQL query updates the table `users` record where `id` is 1.
 
   ```sql
@@ -333,7 +333,7 @@ Follow the set of instructions in the next section to interact with the PostgreS
 
   ![screenshot of updating a record in the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_7.jpg)
 
-- ### Delete a Table Record
+### Delete a Table Record
   **Example**: This SQL code deletes the record where `id` is 2.
 
   ```sql
