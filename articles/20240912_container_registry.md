@@ -1,13 +1,12 @@
 ---
-title: "Streamlining Projects with Daytona’s Container Registry"  
-description: "Learn how Daytona’s container registry enables reusable project configurations across multiple workspaces, using Docker to ensure consistency."  
+title: "Daytona container-registry feature explained"  
+description: "Learn how Daytona’s container registry enables reusable project configurations across multiple workspaces, using Docker to ensure consistency and speed up development environments."  
 date: 2024-09-12  
 author: "Oreoluwa Ajayi"  
-tags: ["Dev Containers", "Container-registry", "Daytona", "Docker", "Development"]  
-
+tags: ["Dev Containers", "Container registry", "Daytona", "Docker", "Development"]
 ---
 
-# Streamlining Projects with Daytona’s Container Registry
+# Daytona container-registry feature explained
 
 ## Introduction
 
@@ -15,114 +14,89 @@ In modern development workflows, maintaining consistency across various environm
 
 Docker plays a pivotal role here by packaging the development environment into containers, ensuring that all dependencies, tools, and configurations are bundled together. With Daytona’s integration, developers can quickly launch these environments across different systems, avoiding the "works on my machine" problem.
 
+In addition to storing custom container images in Daytona’s registry, the platform speeds up workspace creation by reusing images rather than rebuilding them from scratch, allowing consistent environments across workspaces.
+
 ### TL;DR
 
 - **Reusable Configurations**: Daytona’s container registry stores Docker-based project configurations for reuse across workspaces.
 - **Easy Setup**: Simplifies setting up and managing Docker containers, reducing onboarding time.
-- **Consistency**: Docker ensures that development environments remain consistent across different machines and platforms.
+- **Speed and Consistency**: Docker ensures that development environments remain consistent across different machines and platforms, while Daytona speeds up workspace creation by reusing container images.
 
 ## Adding a Project Configuration
 
 Daytona allows developers to create reusable configurations, including Docker containers, to maintain project consistency. This reduces the need for repetitive setup, allowing you to define build configurations, environment variables, and Docker-based setups.
 
-**Steps to Create a Docker-Backed Project Configuration:**
+**Steps to Create a Docker-Backed Project Configuration**:
 
 1. Run the following command to start creating a project configuration:
    ```bash
    daytona project-config add
    ```
 
-   ![Run Daytona Project Config Command](/assets/20240912_daytona_container_registry_img1.png)
+   ![Run Daytona Project Config Command](/articles/assets/20240912_daytona_container_registry_img1.png)
 
 2. Enter the repository URL:
    ```bash
-   https://github.com/your-username/sample-project
+   https://github.com/oreoluwa212/srcbooks-devcontainer
    ```
 
-   ![Enter Repository URL](/assets/20240912_daytona_container_registry_img2.png)
+   ![Enter Repository URL](/articles/assets/20240912_daytona_container_registry_img2.png)
 
 3. Choose the **Docker-backed build configuration**. Daytona integrates with Docker to provide options such as:
    - **Automatic**: Daytona detects and sets up the container automatically based on project files.
    - **Devcontainer**: Use a predefined [Devcontainer](https://code.visualstudio.com/docs/remote/containers) file to define the Docker environment.
-   - **Custom image**: You can also provide a custom Docker image for the project.
+   - **Custom image**: You can also provide a custom Docker image for the project, stored and managed in Daytona's container registry.
 
-   ![Choose Docker Backed Build Configuration](/assets/20240912_daytona_container_registry_img3.png)
+   ![Choose Docker Backed Build Configuration](/articles/assets/20240912_daytona_container_registry_img3.png)
+
+4. Define the devcontainer path as seen below
+   ![Define devcontainer](/articles/assets/20240912_daytona_container_registry_img4.png)
 
 4. Define environment variables in the format `KEY=VALUE`. To reference machine variables, use `$VALUE`.
+   ![Define Environment Variables](/articles/assets/20240912_daytona_container_registry_img5.png)
 
-5. Name the configuration, e.g., `MyProjectConfig`. Daytona will store this configuration, allowing you to reuse the Docker-based setup across various workspaces.
+5. Name the configuration, e.g., `new-book`. Daytona will store this configuration, allowing you to reuse the Docker-based setup across various workspaces. Reuse of pre-built container images from Daytona's registry ensures faster setup and avoids redundant builds.
 
-   ![Define Environment Variables](/assets/20240912_daytona_container_registry_img4.png)
+   ![Define Environment Variables](/articles/assets/20240912_daytona_container_registry_img6.png)
 
-### Example Command:
+5. Project configuration is successfully added
 
-```bash
-daytona project-config add --repo https://github.com/sample-repo --build Devcontainer --env "API_KEY=$API_KEY" --name MyProjectConfig
-```
+   ![Project config created](/articles/assets/20240912_daytona_container_registry_img7.png)
 
-Here, Docker is used to ensure that your development environment is packaged and can be replicated easily, whether for a local workspace or in the cloud.
-
-### Image or Diagram
-
-![Daytona Project Config Example](/assets/20240912_daytona_container_registry_img5.png)
 
 ## Managing Docker-Based Project Configurations
 
 Once created, Daytona provides intuitive commands to manage project configurations stored in Docker containers. With Docker's containerization, developers can ensure the same environment is used across different machines or team members.
 
-**Key Command:**
-- **View a Project Configuration**:
+**View a Project Configuration**:
    ```bash
    daytona project-config info
    ```
 
-   ![View Project Configuration](/assets/20240912_daytona_container_registry_img6.png)
-
-- **List All Docker-Based Configurations**:
-   ```bash
-   daytona project-config list
-   ```
-
-   ![List All Configurations](/assets/20240912_daytona_container_registry_img7.png)
-
-This command allows you to list all Docker-backed configurations, providing details on repository URLs, build configurations (e.g., Devcontainer), and default settings.
-
 ### Example Output:
-
-```
-Name                Repository                Build        Default
-─────────────────────────────────────────────────────────────────────
-MyProjectConfig     https://github.com/user/project    Devcontainer    Yes
-```
+   ![List All Configurations](/articles/assets/20240912_daytona_container_registry_img9.png)
+   ![List Config info](/articles/assets/20240912_daytona_container_registry_img8.png)
 
 ## Updating and Deleting Project Configurations
 
 Daytona makes it easy to modify existing Docker-based configurations or delete those no longer needed.
 
-- **Update a Project Configuration**:
    ```bash
    daytona project-config update
    ```
-
-   ![Update Project Configuration](/assets/20240912_daytona_container_registry_img8.png)
-
-- **Delete a Project Configuration**:
-   ```bash
-   daytona project-config delete
-   ```
-
-   ![Delete Project Configuration](/assets/20240912_daytona_container_registry_img9.png)
-
-By updating the project configuration, you can modify the Docker container settings, including environment variables and build configurations. This helps keep the containerized development environments up-to-date.
+By updating the project configuration, you can modify the Docker container settings, including environment variables and build configurations. This helps keep the containerized development environments up-to-date. Any changes to the images stored in Daytona's registry are reflected across all associated workspaces, ensuring consistent environments.
 
 ## Conclusion
 
-Daytona’s container registry, integrated with Docker, offers an efficient way to manage and reuse project configurations. Docker’s ability to package environments ensures consistency, while Daytona simplifies the process of deploying and managing these containers across multiple workspaces. Whether working with a devcontainer or a custom Docker image, Daytona’s project configuration feature ensures that development remains smooth and consistent.
+Daytona’s container registry, integrated with Docker, offers an efficient way to manage and reuse project configurations. Docker’s ability to package environments ensures consistency, while Daytona simplifies the process of deploying and managing these containers across multiple workspaces. By leveraging Daytona’s container registry, developers can not only ensure consistency but also reduce setup times and enhance team collaboration.
+
+Whether working with a devcontainer or a custom Docker image, Daytona’s project configuration feature ensures that development remains smooth, efficient, and adaptable to changes.
 
 ## References
 
 - [Daytona Documentation](https://www.daytona.io)
 - [Docker Overview](https://www.docker.com/get-started)
 - [Dev Containers vs. Traditional Development Environments](https://www.daytona.io/dotfiles/dev-containers-vs-traditional-development-environments)
+- [Daytona Projects Configuration documentation](https://www.daytona.io/docs/usage/projects)
 
-```
+---
