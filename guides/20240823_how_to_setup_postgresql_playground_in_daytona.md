@@ -347,8 +347,3 @@ By following the steps above you should have learned how to set up a working Pos
 *[PostgreSQL](https://postgresq.ort)*
 
 *[DevContainer](https://containers.dev)*
-
-<!-- Note on Definitions -->
-<!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
-<!-- Format: [term](/definitions/term.md) -->
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
