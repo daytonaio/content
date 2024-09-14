@@ -39,10 +39,6 @@ Daytona allows developers to create reusable configurations, including Docker co
 
 2. Enter the repository URL:
 
-   ```bash
-   https://github.com/oreoluwa212/srcbooks-devcontainer
-   ```
-
    ![Enter Repository URL](/articles/assets/20240912_daytona_container_registry_img2.png)
 
 3. Choose the **Docker-backed build configuration**. Daytona integrates with Docker to provide options such as:
@@ -82,18 +78,6 @@ daytona project-config info
 ![List All Configurations](/articles/assets/20240912_daytona_container_registry_img9.png)
 ![List Config info](/articles/assets/20240912_daytona_container_registry_img8.png)
 
-## Updating and Deleting Project Configurations
-
-Daytona makes it easy to modify existing Docker-based configurations or delete those no longer needed.
-
-```bash
-daytona project-config update
-```
-
-By updating the project configuration, you can modify the Docker container settings, including environment variables and build configurations. This helps keep the containerized development environments up-to-date. Any changes to the images stored in Daytona's registry are reflected across all associated workspaces, ensuring consistent environments.
-
-To include the "container registry feature" in your article, where developers can select a workspace using the "daytona code" command, you could add a section before the conclusion:
-
 ## Using Daytona's Container Registry to Launch a Workspace
 
 Daytona’s standout container-registry feature is the ability to quickly select and launch a workspace from its container registry. After creating and storing Docker-backed project configurations, developers can instantly access these workspaces without repeating the setup process.
@@ -121,6 +105,46 @@ By leveraging this feature, you can instantly launch any containerized workspace
    daytona list
    ```
    ![Registry](/articles/assets/20240912_daytona_container_registry_img13.png)
+
+
+## Setting a Custom Build Registry
+
+Daytona allows developers to set a custom build registry for images built by the Daytona builder. Once an image is built, it can be uploaded to a custom container registry, speeding up the creation of future workspaces for the same project.
+
+### Prerequisites:
+
+Before setting a custom build registry, ensure you have an account on a container registry with permission to push and pull images `(e.g., Docker Desktop)`.
+
+### Steps to Configure a Custom Build Registry:
+
+1. Open a terminal window and execute the following command:
+
+   ```bash
+   daytona container-registry set
+   ```
+
+   This command will prompt you to enter the necessary details.
+
+2. Set the required options:
+
+   - **Server URL**: Enter the full URL to your custom container registry.
+   - **Username**: Provide the username Daytona should use to log in to the container registry.
+   - **Password**: Enter the password for your registry account.
+
+   After entering these details, press Enter to complete the configuration.
+
+3. Configure the server by executing the following command:
+
+   ```bash
+   daytona server configure
+   ```
+
+   Press Enter repeatedly until the “Builder Registry” section is highlighted.
+
+4. The interface will display a list of options for the builder registry. Select the custom registry you just configured using the Up/Down arrow keys. Press Enter until the command exits to save the configuration.
+
+By setting up a custom build registry, you can store your Docker images securely in a registry of your choice, speeding up workspace creation by reusing images instead of building them from scratch.
+
 
 ## Conclusion
 
