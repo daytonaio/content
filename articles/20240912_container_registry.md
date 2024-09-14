@@ -116,6 +116,12 @@ Here’s how you can launch a containerized workspace using the `daytona code` c
 
 By leveraging this feature, you can instantly launch any containerized workspace, reducing the time it takes to set up and manage environments, which is particularly useful for teams working across multiple projects.
 
+4. Type the following command to view registry:
+   ```bash
+   daytona list
+   ```
+   ![Registry](/articles/assets/20240912_daytona_container_registry_img13.png)
+
 ## Conclusion
 
 Daytona’s container registry, integrated with Docker, offers an efficient way to manage and reuse project configurations. Docker’s ability to package environments ensures consistency, while Daytona simplifies the process of deploying and managing these containers across multiple workspaces. By leveraging Daytona’s container registry, developers can not only ensure consistency but also reduce setup times and enhance team collaboration.
