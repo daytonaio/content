@@ -73,7 +73,7 @@ Now, open the `devcontainer.json` file and add the following configuration:
 ```
 
 - **Post Commands**: Automatically install necessary packages and start Srcbook after the container is created.
-- **Forward Ports**: Ensures Srcbook runs on `localhost:3000`.
+- **Forward Ports**: Ensures Srcbook runs on `localhost:2150` as specified in the devcontainer.json file.
 
 ### Step 2.3: Launching the Devcontainer and Daytona
 
@@ -95,27 +95,15 @@ With Daytona running and the environment set up, you can now create a repository
 ```bash
 daytona create https://github.com/oreoluwa212/srcbooks-devcontainer
 ```
-`![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_create.png)` 
+![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_create.png)
 
 This command will generate a new TypeScript notebook for interactive coding.
 
 ### Step 2.5: Running Srcbook
 
-Once your interactive TypeScript notebook environment, Daytona will manage the project lifecycle.
-`![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_running.png)` 
+Once your interactive TypeScript notebook environment, you can proceed to open with your preferred IDE following this [daytona IDE docs](https://www.daytona.io/docs/usage/ide)
+![Daytona Setup Screenshot](../articles/assets/20241110_srcbook_running.png) 
 
-
-### Code Snippet Example
-
-```typescript
-const greet = (name: string) => {
-  return `Hello, ${name}`;
-}
-
-greet('TypeScript Developer');
-```
-
----
 
 ## Step 3: Confirmation
 
@@ -148,9 +136,11 @@ By following this guide, you’ve successfully integrated Srcbook with Daytona, 
 
 Explore more advanced Srcbook features by visiting the [Srcbook Documentation](https://srcbook.com) and continue to refine your Daytona setup by reading through the [Daytona Documentation](https://www.daytona.io/docs).
 
+
 ## References
 
 - [Srcbook GitHub Repository](https://github.com/srcbookdev/srcbook)
 - [Srcbook Website](https://srcbook.com)
 - [Daytona Documentation](https://www.daytona.io/docs)
-```
+
+---
