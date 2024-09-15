@@ -9,7 +9,7 @@ author: "Oreoluwa Ajayi"
 
 ## Introduction
 
-[This guide will demonstrate how to integrate Srcbook, an interactive TypeScript notebook environment, with Daytona, a development environment management tool. This integration provides an efficient cloud-based interactive development environment for TypeScript projects. You'll learn how to set up and run Srcbook within a Daytona-managed container.]
+This guide will demonstrate how to integrate Srcbook, an interactive TypeScript notebook environment, with Daytona, a development environment management tool. This integration provides an efficient cloud-based interactive development environment for TypeScript projects. You'll learn how to set up and run Srcbook within a Daytona-managed container.
 
 ### TL;DR
 
