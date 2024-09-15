@@ -34,11 +34,7 @@ Before getting started, ensure you have the following prerequisites:
    ```
    Confirm Docker is installed by running the above command. The output should display the Docker version.
 
-- **Step 1.2**: Install Daytona by running:
-   ```bash
-   curl -sf -L https://download.daytona.io/daytona/install.sh | sudo bash
-   ```
-   Ensure that Daytona is properly installed by verifying the `daytona` command is recognized.
+- **Step 1.2**: Install Daytona and ensure that Daytona is properly installed by verifying the `daytona` command is recognized.
 
 ## Step 2: Main Process
 
@@ -71,9 +67,9 @@ Now, open the `devcontainer.json` file and add the following configuration:
   "forwardPorts": [2150]
 }
 ```
-
-- **Post Commands**: Automatically install necessary packages and start Srcbook after the container is created.
-- **Forward Ports**: Ensures Srcbook runs on `localhost:2150` as specified in the devcontainer.json file.
+- **Note:**
+- *Post Commands*: Automatically install necessary packages and start Srcbook after the container is created.
+- *Forward Ports*: Ensures Srcbook runs on `localhost:2150` as specified in the devcontainer.json file.
 
 ### Step 2.3: Launching the Devcontainer and Daytona
 
