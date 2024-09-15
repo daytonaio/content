@@ -29,39 +29,27 @@ Daytona allows developers to create reusable configurations, including Docker co
 
 **Steps to Create a Docker-Backed Project Configuration**:
 
-1. Run the following command to start creating a project configuration:
+- [x] Run the following command to start creating a project configuration:
 
    ```bash
    daytona project-config add
    ```
 
-   ![Run Daytona Project Config Command](/articles/assets/20240912_daytona_container_registry_img1.png)
+- [x] Enter the repository URL `e.g https://github.com/oreoluwa212/srcbooks-devcontainer` in the provided space.
 
-2. Enter the repository URL:
-
-   ![Enter Repository URL](/articles/assets/20240912_daytona_container_registry_img2.png)
-
-3. Choose the **Docker-backed build configuration**. Daytona integrates with Docker to provide options such as:
+- [x] Choose the **Docker-backed build configuration**. Daytona integrates with Docker to provide options such as:
 
    - **Automatic**: Daytona detects and sets up the container automatically based on project files.
    - **Devcontainer**: Use a predefined [Devcontainer](https://code.visualstudio.com/docs/remote/containers) file to define the Docker environment.
    - **Custom image**: You can also provide a custom Docker image for the project, stored and managed in Daytona's container registry.
 
-   ![Choose Docker Backed Build Configuration](/articles/assets/20240912_daytona_container_registry_img3.png)
+- [x] Define the devcontainer path `.devcontainer/devcontainer.json`
 
-4. Define the devcontainer path as seen below
-   ![Define devcontainer](/articles/assets/20240912_daytona_container_registry_img4.png)
+- [x] Define environment variables in the format `KEY=VALUE`. To reference machine variables, use `$VALUE`.
 
-5. Define environment variables in the format `KEY=VALUE`. To reference machine variables, use `$VALUE`.
-   ![Define Environment Variables](/articles/assets/20240912_daytona_container_registry_img5.png)
+- [x] Name the configuration, e.g., `new-book`. Daytona will store this configuration, allowing you to reuse the Docker-based setup across various workspaces. Reuse of pre-built container images from Daytona's registry ensures faster setup and avoids redundant builds.
 
-6. Name the configuration, e.g., `new-book`. Daytona will store this configuration, allowing you to reuse the Docker-based setup across various workspaces. Reuse of pre-built container images from Daytona's registry ensures faster setup and avoids redundant builds.
-
-   ![Define Environment Variables](/articles/assets/20240912_daytona_container_registry_img6.png)
-
-7. Project configuration is successfully added
-
-   ![Project config created](/articles/assets/20240912_daytona_container_registry_img7.png)
+- [x] Project configuration is successfully added
 
 ## Managing Docker-Based Project Configurations
 
@@ -72,11 +60,6 @@ Once created, Daytona provides intuitive commands to manage project configuratio
 ```bash
 daytona project-config info
 ```
-
-### Example Output:
-
-![List All Configurations](/articles/assets/20240912_daytona_container_registry_img9.png)
-![List Config info](/articles/assets/20240912_daytona_container_registry_img8.png)
 
 ## Using Daytona's Container Registry to Launch a Workspace
 
@@ -89,11 +72,8 @@ Here’s how you can launch a containerized workspace using the `daytona code` c
    ```bash
    daytona code
    ```
-   ![Select Workspace](/articles/assets/20240912_daytona_container_registry_img10.png)
 
 2. You'll be prompted to select a workspace from the available container configurations. These workspaces are based on pre-built Docker images stored in Daytona’s container registry, ensuring consistency and fast setup times.
-   
-   ![Select Workspace](/articles/assets/20240912_daytona_container_registry_img11.png)
 
 3. Once selected, Daytona will pull the associated container image from the registry (if not already cached) and spin up the development environment in seconds, complete with all the dependencies and configurations.
    ![Select Workspace](/articles/assets/20240912_daytona_container_registry_img12.png)
