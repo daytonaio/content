@@ -82,60 +82,20 @@ Now, create a file called `devcontainer.json` and paste the following code into 
 ```json
 {
     "name": "PostgreSQL Dev Container Playground",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-      "ghcr.io/itsmechlark/features/postgresql:1.5.0": {}
-    },
-    "postCreateCommand": "sudo bash .devcontainer/setup-postgres.sh"  
+        "ghcr.io/itsmechlark/features/postgresql:1": {
+            "version": "latest"
+        }
+    }  
 }
 ```
 
 The `devcontainer.json` code content defines a configuration for a PostgreSQL development container environment.
 
 - **`name`:** Set the name of the development container environment to ``PostgreSQL Dev Container Playground``.
+- **`image`:** This uses a base Ubuntu image from Microsoft image repository.
 - **`features`:** This configuration adds PostgreSQL setup in the environment.
-- **`postCreateCommand`:** This is use for running a bash command as superuser to edit a PostgreSQL config file. When the command runs the script `setup-postgres.sh` successfully, password would not be required to login to `psql`.
-
-### **Step 4**: Create `setup-postgres.sh` file
-
-While still in the same directory, create another file named `setup-postgres.sh` and paste the code below into it. Save it
-
-```bash
-#!/usr/bin/env bash
-
-# Get version number
-major_version_number=$(psql --version | cut -d' ' -f3 | cut -d'.' -f1)
-
-# Path to the pg_hba.conf file
-PGHBA_CONF="/etc/postgresql/${major_version_number}/main/pg_hba.conf"
-
-# Backup the original configuration file
-cp $PGHBA_CONF ${PGHBA_CONF}.bak
-
-# Modify the pg_hba.conf file to use 'trust' authentication
-cat <<EOF > $PGHBA_CONF
-# Database administrative login by Unix domain socket
-local   all             all                                     trust
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
-
-# "local" is for Unix domain socket connections only
-local   all             all                                     trust
-# IPv4 local connections:
-host    all             all             127.0.0.1/32            trust
-# IPv6 local connections:
-host    all             all             ::1/128                 trust
-# Allow replication connections from localhost, by a user with the
-# replication privilege.
-local   replication     all                                     trust
-host    replication     all             127.0.0.1/32            trust
-host    replication     all             ::1/128                 trust
-EOF
-
-# Restart PostgreSQL to apply changes
-sudo service postgresql restart
-
-echo "PostgreSQL configuration updated and service restarted."
-```
-The `setup-postgres.sh` file contain bash commands to edit `pg_hba.conf` which allow user `postgres` to login to `psql` without password.
 
 Your directory structure should look like mine below if you follow along using the same directory name as I did earlier.
 
@@ -143,10 +103,9 @@ Your directory structure should look like mine below if you follow along using t
 postgresql-playground-in-daytona/
 ├── .devcontainer/
 │   ├── devcontainer.json
-│   └── setup-postgres.sh
 ```
 
-### **Step 6:** Go back to the top level
+### **Step 4:** Go back to the top level
 
 Paste the code below to go back to the top level of the directory you created
 
@@ -164,7 +123,7 @@ and you should see this output in the terminal:
 ├── .git
 ```
 
-### **Step 7:** Initialize and make commit
+### **Step 5:** Initialize and make commit
 
 Paste the code below to initialize git and commit the changes you made to your directory.
 
@@ -174,7 +133,7 @@ git add .
 git commit -m "inital commit"
 ```
 
-### **Step 8:** Create a repository in GitHub
+### **Step 6:** Create a repository in GitHub
 
 Create a repository without README, LICENSE or .gitignore files from GitHub web using the name of the directory you created. Mine is `postgresql-playground-in-daytona`.
 
@@ -240,10 +199,19 @@ daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
 
 ### Step 5
 
-Run this command to open in the IDE you selected when setting up your preferred one
+Run the code in your terminal to confirm the workspace is created for the repository.
 
 ```bash
-daytona code
+daytona ls
+```
+You should see that the workspace is running
+
+### Step 6
+
+Run this command to open workspace in the IDE you selected when setting up your preferred one. The name of the workspace is usually the repository name if you didn't modify it when prompted in the creation of the workspace. In my case, it's `postgresql-playground-in-daytona.git`
+
+```bash
+daytona code WORKSPACE-NAME
 ```
 
 Now, your preferred IDE should be open and you'll be prompted to open in it in a devcontainer. Click it and you should see PostgreSQL prompt in your IDE terminal.
