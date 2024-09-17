@@ -208,13 +208,13 @@ You should see that the workspace is running
 
 ### Step 6
 
-Run this command to open workspace in the IDE you selected when setting up your preferred one. The name of the workspace is usually the repository name if you didn't modify it when prompted in the creation of the workspace. In my case, it's `postgresql-playground-in-daytona.git`
+Run this command to open workspace in the IDE you selected when setting up your preferred one. The name of the workspace is usually the repository name if you didn't modify it when prompted in the creation of the workspace. In my case, it's `postgresql-playground-in-daytona`
 
 ```bash
 daytona code WORKSPACE-NAME
 ```
 
-Now, your preferred IDE should be open and you'll be prompted to open in it in a devcontainer. Click it and you should see PostgreSQL prompt in your IDE terminal.
+Now, your preferred IDE should be open and you'll be prompted to reopen in container. Click it and the IDE should restart. Now, you should be in the workspace of the repository you created.
 
 Follow the set of instructions in the next section to interact with the PostgreSQL development environment.
 
