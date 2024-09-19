@@ -6,8 +6,6 @@ date: "2024-09-19"
 tags: ["dotfiles", "Daytona", "containerized development", "developer productivity"]
 ---
 
-
-
 # TL;DR
 
 Dotfiles help developers keep their environment settings consistent. This guide explains how to integrate your dotfiles into Daytona containers using tools like Chezmoi or Daytona’s native support for dotfile repositories.
@@ -27,26 +25,6 @@ Daytona is a development platform that provides isolated, consistent environment
 ### Challenges with Dotfiles in Containerized Development
 
 The challenge with containerized environments is that they’re typically clean every time you start them. Without your dotfiles, you lose the custom setups that make your workflow smooth. Reapplying them manually every time can be frustrating, so automating the process is important for efficiency.
-
----
-
-### Typical Project Structure with Dotfiles Integration
-
-Here’s how a project using dotfiles in Daytona might look:
-
-```
-my-project/
-├── .daytona.yml
-├── Dockerfile
-├── src/
-└── README.md
-```
-
-- **`.daytona.yml`**: Configuration file specifying your dotfiles repository.  
-- **`Dockerfile`**: Defines the containerized environment for your application.  
-- **`src/`**: Contains your project source code.  
-
----
 
 ### Bringing Your Dotfiles to Daytona
 
@@ -85,70 +63,6 @@ To avoid repetitive setup, Daytona supports dotfile integration. You can also us
 
    This allows you to maintain multiple dotfiles setups, applying them to various environments when needed.
 
----
-
-### Troubleshooting Common Issues
-
-1. **Dotfiles Not Loading in the Container**  
-   - **Cause**: The `.daytona.yml` file might be misconfigured.  
-   - **Solution**: Double-check the `repo` URL and `destination` path in the file. Test by manually cloning your dotfiles into the container.
-
-     ```bash
-     git clone https://github.com/your-username/dotfiles ~/dotfiles-test
-     ```
-
-2. **Chezmoi Command Not Found**  
-   - **Cause**: Chezmoi is not installed in the container.  
-   - **Solution**: Install it by adding this to your Dockerfile or installing manually:
-
-     ```bash
-     RUN sh -c "$(curl -fsLS chezmoi.io/get)" -- -b /usr/local/bin
-     ```
-
-3. **Conflicting Dotfiles Already Present**  
-   - **Cause**: The container may already have default configuration files.  
-   - **Solution**: Use Chezmoi’s `diff` command to preview changes before applying:
-
-     ```bash
-     chezmoi diff
-     ```
-
-4. **Incorrect Permissions on Dotfiles**  
-   - **Cause**: File ownership or permissions are incorrect.  
-   - **Solution**: Use `chown` and `chmod` to adjust permissions in the container.
-
-     ```bash
-     chown devuser:devuser ~/.bashrc
-     chmod 644 ~/.bashrc
-     ```
-
-5. **Environment Variables Not Applied**  
-   - **Cause**: Some dotfiles rely on environment variables.  
-   - **Solution**: Verify that the necessary environment variables are set in the `.daytona.yml` file or the container’s runtime configuration.
-
----
-
-### Example `.daytona.yml` Configuration
-```yaml
-dotfiles:
-  repo: "https://github.com/your-username/dotfiles"
-  destination: "/home/devuser"
-env:
-  - EDITOR=vim
-  - PATH=/home/devuser/bin:$PATH
-```
-
-This configuration ensures that your dotfiles are applied and key environment variables are loaded.
-
----
-
 ### Conclusion
 
 Bringing your dotfiles into Daytona ensures your personalized environment stays consistent, even in a container. Whether you use Daytona’s native support or a tool like Chezmoi, these simple steps will save you time and keep your development experience smooth and efficient. By automating this process, you can focus on coding rather than repeatedly configuring your setup.
-
----
-
-### References
-- [Chezmoi GitHub Repository](https://github.com/rio/features/tree/main/src/chezmoi)  
-- [Ultimate Guide to Dotfiles with Daytona](https://www.daytona.io/dotfiles/ultimate-guide-to-dotfiles)  
-
