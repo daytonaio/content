@@ -6,8 +6,11 @@ date: "2024-09-19"
 tags: ["dotfiles", "Daytona", "containerized development", "developer productivity"]
 ---
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9dc624a (initial commit for dotfiles article)
 # TL;DR
 
 Dotfiles help developers keep their environment settings consistent. This guide explains how to integrate your dotfiles into Daytona containers using tools like Chezmoi or Daytona’s native support for dotfile repositories.
@@ -28,6 +31,7 @@ Daytona is a development platform that provides isolated, consistent environment
 
 The challenge with containerized environments is that they’re typically clean every time you start them. Without your dotfiles, you lose the custom setups that make your workflow smooth. Reapplying them manually every time can be frustrating, so automating the process is important for efficiency.
 
+<<<<<<< HEAD
 ---
 
 ### Typical Project Structure with Dotfiles Integration
@@ -48,6 +52,8 @@ my-project/
 
 ---
 
+=======
+>>>>>>> 9dc624a (initial commit for dotfiles article)
 ### Bringing Your Dotfiles to Daytona
 
 To avoid repetitive setup, Daytona supports dotfile integration. You can also use tools like [Chezmoi](https://github.com/rio/features/tree/main/src/chezmoi) to automate the process. Here’s how you can bring your dotfiles into a Daytona container.
@@ -85,6 +91,7 @@ To avoid repetitive setup, Daytona supports dotfile integration. You can also us
 
    This allows you to maintain multiple dotfiles setups, applying them to various environments when needed.
 
+<<<<<<< HEAD
 ---
 
 ### Troubleshooting Common Issues
@@ -152,3 +159,8 @@ Bringing your dotfiles into Daytona ensures your personalized environment stays 
 - [Chezmoi GitHub Repository](https://github.com/rio/features/tree/main/src/chezmoi)  
 - [Ultimate Guide to Dotfiles with Daytona](https://www.daytona.io/dotfiles/ultimate-guide-to-dotfiles)  
 
+=======
+### Conclusion
+
+Bringing your dotfiles into Daytona ensures your personalized environment stays consistent, even in a container. Whether you use Daytona’s native support or a tool like Chezmoi, these simple steps will save you time and keep your development experience smooth and efficient. By automating this process, you can focus on coding rather than repeatedly configuring your setup.
+>>>>>>> 9dc624a (initial commit for dotfiles article)
