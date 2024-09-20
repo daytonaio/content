@@ -143,10 +143,18 @@ You should see logs like my screenshot
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
-Run this command in the new tab of your terminal
+Run the command below in the new tab of your terminal and follow the prompt instruction. It would ask you for a workspace name to use, just choose the default.
 
 ```bash
-daytona create https://github.com/c0d33ngr/playground-duckdb -–code
+daytona create https://github.com/c0d33ngr/playground-duckdb
+```
+
+After you successfully ran the above command you should see screenshot like mine showing your Daytona workspace that contains the DuckDB environment is running
+
+You can now run this command to open the DuckDB environment in your default IDE you choose when installing Daytona (Replace WORKSPACE-NAME with what you choose in the step above, in my case it's `playground-duckdb`).
+
+```bash
+daytona code WORKSPACE-NAME
 ```
 
 That’s it. Daytona will create a DuckDB playground environment for you and open it in your default IDE you set.
