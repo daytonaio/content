@@ -1,12 +1,12 @@
 ---
-title: "Title of the Guide. The title should be a max. of 55 characters."
+title: "Building DuckDB Playground Environment in Daytona Workspace."
 description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
 date: 2024-09-20
 author: "Jeffrey Whewhetu"
 tags: ["DuckDB", "OLAP", "daytona", "Python"]
 ---
 
-# How to Set Up DuckDB Playground Environment in Daytona Workspace
+# Building DuckDB Playground Environment in Daytona Workspace
 
 # Introduction
 
