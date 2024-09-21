@@ -9,6 +9,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Building DuckDB Playground Environment in Daytona Workspace
 
 # Introduction
+This is a comprehensive hands-on guide in using DuckDB database to perform a real world data project in a containerized workspace using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with Python via it's Client API. So it's a long ride and you can get a coffee closed by.
 
 # TL;DR
 
@@ -161,7 +162,186 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 
 # Using DuckDB as a Command Line Interface (CLI) Tool
 
+```sql
+duckdb
+```
+
+```sql
+CREATE TABLE bank_marketing AS
+FROM 'bank_marketing.csv';
+```
+
+```sql
+DESCRIBE bank_marketing;
+```
+
+```sql
+COPY (
+    SELECT 
+        client_id,
+        age,
+        REPLACE(job, '.', '_') AS job,
+        marital,
+        CASE 
+            WHEN education = 'unknown' THEN NULL 
+            ELSE REPLACE(education, '.', '_') 
+        END AS education,
+        CASE 
+            WHEN credit_default = 'yes' THEN 1 
+            ELSE 0 
+        END AS credit_default,
+        CASE 
+            WHEN mortgage = 'yes' THEN 1 
+            ELSE 0 
+        END AS mortgage
+    FROM 
+        bank_marketing
+) TO 'client.csv' (DELIMITER ',', HEADER TRUE);
+```
+
+```sql
+SELECT DISTINCT day
+FROM 'bank_marketing.csv';
+```
+
+```sql
+SELECT DISTINCT month
+FROM 'bank_marketing.csv';
+```
+
+```sql
+COPY (
+  SELECT 
+      client_id,
+      number_contacts,
+      contact_duration,
+      previous_campaign_contacts,
+      CASE
+          WHEN previous_outcome = 'success' THEN 1
+          ELSE 0
+      END AS previous_outcome,
+      CASE
+          WHEN campaign_outcome = 'yes' THEN 1
+          ELSE 0
+      END AS campaign_outcome,
+      MAKE_DATE(
+          2022,
+          CASE 
+            WHEN LOWER(month) = 'jan' THEN 1
+            WHEN LOWER(month) = 'feb' THEN 2
+            WHEN LOWER(month) = 'mar' THEN 3
+            WHEN LOWER(month) = 'apr' THEN 4
+            WHEN LOWER(month) = 'may' THEN 5
+            WHEN LOWER(month) = 'jun' THEN 6
+            WHEN LOWER(month) = 'jul' THEN 7
+            WHEN LOWER(month) = 'aug' THEN 8
+            WHEN LOWER(month) = 'sep' THEN 9
+            WHEN LOWER(month) = 'oct' THEN 10
+            WHEN LOWER(month) = 'nov' THEN 11
+            WHEN LOWER(month) = 'dec' THEN 12
+            ELSE NULL  -- default value if month is unknown
+          END,
+          CAST(day AS BIGINT)
+      ) AS last_contact_date
+  FROM bank_marketing
+) TO 'campaign.csv' (DELIMITER ',', HEADER TRUE);
+```
+
+```sql
+COPY (
+    SELECT 
+        client_id,
+        cons_price_idx,
+        euribor_three_months
+    FROM bank_marketing(test)
+) TO 'economics.csv' (DELIMITER ',', HEADER TRUE);
+```
+
+```sql
+SELECT *
+FROM 'client.csv';
+```
+
+```sql
+SELECT *
+FROM 'campaign.csv';
+```
+
+```sql
+SELECT *
+FROM 'economics.csv';
+```
+
 # Using DuckDB with Python through it's Client API
+
+```python
+import duckdb
+
+result = duckdb.sql(
+    """
+    SELECT AVG(campaign_outcome) AS campaign_outcome_mean
+    FROM 'campaign.csv';
+    """
+).fetchall()
+
+success_rate = result[0][0]  # Access the value directly
+
+print(f"Campaign success rate: {success_rate:.2%}")
+```
+
+```python
+import duckdb
+import matplotlib.pyplot as plt
+
+result = duckdb.sql(
+    """
+    SELECT
+        COALESCE(education, 'Unknown') AS education,
+        AVG(age) AS average_age
+    FROM
+      'client.csv'
+    GROUP BY
+        education
+    ORDER BY
+        education;
+    """
+).fetchdf()
+
+
+# Plot the results
+plt.figure(figsize=(8, 6))
+plt.bar(result['education'], result['average_age'])
+plt.xlabel('Education Level')
+plt.ylabel('Average Age')
+plt.title('Average Client Age by Education Level')
+plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
+plt.tight_layout()
+plt.show()
+```
+
+```python
+
+import duckdb
+import matplotlib.pyplot as plt
+
+result = duckdb.sql(
+    """
+    SELECT 
+        contact_duration,
+        campaign_outcome
+    FROM 'campaign.csv';
+    """
+).fetchdf()
+
+
+plt.figure(figsize=(8, 6))
+plt.scatter(result['contact_duration'], result['campaign_outcome'])
+plt.xlabel('Contact Duration')
+plt.ylabel('Campaign Outcome')
+plt.title('Relationship Between Contact Duration and Campaign Outcome')
+plt.yticks([0, 1])  # Set y-axis ticks to 0 and 1
+plt.show()
+```
 
 # Conclusion
 
@@ -173,3 +353,4 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 - [DuckDB CLI Data Processing](https://duckdb.org/2024/06/20/cli-data-processing-using-duckdb-as-a-unix-tool.html)
 - [DuckDB Python Examples](https://github.com/duckdb/duckdb/blob/main/examples/python/duckdb-python.py)
 - [DuckDB Wikipedia Page](https://en.wikipedia.org/wiki/DuckDB)
+- [DataCamp Data Project](https://www.datacamp.com/projects/1613)
