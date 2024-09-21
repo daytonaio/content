@@ -215,10 +215,7 @@ COPY (
         age,
         REPLACE(job, '.', '_') AS job,
         marital,
-        CASE 
-            WHEN education = 'unknown' THEN NULL 
-            ELSE REPLACE(education, '.', '_') 
-        END AS education,
+        REPLACE(education, '.', '_') AS education,
         CASE 
             WHEN credit_default = 'yes' THEN 1 
             ELSE 0 
@@ -329,7 +326,7 @@ import matplotlib.pyplot as plt
 result = duckdb.sql(
     """
     SELECT
-        COALESCE(education, 'Unknown') AS education,
+        education,
         AVG(age) AS average_age
     FROM
       'client.csv'
