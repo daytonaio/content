@@ -14,20 +14,20 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 
 - What you need to follow along with the guide.
 - What's DuckDB and Why use it
-- Set up a Daytona Workspace with DuckDB environment
+- Set up a Daytona Workspace with DuckDB [environment](20240819_definition_development environment.md)
 - Hands-on practice using DuckDB as a CLI Tool
-- Hands-on practice using DuckDB client API with Python
+- Hands-on practice using DuckDB client API with [Python](20240820_defintion_python.md)
 - Conclusion
 
 # Prerequisites
 
 To follow along with hands-on guide about DuckDB Playground in Daytona, you'll need to have the following;
 
-- An IDE(It could be VS Code, or JetBrains) or just a terminal.
-- Docker installation on your PC or Mac. Click here for more info
+- An [IDE](20240819_definition_integrated development environment _ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
+- [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click here for more info
 - Daytona installation on your PC or Mac. Click here for more info
-- A GitHub account to create a repository. Link here to create one, if you don’t have
-- Basic knowledge of Git and GitHub
+- A GitHub account to create a [repository](20240819_definition_repository.md). Link here to create one, if you don’t have
+- Basic knowledge of [Git](20240819_definition_git.md) and GitHub
 
 # What's DuckDB and Why use it
 
@@ -41,17 +41,17 @@ DuckDB has lots of features that make it stand out among other databases which f
 
 - **Simple:** It's very simple to install and perform embedded in-process operation.
 - **Portable:** Since it has no external dependencies, it's extremely portable and can be compiled for all major operating systems and CPU architectures.
-- **Feature-Rich:** DuckDB has some interesting features such as extensive support for SQL complex queries, integrations to languages like Python, R and Java and data can be stored as persistent, single-file databases.
+- **Feature-Rich:** DuckDB has some interesting features such as extensive support for SQL complex queries, integrations to languages like [Python](20240820_defintion_python.md), R and Java and data can be stored as persistent, single-file databases.
 - **Speed:** it's faster as it uses columnar-vectorized query execution engine which improves performance to run OLAP workloads.
-- **Free:** Lastly, it's a free open source database system which anyone can use because of its permissive MIT License.
+- **Free:** Lastly, it's a free [open source](20240819_definition_open source.md) database system which anyone can use because of its permissive MIT License.
 
 # Setting up Daytona Workspace for DuckDB Playground
 
-Alright that's enough reading, now let us get started to writing codes. To do so we’ll need to set up a DuckDB environment in a Daytona workspace. Let’s begin.
+Alright that's enough reading, now let us get started to writing codes. To do so we’ll need to set up a DuckDB [environment](20240819_definition_development environment.md) in a [Daytona workspace](20240819_definition_daytona workspace.md). Let’s begin.
 
 ## Step 1: Create a Github Repository
 
-First head to GitHub website and create a repository with the name of your choice. For my repository name, I’ll use `playground-duckdb`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-duckdb`
+First head to GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-duckdb`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-duckdb`
 
 ## Step 2: Move in to the Cloned repository
 
@@ -97,13 +97,13 @@ Paste this code into your `devcontainer.json` file
 }
 ```
 
-The `devcontainer.json` content contains configurations to start your DuckDB environment in a Daytona workspace.
+The `devcontainer.json` content contains configurations to start your DuckDB environment in a [Daytona workspace](20240819_definition_daytona workspace.md).
 
 - `name`: This sets the name of the development container environment to `DuckDB Playground`.
 - `image`: This uses a base Ubuntu image from Microsoft image repository.
 - `features`: This configuration add DuckDB installation setup in Daytona workspace
 
-After created and saved the `devcontainer.json` file, move up back to the root directory of your clone repository. For me, I run the command below
+After created and saved the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below
 
 ```bash
 cd ../..
@@ -143,7 +143,7 @@ You should see logs like my screenshot
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
-Run the command below in the new tab of your terminal and follow the prompt instruction. It would ask you for a workspace name to use, just choose the default.
+Run the command below in the new tab of your terminal and follow the prompt instruction. It would ask you for a [workspace](20240819_definition_daytona workspace.md) name to use, just choose the default.
 
 ```bash
 daytona create https://github.com/c0d33ngr/playground-duckdb
@@ -151,7 +151,7 @@ daytona create https://github.com/c0d33ngr/playground-duckdb
 
 After you successfully ran the above command you should see screenshot like mine showing your Daytona workspace that contains the DuckDB environment is running
 
-You can now run this command to open the DuckDB environment in your default IDE you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
+You can now run this command to open the DuckDB [environment](20240819_definition_development environment.md) in your default [IDE](20240819_definition_integrated development environment _ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
 
 ```bash
 daytona code WORKSPACE-NAME
