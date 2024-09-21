@@ -54,15 +54,15 @@ Alright that's enough reading, now let us get started to writing codes. To do so
 
 First head to GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-duckdb`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-duckdb`
 
-## Step 2: Move in to the Cloned repository
+## Step 2: Clone the repository using Git
 
 After creating the repository, the next step is to clone the repository into your local PC or Mac. To clone the repository, open your terminal and run this command `git clone https://github.com/USERNAME/REPOSITORY-NAME` but replace the placeholders with your github name and repository name you chose in step 1.
 
 In my case, it’s `git clone https://github.com/c0d33ngr/playground-duckdb`
 
-## Step 3: Create your `devcontainer.json` file
+## Step 3: Create a `requirements.txt` file
 
-The next step to take after cloning the repository is to move into the repository so we can create our `devcontainer.json` file.
+The next step to take after cloning the repository is to move into it so we can create a `requirements.txt` file.
 
 Run the command to move into your cloned repository but don’t forget to replace `playground-duckdb` to your own repository name you created if yours isn’t same with mine.
 
@@ -70,17 +70,47 @@ Run the command to move into your cloned repository but don’t forget to replac
 cd playground-duckdb
 ```
 
-Next, we’ll create a hidden directory named `.devcontainer` where our `devcontainer.json` file will be. Let’s do so and move into it
+I use `nano` text editor but you can use any GUI or terminal text editor you prefer too.
 
-Run command in the same terminal
+```bash
+nano requirements.txt
+```
+
+Paste the following in the new file `requirements.txt`.
+
+```bash
+contourpy==1.3.0
+cycler==0.12.1
+duckdb==1.1.0
+fonttools==4.53.1
+kiwisolver==1.4.7
+matplotlib==3.9.2
+numpy==2.1.1
+packaging==24.1
+pandas==2.2.3
+pillow==10.4.0
+pyparsing==3.1.4
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.16.0
+tzdata==2024.1
+```
+
+## Step 3: Create your `devcontainer.json` file
+
+Now, lets proceed to the next step.
+
+Create a hidden directory named `.devcontainer` where our `devcontainer.json` file will be. Let’s do so and move into it
+
+Run command to do so.
 
 ```bash
 mkdir .devcontainer && cd .devcontainer
 ```
 
-Let’s create our devcontainer.json file while in the `.devcontainer` directory.
+Let’s create our devcontainer.json file in the `.devcontainer` directory.
 
-I use `nano` to create my own `.devcontainer.json` file using this command but you can use any GUI or other terminal text editor you prefer.
+I use the same `nano` to create my `.devcontainer.json` file using this command.
 
 ```bash
 nano devcontainer.json
@@ -90,11 +120,13 @@ Paste this code into your `devcontainer.json` file
 
 ```yaml
 {
-  "name": "DuckDB Playground",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {}
-  }
+    "name": "DuckDB Playground",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
+        "ghcr.io/devcontainers/features/python:1": {}
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
 }
 ```
 
@@ -102,7 +134,8 @@ The `devcontainer.json` content contains configurations to start your DuckDB env
 
 - `name`: This sets the name of the development container environment to `DuckDB Playground`.
 - `image`: This uses a base Ubuntu image from Microsoft image repository.
-- `features`: This configuration add DuckDB installation setup in Daytona workspace
+- `features`: This configuration add DuckDB installation and Python setups in the Daytona workspace
+- `postCreateComand`: This install the Python packages in the `requirements.txt` into the workspace.
 
 After created and saved the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below
 
