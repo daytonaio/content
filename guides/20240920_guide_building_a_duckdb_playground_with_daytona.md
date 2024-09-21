@@ -17,7 +17,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 - Set up a Daytona Workspace with DuckDB environment
 - Hands-on practice using DuckDB as a CLI Tool
 - Hands-on practice using DuckDB client API with Python
-- Summary
+- Conclusion
 
 # Prerequisites
 
@@ -151,7 +151,7 @@ daytona create https://github.com/c0d33ngr/playground-duckdb
 
 After you successfully ran the above command you should see screenshot like mine showing your Daytona workspace that contains the DuckDB environment is running
 
-You can now run this command to open the DuckDB environment in your default IDE you choose when installing Daytona (Replace WORKSPACE-NAME with what you choose in the step above, in my case it's `playground-duckdb`).
+You can now run this command to open the DuckDB environment in your default IDE you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -172,3 +172,4 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 - [DuckDB Tricks](https://duckdb.org/2024/08/19/duckdb-tricks-part-1.html)
 - [DuckDB CLI Data Processing](https://duckdb.org/2024/06/20/cli-data-processing-using-duckdb-as-a-unix-tool.html)
 - [DuckDB Python Examples](https://github.com/duckdb/duckdb/blob/main/examples/python/duckdb-python.py)
+- [Wikipedia](https://en.wikipedia.org/wiki/DuckDB)
