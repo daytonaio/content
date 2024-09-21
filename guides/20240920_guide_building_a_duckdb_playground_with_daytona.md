@@ -172,4 +172,4 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 - [DuckDB Tricks](https://duckdb.org/2024/08/19/duckdb-tricks-part-1.html)
 - [DuckDB CLI Data Processing](https://duckdb.org/2024/06/20/cli-data-processing-using-duckdb-as-a-unix-tool.html)
 - [DuckDB Python Examples](https://github.com/duckdb/duckdb/blob/main/examples/python/duckdb-python.py)
-- [Wikipedia](https://en.wikipedia.org/wiki/DuckDB)
+- [DuckDB Wikipedia Page](https://en.wikipedia.org/wiki/DuckDB)
