@@ -96,13 +96,13 @@ six==1.16.0
 tzdata==2024.1
 ```
 
-## Step 3: Create your `devcontainer.json` file
+## Step 4: Create your `devcontainer.json` file
 
 Now, lets proceed to the next step.
 
 Create a hidden directory named `.devcontainer` where our `devcontainer.json` file will be. Let’s do so and move into it
 
-Run command to do so.
+Run the command to do so
 
 ```bash
 mkdir .devcontainer && cd .devcontainer
@@ -143,7 +143,7 @@ After created and saved the `devcontainer.json` file, move up back to the root d
 cd ../..
 ```
 
-## Step 4: Commit and Push Changes to GitHub
+## Step 5: Commit and Push Changes to GitHub
 
 Run this commands to push your changes to GitHub
 
@@ -155,7 +155,7 @@ git push
 
 Now, we have successfully push our updated repository that contains our configuration file (`devcontainer.json`) for our DuckDB environment
 
-## Step 5: Verify Daytona Installation
+## Step 6: Verify Daytona Installation
 
 Run this command to check `daytona` is properly installed in your PC or Mac
 
@@ -165,7 +165,7 @@ daytona –-version
 
 You should see your version of `daytona` installed
 
-## Step 6: Create a Daytona Workspace with DuckDB Playground Environment in it
+## Step 7: Create a Daytona Workspace with DuckDB Playground Environment in it
 
 Let’s start daytona server by running the command
 
