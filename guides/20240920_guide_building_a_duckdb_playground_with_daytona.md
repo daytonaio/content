@@ -9,7 +9,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Building DuckDB Playground Environment in Daytona Workspace
 
 # Introduction
-This is a comprehensive hands-on guide in using [DuckDB]() database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python]() via it's Client API. So it's a long ride and you can get a coffee closed by.
+This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via it's Client API. So it's a long ride and you can get a coffee closed by.
 
 In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download [here]()
 
@@ -36,16 +36,16 @@ To follow along with hands-on guide about DuckDB Playground in Daytona, you'll n
 
 ## DuckDB
 
-[DuckDB]() is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialised for [online analytical processing (OLAP)]() workloads
+[DuckDB](20240922_definition_duckdb.md) is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialised for [online analytical processing (OLAP)](20240922_definition_online_analytical_processing_olap.md) workloads
 
 ## Features of it
 
-DuckDB has lots of features that make it stand out among other databases which focus on [OLAP](). Some of the features are:
+DuckDB has lots of features that make it stand out among other databases which focus on [OLAP](20240922_definition_online_analytical_processing_olap.md). Some of the features are:
 
 - **Simple:** It's very simple to install and perform embedded in-process operation.
 - **Portable:** Since it has no external dependencies, it's extremely portable and can be compiled for all major operating systems and CPU architectures.
 - **Feature-Rich:** DuckDB has some interesting features such as extensive support for SQL complex queries, integrations to languages like [Python](20240820_defintion_python.md), R and Java and data can be stored as persistent, single-file databases.
-- **Speed:** it's faster as it uses columnar-vectorized query execution engine which improves performance to run [OLAP]() workloads.
+- **Speed:** it's faster as it uses columnar-vectorized query execution engine which improves performance to run [OLAP](20240922_definition_online_analytical_processing_olap.md) workloads.
 - **Free:** Lastly, it's a free [open source](20240819_definition_open source.md) database system which anyone can use because of its permissive MIT License.
 
 # Setting up Daytona Workspace for DuckDB Playground
@@ -176,7 +176,7 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 
 # Using DuckDB as a Command Line Interface (CLI) Tool
 
-In this section, you'll learn how to work with [DuckDB]() by creating a database from a CSV file, examining its structure, retrieving distinct values, and exporting data to separate CSV files for client, campaign, and economics data. Finally, you'll verify the exported data, gaining hands-on experience with DuckDB's querying and data manipulation capabilities. Lets get started
+In this section, you'll learn how to work with [DuckDB](20240922_definition_duckdb.md) by creating a database from a CSV file, examining its structure, retrieving distinct values, and exporting data to separate CSV files for client, campaign, and economics data. Finally, you'll verify the exported data, gaining hands-on experience with DuckDB's querying and data manipulation capabilities. Lets get started
 
 ## Step 1: Enter DuckDB Interactive Shell
 
@@ -325,7 +325,7 @@ Now, our three csv files are prepared for some analysis using DuckDB Client API 
 
 # Using DuckDB with Python through it's Client API
 
-In this section, you'll learn how to analyze and visualize data using [DuckDB]() and [Matplotlib](). You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome. We'll use the cleaned and transformed CSV files spiltted from our `bank_marketing.csv` in this section. 
+In this section, you'll learn how to analyze and visualize data using [DuckDB](20240922_definition_duckdb.md) and [Matplotlib](20240922_definition_matplotlib.md). You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome. We'll use the cleaned and transformed CSV files spiltted from our `bank_marketing.csv` in this section. 
 
 ## Step 1: Analysis of Customer Campaign Success Rate
 
@@ -414,7 +414,7 @@ plt.show()
 
 Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
 
-That's it. You have done lots of data tasks using [DuckDB]() in a [daytona workspace](20240819_definition_daytona workspace.md). To push this changes to Github, run the command below in your IDE terminal
+That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona workspace.md). To push this changes to Github, run the command below in your IDE terminal
 
 ```bash
 git add .
