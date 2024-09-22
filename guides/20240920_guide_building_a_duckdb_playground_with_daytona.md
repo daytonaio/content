@@ -11,7 +11,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Introduction
 This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via it's Client API. So it's a long ride and you can get a coffee closed by.
 
-In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download from GitHub[here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
+In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download from GitHub [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
 
 # TL;DR
 
@@ -50,7 +50,7 @@ DuckDB has lots of features that make it stand out among other databases which f
 
 # Setting up Daytona Workspace for DuckDB Playground
 
-Alright that's enough reading, now let us get started to writing codes. To do so we’ll need to set up a DuckDB [environment](20240819_definition_development environment.md) in a [Daytona workspace](20240819_definition_daytona workspace.md). Let’s begin.
+Alright that's enough reading, now let us get started to writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development environment.md) in a [Daytona workspace](20240819_definition_daytona workspace.md). Let’s begin.
 
 ## Step 1: Create a Github Repository
 
@@ -129,7 +129,7 @@ git commit -m “add devcontainer.json file”
 git push
 ```
 
-Now, we have successfully push our updated repository that contains our configuration file (`devcontainer.json`) for our DuckDB environment
+Now, you have successfully push our updated repository that contains our configuration file (`devcontainer.json`) for our DuckDB environment
 
 ## Step 5: Verify Daytona Installation
 
