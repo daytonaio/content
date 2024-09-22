@@ -1,6 +1,6 @@
 ---
 title: "Building DuckDB Playground Environment in Daytona Workspace."
-description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
+description: "Set up a DuckDB environment in Daytona Workspace and master some data tasks including cleaning, reformating and splitting CSV file, with this step-by-step guide."
 date: 2024-09-20
 author: "Jeffrey Whewhetu"
 tags: ["DuckDB", "OLAP", "daytona", "Python"]
@@ -10,6 +10,8 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 
 # Introduction
 This is a comprehensive hands-on guide in using DuckDB database to perform a real world data project in a containerized workspace using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with Python via it's Client API. So it's a long ride and you can get a coffee closed by.
+
+In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download [here]()
 
 # TL;DR
 
@@ -195,18 +197,36 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 
 # Using DuckDB as a Command Line Interface (CLI) Tool
 
+In this section, you'll learn how to work with DuckDB by creating a database from a CSV file, examining its structure, retrieving distinct values, and exporting data to separate CSV files for client, campaign, and economics data. Finally, you'll verify the exported data, gaining hands-on experience with DuckDB's querying and data manipulation capabilities. Lets get started
+
+## Step 1: Enter DuckDB Interactive Shell
+
+By now, you should be in your default IDE set up using `daytona`. In your IDE terminal, type the command below to enter into DuckDB database shell in interactive mode where you'll run some SQL based queries that conformed to DuckDB database.
+
 ```sql
 duckdb
 ```
+
+## Step 2: Create Database from CSV file
+
+Let's create a database named `bank_marketing` from the csv file. Run the DuckDB SQL in the database shell to do so.
 
 ```sql
 CREATE TABLE bank_marketing AS
 FROM 'bank_marketing.csv';
 ```
 
+## Step 3: Check Database Structure
+
+To check the database structure run this SQL in the shell.
+
 ```sql
 DESCRIBE bank_marketing;
 ```
+
+## Step 4: Export Client Data to CSV
+
+Run the following SQL query to export client data to a CSV file named `client.csv`.
 
 ```sql
 COPY (
@@ -229,15 +249,27 @@ COPY (
 ) TO 'client.csv' (DELIMITER ',', HEADER TRUE);
 ```
 
+## Step 5: Retrieve Distinct Days
+
+Run the following SQL query to retrieve distinct days from the bank_marketing table. As this would be use in the creation of new columns, let us see it's unique data.
+
 ```sql
 SELECT DISTINCT day
 FROM 'bank_marketing.csv';
 ```
 
+## Step 6: Retrieve Distinct Month
+
+Run the following SQL query to retrieve distinct months from the `bank_marketing` table. Same with this column too for the creation of a new column called `last_contact_date` later on the guide.
+
 ```sql
 SELECT DISTINCT month
 FROM 'bank_marketing.csv';
 ```
+
+## Step 7: Export Campaign Data to CSV
+
+Run the following SQL query to export campaign data to a CSV file named `campaign.csv`
 
 ```sql
 COPY (
@@ -277,6 +309,10 @@ COPY (
 ) TO 'campaign.csv' (DELIMITER ',', HEADER TRUE);
 ```
 
+## Step 8: Export Economical Data to CSV
+
+Run the following SQL query to export economics data to a CSV file named `economics.csv`
+
 ```sql
 COPY (
     SELECT 
@@ -286,6 +322,10 @@ COPY (
     FROM bank_marketing(test)
 ) TO 'economics.csv' (DELIMITER ',', HEADER TRUE);
 ```
+
+## Step 9: Read Data from Exported CSV files
+
+Run the following SQL queries to read data from the `client.csv`, `campaign.csv` and `economics.csv` files.
 
 ```sql
 SELECT *
@@ -302,7 +342,15 @@ SELECT *
 FROM 'economics.csv';
 ```
 
+Now, our three csv files are prepared for some analysis using DuckDB Client API via Python. Let head to the next section for the analysis.
+
 # Using DuckDB with Python through it's Client API
+
+In this section, you'll learn how to analyze and visualize data using DuckDB and Matplotlib. You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome.
+
+## Step 1: Analysis of Customer Campaign Success Rate
+
+Create a file name `campaign_success_rate.py`. Paste the following Python code in it and save.
 
 ```python
 import duckdb
@@ -318,6 +366,12 @@ success_rate = result[0][0]  # Access the value directly
 
 print(f"Campaign success rate: {success_rate:.2%}")
 ```
+
+Run the `campaign_success_rate.py` file in your IDE terminal using `python3 campaign_success_rate.py` and see the campagin success rate of the `campaign.csv` output in your IDE terminal.
+
+## Step 2: Analysis and Visualization of Client Age by Educational Level
+
+Create another file name `client_age_by_education.py`. Paste the following Python code in it and save.
 
 ```python
 import duckdb
@@ -349,6 +403,12 @@ plt.tight_layout()
 plt.show()
 ```
 
+Run the file in your IDE terminal using `python3 client_age_by_education.py` and you should see visualization.
+
+## Step 3: Analysis and Visualization of Contact Duration and Campaign Outcome through Correlation
+
+And lastly, create a new file name `contact_duration_vs_outcome.py`. Paste the following code and save it.
+
 ```python
 
 import duckdb
@@ -373,7 +433,15 @@ plt.yticks([0, 1])  # Set y-axis ticks to 0 and 1
 plt.show()
 ```
 
+Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
+
 # Conclusion
+
+In this comprehensive guide, you have explored the capabilities of using DuckDB in a Daytona Workspace with no stress through hands-on example.
+Throughout this guide, you have gained practical experience in:
+- Creating and managing database with DuckDB in memory
+- Perform SQL queries for data cleaning, transformation and splitting
+- Integration of DuckDB using it's Client APi with Python for data analysis.
 
 # References
 
