@@ -9,7 +9,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Building DuckDB Playground Environment in Daytona Workspace
 
 # Introduction
-This is a comprehensive hands-on guide in using DuckDB database to perform a real world data project in a containerized workspace using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with Python via it's Client API. So it's a long ride and you can get a coffee closed by.
+This is a comprehensive hands-on guide in using [DuckDB]() database to perform a real world data project in a containerized [workspace]() using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python]() via it's Client API. So it's a long ride and you can get a coffee closed by.
 
 In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download [here]()
 
@@ -36,16 +36,16 @@ To follow along with hands-on guide about DuckDB Playground in Daytona, you'll n
 
 ## DuckDB
 
-DuckDB is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialised for online analytical processing (OLAP) workloads
+[DuckDB]() is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialised for [online analytical processing (OLAP)]() workloads
 
 ## Features of it
 
-DuckDB has lots of features that make it stand out among other databases which focus on OLAP. Some of the features are:
+DuckDB has lots of features that make it stand out among other databases which focus on [OLAP](). Some of the features are:
 
 - **Simple:** It's very simple to install and perform embedded in-process operation.
 - **Portable:** Since it has no external dependencies, it's extremely portable and can be compiled for all major operating systems and CPU architectures.
 - **Feature-Rich:** DuckDB has some interesting features such as extensive support for SQL complex queries, integrations to languages like [Python](20240820_defintion_python.md), R and Java and data can be stored as persistent, single-file databases.
-- **Speed:** it's faster as it uses columnar-vectorized query execution engine which improves performance to run OLAP workloads.
+- **Speed:** it's faster as it uses columnar-vectorized query execution engine which improves performance to run [OLAP]() workloads.
 - **Free:** Lastly, it's a free [open source](20240819_definition_open source.md) database system which anyone can use because of its permissive MIT License.
 
 # Setting up Daytona Workspace for DuckDB Playground
@@ -62,43 +62,13 @@ After creating the repository, the next step is to clone the repository into you
 
 In my case, it’s `git clone https://github.com/c0d33ngr/playground-duckdb`
 
-## Step 3: Create a `requirements.txt` file
+## Step 3: Create your `devcontainer.json` file
 
-The next step to take after cloning the repository is to move into it so we can create a `requirements.txt` file.
-
-Run the command to move into your cloned repository but don’t forget to replace `playground-duckdb` to your own repository name you created if yours isn’t same with mine.
+Run the command to move into your cloned repository but don’t forget to replace `playground-duckdb` with your own repository name you created if yours isn’t the same with mine.
 
 ```bash
 cd playground-duckdb
 ```
-
-I use `nano` text editor but you can use any GUI or terminal text editor you prefer too.
-
-```bash
-nano requirements.txt
-```
-
-Paste the following in the new file `requirements.txt`.
-
-```bash
-contourpy==1.3.0
-cycler==0.12.1
-duckdb==1.1.0
-fonttools==4.53.1
-kiwisolver==1.4.7
-matplotlib==3.9.2
-numpy==2.1.1
-packaging==24.1
-pandas==2.2.3
-pillow==10.4.0
-pyparsing==3.1.4
-python-dateutil==2.9.0.post0
-pytz==2024.2
-six==1.16.0
-tzdata==2024.1
-```
-
-## Step 4: Create your `devcontainer.json` file
 
 Now, lets proceed to the next step.
 
@@ -112,7 +82,7 @@ mkdir .devcontainer && cd .devcontainer
 
 Let’s create our devcontainer.json file in the `.devcontainer` directory.
 
-I use the same `nano` to create my `.devcontainer.json` file using this command.
+I use `nano` to create my `.devcontainer.json` file using this command.
 
 ```bash
 nano devcontainer.json
@@ -128,7 +98,7 @@ Paste this code into your `devcontainer.json` file
         "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
         "ghcr.io/devcontainers/features/python:1": {}
     },
-    "postCreateCommand": "pip install -r requirements.txt"
+    "postCreateCommand": "pip install duckdb matplotlib"
 }
 ```
 
@@ -137,7 +107,7 @@ The `devcontainer.json` content contains configurations to start your DuckDB env
 - `name`: This sets the name of the development container environment to `DuckDB Playground`.
 - `image`: This uses a base Ubuntu image from Microsoft image repository.
 - `features`: This configuration add DuckDB installation and Python setups in the Daytona workspace
-- `postCreateComand`: This install the Python packages in the `requirements.txt` into the workspace.
+- `postCreateComand`: This install the Python packages needed for this guide into the workspace.
 
 After created and saved the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below
 
@@ -145,7 +115,7 @@ After created and saved the `devcontainer.json` file, move up back to the root d
 cd ../..
 ```
 
-## Step 5: Commit and Push Changes to GitHub
+## Step 4: Commit and Push Changes to GitHub
 
 Run this commands to push your changes to GitHub
 
@@ -157,7 +127,7 @@ git push
 
 Now, we have successfully push our updated repository that contains our configuration file (`devcontainer.json`) for our DuckDB environment
 
-## Step 6: Verify Daytona Installation
+## Step 5: Verify Daytona Installation
 
 Run this command to check `daytona` is properly installed in your PC or Mac
 
@@ -167,7 +137,7 @@ daytona –-version
 
 You should see your version of `daytona` installed
 
-## Step 7: Create a Daytona Workspace with DuckDB Playground Environment in it
+## Step 6: Create a Daytona Workspace with DuckDB Playground Environment in it
 
 Let’s start daytona server by running the command
 
@@ -206,7 +176,7 @@ That’s it. Daytona will create a DuckDB playground environment for you and ope
 
 # Using DuckDB as a Command Line Interface (CLI) Tool
 
-In this section, you'll learn how to work with DuckDB by creating a database from a CSV file, examining its structure, retrieving distinct values, and exporting data to separate CSV files for client, campaign, and economics data. Finally, you'll verify the exported data, gaining hands-on experience with DuckDB's querying and data manipulation capabilities. Lets get started
+In this section, you'll learn how to work with [DuckDB]() by creating a database from a CSV file, examining its structure, retrieving distinct values, and exporting data to separate CSV files for client, campaign, and economics data. Finally, you'll verify the exported data, gaining hands-on experience with DuckDB's querying and data manipulation capabilities. Lets get started
 
 ## Step 1: Enter DuckDB Interactive Shell
 
@@ -355,7 +325,7 @@ Now, our three csv files are prepared for some analysis using DuckDB Client API 
 
 # Using DuckDB with Python through it's Client API
 
-In this section, you'll learn how to analyze and visualize data using DuckDB and Matplotlib. You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome.
+In this section, you'll learn how to analyze and visualize data using [DuckDB]() and [Matplotlib](). You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome. We'll use the cleaned and transformed CSV files spiltted from our `bank_marketing.csv` in this section. 
 
 ## Step 1: Analysis of Customer Campaign Success Rate
 
@@ -443,6 +413,16 @@ plt.show()
 ```
 
 Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
+
+That's it. You have done lots of data tasks using DuckDB in a containerized workspace using Daytona. To push this this changes to Github, run the command below in your IDE terminal
+
+```bash
+git add .
+git commit -m "add python files"
+git push
+```
+
+Note: you should be in the root of your cloned repository you created for git to track the changes made. 
 
 # Conclusion
 
