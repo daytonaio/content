@@ -11,7 +11,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Introduction
 This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via it's Client API. So it's a long ride and you can get a coffee closed by.
 
-In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download [here]()
+In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download from GitHub[here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
 
 # TL;DR
 
