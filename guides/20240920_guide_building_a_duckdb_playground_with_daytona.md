@@ -62,13 +62,17 @@ After creating the repository, the next step is to clone the repository into you
 
 In my case, it’s `git clone https://github.com/c0d33ngr/playground-duckdb`
 
-## Step 3: Create your `devcontainer.json` file
+## Step 3: Prepare your `devcontainer.json` file and dataset in CSV format
 
 Run the command to move into your cloned repository but don’t forget to replace `playground-duckdb` with your own repository name you created if yours isn’t the same with mine.
 
 ```bash
 cd playground-duckdb
 ```
+
+Download the bank campaign dataset you are going to perform data tasks on which is in CSV format, from Github repo [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv).
+
+Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-duckdb`. 
 
 Now, lets proceed to the next step.
 
@@ -188,7 +192,7 @@ duckdb
 
 ## Step 2: Create Database from CSV file
 
-Let's create a database named `bank_marketing` from the csv file. Run the DuckDB SQL in the database shell to do so.
+Let's create a database named `bank_marketing` from the csv file you downloaded earlier. Run the DuckDB SQL in the database shell to do so.
 
 ```sql
 CREATE TABLE bank_marketing AS
