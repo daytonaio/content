@@ -179,7 +179,16 @@ You should see logs like my screenshot
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
-Run the command below in the new tab of your terminal and follow the prompt instruction. It would ask you for a [workspace](20240819_definition_daytona workspace.md) name to use, just choose the default.
+Run the command below in a new tab of your terminal and follow the prompt instruction. It would ask you for a [workspace](20240819_definition_daytona workspace.md) name to use, just choose the default.
+
+Replace `USERNAME` and `REPOSITORY-NAME` with your username for Github and the repository name you created earlier.
+
+```
+bash
+daytona create https://github.com/USERNAME/REPOSITORY-NAME
+```
+
+In my case, it's this
 
 ```bash
 daytona create https://github.com/c0d33ngr/playground-duckdb
