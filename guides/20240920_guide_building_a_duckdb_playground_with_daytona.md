@@ -157,8 +157,7 @@ Run the command below in a new tab of your terminal and follow the prompt instru
 
 Replace `USERNAME` and `REPOSITORY-NAME` with your username for Github and the repository name you created earlier.
 
-```
-bash
+```bash
 daytona create https://github.com/USERNAME/REPOSITORY-NAME
 ```
 
