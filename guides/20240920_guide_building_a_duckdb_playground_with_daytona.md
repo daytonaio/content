@@ -418,15 +418,7 @@ plt.show()
 
 Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
 
-That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona workspace.md). To push this changes to Github, run the command below in your IDE terminal
-
-```bash
-git add .
-git commit -m "add python files"
-git push
-```
-
-Note: you should be in the root of your cloned repository you created for git to track the changes made. 
+That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona workspace.md).
 
 # Conclusion
 
