@@ -9,7 +9,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Building DuckDB Playground Environment in Daytona Workspace
 
 # Introduction
-This is a comprehensive hands-on guide in using [DuckDB]() database to perform a real world data project in a containerized [workspace]() using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python]() via it's Client API. So it's a long ride and you can get a coffee closed by.
+This is a comprehensive hands-on guide in using [DuckDB]() database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python]() via it's Client API. So it's a long ride and you can get a coffee closed by.
 
 In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download [here]()
 
@@ -414,7 +414,7 @@ plt.show()
 
 Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
 
-That's it. You have done lots of data tasks using DuckDB in a containerized workspace using Daytona. To push this this changes to Github, run the command below in your IDE terminal
+That's it. You have done lots of data tasks using [DuckDB]() in a [daytona workspace](20240819_definition_daytona workspace.md). To push this changes to Github, run the command below in your IDE terminal
 
 ```bash
 git add .
