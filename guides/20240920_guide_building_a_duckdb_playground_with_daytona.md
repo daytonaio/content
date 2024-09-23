@@ -200,7 +200,7 @@ FROM 'bank_marketing.csv';
 
 ## Step 3: Check Database Structure
 
-To check the database structure run this SQL in the shell.
+To check the database table schema run this SQL in the shell.
 
 ```sql
 DESCRIBE bank_marketing;
@@ -231,18 +231,18 @@ COPY (
 ) TO 'client.csv' (DELIMITER ',', HEADER TRUE);
 ```
 
-## Step 5: Retrieve Distinct Days
+## Step 5: Retrieve List of Distinct Records in `day` Column
 
-Run the following SQL query to retrieve distinct days from the bank_marketing table. As this would be use in the creation of new columns, let us see it's unique data.
+Run the following SQL query to retrieve list of distinct days from the bank_marketing table. This results would be useful in the preparation of the SQL query for step 7. We need to know the unique records in the `day` column.
 
 ```sql
 SELECT DISTINCT day
 FROM 'bank_marketing.csv';
 ```
 
-## Step 6: Retrieve Distinct Month
+## Step 6: Retrieve List of Distinct Records in `month` Column
 
-Run the following SQL query to retrieve distinct months from the `bank_marketing` table. Same with this column too for the creation of a new column called `last_contact_date` later on the guide.
+Run the following SQL query to retrieve list of distinct months from the `bank_marketing` table. The results are also needed for the creation of a new column called `last_contact_date` later in step 7.
 
 ```sql
 SELECT DISTINCT month
