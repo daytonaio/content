@@ -216,6 +216,9 @@ daytona code WORKSPACE-NAME
 
 Now, your preferred IDE should be open and you'll be prompted to reopen in container. Click it and the IDE should restart. Now, you should be in the workspace of the repository you created.
 
+In my case, i used terminal SSH as the default IDE in my `daytona` installation. So my workspace is opened in my terminal.
+![screenshot of my workspace in my terminal](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_3.jpg)
+
 Follow the set of instructions in the next section to interact with the PostgreSQL development environment.
 
 ## Performing Some Basic PostgreSQL CRUD Operations in the Workspace
@@ -228,7 +231,7 @@ psql -U postgres
 
 Your output should look this
 
-  ![screenshot of logging in via psql](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_3.jpg)
+  ![screenshot of logging in via psql](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_4.jpg)
   
 ### Create a Table
 **Example**: The SQL code below creates a table named `users`.
@@ -244,7 +247,7 @@ CREATE TABLE users (
 
 Your output should display similar one as mine
 
-![screenshoot of creating a database](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_4.jpg)
+![screenshoot of creating a database](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_5.jpg)
 
 
 ### Insert a Record
@@ -259,7 +262,7 @@ INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
 
 You should have similar screen like this below
 
-![screenshot of inserting records to table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_5.jpg)
+![screenshot of inserting records to table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_6.jpg)
 
 ### Read Data from Table
 **Example**: This SQL query selects all records in the table `users` and return them.
@@ -270,7 +273,7 @@ SELECT * FROM users WHERE name = 'Mark Zuckerberg';
 
 Your output should display something similar
 
-![screenshot of selecting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_6.jpg)
+![screenshot of selecting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_7.jpg)
 
 ### Update a Table Record
 **Example**: This SQL query updates the table `users` record where `id` is 1.
@@ -281,7 +284,7 @@ UPDATE users SET email = 'johndoe@email.com' WHERE id = 2;
 
 You output should be similar
 
-![screenshot of updating a record in the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_7.jpg)
+![screenshot of updating a record in the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_8.jpg)
 
 ### Delete a Table Record
 **Example**: This SQL code deletes the record where `id` is 2.
@@ -292,7 +295,7 @@ DELETE FROM users WHERE id = 2;
 
 You should have similar output
 
-![screenshot of deleting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_8.jpg)
+![screenshot of deleting a record from the table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_9.jpg)
 
 Run the SQL code below to check the table
 
@@ -302,7 +305,15 @@ SELECT * FROM users;
 
 You should now see the deleted record is gone
 
-![screenshot of querying the table for all records](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_9.jpg)
+![screenshot of querying the table for all records](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_10.jpg)
+
+Now we are done with performing some PostgreSQL queries in the playground environment. To exit the PostgreSQL prompt type the command below
+
+```sql
+\q
+```
+
+![screenshot of ending psql shell](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_11.jpg)
 
 ## Conclusion
 
