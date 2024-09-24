@@ -39,7 +39,7 @@ PostgreSQL has so many benefits as to why one should use it some are highlighted
 
 ## Overview of Daytona
 
-Daytona is a self hosted and secure [open source](definitions/20240819_definition_open source.md) development environment manager that uses configurations from a project's repository to build workspace and provision the workspace in a platform of your choice. It's innovative and incredibly easy for all levels including beginners to get started with it.
+Daytona is a self hosted and secure [open source](definitions/20240819_definition_open source.md) development environment manager that uses configurations from a project's repository to build workspace and provision the workspace in a platform of your choice. It's innovative and incredibly easy for all levels, including beginners, to get started with it.
 
 Daytona provides some interesting features which make it one the best products in the area of simplifying development environments for both enterprise and individual levels.
 
@@ -149,11 +149,11 @@ After you run the code, you'll be prompted to input your GitHub username and pas
 
 You can find the GitHub repository where my devcontainer config is located which I used for this guide [here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later added a README and LICENSE files which wasn't neccessary to follow along with this guide.
 
-Now, we have successfully created a GitHub repository needed to spin up a devcontainer for PostgreSQL using Daytona.
+Now, we have successfully created the GitHub repository needed to spin up a devcontainer for PostgreSQL using Daytona.
 
 ## Setting Up PostgreSQL in Daytona
 
-Before starting this section be sure `daytona` is installed in your PC
+Before starting this section be sure that `daytona` is installed on your PC
 
 ### Step 1
 
@@ -167,19 +167,19 @@ Your output should be similar to the screenshot below
 
 ![screenshot of running daytona server](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_1.jpg)
 
-Choose yes and should see similar output in the screenshot below
+Choose "yes" and should see similar output in the screenshot below
 
 ![screenshot of successfully running daytona](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_2.jpg)
   
 ### Step 2
 
-Run the command below to add your git provider if you haven't setup one
+Run the command below to add your git provider if you haven't set up one
 
 ```bash
 daytona git provider add
 ```
 
-Follow the prompts after running the command to setup your provider. In our case it's GitHub
+Follow the prompts after running the command to set up your provider. In our case it's GitHub
 
 ### Step 3
 
@@ -245,7 +245,7 @@ CREATE TABLE users (
 );
 ```
 
-Your output should display similar one as mine
+Your output should display a similar one to mine
 
 ![screenshoot of creating a database](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_5.jpg)
 
@@ -260,7 +260,7 @@ INSERT INTO users (name, email) VALUES ('Bill Gates', 'bill.gates@gatesfoundatio
 INSERT INTO users (name, email) VALUES ('Jack Dorsey', 'jack.dorsey@gmail.com');
   ```
 
-You should have similar screen like this below
+You should have similar screen like the one below
 
 ![screenshot of inserting records to table](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_6.jpg)
 
@@ -303,11 +303,11 @@ Run the SQL code below to check the table
 SELECT * FROM users;
 ```
 
-You should now see the deleted record is gone
+You should now see that the deleted record is gone
 
 ![screenshot of querying the table for all records](assets/20240823_how_to_setup_postgresql_playground_in_daytona_img_10.jpg)
 
-Now we are done with performing some PostgreSQL queries in the playground environment. To exit the PostgreSQL prompt type the command below
+Now we are done with performing some PostgreSQL queries in the playground environment. To exit the PostgreSQL prompt, type the command below
 
 ```sql
 \q
@@ -317,7 +317,7 @@ Now we are done with performing some PostgreSQL queries in the playground enviro
 
 ## Conclusion
 
-By following the steps above you should have learned how to set up a working PostgreSQL playground running on Daytona for you to start building or practice with PostgreSQL. From here, you could continue to explore the opportunities of using Daytona as your [dev environment](definitions/20240819_definition_development environment.md) that suits your needs.
+By following the steps above, you should have learned how to set up a working PostgreSQL playground running on Daytona for you to start building or practice with PostgreSQL. From here, you could continue to explore the opportunities of using Daytona as your [dev environment](definitions/20240819_definition_development environment.md) that suits your needs.
 
 ## References
 
