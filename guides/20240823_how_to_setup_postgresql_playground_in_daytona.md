@@ -24,7 +24,7 @@ This guide will walk you through on how to set up [PostgresQL](definitions/20240
 ## Prerequisities
 
 In order to follow this guide, you’ll need the software installations below on your PC or Mac.
-- An [IDE](definitions/20240819_definition_integrated development environment _ide_.md) like VS Code, link to install it [here](https://code.visualstudio.com/download)
+- An [IDE](definitions/20240819_definition_integrated development environment _ide_.md) like VS Code, link to install it [here](https://code.visualstudio.com/download) or just a terminal
 - Docker, link to it [here](https://docs.docker.com/engine/install/)
 - Daytona, link to install it [here](https://github.com/daytonaio/daytona#installing-daytona)
 
