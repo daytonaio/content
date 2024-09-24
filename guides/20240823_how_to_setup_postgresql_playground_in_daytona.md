@@ -10,7 +10,7 @@ tags: ["daytona", "postgresql", "devcontainer"]
 
 ## Introduction
 
-This guide will walk you through on how to set up [PostgresQL](definitions/20240823_definitions_postgresql.md) database playground in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md) which is a development environment management platform. In a world where companies what to increase development [productivity](definitions/20240819_definition_productivity.md) and individual developers want to start coding right away, Daytona is the best option.
+This guide will walk you through how to set up [PostgresQL](definitions/20240823_definitions_postgresql.md) database playground in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md) which is a development environment management platform. In a world where companies want to increase development [productivity](definitions/20240819_definition_productivity.md) and individual developers want to start coding right away, Daytona is the best option.
 
 ### TL;DR
 
@@ -21,7 +21,7 @@ This guide will walk you through on how to set up [PostgresQL](definitions/20240
 - Hands-on practice with PostgreSQL commands in the workspace
 - Conclusion
 
-## Prerequisities
+## Prerequisites
 
 In order to follow this guide, you’ll need the software installations below on your PC or Mac.
 - An [IDE](definitions/20240819_definition_integrated development environment _ide_.md) like VS Code, link to install it [here](https://code.visualstudio.com/download) or just a terminal
@@ -32,10 +32,10 @@ In order to follow this guide, you’ll need the software installations below on
 
 [PostgreSQL](definitions/20240823_definitions_postgresql.md) or also known as Postgres is the world’s most advanced open source relational database system that has been in use by the developer community for over 35 years with so much great love shown to it because of its strong reputation for reliability, feature robustness and performance.
 
-PostgreSQL has some much benefits on to why one should use it some are highlighted below:
-- [Open Source](definitions/20240819_definition_open source.md) and Free: It’s a completely free software to install and use and also its source code is freely available online to see how it’s implemented under the hood. You don’t have to spend more to purchase license which might be very expensive
-- Cross-Platform Compatibility: PostgreSQL can be run in most of the major OSes in the world. It can run on most Linux distros, Windows, and MacOS making it to be a number one choice.
-- In-Exhaustive LIst of Features: Some of the features are Data Types, Data Integrity and Security. Lots of features can be found in the PostgreSQL website here with more being added in every major release.
+PostgreSQL has so many benefits as to why one should use it some are highlighted below:
+- [Open Source](definitions/20240819_definition_open source.md) and Free: It’s a completely free software to install and use and also its source code is freely available online to see how it’s implemented under the hood. You don’t have to spend more to purchase a license which might be very expensive
+- Cross-Platform Compatibility: PostgreSQL can be run in most of the major OSes in the world. It can run on most Linux distros, Windows, and MacOS making it a number one choice.
+- Inexhaustive LIst of Features: Some of the features are Data Types, Data Integrity and Security. Lots of features can be found in the PostgreSQL website here with more being added in every major release.
 
 ## Overview of Daytona
 
@@ -43,13 +43,13 @@ Daytona is a self hosted and secure [open source](definitions/20240819_definitio
 
 Daytona provides some interesting features which make it one the best products in the area of simplifying development environments for both enterprise and individual levels.
 
-Some of those features it boast of include:
+Some of the features it boasts of include:
 - It has support for popular [IDE](definitions/20240819_definition_integrated development environment _ide_.md) like VS Code and JetBrains
-- It connect with repository providers like GitHub, GitLab, BitBucket and Gitea
+- It connects with repository providers like GitHub, GitLab, BitBucket and Gitea
 - It's very secure. It uses VPN connection to make that possible
 - It has reverse proxy support
 
-For more info about Daytona and it's features, check [here](https://daytona.io)
+For more info about Daytona and its features, check [here](https://daytona.io)
 
 ## Creating a DevContainer for PostgreSQL
 
