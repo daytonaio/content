@@ -11,7 +11,7 @@ tags: ["DuckDB", "OLAP", "daytona", "Python"]
 # Introduction
 This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via it's Client API. So it's a long ride and you can get a coffee closed by.
 
-In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specifications, handling errors and inconsistencies, transforming and splitting it into multiple csv files. The csv file you'll work on is called `bank_marketing.csv`, download from GitHub [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
+In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and do some analysis on the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specification, handling errors and inconsistencies, transforming and splitting it into multiple CSV files. The CSV file you'll work on is called `bank_marketing.csv`, download from GitHub [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
 
 # TL;DR
 
@@ -36,7 +36,7 @@ To follow along with hands-on guide about DuckDB Playground in Daytona, you'll n
 
 ## DuckDB
 
-[DuckDB](20240922_definition_duckdb.md) is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialised for [online analytical processing (OLAP)](20240922_definition_online_analytical_processing_olap.md) workloads
+[DuckDB](20240922_definition_duckdb.md) is a fast in-process data analytical database with support of feature-rich SQL dialect complemented with deep integrations into client APIs. It's designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. It's specialized for [online analytical processing (OLAP)](20240922_definition_online_analytical_processing_olap.md) workloads
 
 ## Features of it
 
@@ -52,13 +52,13 @@ DuckDB has lots of features that make it stand out among other databases which f
 
 Alright that's enough reading, now let us get started to writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development environment.md) in a [Daytona workspace](20240819_definition_daytona workspace.md). Let’s begin.
 
-## Step 1: Create a Github Repository
+## Step 1: Create a GitHub Repository
 
 First head to GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-duckdb`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-duckdb`
 
 ## Step 2: Clone the repository using Git
 
-After creating the repository, the next step is to clone the repository into your local PC or Mac. To clone the repository, open your terminal and run this command `git clone https://github.com/USERNAME/REPOSITORY-NAME` but replace the placeholders with your github name and repository name you chose in step 1.
+After creating the repository, the next step is to clone the repository into your local PC or Mac. To clone the repository, open your terminal and run this command `git clone https://github.com/USERNAME/REPOSITORY-NAME` but replace the placeholders with your GitHub username and repository name you chose in step 1.
 
 In my case, it’s `git clone https://github.com/c0d33ngr/playground-duckdb`
 
@@ -70,7 +70,7 @@ Run the command to move into your cloned repository but don’t forget to replac
 cd playground-duckdb
 ```
 
-Download the bank campaign dataset you are going to perform data tasks on which is in CSV format, from Github repo [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv).
+Download the bank campaign dataset you are going to perform data tasks on which is in CSV format, from GitHub repo [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv).
 
 Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-duckdb`. 
 
@@ -155,7 +155,7 @@ Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
 Run the command below in a new tab of your terminal and follow the prompt instruction. It would ask you for a [workspace](20240819_definition_daytona workspace.md) name to use, just choose the default.
 
-Replace `USERNAME` and `REPOSITORY-NAME` with your username for Github and the repository name you created earlier.
+Replace `USERNAME` and `REPOSITORY-NAME` with your username for GitHub and the repository name you created earlier.
 
 ```bash
 daytona create https://github.com/USERNAME/REPOSITORY-NAME
@@ -191,7 +191,7 @@ duckdb
 
 ## Step 2: Create Database from CSV file
 
-Let's create a database named `bank_marketing` from the csv file you downloaded earlier. Run the DuckDB SQL in the database shell to do so.
+Let's create a database named `bank_marketing` from the CSV file you downloaded earlier. Run the DuckDB SQL in the database shell to do so.
 
 ```sql
 CREATE TABLE bank_marketing AS
@@ -233,7 +233,7 @@ COPY (
 
 ## Step 5: Retrieve List of Distinct Records in `day` Column
 
-Run the following SQL query to retrieve list of distinct days from the bank_marketing table. This results would be useful in the preparation of the SQL query for step 7. We need to know the unique records in the `day` column.
+Run the following SQL query to retrieve a list of distinct days from the bank_marketing table. The results would be useful in the preparation of the SQL query for step 7. We need to know the unique records in the `day` column.
 
 ```sql
 SELECT DISTINCT day
@@ -324,11 +324,11 @@ SELECT *
 FROM 'economics.csv';
 ```
 
-Now, our three csv files are prepared for some analysis using DuckDB Client API via Python. Let head to the next section for the analysis.
+Now, our three CSV files are prepared for some analysis using DuckDB Client API via Python. Let head to the next section for the analysis.
 
-# Using DuckDB with Python through it's Client API
+# Using DuckDB with Python through its Client API
 
-In this section, you'll learn how to analyze and visualize data using [DuckDB](20240922_definition_duckdb.md) and [Matplotlib](20240922_definition_matplotlib.md). You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome. We'll use the cleaned and transformed CSV files spiltted from our `bank_marketing.csv` in this section. 
+In this section, you'll learn how to analyze and visualize data using [DuckDB](20240922_definition_duckdb.md) and [Matplotlib](20240922_definition_matplotlib.md). You'll calculate the campaign success rate, create a bar chart to compare average client age by education level, and generate a scatter plot to explore the relationship between contact duration and campaign outcome. We'll use the cleaned and transformed CSV files spilt from our `bank_marketing.csv` in this section. 
 
 ## Step 1: Analysis of Customer Campaign Success Rate
 
@@ -349,7 +349,7 @@ success_rate = result[0][0]  # Access the value directly
 print(f"Campaign success rate: {success_rate:.2%}")
 ```
 
-Run the `campaign_success_rate.py` file in your IDE terminal using `python3 campaign_success_rate.py` and see the campagin success rate of the `campaign.csv` output in your IDE terminal.
+Run the `campaign_success_rate.py` file in your IDE terminal using `python3 campaign_success_rate.py` and see the campaign success rate of the `campaign.csv` output in your IDE terminal.
 
 ## Step 2: Analysis and Visualization of Client Age by Educational Level
 
@@ -425,7 +425,7 @@ In this comprehensive guide, you have explored the capabilities of using DuckDB 
 Throughout this guide, you have gained practical experience in:
 - Creating and managing database with DuckDB in memory
 - Perform SQL queries for data cleaning, transformation and splitting
-- Integration of DuckDB using it's Client APi with Python for data analysis.
+- Integration of DuckDB using its Client API with Python for data analysis.
 
 # References
 
