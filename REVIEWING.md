@@ -17,7 +17,6 @@ Thank you for participating in the review process of the Daytona Content Program
 - [Resources](#resources)
 
 ## Role of a Reviewer
-
 As a reviewer, your primary responsibilities include:
 
 - Evaluating the submitted content for quality, accuracy, and adherence to guidelines.
