@@ -69,6 +69,7 @@ As a reviewer, your primary responsibilities include:
   that references are properly cited.
 
 ### Adherence to Guidelines
+
 - **Contribution Guidelines**: Ensure that the content adheres to the [Contributing.md](https://github.com/daytonaio/content/blob/main/CONTRIBUTING.md) guidelines. Avoid repeating instructions here; instead, reference the relevant sections.
 - **Naming Conventions and Formatting**: Confirm that naming conventions and formatting follow the established standards as outlined in the [Contributing.md](./CONTRIBUTING.md).
 
