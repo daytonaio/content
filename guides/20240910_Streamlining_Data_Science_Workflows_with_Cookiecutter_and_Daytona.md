@@ -210,7 +210,7 @@ To use this feature in your Daytona cloud development environment, follow these 
 
 ```bash
 daytona server
-daytona create --code
+daytona create
 ```
 The command above creates a new Daytona workspace and opens the workspace in VSCode.
 When prompted to either enter a **custom Repository URL** or **Create from sample**, select the latter. Then select Python from the options of sample workspaces.
