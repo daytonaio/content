@@ -323,6 +323,6 @@ By following the steps above, you should have learned how to set up a working Po
 
 *[Daytona](https://daytona.io)*
 
-*[PostgreSQL](https://postgresq.ort)*
+*[PostgreSQL](https://postgresql.org)*
 
 *[DevContainer](https://containers.dev)*
