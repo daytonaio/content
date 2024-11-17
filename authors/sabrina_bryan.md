@@ -1,4 +1,0 @@
-Author: Sabrina Bryan
-Title: Golang Enthusiast
-Description: Sabrina Bryan is a systems engineer with a strong passion for Golang and backend development. She excels at building scalable, efficient applications that prioritize performance and simplicity. Sabrina is particularly skilled in designing distributed systems and solving concurrency challenges, bringing Go’s strengths to the forefront in every project. Whether contributing to open-source Go libraries or architecting cloud-native solutions, she thrives on creating clean, maintainable code. Outside of work, Sabrina enjoys mentoring developers and writing technical guides to help others dive into the Go ecosystem with confidence.
-Author Image: ![sabrina-bryan](./assets/sabrina-bryan.jpg)
