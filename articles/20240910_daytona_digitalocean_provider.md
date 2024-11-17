@@ -12,16 +12,16 @@ tags: ["digitalocean", "droplets", "daytona"]
 
 The DigitalOcean Provider allows Daytona to create and manage Workspace projects on DigitalOcean droplets. This provider integrates Daytona with DigitalOcean, enabling scalable and flexible management of Workspaces in a cloud environment. To use the DigitalOcean Provider, we need a DigitalOcean API token with appropriate permissions. This token grants the necessary access to manage droplets, critical for Daytona’s Workspace project creation and management.
 
-In this guide, we will walk you through the setup and configuration of the Daytona DigitalOcean Provider, including creating an API token with the required permissions.
+In this article, we will walk you through the setup and configuration of the Daytona DigitalOcean Provider, including creating an API token with the required permissions.
 
 ### Prerequisites
 
-To follow along with this guide, you should have:
+To follow along with this article, you should have:
 - A basic understanding of [DigitalOcean](../definitions/20240910_definition_digitalocean.md) and [Droplets](../definitions/20240910_definition_droplets.md).
 - A DigitalOcean account with access to create API tokens.
 - Installed Daytona latest version [install from [here](https://www.daytona.io/docs/installation/installation/)]
 
-**Note:** *[In this guide, Daytona v0.29.1 is used]*
+**Note:** *[In this article, Daytona v0.29.1 is used]*
 
 ### TL;DR
 
@@ -155,7 +155,7 @@ While setting up and configuring the DigitalOcean Provider with Daytona, you may
 
 
 ## Conclusion
-By following this guide, you’ve successfully set up and configured the Daytona DigitalOcean Provider. You can now manage Workspaces on DigitalOcean using Daytona, leveraging its powerful infrastructure for your development and deployment needs.
+By following this article, you’ve successfully set up and configured the Daytona DigitalOcean Provider. You can now manage Workspaces on DigitalOcean using Daytona, leveraging its powerful infrastructure for your development and deployment needs.
 
 For the latest information, refer to the official Daytona [documentation](https://www.daytona.io/docs/).
 
@@ -166,9 +166,3 @@ For the latest information, refer to the official Daytona [documentation](https:
 - [Daytona DigitalOcean Provider Repository](https://github.com/daytonaio/daytona-provider-digitalocean)
 
 - [DigitalOcean Droplet Documentation](https://docs.digitalocean.com/products/droplets/how-to/create/)
-
-
-<!-- Note on Definitions -->
-<!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
-<!-- Format: [term](/definitions/term.md) -->
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
