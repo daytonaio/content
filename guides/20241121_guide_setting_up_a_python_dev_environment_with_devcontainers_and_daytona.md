@@ -24,7 +24,7 @@ This guide walks you through setting up a Python development environment using D
 
 ## Prerequisites
 To follow this guide, you'll need to have the following:
-- Basic understanding of[Python](definitions/20240820_defintion_python.md) and [Development Environment](definitions/20240819_definition_development environment.md)
+- Basic understanding of [Python](definitions/20240820_defintion_python.md) and [Development Environment](definitions/20240819_definition_development environment.md)
 - An IDE (like [VS Code](https://code.visualstudio.com/))
 - Docker (download from [here](https://www.docker.com/))
 - Daytona latest version [install from [here](https://www.daytona.io/docs/installation/installation/)]
