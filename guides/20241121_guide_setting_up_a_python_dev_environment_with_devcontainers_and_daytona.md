@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Python Dev Environment with DevContainers and Daytona"
-description: "A step-by-step guide to setting up setting up a Python dev environment with DevContainers and Daytona"
+description: "A step-by-step guide to setting up a Python dev environment with DevContainers and Daytona"
 date: 2024-11-21
 author: "Kiran Naragund"
 tags: ["python", "devcontainers", "daytona"]
@@ -121,7 +121,8 @@ Now create a dev environment of the repository you created in GitHub(by forking)
 ```bash
 daytona create
 ```
-  
+Choose Github as provider and select the python-project-template repository.
+
   #### Step 2.4.1 Provide workspace name
   The name of the workspace is usually the repository name if you didn't modify it when prompted in the creation of the workspace. In my case, it's `python-project-template`
 
