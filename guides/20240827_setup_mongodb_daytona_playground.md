@@ -111,7 +111,6 @@ Here, you're going to create a dev container using a `devcontainer.json` file, a
 - **Step 5** Create a docker-compose.yml file:
 
     You are going to create `docker-compose.yml` file in the same directory
-
     ```yml
     version: '3.8'
 
@@ -321,6 +320,10 @@ Alternatively you can use the official MongoDB extensions playground since you p
 **Cannot Start the Daytona Docker Registry**: If you cant start the Daytona Docker registry don't panic, just re-run the `daytona create` command and it should run as expected.
 
 **IDE doesn't open after building Workspace** : If your IDE doesnt start immediately after building the devcontainer, open your terminal and type the `daytona list` command,select your running workspace and you're good to go.
+
+**Image Compatibilty Issues** : There could be a few issues regarding compatibility for the base Ubuntu image. You can fix it by opening `Dockerfile` and changing `FROM mcr.microsoft.com/devcontainers/base:focal` to `FROM ubuntu:focal`.
+
+**Build Target** : The build target may need to be set to docker manually. You can set it with `daytona target set`
 
 ## Conclusion
 
