@@ -11,11 +11,11 @@ tags: ["Project Config", "Daytona", "Development", "Prebuilds"]
 
 ## Introduction
 
-Creating and maintaining consistent [development environments](./definitions/20240819_definition_development%20environment.md)
+Creating and maintaining consistent [development environments](/definitions/20240819_definition_development%20environment.md)
 can often feel repetitive and time-consuming. Every time you start a new
 project or set up a new
-[workspace](./definitions/20240819_definition_daytona%20workspace.md), you may find
-yourself manually configuring [repositories](./definitions/20240819_definition_repository.md)
+[workspace](/definitions/20240819_definition_daytona%20workspace.md), you may find
+yourself manually configuring [repositories](/definitions/20240819_definition_repository.md)
 , environment variables, and build settings from scratch. As project
 complexity increases, these overhead tasks can hinder your productivity.
 
@@ -51,7 +51,7 @@ streamline workflows.
 
 **Project Configs** contains all the essential information necessary to create a
 **project** within a
-[workspace](./definitions/20240819_definition_daytona%20workspace.md).
+[workspace](/definitions/20240819_definition_daytona%20workspace.md).
 It stores critical details like the [Repository URL](/definitions/20240819_definition_repository.md)
 , **build configurations**, and environment variables,
 making it easy to reuse these settings whenever you need to create a new workspace.
@@ -61,7 +61,7 @@ For a deeper understanding of how it works, check out the official [Usage guide]
 
 For developers working in teams or managing multiple projects, it's essential to
 maintain a uniform
-[development environment](./definitions/20240819_definition_development%20environment.md)
+[development environment](/definitions/20240819_definition_development%20environment.md)
 to avoid issues like version mismatches, missing dependencies, or inconsistent
 build processes. Project Configs not only save time
 but also ensure that the environments are consistent and reproducible.
@@ -87,7 +87,7 @@ consistent [development environment](/definitions/20240819_definition_developmen
 across multiple workspaces. Whether you're switching between
 projects or collaborating with other developers, the environment will always be
 identical, reducing the likelihood of
-"[works on my machine](./definitions/20240819_definition_works%20on%20my%20machine%20syndrome.md)"
+"[works on my machine](/definitions/20240819_definition_works%20on%20my%20machine%20syndrome.md)"
 issues.
 
 ### Reusability and Automation
@@ -101,7 +101,7 @@ time but also helps avoid human errors that can occur during manual setup.
 
 New developers joining a project or team can benefit from Project Configs by having
 a predefined, ready-to-use
-[development environment](./definitions/20240819_definition_development%20environment.md).
+[development environment](/definitions/20240819_definition_development%20environment.md).
 This eliminates the learning curve of setting up an
 environment from scratch and ensures that new team members are
 productive from day one.
@@ -122,7 +122,7 @@ daytona project-config add
 ```
 
 You'll be prompted to enter key information for the configuration, such as the
-[repository URL](./definitions/20240819_definition_repository.md), build
+[repository URL](/definitions/20240819_definition_repository.md), build
 configuration, and environment variables.
 
 For example:
@@ -154,6 +154,7 @@ daytona project-config add
 > Enter environment variables: NODE_ENV=development
 > Name your project config: TypeScript-Node
 ```
+<img src='assets/20240910_Daytona_Project_Config_add.png'/>
 
 Once saved, you can apply this configuration to multiple workspaces, ensuring that
 each workspace has the same repository and environment setup. To create a new
@@ -186,11 +187,7 @@ daytona project-config list
 This will display a table with the Project Config name, associated repository,
 build configuration, and whether it's set as the default.
 
-```bash
-Name                       Repository                                Build    Default
-───────────────────────────────────────────────────────────────────────────────────
-TypeScript-Node https://github.com/daytonaio/sample-ts   Dev      Yes
-```
+<img src='assets/20240910_Daytona_Project_Config_list.png'/>
 
 ### Viewing Details of a Project Config
 
@@ -290,6 +287,6 @@ daytona project-config delete
 ```
 
 For more detailed documentation, visit the official
-[Daytona CLI Reference](<https://www.daytona.io/docs/reference/cli/#daytona-project-config>)
+[Daytona CLI Reference](<https://www.daytona.io/docs/tools/cli/#daytona-project-config>)
 or explore our comprehensive
 [Project Configuration Usage Guide](<https://www.daytona.io/docs/usage/projects/#project-configuration>)
