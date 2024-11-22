@@ -6,7 +6,7 @@ author: "Jeffrey Whewhetu"
 tags: ["DuckDB", "OLAP", "Daytona", "Python"]
 ---
 
-# Building DuckDB Playground Environment in Daytona Workspace
+# Building a DuckDB Playground with Daytona
 
 # Introduction
 This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real-world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via its Client API. So it's a long ride and you can get a coffee nearby.
@@ -102,7 +102,7 @@ Paste this code into your `devcontainer.json` file.
         "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
         "ghcr.io/devcontainers/features/python:1": {}
     },
-    "postCreateCommand": "pip install duckdb matplotlib"
+    "postCreateCommand": "pip install duckdb matplotlib pandas"
 }
 ```
 
@@ -188,6 +188,9 @@ By now, you should be in your default IDE set up using `daytona`. In your IDE te
 ```sql
 duckdb
 ```
+You should have a similar screenshot to the one below.
+
+![screenshot of duckdb interactive shell](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_1.png)
 
 ## Step 2: Create Database from CSV file
 
@@ -198,6 +201,8 @@ CREATE TABLE bank_marketing AS
 FROM 'bank_marketing.csv';
 ```
 
+![screenshot of creating database from csv file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_2.png)
+
 ## Step 3: Check Database Structure
 
 To check the database table schema run this SQL in the shell.
@@ -205,6 +210,8 @@ To check the database table schema run this SQL in the shell.
 ```sql
 DESCRIBE bank_marketing;
 ```
+
+![screenshot of description of the database](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_3.png)
 
 ## Step 4: Export Client Data to CSV
 
@@ -231,6 +238,8 @@ COPY (
 ) TO 'client.csv' (DELIMITER ',', HEADER TRUE);
 ```
 
+![screenshot of exporting client data to CSV file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_4.png)
+
 ## Step 5: Retrieve the List of Distinct Records in `day` Column
 
 Run the following SQL query to retrieve a list of distinct days from the bank_marketing table. The results would be useful in preparing the SQL query for step 7. We need to know the unique records in the `day` column.
@@ -240,6 +249,8 @@ SELECT DISTINCT day
 FROM 'bank_marketing.csv';
 ```
 
+![screenshot of distinct records in day column](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_5.png)
+
 ## Step 6: Retrieve the List of Distinct Records in `month` Column
 
 Run the following SQL query to retrieve the list of distinct months from the `bank_marketing` table. The results are also needed for the creation of a new column called `last_contact_date` later in step 7.
@@ -248,6 +259,8 @@ Run the following SQL query to retrieve the list of distinct months from the `ba
 SELECT DISTINCT month
 FROM 'bank_marketing.csv';
 ```
+
+![screenshot of distinct records in month column](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_6.png)
 
 ## Step 7: Export Campaign Data to CSV
 
@@ -291,6 +304,8 @@ COPY (
 ) TO 'campaign.csv' (DELIMITER ',', HEADER TRUE);
 ```
 
+![screenshot of exporting camapign data to CSV file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_7.png)
+
 ## Step 8: Export economic data to CSV
 
 Run the following SQL query to export economics data to a CSV file named `economics.csv`
@@ -301,9 +316,11 @@ COPY (
         client_id,
         cons_price_idx,
         euribor_three_months
-    FROM bank_marketing(test)
+    FROM bank_marketing
 ) TO 'economics.csv' (DELIMITER ',', HEADER TRUE);
 ```
+
+![screenshot of exporting economic data to CSV file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_8.png)
 
 ## Step 9: Read Data from Exported CSV files
 
@@ -314,15 +331,21 @@ SELECT *
 FROM 'client.csv';
 ```
 
+![screenshot of records in clients.csv file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_9.png)
+
 ```sql
 SELECT *
 FROM 'campaign.csv';
 ```
 
+![screenshot of records in campaign.csv file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_10.png)
+
 ```sql
 SELECT *
 FROM 'economics.csv';
 ```
+
+![screenshot of records in economics.csv file](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_11.png)
 
 Now, our three CSV files have been prepared for analysis using DuckDB Client API via Python. Let's head to the next section for the analysis.
 
@@ -350,6 +373,8 @@ print(f"Campaign success rate: {success_rate:.2%}")
 ```
 
 Run the `campaign_success_rate.py` file in your IDE terminal using `python3 campaign_success_rate.py` and see the campaign success rate of the `campaign.csv` output in your IDE terminal.
+
+![screenshot of campaign success rate](assets/20240820_how_to_setup_duckdb_playground_in_daytona_img_12.png)
 
 ## Step 2: Analysis and Visualization of Client Age by Educational Level
 
