@@ -11,102 +11,54 @@ tags: ["Project Config", "Daytona", "Development", "Prebuilds"]
 
 ## Introduction
 
-Creating and maintaining consistent [development environments](/definitions/20240819_definition_development%20environment.md)
-can often feel repetitive and time-consuming. Every time you start a new
-project or set up a new
-[workspace](/definitions/20240819_definition_daytona%20workspace.md), you may find
-yourself manually configuring [repositories](/definitions/20240819_definition_repository.md)
-, environment variables, and build settings from scratch. As project
-complexity increases, these overhead tasks can hinder your productivity.
+Developing similar [development environments](/definitions/20240819_definition_development%20environment.md) for different projects can often be boring and time-consuming. Each time you begin a new project or adjust a new [workspace](/definitions/20240819_definition_daytona%20workspace.md), you probably recreate [repository](/definitions/20240819_definition_repository.md), environment variables, and build settings by hand. The more complex your projects are, the more these overhead tasks hinder your productivity.
 
-What if there was a way to automate these processes and maintain consistency across
-all your workspaces? Enter **Daytona's Project Configs**, a powerful new feature
-introduced in [**v0.24.0**](<https://github.com/daytonaio/daytona/releases/tag/v0.24.0>)
-designed to simplify workspace setup by allowing you to
-predefine project settings that can be reused across multiple environments. Whether
-you're managing multiple repositories or frequently spinning up new development
-environments, Project Configs can save you hours of configuration time.
+You can automate all those processes and even keep the whole consistency throughout your workspaces by using Project Configs. They were introduced in [v0.24.0](<https://github.com/daytonaio/daytona/releases/tag/v0.24.0>). It enables you to predefine project settings .
 
-> **"The idea behind Project Configs is to give developers a quick, efficient way
-> to set up their projects without having to constantly reconfigure everything.
-> It's a time-saver and a consistency booster."** – Daytona Dev Team
+---
 
 ### TL;DR
 
-- **What are Project Configs?** A feature introduced in
-[Daytona v0.24.0](<https://github.com/daytonaio/daytona/releases/tag/v0.24.0>)
-for predefining
-workspace settings to reduce setup time.
-- **Why use them?** Save setup time, ensure consistency across environments, and
-streamline workflows.
-- **Key Features:** Automatically configure Git repository URLs, build settings
-(e.g., `devcontainer.json`), and environment variables in `KEY=VALUE` format.
+- **What are Project Configs?** Preset workspace parameters to save down on setup time.
+- **Why use them?** they reduce setup time and are prefered by power users 
+- **Key Features:** They use the KEY=VALUE syntax to enclose your project's environment variables, 
+build parameters (devcontainer.json), and Git URL.
 - **Future Development:** Project Configs will soon integrate with
 [Prebuilds](<https://www.daytona.io/docs/usage/prebuilds>)
 , enhancing workspace readiness.
 
 ---
 
-## What Is Daytona Project Config?
+## What Is a Project-Config ?
 
-**Project Configs** contains all the essential information necessary to create a
-**project** within a
-[workspace](/definitions/20240819_definition_daytona%20workspace.md).
-It stores critical details like the [Repository URL](/definitions/20240819_definition_repository.md)
-, **build configurations**, and environment variables,
-making it easy to reuse these settings whenever you need to create a new workspace.
-For a deeper understanding of how it works, check out the official [Usage guide](<https://www.daytona.io/docs/usage/projects/#project-configuration>).
+A project configuration contains all necessary properties to define and manage projects within a [Workspace](/definitions/20240819_definition_daytona%20workspace.md). It stores information such as the [repository URL](/definitions/20240819_definition_repository.md), build configuration, and environment variables. This allows for easy reuse of previously set configurations, ensuring a consistent and reproducible setup across multiple Workspaces.
 
-**Why is this important?**
+**What makes this significant?**
 
-For developers working in teams or managing multiple projects, it's essential to
-maintain a uniform
-[development environment](/definitions/20240819_definition_development%20environment.md)
-to avoid issues like version mismatches, missing dependencies, or inconsistent
-build processes. Project Configs not only save time
-but also ensure that the environments are consistent and reproducible.
+Maintaining a consistent [development environment](/definitions/20240819_definition_development%20environment.md) is crucial for developers managing several projects or working in teams in order to prevent problems like inconsistent build procedures, missing dependencies, and version mismatches. In addition to saving time, project configurations provide reproducible and consistent environments.
 
-### Key Features of Project Configs
+### Key Features of a Project-Config
 
-- **Repository URL**: Specifies the Git repository linked to your project.
-- **Build Configuration**: Choose between automatic detection, using a
-`devcontainer.json` file, custom image builds, or the default Daytona base image.
-- **Environment Variables**: Set essential environment variables for the build and
-runtime environments in `KEY=VALUE` format.
-- **Configuration Name**: Each Project Config has a unique identifier that
-distinguishes it from other configurations.
+A project configuration encapsulates all the essential elements for setting up a project, including:
+
+#### Repository URL
+The URL of the Git repository associated with the Project.
+
+#### Build Configuration
+- **[Automatic](<https://www.daytona.io/docs/usage/builders#automatic>)**: Auto-detects the most appropriate Builder for your project.
+- **[Devcontainer](<https://www.daytona.io/docs/usage/builders#dev-container>)**: Utilizes a predefined development container specified by a `devcontainer.json` file.
+- **[Custom image](<https://www.daytona.io/docs/usage/builders#custom-image>)**: Builds the Project image by specifying a custom base container.
+- **[None](<https://www.daytona.io/docs/usage/builders#none>)**: Builds a Project by using the default base image (`daytonaio/workspace-project`).
+
+#### Environment Variables
+Environment variables are specified in the `KEY=VALUE` format. These variables are essential for the Project’s build and runtime environments. You can set the variables directly or pass them from the machine’s environment during execution.
+
+#### Project Configuration Name
+A unique identifier for the Project Configuration, which distinguishes it from other configurations within the system.
 
 ---
 
-## Benefits of Project Configs for Developers
-
-### Consistency Across Environments
-
-One of the primary advantages of using Project Configs is that they ensure a
-consistent [development environment](/definitions/20240819_definition_development%20environment.md)
-across multiple workspaces. Whether you're switching between
-projects or collaborating with other developers, the environment will always be
-identical, reducing the likelihood of
-"[works on my machine](/definitions/20240819_definition_works%20on%20my%20machine%20syndrome.md)"
-issues.
-
-### Reusability and Automation
-
-With Project Configs you don't have to reinvent the wheel every time you create a
-new workspace. By storing repository and environment settings in a Project Config,
-you can easily reuse them across projects. This level of automation not only saves
-time but also helps avoid human errors that can occur during manual setup.
-
-### Faster Onboarding
-
-New developers joining a project or team can benefit from Project Configs by having
-a predefined, ready-to-use
-[development environment](/definitions/20240819_definition_development%20environment.md).
-This eliminates the learning curve of setting up an
-environment from scratch and ensures that new team members are
-productive from day one.
-
----
+With the `daytona project-config` command, you can add, view, update, list, set as default, or delete Project Configurations, giving you full control over the configuration and reuse of your Project setups across different Workspaces.
 
 ## Step-by-Step Guide: Creating a New Project Config
 
