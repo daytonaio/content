@@ -1,16 +1,18 @@
 ---
-title: "Using Environmental Variables in Daytona"
-description: "Learn how to set, manage, and use environmental variables in Daytona workspaces with a simple Python project for demonstration."
+title: 'Using Environmental Variables in Daytona'
+description: 'Learn how to set, manage, and use environmental variables in Daytona workspaces with a simple Python project for demonstration.'
 date: 2024-11-26
-author: "Busayo Samuel"
-tags: ["Environment Variables", "Development Environment", "Daytona Workspaces"]
+author: 'Busayo Samuel'
+tags: ['Environment Variables', 'Development Environment', 'Daytona Workspaces']
 ---
 
 # Using Environmental Variables in Daytona
 
 ## Introduction
 
-[Environmental variables]('/definitions/20241126_definition_environment_variables.md') are important for configuring development environments, storing sensitive information, and managing application settings. Daytona provides a straightforward method to set and manage environmental variables across different workspaces using the `daytona env` command.
+[Environmental variables]('/definitions/20241126_definition_environment_variables.md')  variables are important for configuring development environments and storing sensitive information. They provide a flexible way to control application behavior without hardcoding values directly into the source code. Daytona offers a streamlined method for setting, managing, and using environmental variables across various workspaces using the `daytona env` command. This simplifies configuration and enhances security especially when collaborating on projects.
+
+This article will explain how to use the `daytona env` command to set and manage environmental variables within Daytona workspaces. You will learn how to set variables, create a workspace, and access these variables within a workspace.
 
 ### TL;DR
 
@@ -76,6 +78,7 @@ The command will clone the repository, set up the development environment and op
 In your development enviroment, create a Python script to demonstrate accessing environmental variables:
 
 `env_demo.py`:
+
 ```python
 import os
 
@@ -93,6 +96,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
 Run the script using:
 
 ```bash
@@ -106,6 +110,7 @@ Your output should look like this:
 ### Best Practices
 
 1. **Security**:
+
    - Avoid storing sensitive information like passwords directly in environmental variables
    - Use secure secret management tools for production credentials
    - Consider using environment-specific configurations
