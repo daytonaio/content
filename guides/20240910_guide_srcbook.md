@@ -91,7 +91,7 @@ Now, open the `devcontainer.json` file and add the following configuration:
 
 With Daytona running and the environment set up, you can now create a repository with a devcontainer for Srcbook:
 
-# Example
+#### Example
 
 ```bash
 daytona create https://github.com/oreoluwa212/srcbooks-devcontainer
@@ -156,9 +156,7 @@ console.log(greet("Srcbook"));
 - Use GitHub Actions or similar tools to validate notebook execution
 - Export notebook results as part of your documentation or reporting process
 
-### 5.3 Troubleshooting
-
-## Common Issues and Troubleshooting
+### 5.3 Common Issues and Troubleshooting
 
 ### Problem 1: Container Fails to Start
 
