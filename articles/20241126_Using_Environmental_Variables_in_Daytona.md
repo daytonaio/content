@@ -10,9 +10,9 @@ tags: ['Environment Variables', 'Development Environment', 'Daytona Workspaces']
 
 ## Introduction
 
-[Environmental variables]('/definitions/20241126_definition_environment_variables.md')  variables are important for configuring development environments and storing sensitive information. They provide a flexible way to control application behavior without hardcoding values directly into the source code. Daytona offers a streamlined method for setting, managing, and using environmental variables across various workspaces using the `daytona env` command. This simplifies configuration and enhances security especially when collaborating on projects.
+[Environmental variables]('/definitions/20241126_definition_environment_variables.md') are important for configuring development environments and storing sensitive information. They provide a flexible way to control application behavior without hardcoding values directly into the source code. Daytona offers a streamlined method for setting, managing, and using environmental variables across various workspaces using the `daytona env` command. This simplifies configuration and enhances security especially when collaborating on projects.
 
-This article will explain how to use the `daytona env` command to set and manage environmental variables within Daytona workspaces. You will learn how to set variables, create a workspace, and access these variables within a workspace.
+This article will explain using the `daytona env` command to set and manage environmental variables within Daytona workspaces. You will learn how to set variables, create a workspace, and access these variables within a workspace.
 
 ### TL;DR
 
@@ -33,13 +33,13 @@ This article will explain how to use the `daytona env` command to set and manage
 
 ## Set Environmental Variables
 
-Before adding an environment variable to Daytona, ensure the both Docker and your server is running. Start your server using:
+Before adding an environment variable to Daytona, ensure that Docker and your server are running. Start your server using:
 
 ```bash
 daytona server
 ```
 
-Then use the `daytona env set` command to define environmental variables:
+Then use `daytona env set` to define environmental variables:
 
 ```bash
 daytona env set USERNAME=JohnDoe PASSWORD=123456
@@ -49,7 +49,7 @@ This command allows you to set multiple environmental variables in a single oper
 
 ### How `daytona env set` Works
 
-The command stores environmental variables at the workspace level. The variables are persistent across multiple workspace and are accessible to all containers and development tools within the workspace. This provides a secure way to manage configuration without modifying project files.
+The command stores environment variables at the workspace level. The variables are persistent across multiple workspaces and are accessible to all containers and development tools within the workspace. This provides a secure way to manage configuration without modifying project files.
 
 You can verify that the environmental variables have been saved by running:
 
@@ -57,7 +57,7 @@ You can verify that the environmental variables have been saved by running:
 daytona env list
 ```
 
-You should see output similar to the image below:
+You should see an output similar to the image below:
 
 ![Screenshot example of Daytona env variable list](assets/20241126_Using_Environmental_Variables_in_Daytona_1.png)
 
@@ -69,13 +69,13 @@ You can create and open a new workspace using Daytona's create command with the 
 daytona create --code
 ```
 
-When prompted, choose to enter a GitHub URL. For this tutorial, let's use a simple Python project with a DevContainer configuration. Enter this URL in the input space: `https://github.com/bellatrick/python_starter.git`
+When prompted, choose to enter a GitHub URL. Let's use a simple Python project with a DevContainer configuration for this tutorial. Enter this URL in the input space: `https://github.com/bellatrick/python_starter.git`.
 
-The command will clone the repository, set up the development environment and open Visual Studio Code.
+The command will clone the repository, set up the development environment, and open Visual Studio Code.
 
 ### Using Environmental Variables in Your Project
 
-In your development enviroment, create a Python script to demonstrate accessing environmental variables:
+In your development environment, create a Python script to demonstrate accessing environment variables:
 
 `env_demo.py`:
 
