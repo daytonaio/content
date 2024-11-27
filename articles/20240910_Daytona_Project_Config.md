@@ -58,14 +58,13 @@ A unique identifier for the Project Configuration, which distinguishes it from o
 
 ---
 
-With the `daytona project-config` command, you can add, view, update, list, set as default, or delete Project Configurations, giving you full control over the configuration and reuse of your Project setups across different Workspaces.
+`daytona project-config` command allows you to add, inspect, change, list, set as default, and delete Project Configurations, providing you complete control over the configuration and reuse of your Project configurations across many Workspaces.
 
 ## Step-by-Step Guide: Creating a New Project Config
 
-Let's dive into the actual process of creating a Project Config in Daytona. Here's
-how you can get started:
+To get started in actual process steps included:
 
-### 1. Add a New Project Config
+### No 1. Add a New Project Config
 
 Open your terminal and run the following command:
 
@@ -73,11 +72,11 @@ Open your terminal and run the following command:
 daytona project-config add
 ```
 
-You'll be prompted to enter key information for the configuration, such as the
+You'll be asked to enter key information for the configuration, such as the
 [repository URL](/definitions/20240819_definition_repository.md), build
 configuration, and environment variables.
 
-For example:
+We will see an example now:
 
 ```bash
 daytona project-config add
@@ -97,7 +96,7 @@ Let's set up a Project Config for a
 , which includes a basic Node.js app and a `devcontainer.json`
 for an easy development setup.
 
-Here's how to create the Project Config:
+Let's learn how to make a Project Config:
 
 ```bash
 daytona project-config add
@@ -108,7 +107,7 @@ daytona project-config add
 ```
 <img src='assets/20240910_Daytona_Project_Config_add.png'/>
 
-Once saved, you can apply this configuration to multiple workspaces, ensuring that
+Saving this, will apply this configuration to multiple workspaces, ensuring that
 each workspace has the same repository and environment setup. To create a new
 workspace with this setup, use:
 
@@ -117,8 +116,8 @@ daytona create
 > Select project config: TypeScript-Node
 ```
 
-This process will quickly set up your workspace with the same configuration, making
-it easy to get started.
+This process will easily set up your workspace with the exact configuration, making
+it smooth to get started.
 
 ---
 
@@ -141,7 +140,7 @@ build configuration, and whether it's set as the default.
 
 <img src='assets/20240910_Daytona_Project_Config_list.png'/>
 
-### Viewing Details of a Project Config
+### Seeing the Details of a Project Config
 
 To see the details of a specific Project Config, run:
 
@@ -151,7 +150,7 @@ daytona project-config info
 
 Select the configuration you want to view, and Daytona will display details about
 the repository URL, build configuration, and any environment variables associated
-with it. For example, you might see information like this:
+with it. It might look like this:
 
 ```bash
 Project Config Info:
@@ -163,30 +162,30 @@ Build: Devcontainer
 Devcontainer path: .devcontainer/devcontainer.json
 ```
 
-This output provides a structured view of the Project Config, showing key details
+This result provides a structured view of the Project Config, showing important details
 such as the repository URL, build configuration, and the path to the development
 container configuration.
 
 ---
 
-## Updating or Deleting Project Configs
+## Updating or Removing Project Configs
 
 ### Updating a Project Config
 
-If you need to change settings within an existing Project Config, Daytona makes it
+If you need to change settings within an before active Project Config, Daytona makes it
 easy. Simply run:
 
 ```bash
 daytona project-config update
 ```
 
-You'll be prompted to select the Project Config you want to update and then modify
+You'll be asked to choose the Project Config you want to remake and then change
 any of the settings, such as changing the repository URL or adding new environment
 variables.
 
 ### Deleting a Project Config
 
-If a configuration is no longer needed, you can remove it using the following
+If a configuration is no longer needed, you can delete it using the following
 command:
 
 ```bash
@@ -200,18 +199,18 @@ clean and organized.
 
 ## What's Next: Project Configs and Prebuilds
 
-The introduction of Project Configs is part of Daytona's broader initiative to
-improve developer efficiency by automating repetitive tasks. One upcoming feature
+The introduction of Project Configs is part of Daytona's broader start to
+improve developer productivity by automating repetitive tasks. One upcoming feature
 that will further streamline the development process is **Prebuilds**.
 
 ### How Prebuilds Will Enhance Project Configs
 
-Prebuilds allow for even faster workspace setup by listening for changes in the
+Prebuilds allow for even rapid workspace setup by listening for changes in the
 underlying repository and automatically running builds in the background. This
 ensures that when a developer creates a new workspace, all necessary builds have
 already been completed, significantly reducing wait times.
 
-> **"Prebuilds are designed to take Daytona's automation to the next level,
+> **"Prebuilds are made to take Daytona's automation to the next level,
 > allowing for 'ready-to-go' environments. Coupled with Project Configs, they'll
 > make workspace creation nearly instantaneous."** – Daytona Engineering Team
 
@@ -225,7 +224,7 @@ variables, and build settings. Whether you're a solo developer or part of a larg
 team, the ability to define and reuse configurations can dramatically enhance your
 productivity.
 
-As Daytona continues to roll out features like **Prebuilds**, the development
+As Daytona continues to launch new features like **Prebuilds**, the development
 experience will only get faster and more efficient, allowing developers to spend
 less time on setup and more time coding.
 
@@ -238,7 +237,7 @@ daytona project-config update
 daytona project-config delete
 ```
 
-For more detailed documentation, visit the official
+For detailed documentation, visit the official
 [Daytona CLI Reference](<https://www.daytona.io/docs/tools/cli/#daytona-project-config>)
 or explore our comprehensive
 [Project Configuration Usage Guide](<https://www.daytona.io/docs/usage/projects/#project-configuration>)
