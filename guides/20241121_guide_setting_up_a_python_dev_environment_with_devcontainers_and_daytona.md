@@ -1,25 +1,25 @@
 ---
-title: "Setting Up a Python Dev Environment with DevContainers and Daytona"
-description: "A step-by-step guide to setting up a Python dev environment with DevContainers and Daytona"
+title: "Setting Up a Python Dev Environment with Dev Containers and Daytona"
+description: "A step-by-step guide to setting up a Python dev environment with Dev Containers and Daytona"
 date: 2024-11-21
 author: "Kiran Naragund"
 tags: ["python", "devcontainers", "daytona"]
 ---
 
-# Setting Up a Python Dev Environment with DevContainers and Daytona
+# Setting Up a Python Dev Environment with Dev Containers and Daytona
 
 ## Introduction
 
-In modern Python development, managing dependencies, Python versions, and conflicting libraries can often be cumbersome and time-consuming. Traditional tools like venv, virtualenv, and pipenv have helped manage these issues, but there's a better way to simplify and streamline your workflow: using DevContainers with Daytona.
+In modern Python development, managing dependencies, Python versions, and conflicting libraries can often be cumbersome and time-consuming. Traditional tools like venv, virtualenv, and pipenv have helped manage these issues, but there's a better way to simplify and streamline your workflow using Dev Containers with Daytona.
 
-This guide walks you through setting up a Python development environment using Daytona's containerized workspaces and the DevContainer. You'll learn how to skip the hassle of traditional environment managers and achieve consistency across team members, projects, and machines.
+This guide walks you through setting up a Python development environment using Daytona's containerized workspaces and the Dev Container.
 
 ### TL;DR
 
-- What is needed to get started in this hands-on learning
-- Overviews of both DevContainer and Daytona
-- Using Python project template
-- Setup python project workspace in Daytona
+- Required tools and knowledge for hands-on learning.
+- Overview of both Dev Containers and Daytona.
+- Setting up a Python project template.
+- Creating a Python project workspace in Daytona.
 - Conclusion
 
 ## Prerequisites
@@ -46,11 +46,11 @@ Daytona is an open-source development environment manager that uses configuratio
 
 For more info about Daytona and it's features, check [here](https://daytona.io)
 
-## Overview of DevContainers
+## Overview of Dev Containers
 
-DevContainers, short for Development Containers, are a way to configure portable and reproducible development environments using Docker containers. Dev containers are isolated, lightweight environments that allow developers to work inside a containerized version of a build environment. 
+Dev Containers, short for Development Containers, are a way to configure portable and reproducible development environments using Docker containers. Dev containers are isolated, lightweight environments that allow developers to work inside a containerized version of a build environment. 
 
-**Key Features of DevContainers:**
+**Key Features of Dev Containers:**
 
 - **Pre-configured Build Environments**: Dev containers come with a base image that has all the software, tools, and dependencies pre-installed, so you can get started coding right away.
 - **Isolated Environments**: Each dev container has its own isolated filesystem, networking, memory, and CPU, so there are no conflicts with other projects or software on your local machine.
@@ -58,19 +58,73 @@ DevContainers, short for Development Containers, are a way to configure portable
 - **Less Setup Time**: Starting a new project with dev containers means you can skip the lengthy setup and configuration process. Just open your project in the container and everything is ready to go.
 - **Flexibility**: You can choose a base image with the software and tools you want or build your own custom base image, meeting your specific needs.
 
-For more info about DevContainers and it's features, check [here](https://containers.dev/)
+For more info about Dev Containers and it's features, check [here](https://containers.dev/)
 
 ## Step 1: Preparations
 
 ### Fork the Template Repository
 
-For this guide we will be using this [pthon-project-template](https://github.com/pamelafox/python-project-template). 
-
-This repository starts with a very simple `main.py` and a test for it at `tests/main_test.py`. Read the README file for better understanding of the file structure.
+We’ll use this [pthon-project-template](https://github.com/pamelafox/python-project-template), which includes a basic `main.py` and tests in `tests/main_test.py`. Refer to the `README` for details on the project structure.
 
 Click on the "Fork" button at the top right of the repository page to create a local copy under your GitHub account.
 
-**Note:** *[The `.devcontainer/devcontainer.json` file content defines a configuration for a python development container environment.]*
+The `.devcontainer/devcontainer.json` file content defines a configuration for a python development container environment.
+
+```json
+{
+    "name": "Python 3",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+
+    "customizations": {
+
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.unittestEnabled": false,
+                "files.exclude": {
+                    ".coverage": true,
+                    ".pytest_cache": true,
+                    "__pycache__": true
+                }
+            },
+
+            "extensions": [
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "ms-python.black-formatter"
+            ]
+        }
+    },
+
+
+    // "forwardPorts": [],
+
+	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+	"postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",
+
+    "remoteUser": "vscode"
+}
+```
+Let's breakdown the `devcontainer.json` file 
+  - **name**: Specifies the name of the development environment.
+  - **image**: Points to the Docker image used for the container, `mcr.microsoft.com/devcontainers/python:3.11-bullseye`, a Python 3.11 environment based on Debian Bullseye.
+  - **customizations**: Allows customization of the development environment, specifically for Visual Studio Code.
+    - **vscode**: AContains VS Code-specific configurations
+      - **settings**: Defines default VS Code settings for the container:
+        - **python.defaultInterpreterPath**: Specifies the Python interpreter path inside the container (`/usr/local/bin/python`).
+        - **python.testing.pytestEnabled**: Enables the use of `pytest` for testing.
+        - **python.testing.unittestEnabled**: Disables unittest as the testing framework.
+        - **files.exclude**: Hides specified files and folders (e.g., `.coverage`, `.pytest_cache`, `__pycache__`) from the VS Code file explorer.
+      - **extensions**: Lists extensions to be installed automatically in the container:
+        - **ms-python.python**: Python language support for VS Code.
+        - **charliermarsh.ruff**: A Python linter.
+        - **ms-python.black-formatter**: Formatter for Python code using Black.
+  - **forwardPorts**: (Currently commented out) Would be used to expose specific container ports to the host machine for interaction.
+  - **postCreateCommand**: Configures Git to recognize the container workspace folder as safe (`git config --global --add safe.directory ${containerWorkspaceFolder}`).
+  - **postStartCommand**: Installs Python packages from requirements-dev.txt (`pip3 install --user -r requirements-dev.txt`) and sets up pre-commit hooks (`pre-commit install`).
+  - **remoteUser**: sets `vscode` as the non-root default user.
 
 By including a devcontainer.json file in your project repository, you can specify not just the Python version and dependencies, but also any required system packages, VS Code extensions, environment variables, and even custom scripts to run during setup.
 
@@ -142,21 +196,19 @@ Daytona will now start creating a workspace by pulling your project and install 
 Now, your python dev environmentis ready to use.
 
 ### Step 3: Confirmation
-Now, In your VS code run the test cases, you will see all the testcases passed. This means python dev environment has successfull set for your project.
+In your VS Code, run the test cases using the command below, you will see all the testcases passed. This means the python dev environment has successfull set for your project.
+
+```bash
+python3 -m pytest
+```
 
 ![Daytona workspace](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img10.png)
 
 ## Conclusion
-By following this guide, you've set up a fully containerized Python development environment using Daytona and DevContainers. This setup ensures that your projects are reproducible, isolated, and consistent across machines, enabling smooth collaboration and effortless debugging.
+By following this guide, you've set up a fully containerized Python development environment using Daytona and Dev Containers. This setup ensures that your projects are reproducible, isolated, and consistent across machines, enabling smooth collaboration and effortless debugging.
 
 ## References
 
 - [Python Project Template by Pamela Fox](https://github.com/pamelafox/python-project-template)
 
 - [Daytona Documentation](https://www.daytona.io/dotfiles/the-ultimate-guide-to-managing-python-environments)
-
-
-<!-- Note on Definitions -->
-<!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
-<!-- Format: [term](/definitions/term.md) -->
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
