@@ -29,8 +29,6 @@ To follow this guide, you'll need to have the following:
 - Docker (download from [here](https://www.docker.com/))
 - Daytona latest version [install from [here](https://www.daytona.io/docs/installation/installation/)]
 
-**Note:** *[In this guide, Daytona v0.45.0 is used]*
-
 ## Overview of Daytona
 Daytona is an open-source development environment manager that uses configuration files from a project's repository to build and provision workspaces. It simplifies the process of setting up consistent development environments across teams or for individual developers.
 
@@ -159,8 +157,6 @@ Your output should be similar to the image below
 Select GitHub and provide your personal access token.
 
 ![image of github provider](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img4.png)
-
-**Note:** *[Enable the required scopes while generating the token]*
 
 ### Step 2.3: Choose your preferred IDE
      
