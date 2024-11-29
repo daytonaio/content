@@ -69,7 +69,7 @@ You can create and open a new workspace using Daytona's create command with the 
 daytona create --code
 ```
 
-When prompted, choose to enter a GitHub URL. Let's use a simple Python project with a DevContainer configuration for this tutorial. Enter this URL in the input space: `https://github.com/bellatrick/python_starter.git`.
+When prompted, choose to enter a GitHub URL. Let's use a simple Python project with a Dev Container configuration for this tutorial. Enter this URL in the input space: `https://github.com/bellatrick/python_starter.git`.
 
 The command will clone the repository, set up the development environment, and open Visual Studio Code.
 
@@ -133,4 +133,4 @@ The `daytona env` command provides a simple and powerful method for managing env
 
 - [Daytona Official Documentation](https://www.daytona.io/docs/)
 - [Daytona CLI](https://www.daytona.io/docs/tools/cli/#daytona-env)
-- [DevContainer Specification](https://containers.dev/)
+- [Dev Container Specification](https://containers.dev/)
