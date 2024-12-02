@@ -9,7 +9,7 @@ tags: ["DuckDB", "OLAP", "Daytona", "Python"]
 # Building a DuckDB Playground with Daytona
 
 # Introduction
-This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real-world data project in a containerized [workspace](20240819_definition_daytona workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via its Client API. So it's a long ride and you can get a coffee nearby.
+This is a comprehensive hands-on guide in using [DuckDB](20240922_definition_duckdb.md) database to perform a real-world data project in a containerized [workspace](20240819_definition_daytona%20workspace.md) using Daytona. You'll follow me along from setup to actually working with DuckDB cli and even with [Python](20240820_defintion_python.md) via its Client API. So it's a long ride and you can get a coffee nearby.
 
 In this comprehensive guide, you will learn how to prepare personal loan marketing campaign data for importation into a DuckDB database and analyze the dataset. Your tasks will include collecting and reviewing the data, cleaning and structuring it according to a specification, handling errors and inconsistencies, and transforming and splitting it into multiple CSV files. The CSV file you'll work on is called `bank_marketing.csv`, download from GitHub [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv)
 
@@ -17,7 +17,7 @@ In this comprehensive guide, you will learn how to prepare personal loan marketi
 
 - What you need to follow along with the guide.
 - What's DuckDB and Why Use it
-- Set up a Daytona Workspace with DuckDB [environment](20240819_definition_development environment.md)
+- Set up a Daytona Workspace with DuckDB [environment](20240819_definition_development%20environment.md)
 - Hands-on practice using DuckDB as a CLI Tool
 - Hands-on practice using DuckDB client API with [Python](20240820_defintion_python.md)
 - Conclusion
@@ -26,7 +26,7 @@ In this comprehensive guide, you will learn how to prepare personal loan marketi
 
 To follow along with a hands-on guide about DuckDB Playground in Daytona, you'll need to have the following;
 
-- An [IDE](20240819_definition_integrated development environment _ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
+- An [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
 - [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click here for more info.
 - Daytona installation on your PC or Mac. Click here for more info.
 - A GitHub account to create a [repository](20240819_definition_repository.md). Link here to create one, if you don’t have one.
@@ -46,11 +46,11 @@ DuckDB has many features that make it stand out among other databases focusing o
 - **Portable:** Since it has no external dependencies, it's extremely portable and can be compiled for all major operating systems and CPU architectures.
 - **Feature-Rich:** DuckDB has some interesting features such as extensive support for SQL complex queries, integrations to languages like [Python](20240820_defintion_python.md), R and Java, and data can be stored as persistent, single-file databases.
 - **Speed:** It's faster as it uses a columnar-vectorized query execution engine which improves performance to run [OLAP](20240922_definition_online_analytical_processing_olap.md) workloads.
-- **Free:** Lastly, it's a free [open source](20240819_definition_open source.md) database system which anyone can use because of its permissive MIT License.
+- **Free:** Lastly, it's a free [open source](20240819_definition_open%20source.md) database system which anyone can use because of its permissive MIT License.
 
 # Setting up Daytona Workspace for DuckDB Playground
 
-Alright, that's enough reading, now let us start writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development environment.md) in a [Daytona workspace](20240819_definition_daytona workspace.md). Let’s begin.
+Alright, that's enough reading, now let us start writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development%20environment.md) in a [Daytona workspace](20240819_definition_daytona%20workspace.md). Let’s begin.
 
 ## Step 1: Create a GitHub Repository
 
@@ -106,7 +106,7 @@ Paste this code into your `devcontainer.json` file.
 }
 ```
 
-The `devcontainer.json` content contains configurations to start your DuckDB environment in a [Daytona workspace](20240819_definition_daytona workspace.md).
+The `devcontainer.json` content contains configurations to start your DuckDB environment in a [Daytona workspace](20240819_definition_daytona%20workspace.md).
 
 - `name`: This sets the name of the development container environment to `DuckDB Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
@@ -153,7 +153,7 @@ You should see logs like my screenshot.
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
-Run the command below in a new tab of your terminal and follow the prompt instructions. It would ask you for a [workspace](20240819_definition_daytona workspace.md) name to use, choose the default.
+Run the command below in a new tab of your terminal and follow the prompt instructions. It would ask you for a [workspace](20240819_definition_daytona%20workspace.md) name to use, choose the default.
 
 Replace `USERNAME` and `REPOSITORY-NAME` with your username for GitHub and the repository name you created earlier.
 
@@ -169,7 +169,7 @@ daytona create https://github.com/c0d33ngr/playground-duckdb
 
 After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the DuckDB environment is running.
 
-You can now run this command to open the DuckDB [environment](20240819_definition_development environment.md) in your default [IDE](20240819_definition_integrated development environment _ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
+You can now run this command to open the DuckDB [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -442,7 +442,7 @@ plt.show()
 
 Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
 
-That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona workspace.md).
+That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona%20workspace.md).
 
 # Conclusion
 
