@@ -23,7 +23,7 @@ Some of the main benefits of using dev containers include:
 - **Less Setup Time**: Starting a new project with dev containers means you can skip the lengthy setup and configuration process. Just open your project in the container and everything is ready to go.
 - **Flexibility**: You can choose a base image with the software and tools you want or build your own custom base image, meeting your specific needs.
 
-  ![Alt text](../authors/assets/devcontainer.png)
+  ![Alt text](./assets/20230820_devcontainer.png)
 
 Dev containers revolutionize the developer experience by providing pre-configured, isolated environments that can supercharge your productivity. If you haven't tried them yet, you owe it to yourself as a developer to give dev containers a shot. They may just change the way you work! The future is containerized!
 
@@ -63,31 +63,35 @@ Before you begin, ensure you have the following:
 
    Source: [Dockerfile Configuration `Dockerfile`](https://github.com/devcontainers/templates/blob/main/src/go-postgres/.devcontainer/Dockerfile)
 
-## Step 1: Create a `devcontainer.json` File
+## Start to create your first dev container
+
+Get started with a fully isolated development environment that’s quick to set up and easy to use. Let’s dive in!
+
+### Step 1: **Create a `devcontainer.json` File**
 
 The devcontainer.json file describes how VSCode should interact with the development container. In the same directory, create a file named devcontainer.json with the following content:
 
-```sh
+```json
 {
-    "name": "Go & PostgreSQL",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "app",
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+  "name": "Go & PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
 
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    // "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-    // Configure tool-specific properties.
-    // "customizations": {},
+  // Configure tool-specific properties.
+  // "customizations": {},
 
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [5432],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [5432],
 
-    // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "go version",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "go version",
 
-    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
 ```
 
@@ -95,12 +99,12 @@ This file tells VSCode to build the development container image using the Docker
 
 Source: [DevContainer Configuration `devcontainer.json`](https://github.com/devcontainers/templates/blob/main/src/go-postgres/.devcontainer/devcontainer.json)
 
-### Step 3a: Open the Project in VSCode
+### Step 2a: Open the Project in VSCode
 
 1. **Open the Directory**: You created in VSCode.
 2. **Reopen in Container**: Press `F1` to open the command palette and select `Remote-Containers: Reopen in Container`. This will build the Docker image if it's not already built and start a container with your development environment, attaching VSCode to it.
 
-### Step 3b: Open the Project in Daytona
+### Step 2b: Open the Project in Daytona
 
 **Why Daytona?**  
 Daytona automates environment setup, manages containers, and handles SSH and port forwarding, ensuring a stable, consistent development environment with minimal setup time and no drift.
@@ -108,11 +112,22 @@ Daytona automates environment setup, manages containers, and handles SSH and por
 **How to Setup?**
 
 1. **Start Daytona**: Run `daytona server` to launch the server.
+
+   ![Alt text](./assets/20230820_dev_server.png)
+
 2. **Create DevContainer**: Use `daytona create test -r <repo> --skip-ide` to set up your container.
+
+   ![Alt text](./assets/20230820_dev_create.png)
+
 3. **Open in VSCode**: Run `daytona code` to open the project in VSCode.
+
+   ![Alt text](./assets/20230820_dev_vscode.png)
+
 4. **Rebuild in Container**: Press `Cmd + Shift + P` or `Ctrl + Shift + P` in VSCode and select "_Rebuild and Reopen in Container._"
 
-### Step 4: Develop Inside the Container
+   ![Alt text](./assets/20230820_dev_rebuild_container.png)
+
+### Step 3: Develop Inside the Container
 
 Now you are inside a containerized development environment. You can open a terminal in VSCode, and you'll be interacting with the shell inside the container. Install your project's dependencies, develop your code, and run your applications all within the container. You can add more tools and dependencies you need for your project by modifying the Dockerfile and rebuilding the container.
 
