@@ -13,13 +13,17 @@ description:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+>>>>>>> 6a73653 (fixed linting issues and changes some rules)
 Python is a high-level, interpreted programming language known for its
 readability and ease of use. It was created by Guido van Rossum and first
 released in 1991. Python's syntax emphasizes code readability and simplicity,
 allowing developers to express concepts in fewer lines of code compared to
 languages like C++ or Java.
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Python is widely used in various fields, including web development, data
@@ -48,6 +52,8 @@ development workflow.
 Python is a high-level, interpreted programming language known for its readability and ease of use. It was created by Guido van Rossum and first released in 1991. Python's syntax emphasizes code readability and simplicity, allowing developers to express concepts in fewer lines of code compared to languages like C++ or Java.
 =======
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+>>>>>>> 6a73653 (fixed linting issues and changes some rules)
 
 Python is widely used in various fields, including web development, data
 science, artificial intelligence, scientific computing, and automation. Its
@@ -67,6 +73,7 @@ making it a go-to language for both beginners and experienced developers.
 
 - **Community Support:** Python has a large and active community, offering
   extensive resources for learning and problem-solving.
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,3 +91,9 @@ In a Devcontainer, Python is frequently used to install packages, manage
 environments, and automate setup processes, making it an essential part of the
 development workflow.
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+
+In a Devcontainer, Python is frequently used to install packages, manage
+environments, and automate setup processes, making it an essential part of the
+development workflow.
+>>>>>>> 6a73653 (fixed linting issues and changes some rules)

@@ -1,9 +1,11 @@
 ---
-title: "Title of the Article. The title should be a max. of 55 characters."
-description: "A brief description of what the article covers. The description should be a maximum of 160 characters."
+title: 'Title of the Article. The title should be a max. of 55 characters.'
+description:
+  'A brief description of what the article covers. The description should be a
+  maximum of 160 characters.'
 date: YYYY-MM-DD
-author: "Author Name"
-tags: ["one", "two", "three"]
+author: 'Author Name'
+tags: ['one', 'two', 'three']
 ---
 
 # Title of the Article
@@ -81,12 +83,16 @@ reader.]_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 934db35 (fixed merge conflict)
+=======
+>>>>>>> 6a73653 (fixed linting issues and changes some rules)
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 >>>>>>> 49d2e46 (fixed merge conflict)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
@@ -105,3 +111,8 @@ reader.]_
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
 =======
 >>>>>>> 934db35 (fixed merge conflict)
+=======
+=======
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+>>>>>>> 3b409bd (fixed linting issues and changes some rules)
+>>>>>>> 6a73653 (fixed linting issues and changes some rules)
