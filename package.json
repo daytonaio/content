@@ -2,9 +2,13 @@
     "name": "content-repo",
     "version": "1.0.0",
     "scripts": {
-      "lint": "markdownlint '**/*.md'"
+        "lint:md": "markdownlint '**/*.md' --ignore 'node_modules'",
+        "prepare": "husky install"
+
     },
     "devDependencies": {
-      "markdownlint-cli": "^0.29.0"
+        "husky": "^9.1.7",
+        "markdownlint-cli": "^0.29.0",
+        "prettier": "^3.4.1"
     }
-  }
+}
