@@ -87,30 +87,30 @@ development container environment.
 
 ```json
 {
-    "name": "Python 3",
-    "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "python.defaultInterpreterPath": "/usr/local/bin/python",
-                "python.testing.pytestEnabled": true,
-                "python.testing.unittestEnabled": false,
-                "files.exclude": {
-                    ".coverage": true,
-                    ".pytest_cache": true,
-                    "__pycache__": true
-                }
-            },
-            "extensions": [
-                "ms-python.python",
-                "charliermarsh.ruff",
-                "ms-python.black-formatter"
-            ]
-        }
-    },
-    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-    "postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",
-    "remoteUser": "vscode"
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "customizations": {
+      "vscode": {
+          "settings": {
+              "python.defaultInterpreterPath": "/usr/local/bin/python",
+              "python.testing.pytestEnabled": true,
+              "python.testing.unittestEnabled": false,
+              "files.exclude": {
+                  ".coverage": true,
+                  ".pytest_cache": true,
+                  "__pycache__": true
+              }
+          },
+          "extensions": [
+              "ms-python.python",
+              "charliermarsh.ruff",
+              "ms-python.black-formatter"
+          ]
+      }
+  },
+  "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",
+  "remoteUser": "vscode"
 }
 ```
 Let's breakdown the `devcontainer.json` file.
