@@ -133,7 +133,7 @@ Let's breakdown the `devcontainer.json` file.
 - **postStartCommand**: Installs Python packages from requirements-dev.txt ("pip3 install --user -r requirements-dev.txt") and sets up pre-commit hooks ("pre-commit install").
 - **remoteUser**: sets `vscode` as the non-root default user.
 
-By including a devcontainer.json file in your project repository, you can specify not just
+By including a `devcontainer.json` file in your project repository, you can specify not just
 the Python version and dependencies, but also any required system packages, VS Code extensions,
 environment variables, and even custom scripts to run during setup.
 
