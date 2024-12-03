@@ -1,9 +1,11 @@
 ---
-title: "Title of the Guide. The title should be a max. of 55 characters."
-description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
+title: 'Title of the Guide. The title should be a max. of 55 characters.'
+description:
+  'A brief description of what the guide covers. The description should be a
+  maximum of 160 characters.'
 date: YYYY-MM-DD
-author: "Author Name"
-tags: ["one", "two", "three"]
+author: 'Author Name'
+tags: ['one', 'two', 'three']
 ---
 
 # Title of the Guide
