@@ -57,9 +57,9 @@ For more info about Daytona and its features, check [here](https://daytona.io)
 ## Overview of Dev Containers
 
 Dev Containers, short for Development Containers, are a way to configure portable
-and reproducible development environments using Docker containers. Dev containers 
+and reproducible development environments using Docker containers. Dev containers
 are isolated, lightweight environments that allow developers to work inside a
-containerized version of a build environment. 
+containerized version of a build environment.
 
 **Key Features of Dev Containers:**
 
@@ -168,15 +168,15 @@ daytona git-provider add
 ```
 
 Your output should be similar to the image below.
-    
+
 ![image of github provider](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img3.png)
-    
+
 Select GitHub and provide your personal access token.
 
 ![image of github provider](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img4.png)
 
 ### Step 2.3: Choose your preferred IDE
-     
+
 Run this command in the terminal to choose your [IDE](https://www.daytona.io/docs/usage/ide/).
 
 ```bash
