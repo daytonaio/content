@@ -128,7 +128,6 @@ Let's breakdown the `devcontainer.json` file.
 - **ms-python.python**: Python language support for VS Code.
 - **charliermarsh.ruff**: A Python linter.
 - **ms-python.black-formatter**: Formatter for Python code using Black.
-- **forwardPorts**: (Currently commented out) Would be used to expose specific container ports to the host machine for interaction.
 - **postCreateCommand**: Configures Git to recognize the container workspace folder as safe ("git config --global --add safe.directory ${containerWorkspaceFolder}").
 - **postStartCommand**: Installs Python packages from requirements-dev.txt ("pip3 install --user -r requirements-dev.txt") and sets up pre-commit hooks ("pre-commit install").
 - **remoteUser**: sets `vscode` as the non-root default user.
