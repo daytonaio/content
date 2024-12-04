@@ -46,4 +46,4 @@ jobs:
         fi
 
     - name: Run Markdown Lint
-      run: npx markdownlint '**/*.md'
+      run: npx markdownlint '**/*.md --ignore "node_modules"'
