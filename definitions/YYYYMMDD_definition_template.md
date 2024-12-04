@@ -1,8 +1,8 @@
 ---
-title: "[Term to be Defined]"
-description: "A brief description of the term"
+title: '[Term to be Defined]'
+description: 'A brief description of the term'
 date: YYYY-MM-DD
-author: "Author Name"
+author: 'Author Name'
 ---
 
 # [Term to be Defined]
@@ -13,4 +13,5 @@ author: "Author Name"
 
 ## Context and Usage
 
-[Explain the context in which this term is typically used and how it's applied in practice]
+[Explain the context in which this term is typically used and how it's applied
+in practice]

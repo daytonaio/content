@@ -1,35 +1,43 @@
 ---
-title: "Title of the Guide. The title should be a max. of 55 characters."
-description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
+title: 'Title of the Guide. The title should be a max. of 55 characters.'
+description:
+  'A brief description of what the guide covers. The description should be a
+  maximum of 160 characters.'
 date: YYYY-MM-DD
-author: "Author Name"
-tags: ["one", "two", "three"]
+author: 'Author Name'
+tags: ['one', 'two', 'three']
 ---
 
 # Title of the Guide
 
-## Introduction
+# Introduction
 
-*[Write at least two paragraphs introducing the topic and what the guide will help the reader accomplish. Include any prerequisites. Use inline links for definitions where appropriate, e.g., [term](/definitions/term.md).]*
+_[Write at least two paragraphs introducing the topic and what the guide will
+help the reader accomplish. Include any prerequisites. Use inline links for
+definitions where appropriate, e.g., [term](/definitions/term.md).]_
 
-### TL;DR
+## TL;DR
 
-- **Bullet Point Summary**: *[Summarize the key points in a few bullet points for quick reference.]*
+- **Bullet Point Summary**: _[Summarize the key points in a few bullet points
+  for quick reference.]_
 
 ## Step 1: Preparations
 
 ### Subheading (if needed)
 
-*[Detail any preparatory steps the reader needs to take before starting the main guide. Continue to use inline links for definitions and sitemap articles where appropriate.]*
+_[Detail any preparatory steps the reader needs to take before starting the main
+guide. Continue to use inline links for definitions and sitemap articles where
+appropriate.]_
 
 **Example:**
 
-- **Step 1.1**: *[List out the first sub-step here.]*
-- **Step 1.2**: *[List out the second sub-step here.]*
+- **Step 1.1**: _[List out the first sub-step here.]_
+- **Step 1.2**: _[List out the second sub-step here.]_
 
 ## Step 2: Main Process
 
-*[Provide detailed, step-by-step instructions. Include screenshots, code snippets, and diagrams as needed.]*
+_[Provide detailed, step-by-step instructions. Include screenshots, code
+snippets, and diagrams as needed.]_
 
 ### Image or Diagram
 
@@ -37,36 +45,38 @@ tags: ["one", "two", "three"]
 
 ### Sub-step (if needed)
 
-*[Further breakdown of steps under this section.]*
+_[Further breakdown of steps under this section.]_
 
 ```bash
 # Example command or code snippet
 sudo apt-get update
 ```
 
-**Note:** *[Any special notes or warnings related to this step.]*
+**Note:** _[Any special notes or warnings related to this step.]_
 
 ## Step 3: Confirmation
 
-*[Describe how the reader can confirm they've completed the guide correctly.]*
+_[Describe how the reader can confirm they've completed the guide correctly.]_
 
 ## Common Issues and Troubleshooting
 
-*[List common problems and their solutions.]*
+_[List common problems and their solutions.]_
 
-**Problem:** *[Description of the problem]*
+**Problem:** _[Description of the problem]_
 
-**Solution:** *[Description of the solution]*
+**Solution:** _[Description of the solution]_
 
 ## Conclusion
 
-*[Summarize what was accomplished by following the guide. Optionally, suggest further actions or related guides.]*
+_[Summarize what was accomplished by following the guide. Optionally, suggest
+further actions or related guides.]_
 
 ## References
 
-*[Cite any sources or references used in the guide.]*
+_[Cite any sources or references used in the guide.]_
 
-*[Add links to related guides or further reading that might interest the reader.]*
+_[Add links to related guides or further reading that might interest the
+reader.]_
 
 <!-- Note on Definitions -->
 <!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
