@@ -410,10 +410,10 @@ plt.ylabel('Average Age')
 plt.title('Average Client Age by Education Level')
 plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
 plt.tight_layout()
-plt.show()
+plt.savefig('plot-1.png')
 ```
 
-Run the file in your IDE terminal using `python3 client_age_by_education.py` and you should see the visualization.
+Run the file in your IDE terminal using `python3 client_age_by_education.py` and you should see the visualization plot saved as `plot-1.png`.
 
 ### Step 3: Analysis and Visualization of Contact Duration and Campaign Outcome through Correlation
 
@@ -440,10 +440,10 @@ plt.xlabel('Contact Duration')
 plt.ylabel('Campaign Outcome')
 plt.title('Relationship Between Contact Duration and Campaign Outcome')
 plt.yticks([0, 1])  # Set y-axis ticks to 0 and 1
-plt.show()
+plt.savefig('plot-2.png')
 ```
 
-Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see some visualization.
+Run the file in the IDE terminal using `python3 contact_duration_vs_outcome.py` and you should also see another visualization plot saved as `plot-2.png`.
 
 That's it. You have done lots of data tasks using [DuckDB](20240922_definition_duckdb.md) in a [daytona workspace](20240819_definition_daytona%20workspace.md).
 
