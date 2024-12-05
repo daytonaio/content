@@ -120,7 +120,7 @@ If you're contributing to the Daytona Content Programme for the first time, we r
 2. Name the file using the format `firstname-lastname.md` (e.g., `jane-doe.md`).
 3. Use the provided template in the `authors` folder to fill out your profile information.
 4. Fill in all the fields with your information.
-5. Place your author image and company logos in the `authors/assets` folder, using clear and descriptive filenames.
+5. Place your author image and company logos in the `authors/assets` folder, using clear and descriptive filenames (e.g. name-surname-logo.png).
 6. In your profile, reference the image and logo files using relative paths from the `authors` folder.
 7. Once you've completed your profile, include it in the same pull request as your first content contribution.
 
