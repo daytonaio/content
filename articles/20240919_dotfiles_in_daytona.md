@@ -6,6 +6,8 @@ date: "2024-09-19"
 tags: ["dotfiles", "Daytona", "containerized development", "developer productivity"]
 ---
 
+
+
 # TL;DR
 
 Dotfiles help developers keep their environment settings consistent. This guide explains how to integrate your dotfiles into Daytona containers using tools like Chezmoi or Daytona’s native support for dotfile repositories.
