@@ -1,5 +1,5 @@
 ---
-title: 'Building a Link Shortener with FastHTML and Dub.co'
+title: 'Building a Link Shortener with FastHTML and Dub.co.'
 description:
   'Learn how to build a link shortener using FastHTML lightweight framework and Dub.co robust link management API.'
 date: 2024-12-05
@@ -100,6 +100,8 @@ Dub.co is a robust link management platform that allows developers and businesse
 
 Check out Dub.co: [Dub.co API Documentation](https://www.dub.co/api)
 
+# Setup Dub.co API key
+
 #  Setting up Daytona development environment
 To set up your Daytona development environment and integrate it with your IDE (such as VSCode, IntelliJ, or Cursor) and Git providers (including Bitbucket and GitHub), follow these steps:
 
@@ -111,14 +113,14 @@ To set up your Daytona development environment and integrate it with your IDE (s
    ```bash
    daytona serve
    ```
-   ![Terminal after starting Daytona serve](path/to/your/image1.png)
+   ![Terminal after starting Daytona serve](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_1.png)
 
 **Step 3: Set the Target to Local Docker Provider**: 
    Once the server is running, set up a target to your local Docker provider by executing:
    ```bash
    daytona target set
    ```
-   ![Terminal after setting target](path/to/your/image2.png)
+   ![Terminal after setting target](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_2.png)
 
 **Step 4: Add Git Provider**: 
    Next, set up your Git provider using the command:
@@ -126,7 +128,7 @@ To set up your Daytona development environment and integrate it with your IDE (s
    daytona git-providers add
    ```
    Select your preferred Git provider from the options presented. 
-   ![Terminal after adding git provider](path/to/your/image3.png)
+   ![Terminal after adding git provider](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_3.png)
 
 **Step 5: Set Up IDE for Development**: 
    Use the following command to set up your IDE for development:
@@ -134,17 +136,28 @@ To set up your Daytona development environment and integrate it with your IDE (s
    daytona ide
    ```
    Choose any IDE you prefer, such as Visual Studio Code or IntelliJ. 
-   ![Terminal after setting up IDE](path/to/your/image4.png)
+   ![Terminal after setting up IDE](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_4.png)
 
 **Step 6: Create a Workspace**: 
    Finally, create a workspace using your GitHub repository URL with the command:
    ```bash
    daytona create <github_url>
    ```
-   ![Terminal after creating workspace](path/to/your/image5.png)
+   ![Terminal after creating workspace](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_5.png)
 
 
 The workspace will be opened in your ide using SSH from daytona. You can start experimenting in your development environment
+
+# Setting Up Dub.co and Obtaining API Key
+In this section, you will create a Dub.co account and obtain an API key for our application.
+
+## Step 1: Register on Dub.co
+Click on [dub.co](https://dub.co) and follow the sign-up process to create an account.
+![Dub.co Sign-up Page](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_6.png)
+
+## Step 2: Obtain API Key
+After successfully registering, you will be directed to the dashboard. In the sidebar, there is a tab to obtain the API key for your application.
+![Dub.co Dashboard](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_7.png)
 
 # Setting Up the Project
 
@@ -156,7 +169,7 @@ To begin, we need to install the required Python packages. Open your terminal an
 ```
 pip install python-fasthtml dub python-dotenv
 ```
-## Step 1: Create a .env File and Add the Environmental Variable
+## Step 2: Create a .env File and Add the Environmental Variable
 1. Create a file named `.env`.
 2. Add the following line to the file, replacing `your_api_key_here` with your actual API key:
    ```
@@ -171,7 +184,7 @@ In this section, we will guide you through the process of building a link shorte
 ## Step 1: Create the Application Structure
 
 Organize your project as follows:
-fasthtml-link-shortener/
+fasthtml-link-shortener
 ├── main.py          # Application logic
 ├── .env             # API key
 
@@ -242,8 +255,8 @@ python3 main.py
 ```
 Once the project is running, open [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser to access the interface.
 
- ![Image of the interface](path/to/your/image6.png)
+ ![Image of the interface](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_8.png)
 
 To test the link shortening functionality, enter an AI artefact link and click the "Shorten" button to see the shortened link.
 
- ![Image of the interface after link has been shortened](path/to/your/image7.png)
+ ![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_9.png)
