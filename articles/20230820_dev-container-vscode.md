@@ -115,7 +115,7 @@ Daytona automates environment setup, manages containers, and handles SSH and por
 
    ![Alt text](./assets/20230820_dev_server.png)
 
-2. **Create DevContainer**: Use `daytona create test -r <repo> --skip-ide` to set up your container.
+2. **Create DevContainer**: Use `daytona create test -r <repo> --skip-ide` or `daytona create <REPO_URL> --skip-ide` to set up your container.
 
    ![Alt text](./assets/20230820_dev_create.png)
 
@@ -130,6 +130,8 @@ Daytona automates environment setup, manages containers, and handles SSH and por
 ### Step 3: Develop Inside the Container
 
 Now you are inside a containerized development environment. You can open a terminal in VSCode, and you'll be interacting with the shell inside the container. Install your project's dependencies, develop your code, and run your applications all within the container. You can add more tools and dependencies you need for your project by modifying the Dockerfile and rebuilding the container.
+
+Note: Find the source here for better understanding: [source](https://www.daytona.io/docs/usage/workspaces/)
 
 ### Conclusion
 
