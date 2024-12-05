@@ -46,4 +46,11 @@
 - [ ] Run the draft through [Grammarly](https://grammarly.com) or a similar
       grammar tool.
 - [ ] Double-check adherence to the style guide and repository guidelines.
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 - [ ] Use the name of the article for the title of the PR.
+>>>>>>> 4b6c25a (naming pr)
+=======
+- [ ] Use the name of the article for the title of the PR.
+>>>>>>> 3b409bd (fixed linting issues and changes some rules)
