@@ -1,18 +1,9 @@
 ---
-title: 'Title of the Guide. The title should be a max. of 55 characters.'
+title: 'Building a Link Shortener with FastHTML and Dub.co.'
 description:
-  'A brief description of what the guide covers. The description should be a
-  maximum of 160 characters.'
-date: YYYY-MM-DD
-author: 'Author Name'
-tags: ['one', 'two', 'three']
----
-
----
-title: 'Building a Link Shortener with FastHTML and Dub.co'
-description: 'Learn how to build a link shortener using FastHTML's lightweight framework and Dub.co's robust link management API.'
+  'Learn how to build a link shortener using FastHTML's lightweight framework and Dub.co's robust link management API..'
 date: 2024-12-05
-author: 'Taiwo Triumphant'
+author: 'Author Name'
 tags: ['Daytona', 'FastHTML', 'Dub.co', 'Link Shortener']
 ---
 
