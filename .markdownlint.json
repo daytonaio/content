@@ -5,6 +5,7 @@
     "MD003": { "style": "atx" },  // Header style (atx or setext)
     "MD004": { "style": "dash" }, // Unordered list style (asterisk, plus, or dash)
     "MD005": false,               // Inconsistent indentation for list items at the same level
+    "MD013": false,               // Line length
     "MD022": true,                // Headings should be surrounded by blank lines
     "MD023": true,                // Headings must start at the beginning of the line
     "MD026": false,               // Trailing punctuation in header
