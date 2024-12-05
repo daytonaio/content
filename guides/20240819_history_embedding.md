@@ -9,14 +9,14 @@ author: "Jacob Gaffke"
 
 ## Introduction
 
-[Embedding](/definitions/d/embedding) your browser history with ChromaDB is a great way to dive into the world of machine learning. In this guide, you'll learn how to transform your web activity into structured, searchable formats by converting URLs and metadata into numerical representations. You’ll be guided through setting up a development environment, [embedding](/definitions/d/embedding) your browser history, and running advanced searches using ChromaDB, whether you’re using a local model or an OpenAI compatible service.
+[Embedding](/definitions/20240819_definition_embedding.md) your browser history with ChromaDB is a great way to dive into the world of machine learning. In this guide, you'll learn how to transform your web activity into structured, searchable formats by converting URLs and metadata into numerical representations. You’ll be guided through setting up a development environment, [embedding](/definitions/20240819_definition_embedding.md) your browser history, and running advanced searches using ChromaDB, whether you’re using a local model or an OpenAI compatible service.
 
-This guide is perfect for those eager to understand [embeddings](/definitions/d/embedding) and explore their various applications. From setting up the necessary tools to crafting detailed search queries with filters, you’ll gain practical experience that will lay the foundation for future projects. Whether you’re a developer starting your journey into [embeddings](/definitions/d/embedding) or someone looking to better manage their digital footprint, these step-by-step instructions will help you create a functional project with ChromaDB.
+This guide is perfect for those eager to understand [embeddings](/definitions/20240819_definition_embedding.md) and explore their various applications. From setting up the necessary tools to crafting detailed search queries with filters, you’ll gain practical experience that will lay the foundation for future projects. Whether you’re a developer starting your journey into [embeddings](/definitions/20240819_definition_embedding.md) or someone looking to better manage their digital footprint, these step-by-step instructions will help you create a functional project with ChromaDB.
 
 ### TL;DR
 
 - **Export Browser History**: Use the Export Chrome History extension to get a CSV file.
-- **Set Up Environment**: Install Daytona and create a [workspace](/definitions/d/daytona-workspace).
+- **Set Up Environment**: Install Daytona and create a [workspace](/definitions/20240819_definition_daytona-workspace.md).
 - **Embed History**: Run the `search.py` script to embed your history data.
 - **Search History**: Perform searches using various filters and options.
 
@@ -32,7 +32,7 @@ You can install Daytona by running the following command in your terminal:
 curl -L https://download.daytona.io/daytona/install.sh | sudo bash
 ```
 
-Daytona creates a controlled [development environment](/definitions/d/development-environment) where you can work on the project with all dependencies correctly configured, reducing the likelihood of compatibility issues.
+Daytona creates a controlled [development environment](/definitions/20240819_definition_development-environment.md) where you can work on the project with all dependencies correctly configured, reducing the likelihood of compatibility issues.
 
 ### Exporting Browser History
 
@@ -40,7 +40,7 @@ To work with your browser history, you'll need to export it from your browser:
 
 1. **Install the Export Chrome History Extension**: Download and install the [Export Chrome History](https://chrome.google.com/webstore/detail/export-chrome-history/) Chrome extension.
 
-![export chrome history extension](/assets/images/20240819_history_embedding_img1.jpg)
+![export chrome history extension](assets/images/20240819_history_embedding_img1.jpg)
 
 2. **Export to CSV**: Use the extension to export your browser history as a CSV file. Save it to a convenient location, such as `~/Downloads/history.csv`.
 
@@ -56,13 +56,13 @@ visit_time,url,title,visit_count,typed_count
 
 ### Creating a Daytona Workspace
 
-With Daytona installed, you can create a [workspace](/definitions/d/daytona-workspace) for the [`nkkko/history` repository](https://github.com/nkkko/history):
+With Daytona installed, you can create a [workspace](/definitions/20240819_definition_daytona-workspace.md) for the [`nkkko/history` repository](https://github.com/nkkko/history):
 
 ```bash
 daytona create https://github.com/nkkko/history --code
 ```
 
-This command clones the [repository](/definitions/r/repository) and sets up the necessary environment. Daytona manages dependencies and configurations, ensuring that your environment is set up correctly for running the project scripts.
+This command clones the [repository](/definitions/20240819_definition_repository.md) and sets up the necessary environment. Daytona manages dependencies and configurations, ensuring that your environment is set up correctly for running the project scripts.
 
 ### Set Up OpenAI Service (Optional)
 
@@ -107,7 +107,7 @@ AZURE_OPENAI_API_KEY=<your_azure_api_key>
 
 ### Embedding
 
-With your [development environment](/definitions/d/development-environment) ready, you can now embed your browser history into ChromaDB.
+With your [development environment](/definitions/20240819_definition_development-environment.md) ready, you can now embed your browser history into ChromaDB.
 
 To embed using the local model (multi-qa-distilbert-cos-v1), run:
 
@@ -115,11 +115,11 @@ To embed using the local model (multi-qa-distilbert-cos-v1), run:
 python search.py --embed path/to/your/history.csv  # Ex: ~/Downloads/history.csv
 ```
 
-This command reads each entry from the CSV, processes it into an [embedding](/definitions/d/embedding), and stores it in ChromaDB. The local model `multi-qa-distilbert-cos-v1` is lightweight and works well for most purposes.
+This command reads each entry from the CSV, processes it into an [embedding](/definitions/20240819_definition_embedding.md), and stores it in ChromaDB. The local model `multi-qa-distilbert-cos-v1` is lightweight and works well for most purposes.
 
 #### Using Azure Embeddings
 
-If you’re leveraging Azure for [embeddings](/definitions/d/embedding), use the `--azure` flag:
+If you’re leveraging Azure for [embeddings](/definitions/20240819_definition_embedding.md), use the `--azure` flag:
 
 ```bash
 python search.py --embed path/to/your/history.csv --azure
@@ -185,13 +185,13 @@ This command combines domain restriction, recent sorting, and visit count filter
 
 ## Real-world Use Cases
 
-Understanding how to apply the concepts in this guide to real-world scenarios can help you better appreciate the power of [embedding](/definitions/d/embedding) your browser history. Below are some practical examples of how this tool can be used in various contexts:
+Understanding how to apply the concepts in this guide to real-world scenarios can help you better appreciate the power of [embedding](/definitions/20240819_definition_embedding.md) your browser history. Below are some practical examples of how this tool can be used in various contexts:
 
 ### Personal Productivity Tracking
 
-![person using laptop](/assets/images/20240819_history_embedding_img2.jpg)
+![person using laptop](assets/images/20240819_history_embedding_img2.jpg)
 
-For individuals looking to optimize their time online, this tool can be invaluable. By [embedding](/definitions/d/embedding) your browser history and using the search functionality, you can analyze how much time you spend on work-related sites versus leisure activities. For example, you could filter your history by domains associated with productivity tools (like Google Docs or Trello) and compare them against social media or entertainment sites. Over time, this data can reveal patterns in your online behavior, helping you make more informed decisions about time management.
+For individuals looking to optimize their time online, this tool can be invaluable. By [embedding](/definitions/20240819_definition_embedding.md) your browser history and using the search functionality, you can analyze how much time you spend on work-related sites versus leisure activities. For example, you could filter your history by domains associated with productivity tools (like Google Docs or Trello) and compare them against social media or entertainment sites. Over time, this data can reveal patterns in your online behavior, helping you make more informed decisions about time management.
 
 **Example**:
 ```bash
@@ -200,9 +200,9 @@ python search.py "to do" --domain trello.com --newest
 
 ### Content Curation and Management
 
-![man doing a blog](/assets/images/20240819_history_embedding_img3.jpg)
+![man doing a blog](assets/images/20240819_history_embedding_img3.jpg)
 
-If you're a content creator or curator, keeping track of all the resources you come across online can be challenging. Using this guide, you can [embed](/definitions/d/embedding) and index your browsing history, allowing you to quickly retrieve articles, videos, or research papers you’ve encountered. For instance, if you're writing a blog post and need to revisit a source you found weeks ago, a quick search using relevant keywords or filters like visit count can bring it up immediately.
+If you're a content creator or curator, keeping track of all the resources you come across online can be challenging. Using this guide, you can [embed](/definitions/20240819_definition_embedding.md) and index your browsing history, allowing you to quickly retrieve articles, videos, or research papers you’ve encountered. For instance, if you're writing a blog post and need to revisit a source you found weeks ago, a quick search using relevant keywords or filters like visit count can bring it up immediately.
 
 **Example**:
 ```bash
@@ -211,9 +211,9 @@ python search.py "python" --typed-count 3 --newest
 
 ### Academic Research
 
-![classroom with whiteboard](/assets/images/20240819_history_embedding_img4.jpg)
+![classroom with whiteboard](assets/images/20240819_history_embedding_img4.jpg)
 
-Researchers often sift through vast amounts of online material during literature reviews or while gathering data. By [embedding](/definitions/d/embedding) and searching your browser history, you can easily retrieve previously visited papers, articles, or datasets. This is particularly useful for ongoing projects where you may need to reference multiple sources over time. Additionally, you can filter results by the domain of academic databases or journals to focus solely on credible sources.
+Researchers often sift through vast amounts of online material during literature reviews or while gathering data. By [embedding](/definitions/20240819_definition_embedding.md) and searching your browser history, you can easily retrieve previously visited papers, articles, or datasets. This is particularly useful for ongoing projects where you may need to reference multiple sources over time. Additionally, you can filter results by the domain of academic databases or journals to focus solely on credible sources.
 
 **Example**:
 ```bash
@@ -222,9 +222,9 @@ python search.py "machine learning" --domain arxiv.org --visit-count 2
 
 ### Personalized Content Recommendations
 
-![man giving thumb up](/assets/images/20240819_history_embedding_img5.jpg)
+![man giving thumb up](assets/images/20240819_history_embedding_img5.jpg)
 
-[Embedding](/definitions/d/embedding) your browser history can enhance personalized content recommendations by allowing you to track and retrieve relevant content easily. For example, if you frequently visit sites like Medium for articles on data science, embedding this history lets you quickly find similar content or revisit specific posts, ensuring your recommendations are more aligned with your interests.
+[Embedding](/definitions/20240819_definition_embedding.md) your browser history can enhance personalized content recommendations by allowing you to track and retrieve relevant content easily. For example, if you frequently visit sites like Medium for articles on data science, embedding this history lets you quickly find similar content or revisit specific posts, ensuring your recommendations are more aligned with your interests.
 
 **Example**:
 ```bash
@@ -244,7 +244,7 @@ Ensure that the CSV file is correctly formatted and accessible from the path pro
 ### Hosted Embeddings Not Applied
 
 **Problem:**  
-Hosted [embedding](/definitions/d/embedding) model is not being used despite setting environment variables.
+Hosted [embedding](/definitions/20240819_definition_embedding.md) model is not being used despite setting environment variables.
 
 **Solution:**  
 Verify that the `.env` file is correctly configured and located in the root directory. Ensure that the keys and endpoints are correct and match the required format.
@@ -255,18 +255,16 @@ Verify that the `.env` file is correctly configured and located in the root dire
 Search results don’t seem to match your query.
 
 **Solution:**  
-Check if the correct [embedding](/definitions/d/embedding) model is being used. If the local model is inadequate, try using a hosted [embedding](/definitions/d/embedding) service for more accurate results. Also, review your filters and search query for specificity.
+Check if the correct [embedding](/definitions/20240819_definition_embedding.md) model is being used. If the local model is inadequate, try using a hosted [embedding](/definitions/20240819_definition_embedding.md) service for more accurate results. Also, review your filters and search query for specificity.
 
 ## Conclusion
 
 By following this guide, you've successfully set up a system to embed and search your browser history using ChromaDB. You now have a powerful tool at your disposal for exploring your browsing habits, whether for productivity analysis, research, or personal curiosity. 
 
-You can continue experimenting with different [embedding](/definitions/d/embedding) models and search parameters to refine your results. Consider expanding this setup to include other data types or integrate it into larger data analysis projects.
+You can continue experimenting with different [embedding](/definitions/20240819_definition_embedding.md) models and search parameters to refine your results. Consider expanding this setup to include other data types or integrate it into larger data analysis projects.
 
 ## References
 
-- [ChromaDB Documentation](https://chromadb.com/docs)
+- [ChromaDB Documentation](https://docs.trychroma.com/)
 - [Daytona Installation Guide](https://daytona.io/docs/installation/installation/)
-- [Export Chrome History Extension](https://chrome.google.com/webstore/detail/export-chrome-history/)
-
-For further reading, consider exploring guides on data [embedding](/definitions/d/embedding) techniques and using alternative [embedding](/definitions/d/embedding) models for specialized tasks.
+- [Export Chrome History Extension](https://chromewebstore.google.com/detail/export-chrome-history/dihloblpkeiddiaojbagoecedbfpifdj?pli=1)
