@@ -1,7 +1,7 @@
 ---
-title: 'Building a Link Shortener with FastHTML and Dub.co.'
+title: 'Building a Link Shortener with FastHTML and Dub.co'
 description:
-  'Learn how to build a link shortener using FastHTML's lightweight framework and Dub.co's robust link management API..'
+  'Learn how to build a link shortener using FastHTML lightweight framework and Dub.co robust link management API.'
 date: 2024-12-05
 author: 'Author Name'
 tags: ['Daytona', 'FastHTML', 'Dub.co', 'Link Shortener']
