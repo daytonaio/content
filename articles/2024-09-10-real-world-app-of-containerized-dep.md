@@ -33,10 +33,6 @@ Spotify introduced Docker for environment isolation, ensuring development and pr
 - Spotify implemented pre-configured Docker images, allowing developers to quickly replicate the production environment.  
 - Onboarding was streamlined through these images, reducing setup time for new developers to hours instead of days.
 
-**Visual Aid**:  
-An example Docker architecture for microservices highlighting how Spotify orchestrates them across regions.  
-*(Suggested graphic: Diagram of a microservice architecture containerized and orchestrated by Kubernetes.)*
-
 ---
 
 ## Shopify: Scaling eCommerce Without Disruption
@@ -50,10 +46,6 @@ Shopify containerized its application stack, ensuring all dependencies were enca
 ### Workflows and Onboarding:
 - CI/CD pipelines leveraged containers for testing and deployment, ensuring updates were safe and reliable.
 - New hires accessed development environments with a single command, gaining a fully functional setup on their first day.
-
-**Visual Aid**:  
-Flowchart of Shopify’s CI/CD process, from code commits to production rollout.  
-*(Suggested graphic: CI/CD flow with container integration.)*
 
 ---
 
@@ -69,10 +61,6 @@ GitHub adopted containers to standardize its environments across development, te
 - Developers used containerized templates for building features, ensuring consistency and reducing onboarding times.  
 - GitHub implemented interactive tutorials for new developers, using containers to replicate real-world scenarios.
 
-**Visual Aid**:  
-A workflow diagram showing GitHub’s containerized development pipeline.  
-*(Suggested graphic: Visualizing how GitHub ensures code integrity from commit to deployment.)*
-
 ---
 
 ## Netflix: Delivering Entertainment at Global Scale
@@ -86,10 +74,6 @@ Netflix adopted Docker and developed Titus, a custom container orchestration too
 ### Workflows and Onboarding:
 - Developers used containers to simulate production conditions locally, allowing thorough testing.  
 - Onboarding included hands-on training with Titus to help engineers understand Netflix’s unique orchestration system.
-
-**Visual Aid**:  
-Diagram of Netflix’s architecture, emphasizing the role of Titus in scaling services globally.  
-*(Suggested graphic: Netflix’s multi-region container orchestration setup.)*
 
 ---
 
@@ -105,9 +89,7 @@ Slack’s backend services were containerized, ensuring consistent dependencies 
 - Developers worked in isolated containers for each feature, enabling independent development without affecting others.  
 - Onboarding was simplified through pre-configured development containers, including documentation and example configurations.
 
-**Visual Aid**:  
-A timeline illustrating Slack’s feature development cycle, from concept to production.  
-*(Suggested graphic: Slack’s end-to-end feature pipeline within containerized environments.)*
+<img src='authors/assets/slack.png'/>
 
 ---
 
@@ -117,39 +99,44 @@ A timeline illustrating Slack’s feature development cycle, from concept to pro
 1. **Dependency Conflicts**:
    Teams often faced mismatches across environments. For example, Spotify encountered conflicts between local libraries and production systems.
    
-   **Fix**: Dependency version pinning and immutable Docker images solved this for many organizations.  
-   **Visual Aid**: Side-by-side comparison of environments before and after container adoption.
+   **Fix**: Dependency version pinning and immutable Docker images solved this for many organizations.
+
+   <img src='authors/assets/containers-vs-virtual-machines-vm.jpg'> 
 
 2. **Scaling Complex Architectures**:
    Netflix’s scaling issues underscored the need for reliable orchestration tools.
    
    **Fix**: Tools like Kubernetes and custom solutions (e.g., Titus) automated scaling and load balancing.  
-   **Visual Aid**: Architecture diagram illustrating orchestration in action.
+
+   <img src='authors/assets/orchestration.png'>
 
 3. **Security Vulnerabilities**:
    Containers inherit vulnerabilities from their base images, creating risks for production environments. GitHub faced this issue at scale.  
 
    **Fix**: Integrated vulnerability scanning tools like Clair were essential for safe deployments.  
-   **Visual Aid**: Layered container diagram highlighting potential security risks.
+
+   <img src='authors/assets/container-security scan.png'>
+   
 
 ---
 
 ### Innovations:
 1. **Fail-Fast Workflows**:
-   Containers made it easier for teams to experiment without disrupting ongoing projects. Netflix, for instance, used isolated containers to test features.  
-   **Visual Aid**: A decision tree showing how fail-fast testing can lead to safer deployments.
+   Containers made it easier for teams to experiment without disrupting ongoing projects. Netflix, for instance, used isolated containers to test features.
+
+   <img src='authors/assets/fail-fast-fail-safe.avif'>
 
 2. **Unified Development**:
-   GitHub’s container strategy bridged local and production environments, eliminating environment-specific bugs.  
-   **Visual Aid**: Diagram showing a unified container lifecycle across local, staging, and production.
+   GitHub’s container strategy bridged local and production environments, eliminating environment-specific bugs.
+
+   <img src='authors/assets/CICD-Process-1024x385.png'>
 
 3. **Streamlined Onboarding**:
    Pre-configured containers reduced onboarding time for companies like Shopify and Slack, allowing new developers to focus on coding from day one.  
-   **Visual Aid**: Infographic on the time saved by using containerized onboarding processes.
-
+   
 ---
 
-By blending these lessons with visual aids and practical takeaways, companies can better understand how to harness the power of containerization while avoiding common pitfalls. Whether you're looking to streamline development workflows or scale your infrastructure, the insights shared here offer a roadmap for success.
+By blending these lessons with practical takeaways, companies can better understand how to harness the power of containerization while avoiding common pitfalls. Whether you're looking to streamline development workflows or scale your infrastructure, the insights shared here offer a roadmap for success.
 
 
 ## References:
