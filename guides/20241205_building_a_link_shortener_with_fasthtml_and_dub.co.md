@@ -293,3 +293,44 @@ Once you've completed the configuration, click the "Deploy" button to start the 
 After deployment, your link shortener application will be accessible at a public URL provided by Render. You can then share this URL with others, allowing them to use your application to shorten links.
 ![Image of the interface on the deployed app](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_15.png)
 ![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_17.png)
+
+## Common Issues and Troubleshooting
+
+During the process of building and deploying your link shortener application, you may encounter some common issues. This section aims to address these problems and provide solutions to help you troubleshoot and resolve them efficiently.
+
+**Problem 1: Daytona Serve Error**
+The Daytona serve is giving an error, and you are unable to start the development server.
+
+**Solution 1**
+Make sure Docker Desktop is running. This is a common issue that can be resolved by ensuring that Docker is up and running.
+
+**Problem 2: Unable to Create a Workspace**
+You are unable to create a new workspace in Daytona, and you are encountering errors during the setup process.
+
+**Solution 2**
+Try updating your Daytona version to the latest release, as bugs were discovered in previous versions that have since been fixed. Additionally, you can try deleting the file in AppData/Roaming and reinstalling Daytona. If the issue persists, check if Daytona target and Git providers are set.
+
+**Problem 3: Dub API Key Error**
+
+If you are getting an error relating to the Dub API key, such as `d = dub.Dub(token=os.getenv('DUB_API_KEY'))`
+
+**Solution 3**
+If you are encountering an error related to the Dub API key, such as `d = dub.Dub(token=os.getenv('DUB_API_KEY'))`, it is likely that your environmental variables are not set. To resolve this issue, ensure that you have set the `DUB_API_KEY` environmental variable.
+
+## Conclusion
+
+In this guide, we have successfully set up a robust link shortener using Daytona, FastHTML, and the Dub.co API. We have learned how to configure a Daytona workspace, build a landing page with FastHTML, integrate external APIs, and deploy the finished application to a production environment. By following this guide, you have gained hands-on experience in managing development environments, building server-rendered web applications, and integrating external APIs.
+
+Optionally, you can explore further by customizing the landing page, adding more features to the link shortener, or integrating other APIs. You can also check out the documentation for Daytona, FastHTML, and the Dub.co API for more advanced usage and best practices.
+
+## References
+
+- [Daytona Documentation](https://www.daytona.io/docs)
+- [FastHTML GitHub Repository](https://github.com/AnswerDotAI/fasthtml)
+- [Dub.co API Documentation](https://www.dub.co/api)
+- [Render documentation](https://render.com/docs)
+- [FastHTML doumentation](https://docs.fastht.ml/)
+
+## GitHub Project
+
+The code for this guide is available on GitHub. You can find it [here](https://github.com/your-username/your-project).
