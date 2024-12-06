@@ -319,7 +319,7 @@ Once you've completed the configuration, click the "Deploy" button to start the 
 ![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_15.png)
 
 After deployment, your link shortener application will be accessible at a public URL provided by Render. You can then share this URL with others, allowing them to use your application to shorten links.
-![Image of the interface on the deployed app](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_15.png)
+![Image of the interface on the deployed app](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_16.png)
 ![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_17.png)
 
 ## Common Issues and Troubleshooting
