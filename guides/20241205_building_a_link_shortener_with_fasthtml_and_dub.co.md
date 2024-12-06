@@ -100,8 +100,6 @@ Dub.co is a robust link management platform that allows developers and businesse
 
 Check out Dub.co: [Dub.co API Documentation](https://www.dub.co/api)
 
-# Setup Dub.co API key
-
 #  Setting up Daytona development environment
 To set up your Daytona development environment and integrate it with your IDE (such as VSCode, IntelliJ, or Cursor) and Git providers (including Bitbucket and GitHub), follow these steps:
 
@@ -177,7 +175,7 @@ pip install python-fasthtml dub python-dotenv
    ```
 
 
-# Building the Link Shortener
+# Integrating the Dub.co API for a simple FastHml landing page
 
 In this section, we will guide you through the process of building a link shortener using FastHTML and Dub.co. This will involve setting up the project structure, implementing the main application logic, and explaining each step in detail.
 
@@ -185,8 +183,8 @@ In this section, we will guide you through the process of building a link shorte
 
 Organize your project as follows:
 fasthtml-link-shortener
-├── main.py          # Application logic
-├── .env             # API key
+  ├── main.py          # Application logic
+  └── .env             # API key
 
 ## Step 2: Implement main.py
 
@@ -244,7 +242,7 @@ async def shorten(url: str):
 serve()
 ```
 
-## Step 3: Testing Application
+## Step 3: Testing and debugging the application
 To run the project, use the following command in your terminal:
 ```bash
 python main.py
@@ -260,3 +258,38 @@ Once the project is running, open [http://127.0.0.1:5001](http://127.0.0.1:5001)
 To test the link shortening functionality, enter an AI artefact link and click the "Shorten" button to see the shortened link.
 
  ![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_9.png)
+
+# Deploying the Application to Render
+Once your link shortener application is complete, you can deploy it to a production environment using Render. Render is a cloud platform that allows you to deploy web applications quickly and easily. It supports a wide range of technologies and provides a simple, intuitive interface for managing your deployments.
+
+To deploy your application to Render, follow these steps:
+
+**Step 1: Create a Render account and log in to the dashboard.**
+
+To begin, navigate to the Render website and sign up for an account. Once you've completed the registration process, log in to your account to access the dashboard. This is where you'll manage your deployments.
+
+**Step 2: Click on the "New Web Service" button and select "Python" as the runtime.**
+
+In the Render dashboard, click on the "New Web Service" button to start the deployment process. You will be prompted to select the runtime environment for your application. Choose "Python" as the runtime environment, as it is the language used for this project.
+
+![Click on new Web Service](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_11.png)
+
+**Step 3: Connect your GitHub repository containing the link shortener application.**
+
+Next, you need to connect your GitHub repository that contains the link shortener application. This allows Render to access your code and deploy it. Follow the instructions provided by Render to link your GitHub account and select the repository containing your project.
+![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_12.png)
+
+**Step 4: Configure the deployment settings as needed, such as the environment variables and the command to run the application.**
+
+In this step, you'll need to configure the deployment settings for your application. This includes setting environment variables and specifying the command to run your application. Ensure that you set the environment variables required by your application, such as the Dub.co API key. Additionally, specify the command to run your application, which in this case is `python main.py`.
+![Image of when seting commands to run](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_13.png)
+![Image of the when adding environmental variables](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_14.png)
+
+**Step 5: Click "Deploy" to start the deployment process.**
+
+Once you've completed the configuration, click the "Deploy" button to start the deployment process. Render will then build and deploy your application to a production environment. This process may take a few minutes to complete.
+![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_15.png)
+
+After deployment, your link shortener application will be accessible at a public URL provided by Render. You can then share this URL with others, allowing them to use your application to shorten links.
+![Image of the interface on the deployed app](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_15.png)
+![Image of the interface after link has been shortened](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_17.png)
