@@ -33,6 +33,7 @@ Before diving in, make sure you have the following:
 - An **Integrated Development Environment (IDE)**: Use an IDE to write, debug, and manage your code efficiently. Examples include **[VS Code](https://code.visualstudio.com/)**, **[PyCharm](https://www.jetbrains.com/pycharm/)** and **[Atom](https://atom-editor.cc/)**.
 - **[GitHub](https://github.com/)** account: Use GitHub to manage your project's version control and collaborate effectively.
 - Basic familiarity with **[Python](https://docs.python.org/3/tutorial/)** and **[web development concepts](https://developer.mozilla.org/en-US/docs/Learn)** (helpful but not strictly required).
+- The code for this guide is available on GitHub. You can find it [here](https://github.com/Titre123/fast-link-shortner).
 
 Let's get started!
 
@@ -359,7 +360,3 @@ Optionally, you can explore further by customizing the landing page, adding more
 - [Dub.co API Documentation](https://dub.co/docs/quickstart/python)
 - [Render documentation](https://render.com/docs)
 - [FastHTML doumentation](https://docs.fastht.ml/)
-
-## GitHub Project
-
-The code for this guide is available on GitHub. You can find it [here](https://github.com/Titre123/fast-link-shortner).
