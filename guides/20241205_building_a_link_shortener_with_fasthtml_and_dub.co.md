@@ -356,7 +356,6 @@ Optionally, you can explore further by customizing the landing page, adding more
 ## References
 
 - [Daytona Documentation](https://www.daytona.io/docs)
-- [FastHTML GitHub Repository](https://github.com/AnswerDotAI/fasthtml)
 - [Dub.co API Documentation](https://dub.co/docs/quickstart/python)
 - [Render documentation](https://render.com/docs)
 - [FastHTML doumentation](https://docs.fastht.ml/)
