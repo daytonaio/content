@@ -13,7 +13,7 @@ author: "Jacob Gaffke"
 
 This guide will take you through setting up and configuring [Docker](/definitions/20240819_definition_docker.md) containers specifically for GPU-accelerated tasks. We'll cover everything from initial setup to optimizing performance and troubleshooting common issues. By the end of this guide, you'll be equipped to deploy and manage [LLMs](/definitions/20240820_definition_large-language-model.md) in a GPU-enabled [containerized environment](/definitions/20240819_definition_containerization.md).
 
-![docker diagram](assets/20240820_gpu_utilization_img1.jpg)
+![architecture diagram](assets/20240820_gpu_utilization_img1.jpg)
 
 ### TL;DR
 
