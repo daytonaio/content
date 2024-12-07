@@ -13,6 +13,8 @@ author: "Jacob Gaffke"
 
 This guide will take you through setting up and configuring [Docker](/definitions/20240819_definition_docker.md) containers specifically for GPU-accelerated tasks. We'll cover everything from initial setup to optimizing performance and troubleshooting common issues. By the end of this guide, you'll be equipped to deploy and manage [LLMs](/definitions/20240820_definition_large-language-model.md) in a GPU-enabled [containerized environment](/definitions/20240819_definition_containerization.md).
 
+![docker diagram](assets/20240820_gpu_utilization_img1.jpg)
+
 ### TL;DR
 
 - **Set up a GPU-enabled environment**: Install and configure Docker with NVIDIA Container Toolkit for GPU support.
@@ -43,8 +45,6 @@ Daytona creates a controlled [development environment](/definitions/20240819_def
 ### Docker Installation
 
 [Docker](/definitions/20240819_definition_docker.md) is a platform that allows you to automate the deployment of applications inside lightweight, portable containers. These containers include everything needed to run the application, such as the code, runtime, libraries, and dependencies, ensuring consistency across different environments.
-
-![docker diagram](assets/20240820_gpu_utilization_img1.jpg)
 
 If [Docker](/definitions/20240819_definition_docker.md) isn't already installed on your system, follow these steps:
 
@@ -95,17 +95,25 @@ If your setup is correct, the `nvidia-smi` command will display information abou
 
 With your GPU-enabled [Docker](/definitions/20240819_definition_docker.md) environment ready, the next step is to develop a text generation script using an [LLM](/definitions/20240820_definition_large-language-model.md) and run it inside a [Docker](/definitions/20240819_definition_docker.md) container.
 
-### Setup Development Environment
+### Create Daytona Workspace
 
-Before starting, make sure you have the correct development environment configured by creating a Daytona workspace:
+Before starting, make sure to create a Daytona workspace to set up a development environment:
 
 ```bash
 daytona create https://github.com/giraffekey/gpu-container-example
 ```
 
+This will create a controlled environment with the required Python dependencies installed.
+
+You can open the workspace in your preferred IDE with the following command:
+
+```bash
+daytona code
+```
+
 ### Download the GPT-2 Model
 
-To download the GPT-2 model and tokenizer, use the following script:
+There should be this script in your opened workspace:
 
 ```python
 # download.py
@@ -129,9 +137,9 @@ python3 download.py
 
 You should see `gpt2_model` and `gpt2_tokenizer` directories.
 
-### Create the Initial Script
+### Test the Model
 
-Now, create a script to generate text using the downloaded GPT-2 model:
+This is the script we will be using to generate text with the model:
 
 ```python
 # inference.py
@@ -139,11 +147,11 @@ Now, create a script to generate text using the downloaded GPT-2 model:
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-def generate_text(prompt, max_length=50):
+def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
     # Check if GPU is available and set device accordingly
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # Load downloaded GPT-2 model and tokenizer
+    # Load pre-trained GPT-2 model and tokenizer
     model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
     tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
     
@@ -161,7 +169,11 @@ def generate_text(prompt, max_length=50):
         inputs,
         max_length=max_length, 
         attention_mask=attention_mask,
-        pad_token_id=tokenizer.eos_token_id
+        pad_token_id=tokenizer.eos_token_id,
+        do_sample=True,  # Enable sampling
+        top_k=top_k,     # Top-k sampling
+        top_p=top_p,     # Nucleus (top-p) sampling
+        temperature=temperature  # Adjust temperature
     )
 
     # Decode the generated text
@@ -173,11 +185,17 @@ if __name__ == "__main__":
     print(generated_text)
 ```
 
-This script loads the model and tokenizer, performs text generation, and prints the output.
+This script loads the model and tokenizer, performs text generation with advanced sampling techniques, and prints the output.
 
-### Create a Docker Container with Dependencies
+You can test the script in your workspace with the following command:
 
-To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, create a `Dockerfile` that includes all necessary dependencies, such as PyTorch and the Transformers library:
+```bash
+python3 inference.py
+```
+
+### Create a Docker Container
+
+To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, we'll be using the following Dockerfile:
 
 ```Dockerfile
 FROM nvidia/cuda:12.6.0-base-ubuntu24.04
@@ -229,10 +247,10 @@ docker run --gpus all llm-gpu
 Running the script should generate text similar to the following:
 
 ```
-Once upon a time in a land far, far away, the world was a land of the dead, where the dead were buried, and the dead were buried. The dead were buried in the land of the dead, and the dead were buried in
+Once upon a time in a land far, far away, they would be able to see through their mind, and understand their own thoughts. We should be ashamed of ourselves, but we must not be ashamed of ourselves. We can only see and feel
 ```
 
-As you may have noticed, the initial output is repetitive and low quality. We will fix this in the following sections.
+The output will be different each time the command is run.
 
 ## Implementing Advanced Text Generation Techniques
 
@@ -250,73 +268,32 @@ Nucleus sampling selects from the smallest set of words whose cumulative probabi
 
 The temperature parameter controls the randomness of predictions by scaling the logits before applying the softmax function. Lower temperatures produce more deterministic results, while higher temperatures introduce greater variability.
 
-### Updated Script
+### Configuring the Script
 
-Here's how to integrate these techniques into the text generation script:
+In the `inference.py` script, you can experiment with these values in order to tamper with the text output.
 
 ```python
-import torch
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+# inference.py
 
-def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
-    # Check if GPU is available and set device accordingly
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    
-    # Load pre-trained GPT-2 model and tokenizer
-    model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
-    tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
-    
-    # Move model to the GPU
-    model.to(device)
-
-    # Encode the input prompt
-    inputs = tokenizer.encode(prompt, return_tensors="pt").to(device)
-
-    # Create attention mask
-    attention_mask = torch.ones(inputs.shape, device=inputs.device)
-
-    # Generate text with advanced sampling techniques
-    outputs = model.generate(
-        inputs,
-        max_length=max_length, 
-        attention_mask=attention_mask,
-        pad_token_id=tokenizer.eos_token_id,
-        do_sample=True,  # Enable sampling
-        top_k=top_k,     # Top-k sampling
-        top_p=top_p,     # Nucleus (top-p) sampling
-        temperature=temperature  # Adjust temperature
-    )
-
-    # Decode the generated text
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+...
 
 if __name__ == "__main__":
     prompt = "Once upon a time in a land far, far away"
-    generated_text = generate_text(prompt)
+    generated_text = generate_text(prompt, top_k=50, top_p=0.9, temperature=2.0)
     print(generated_text)
 ```
 
-### Implementing These Techniques in Docker
+By increasing the temperature all the way to 2.0, the generated text becomes more creative and often less coherent.
 
-To use the updated script in a [Docker](/definitions/20240819_definition_docker.md) container, replace the content of your `inference.py` script with the updated code and rebuild the container:
-
-```bash
-# Build the container
-docker build -t llm-gpu .
-
-# Run the container with GPU support
-docker run --gpus all llm-gpu
-```
-
-### Output
-
-The output should now be more coherent and varied. For instance:
+Here's an example:
 
 ```
-Once upon a time in a land far, far away, they would be able to see through their mind, and understand their own thoughts. We should be ashamed of ourselves, but we must not be ashamed of ourselves. We can only see and feel
+Once upon a time in a land far, far away
+
+There stood one and no boy, the name came over in one. One that spoke so loudly he was the best that could play; they looked me in the eyes, he sat on
 ```
 
-As you can see, this is much more interesting.
+It's important to play around with these values in order to achieve the preferred output.
 
 ## Monitoring and Optimizing Performance
 
@@ -332,9 +309,11 @@ nvidia-smi
 
 ### Benchmarking and Performance Tuning
 
-To measure the script's execution time and evaluate GPU utilization, consider adding a benchmarking script:
+To measure the script's execution time and evaluate GPU utilization, consider using the benchmarking script:
 
 ```python
+# benchmark.py
+
 import time
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
@@ -366,6 +345,12 @@ def generate_text(prompt, max_length=50, model_name='gpt2', top_k=50, top_p=0.9,
 if __name__ == "__main__":
     prompt = "Once upon a time in a land far, far away"
     print(generate_text(prompt))
+```
+
+Run the script with:
+
+```bash
+python3 benchmark.py
 ```
 
 Running this script will help you assess the performance of your model and guide optimization efforts.
