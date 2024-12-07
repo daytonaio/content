@@ -64,11 +64,21 @@ You can set up your development environment with Daytona and Gitlab using differ
 
 ### Setting up a Development Environment with Gitpod (daytona gp)
 
-The Starlight project that will be used as an example is hosted on Github, here. You will have to fork the GitHub repository to your personal GitHub account, then, import it as a new project on your Gitlab account. You can then create a Daytona configuration file in the root folder of your Starlight Gitlab project. The Daytona configuration file defines the specifications of the development environment, such as the programming languages, tools, and dependencies required for the project, and is written in YAML, making it easy to read and modify.
+The Starlight project that will be used as an example is hosted on Github, [here](https://github.com/withastro/starlight). You will have to fork the GitHub repository to your personal GitHub account, then, import it as a new project on your Gitlab account. 
+
+![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img1.png)
+
+![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img2.png)
+
+![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img3.png)
+
+![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img4.png)
+
+You can then create a Daytona configuration file in the root folder of your Starlight Gitlab project. The Daytona configuration file defines the specifications of the development environment, such as the programming languages, tools, and dependencies required for the project, and is written in YAML, making it easy to read and modify.
 
 You can create the Daytona configuration file by clicking on the plus icon at the top of the project, which displays a dropdown. Then click on "new file" in the options present in the dropdown to create a new file.
 
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img1.png)
+![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img5.png)
 
 Name the file `.daytona.yml` and specify the following configuration in the file:
 
@@ -106,11 +116,11 @@ github:
 
 The configuration above defines the commands, ports, images, and prebuilds to use when creating or running the environment for your project. The content of your `.daytona.yml` file will depend on your project's needs.
 
-![Naming the file and adding configurations](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img2.png)
+![Naming the file and adding configurations](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img6.png)
 
 After adding the configurations to your Daytona configuration file, click the commit button beneath the input area to commit it to your project.
 
-![Commiting the file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img3.png)
+![Commiting the file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img7.png)
 
 Next, create a file named `.gitpod.yml` that points Gitpod to the Daytona configuration file when setting up the environment. Add these configurations to your `.gitpod.yml` file:
 
@@ -122,15 +132,15 @@ tasks:
     command: pnpm start
 ```
 
-![Creating Gitpod configuration file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img4.png)
+![Creating Gitpod configuration file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img8.png)
 
 After specifying the configurations for the Daytona and Gitpod, you can create the environment by opening the Gitlab project on Gitpod.
 
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img5.png)
+![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img9.png)
 
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img6.png)
+![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img10.png)
 
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img7.png)
+![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img11.png)
 
 ### Setting up a Development Environment with the Daytona CLI
 
