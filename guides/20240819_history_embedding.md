@@ -59,7 +59,7 @@ visit_time,url,title,visit_count,typed_count
 With Daytona installed, you can create a [workspace](/definitions/20240819_definition_daytona-workspace.md) for the [`nkkko/history` repository](https://github.com/nkkko/history):
 
 ```bash
-daytona create https://github.com/nkkko/history --code
+daytona create https://github.com/nkkko/history
 ```
 
 This command clones the [repository](/definitions/20240819_definition_repository.md) and sets up the necessary environment. Daytona manages dependencies and configurations, ensuring that your environment is set up correctly for running the project scripts.
