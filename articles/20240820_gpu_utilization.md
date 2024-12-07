@@ -25,8 +25,20 @@ This guide will take you through setting up and configuring [Docker](/definition
 
 Before setting up your environment for GPU-intensive tasks, ensure that you have the following prerequisites:
 
-- A machine with a CUDA-compatible GPU (e.g., NVIDIA GPUs).
-- [Docker](/definitions/20240819_definition_docker.md) installed on your system, along with the NVIDIA Container Toolkit for GPU support.
+- A machine with a CUDA-compatible GPU (e.g., NVIDIA GPUs)
+- [Docker](/definitions/20240819_definition_docker.md)
+- [Daytona](https://github.com/daytonaio/daytona)
+- [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+
+### Daytona Installation
+
+You can install Daytona by running the following command in your terminal:
+
+```bash
+curl -sf -L https://download.daytona.io/daytona/install.sh | sudo bash
+```
+
+Daytona creates a controlled [development environment](/definitions/20240819_definition_development-environment.md) where you can work on the project with all dependencies correctly configured, reducing the likelihood of compatibility issues.
 
 ### Docker Installation
 
@@ -82,6 +94,14 @@ If your setup is correct, the `nvidia-smi` command will display information abou
 ## Running LLM Inference in a Docker Container
 
 With your GPU-enabled [Docker](/definitions/20240819_definition_docker.md) environment ready, the next step is to develop a text generation script using an [LLM](/definitions/20240820_definition_large-language-model.md) and run it inside a [Docker](/definitions/20240819_definition_docker.md) container.
+
+### Setup Development Environment
+
+Before starting, make sure you have the correct development environment configured by creating a Daytona workspace:
+
+```bash
+daytona create https://github.com/giraffekey/gpu-container-example
+```
 
 ### Download the GPT-2 Model
 
