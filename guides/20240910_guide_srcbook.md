@@ -75,6 +75,7 @@ Now, open the `devcontainer.json` file and add the following configuration:
 - **Note:**
 - _Post Commands_: Automatically install necessary packages and start Srcbook after the container is created.
 - _Forward Ports_: Ensures Srcbook runs on `localhost:2150` as specified in the devcontainer.json file.
+  ![Port Forwarding](../guides/assets/20241207_forwarding_srcbook_port_to_localhost_img.png)
 
 ### Step 2.3: Launching the Devcontainer and Daytona
 
@@ -90,6 +91,16 @@ Now, open the `devcontainer.json` file and add the following configuration:
 ### Step 2.4: Creating a New Srcbook Project
 
 With Daytona running and the environment set up, you can now create a repository with a devcontainer for Srcbook:
+
+### Step 2.5: Adding API Tools API Key
+
+To configure your development environment with the required API key, follow these steps:
+
+1. Go to the API tools dashboard.
+2. Navigate to the "API Keys" section.
+3. Click "Generate New Key" and copy the key.
+
+![Adding API Key](../guides/assets/20241207_setting_up_ai_tools_adding_api_keys_for_integration_img.png)
 
 #### Example
 
@@ -136,6 +147,12 @@ Create a sample TypeScript notebook to verify setup:
 const greet = (name: string) => `Hello, ${name}!`;
 console.log(greet("Srcbook"));
 ```
+
+### Sample TypeScript Srcbook Screenshot
+
+Below is an example of a TypeScript notebook in Srcbook. The screenshot demonstrates a simple `greet` function:
+
+![Srcbook Example](../guides/assets/20241207_sample_typescript_src_book_img.png)
 
 ## Step 5: Tips for Effective Use
 
