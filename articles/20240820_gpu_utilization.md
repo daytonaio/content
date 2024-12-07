@@ -180,14 +180,14 @@ WORKDIR /workspace
 # Copy your script into the container
 COPY inference.py /workspace
 
-# Copy local GPT-2 model into the container
-COPY ./gpt2_model /workspace/gpt2_model
+# Copy downloaded model into container
+COPY gpt2_model /workspace/gpt2_model
 
-# Copy local GPT-2 tokenizer into the container
-COPY ./gpt2_tokenizer /workspace/gpt2_tokenizer
+# Copy downloaded tokenizer into container
+COPY gpt2_tokenizer /workspace/gpt2_tokenizer
 
 # Specify the command to run
-CMD ["/workspace/bin/python", "inference.py"]
+CMD ["bin/python", "inference.py"]
 ```
 
 This `Dockerfile` sets up a GPU-enabled environment, installs Python and the necessary libraries, and copies the text generation script into the container.
