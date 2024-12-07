@@ -44,7 +44,7 @@ Daytona creates a controlled [development environment](/definitions/20240819_def
 
 [Docker](/definitions/20240819_definition_docker.md) is a platform that allows you to automate the deployment of applications inside lightweight, portable containers. These containers include everything needed to run the application, such as the code, runtime, libraries, and dependencies, ensuring consistency across different environments.
 
-![docker diagram](assets/images/20240820_gpu_utilization_img1.jpg)
+![docker diagram](assets/20240820_gpu_utilization_img1.jpg)
 
 If [Docker](/definitions/20240819_definition_docker.md) isn't already installed on your system, follow these steps:
 
@@ -59,7 +59,7 @@ sudo systemctl start docker
 
 The NVIDIA Container Toolkit is essential for enabling GPU support in [Docker](/definitions/20240819_definition_docker.md) containers. It provides the necessary libraries and tools to seamlessly access NVIDIA GPUs from within [Docker](/definitions/20240819_definition_docker.md) containers, allowing you to leverage GPU acceleration for your applications.
 
-![nvidia diagram](assets/images/20240820_gpu_utilization_img2.jpg)
+![nvidia diagram](assets/20240820_gpu_utilization_img2.jpg)
 
 To enable GPU support in [Docker](/definitions/20240819_definition_docker.md) containers, you need to install the NVIDIA Container Toolkit:
 
