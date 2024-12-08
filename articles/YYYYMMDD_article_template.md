@@ -78,23 +78,7 @@ reader.]_
 <!-- Format: [term](/definitions/term.md) -->
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 49d2e46 (fixed merge conflict)
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 6b0448e (restore deleted files)
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 4453748 (fixed merge conflict)
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 >>>>>>> 49d2e46 (fixed merge conflict)

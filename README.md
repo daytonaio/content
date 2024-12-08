@@ -81,9 +81,16 @@ with pride! For more information, check the
   <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
 </p>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
+=======
+You can showcase your achievement badges on your GitHub profile in the following way:
+=======
 You can showcase your achievement badges on your GitHub profile in the following
 way:
 
+>>>>>>> 3b409bd (fixed linting issues and changes some rules)
 <p>
   <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
 </p>
@@ -99,5 +106,10 @@ Simply add the following code to your GitHub profile README file:
 </p>
 ```
 
+<<<<<<< HEAD
+Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
+>>>>>>> de0091a (added example)
+=======
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
 blog!
+>>>>>>> 3b409bd (fixed linting issues and changes some rules)

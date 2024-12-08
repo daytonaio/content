@@ -3,6 +3,9 @@
 ### Writing Structure
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b84c90011c85605c006352dce43fa80020f1b029
 
 - [ ] Use short sentences and paragraphs, and include bucket brigades.
 - [ ] Include more than two descriptive H2 headings to organize content.
@@ -56,6 +59,7 @@
 =======
 - [ ] Use the name of the article for the title of the PR.
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+<<<<<<< HEAD
 =======
 =======
 
@@ -105,3 +109,5 @@
       grammar tool.
 - [ ] Double-check adherence to the style guide and repository guidelines.
 - [ ] Use the name of the article for the title of the PR.
+=======
+>>>>>>> b84c90011c85605c006352dce43fa80020f1b029
