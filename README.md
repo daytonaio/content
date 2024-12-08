@@ -66,11 +66,6 @@ subject to the terms outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 - Join `#content` channel in our [Slack community](https://go.daytona.io/slack)
   for discussions and support.
 
-<<<<<<< HEAD
-- For questions or assistance, open an issue or contact the repo maintainers.
-- Join `#content` channel in our [Slack community](https://go.daytona.io/slack)
-  for discussions and support.
-
 ## Showcase Your Contributions
 
 Along with the chance to earn bounties, each engagement comes with an
@@ -86,82 +81,6 @@ with pride! For more information, check the
   <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
 </p>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-You can showcase your achievement badges on your GitHub profile in the following
-way:
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
-<<<<<<< HEAD
-=======
-You can showcase your achievement badges on your GitHub profile in the following way:
-=======
-You can showcase your achievement badges on your GitHub profile in the following
-way:
-
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
->>>>>>> 6a73653 (fixed linting issues and changes some rules)
-<p>
-  <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
-</p>
-
-Simply add the following code to your GitHub profile README file:
-
-```html
-<p>
-  <img
-    src="https://api.vaunt.dev/v1/github/entities/USERNAME/achievements?format=svg&limit=3"
-    width="400"
-  />
-</p>
-```
-
-<<<<<<< HEAD
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
-blog!
-=======
-<<<<<<< HEAD
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
->>>>>>> de0091a (added example)
-=======
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
-blog!
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
->>>>>>> 6a73653 (fixed linting issues and changes some rules)
-=======
-
-=======
->>>>>>> ecef784 (readme splitted into 3 files)
-## Showcase Your Contributions
-
-Along with the chance to earn bounties, each engagement comes with an
-achievement badge.
-
-Showcase your contributions in your GitHub profile and display your achievements
-with pride! For more information, check the
-[CONTRIBUTING.md](CONTRIBUTING.md#showcase-your-contributions) file.
-
-### Top Contributors
-
-<p>
-  <img src="https://api.vaunt.dev/v1/github/entities/daytonaio/repositories/content/contributors?format=svg&limit=10" width="600" />
-</p>
-<<<<<<< HEAD
->>>>>>> f2efc13 (added vaunt section)
-=======
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
->>>>>>> ecef784 (readme splitted into 3 files)
-=======
-You can showcase your achievement badges on your GitHub profile in the following way:
-=======
-=======
->>>>>>> a387d18 (update)
 You can showcase your achievement badges on your GitHub profile in the following
 way:
 
@@ -181,9 +100,4 @@ Simply add the following code to your GitHub profile README file:
 ```
 
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
-<<<<<<< HEAD
 blog!
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
-=======
-blog!
->>>>>>> a387d18 (update)
