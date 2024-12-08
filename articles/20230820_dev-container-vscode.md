@@ -115,7 +115,7 @@ Daytona automates environment setup, manages containers, and handles SSH and por
 
    ![Alt text](./assets/20230820_dev_server.png)
 
-2. **Create DevContainer**: Use `daytona create test -r <repo> --skip-ide` or `daytona create <REPO_URL> --skip-ide` to set up your container.
+2. **Create DevContainer**: Use `daytona create <REPO_URL>` or `daytona create <REPO_URL> --no-ide` to set up your container.
 
    ![Alt text](./assets/20230820_dev_create.png)
 
