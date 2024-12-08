@@ -6,8 +6,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6a73653 (fixed linting issues and changes some rules)
+=======
+>>>>>>> a387d18 (update)
 
 - [ ] Use short sentences and paragraphs, and include bucket brigades.
 - [ ] Include more than two descriptive H2 headings to organize content.
@@ -53,10 +56,8 @@
 - [ ] Run the draft through [Grammarly](https://grammarly.com) or a similar
       grammar tool.
 - [ ] Double-check adherence to the style guide and repository guidelines.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 - [ ] Use the name of the article for the title of the PR.
+<<<<<<< HEAD
 >>>>>>> 4b6c25a (naming pr)
 =======
 - [ ] Use the name of the article for the title of the PR.
@@ -170,3 +171,5 @@
 =======
 - [ ] Use the name of the article for the title of the PR.
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+>>>>>>> a387d18 (update)

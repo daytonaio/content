@@ -88,6 +88,7 @@ reader.]_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 934db35 (fixed merge conflict)
 =======
@@ -132,3 +133,6 @@ reader.]_
 =======
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
+>>>>>>> a387d18 (update)

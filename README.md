@@ -87,6 +87,7 @@ with pride! For more information, check the
 </p>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 You can showcase your achievement badges on your GitHub profile in the following
 way:
 
@@ -159,10 +160,11 @@ Happy writing, and thank you for contributing to the Daytona Dotfiles Insider bl
 =======
 You can showcase your achievement badges on your GitHub profile in the following way:
 =======
+=======
+>>>>>>> a387d18 (update)
 You can showcase your achievement badges on your GitHub profile in the following
 way:
 
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
 <p>
   <img src="https://api.vaunt.dev/v1/github/entities/nkkko/achievements?format=svg&limit=3" width="400" />
 </p>
@@ -178,10 +180,10 @@ Simply add the following code to your GitHub profile README file:
 </p>
 ```
 
-<<<<<<< HEAD
-Happy writing, and thank you for contributing to the Daytona Dotfiles Insider blog!
->>>>>>> de0091a (added example)
-=======
 Happy writing, and thank you for contributing to the Daytona Dotfiles Insider
+<<<<<<< HEAD
 blog!
 >>>>>>> 3b409bd (fixed linting issues and changes some rules)
+=======
+blog!
+>>>>>>> a387d18 (update)
