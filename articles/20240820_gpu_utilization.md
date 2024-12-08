@@ -193,6 +193,10 @@ You can test the script in your workspace with the following command:
 python3 inference.py
 ```
 
+Which should output generated text like so:
+
+![output example](assets/20240820_gpu_utilization_img3.jpg)
+
 ### Create a Docker Container
 
 To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, we'll be using the following Dockerfile:
@@ -232,25 +236,21 @@ This `Dockerfile` sets up a GPU-enabled environment, installs Python and the nec
 
 ### Build and Run the Docker Container
 
-With your `Dockerfile` ready, build and run the container:
+With your `Dockerfile` ready, build the container:
 
 ```bash
-# Build the container
 docker build -t llm-gpu .
+```
 
-# Run the container with GPU support
+![docker build output](assets/20240820_gpu_utilization_img4.jpg)
+
+And run it with NVIDIA GPUs enabled:
+
+```bash
 docker run --gpus all llm-gpu
 ```
 
-### Output
-
-Running the script should generate text similar to the following:
-
-```
-Once upon a time in a land far, far away, they would be able to see through their mind, and understand their own thoughts. We should be ashamed of ourselves, but we must not be ashamed of ourselves. We can only see and feel
-```
-
-The output will be different each time the command is run.
+![docker run output](assets/20240820_gpu_utilization_img5.jpg)
 
 ## Implementing Advanced Text Generation Techniques
 
@@ -285,13 +285,7 @@ if __name__ == "__main__":
 
 By increasing the temperature all the way to 2.0, the generated text becomes more creative and often less coherent.
 
-Here's an example:
-
-```
-Once upon a time in a land far, far away
-
-There stood one and no boy, the name came over in one. One that spoke so loudly he was the best that could play; they looked me in the eyes, he sat on
-```
+![docker run output](assets/20240820_gpu_utilization_img6.jpg)
 
 It's important to play around with these values in order to achieve the preferred output.
 
@@ -352,6 +346,8 @@ Run the script with:
 ```bash
 python3 benchmark.py
 ```
+
+![docker run output](assets/20240820_gpu_utilization_img7.jpg)
 
 Running this script will help you assess the performance of your model and guide optimization efforts.
 
