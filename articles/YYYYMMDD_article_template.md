@@ -76,12 +76,4 @@ reader.]_
 <!-- Note on Definitions -->
 <!-- Throughout this article, link relevant terms to their definitions using inline Markdown links. -->
 <!-- Format: [term](/definitions/term.md) -->
-<<<<<<< HEAD
-<<<<<<< HEAD
 <!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 49d2e46 (fixed merge conflict)
-=======
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
->>>>>>> 3b409bd (fixed linting issues and changes some rules)
