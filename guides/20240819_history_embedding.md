@@ -16,7 +16,7 @@ This guide is perfect for those eager to understand [embeddings](/definitions/20
 ### TL;DR
 
 - **Export Browser History**: Use the Export Chrome History extension to get a CSV file.
-- **Set Up Environment**: Install Daytona and create a [workspace](/definitions/20240819_definition_daytona-workspace.md).
+- **Set Up Environment**: Install Daytona and create a [workspace](</definitions/20240819_definition_daytona workspace.md>).
 - **Embed History**: Run the `search.py` script to embed your history data.
 - **Search History**: Perform searches using various filters and options.
 
@@ -32,7 +32,7 @@ You can install Daytona by running the following command in your terminal:
 curl -L https://download.daytona.io/daytona/install.sh | sudo bash
 ```
 
-Daytona creates a controlled [development environment](/definitions/20240819_definition_development-environment.md) where you can work on the project with all dependencies correctly configured, reducing the likelihood of compatibility issues.
+Daytona creates a controlled [development environment](</definitions/20240819_definition_development environment.md>) where you can work on the project with all dependencies correctly configured, reducing the likelihood of compatibility issues.
 
 ### Exporting Browser History
 
@@ -56,7 +56,7 @@ visit_time,url,title,visit_count,typed_count
 
 ### Creating a Daytona Workspace
 
-With Daytona installed, you can create a [workspace](/definitions/20240819_definition_daytona-workspace.md) for the [`nkkko/history` repository](https://github.com/nkkko/history):
+With Daytona installed, you can create a [workspace](</definitions/20240819_definition_daytona workspace.md>) for the [`nkkko/history` repository](https://github.com/nkkko/history):
 
 ```bash
 daytona create https://github.com/nkkko/history
@@ -107,7 +107,7 @@ AZURE_OPENAI_API_KEY=<your_azure_api_key>
 
 ### Embedding
 
-With your [development environment](/definitions/20240819_definition_development-environment.md) ready, you can now embed your browser history into ChromaDB.
+With your [development environment](</definitions/20240819_definition_development environment.md>) ready, you can now embed your browser history into ChromaDB.
 
 To embed using the local model (multi-qa-distilbert-cos-v1), run:
 
