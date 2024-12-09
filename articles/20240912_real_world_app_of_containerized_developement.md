@@ -129,7 +129,7 @@ Slack’s backend services were containerized, ensuring consistent dependencies 
 2. **Unified Development**:
    GitHub’s container strategy bridged local and production environments, eliminating environment-specific bugs.
 
-   <img src='articles/assets/CICD-Process-1024x385.png'>
+   <img src='articles/assets/CICD-Process-1024x385.png' >
 
 3. **Streamlined Onboarding**:
    Pre-configured containers reduced onboarding time for companies like Shopify and Slack, allowing new developers to focus on coding from day one.  
