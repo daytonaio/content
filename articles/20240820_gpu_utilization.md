@@ -150,7 +150,7 @@ daytona code
 
 ### Download the GPT-2 Model
 
-To download the GPT-2 model and tokenizer, use the following script:
+To download the GPT-2 model and tokenizer, create the following script:
 
 ```python
 # download.py
