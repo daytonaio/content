@@ -76,7 +76,7 @@ For more info about Dev Containers and its features, check [here](https://contai
 Now, we're going to create a dev container for the Python dev environment using a **devcontainer.json** configuration file also, 
 writing essential project files like `main.py` and `requirements-dev.txt`.
 
-By defining a `devcontainer.json` file in your project, you can specify the exact environment configuration, including operating system, tools, and dependencies needed for development. 
+By defining a `devcontainer.json` file in your project, you can specify the exact environment configuration, including the operating system, tools, and dependencies needed for development. 
 This ensures that every developer on your team can work in the same environment, regardless of their local machine setup.
 
 Here is the step-by-step guide:
@@ -91,7 +91,7 @@ Here is the step-by-step guide:
 
 - **Step 2**: Create a .devcontainer directory
 
-    This is where your devcontainer.json file will live
+    This is where your devcontainer.json file will live.
 
     ```bash
     mkdir .devcontainer && cd .devcontainer
@@ -99,7 +99,7 @@ Here is the step-by-step guide:
 
 - **Step 3**: Create a `devcontainer.json` file
 
-    You are going to create a `devcontainer.json` file with the following code. This is the configuration file for the python dev environment specifying settings and dependencies.
+    You are going to create a `devcontainer.json` file with the following code. This is the configuration file for the Python dev environment specifying settings and dependencies.
 
     ```json
     {
@@ -124,12 +124,11 @@ Here is the step-by-step guide:
             ]
         }
     },
-    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
     "postStartCommand": "pip3 install --user -r requirements-dev.txt",
     "remoteUser": "vscode"
     }
     ```
-    Let's breakdown the `devcontainer.json` file.
+    Let's break down the `devcontainer.json` file.
 
     - **name**: Specifies the name of the development environment.
     - **image**: Points to the Docker image used for the container, `mcr.microsoft.com/devcontainers/python:3.11-bullseye`, a Python 3.11 environment based on Debian Bullseye.
@@ -144,7 +143,6 @@ Here is the step-by-step guide:
     - **ms-python.python**: Python language support for VS Code.
     - **charliermarsh.ruff**: A Python linter.
     - **ms-python.black-formatter**: Formatter for Python code using Black.
-    - **postCreateCommand**: Configures Git to recognize the container workspace folder as safe ("git config --global --add safe.directory ${containerWorkspaceFolder}").
     - **postStartCommand**: Installs Python packages from requirements-dev.txt ("pip3 install --user -r requirements-dev.txt").
     - **remoteUser**: sets `vscode` as the non-root default user.
 
@@ -194,7 +192,7 @@ Here is the step-by-step guide:
 
     This test imports the `add_numbers` function from `main.py` and verifies that it returns the correct sum when given 2 and 2 as inputs.
 
-- **Step 7**: Initialize, Commmit and Create a GitHub repository
+- **Step 7**: Initialize, Commit and Create a GitHub repository
 
     Now initialize git and commit all the changes you made to your directory.
 
@@ -204,7 +202,7 @@ Here is the step-by-step guide:
     git commit -m "inital commit"
     ```
 
-    After commiting your code you will push it to a remote repository of your choice.
+    After committing your code you will push it to a remote repository of your choice.
 
     ```bash
     git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME.git
@@ -212,12 +210,12 @@ Here is the step-by-step guide:
     git push -u origin main
     ```
 
-    You can checkout my repository [here](https://github.com/Kiran1689/python-dev-env).
+    You can check out my repository [here](https://github.com/Kiran1689/python-dev-env).
 
 ## Creating the Python dev environment in Daytona
 
 Here you are going to use Daytona to build the python dev environment using Github as a Provider and 
-open a workspace in VS Code. You should ensure `daytona` is installed on you machine before proceeding.
+open a workspace in VS Code. You should ensure `daytona` is installed on your machine before proceeding.
 
 ### Step 1: Start Daytona Server
 
@@ -240,7 +238,7 @@ by allowing direct access to repositories, and simplifying workspace creation
 from existing projects.
 
 Execute the command provided below to add your git provider. Daytona also has
-support for other Git providers like Bitbucket and Gitlab. You can learn more
+support for other Git providers like Bitbucket and GitLab. You can learn more
 about Daytona Git Providers [here](https://www.daytona.io/docs/configuration/git-providers/)
 
 ```bash
@@ -265,7 +263,7 @@ daytona ide
 
 ![preferred IDE](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img5.png)
 
-### Step 4 Create a Daytona Workspace
+### Step 4: Create a Daytona Workspace
 
 Now create a dev environment of the repository you created in GitHub(by forking) and
 follow the prompts after you run it.
@@ -274,16 +272,16 @@ follow the prompts after you run it.
 daytona create
 ```
 
-Choose Github as a provider and select the python-dev-env repository.
+Choose GitHub as a provider and select the python-dev-env repository.
 
-#### Step 4.1 Provide workspace name
+#### Step 4.1: Provide workspace name
 
 The name of the workspace is usually the repository name if you didn't modify it when
-prompted in the creation of the workspace. In my case, it's `python-dev-env`
+prompted in the creation of the workspace.
 
 ![workspace name](assets/setting_up_a_python_dev_environment_with_devcontainers_and_daytona_img6.png)
 
-#### Step 4.2 Choose the target
+#### Step 4.2: Choose the target
 
 Now it will ask you to choose the target, select `local`, and enter.
 
@@ -301,7 +299,7 @@ Now, your Python dev environment is ready to use.
 ### Confirmation
 
 In your VS Code, run the test cases using the command below, and you will see all the test cases passed.
-This means the Python dev environment has successfully set for your project.
+This means the Python dev environment has been successfully setup for your project.
 
 ```bash
 python3 -m pytest
@@ -316,7 +314,5 @@ Daytona and Dev Containers. This setup ensures that your projects are reproducib
 consistent across machines, enabling smooth collaboration and effortless debugging.
 
 ## References
-
-- [Python Project Template by Pamela Fox](https://github.com/pamelafox/python-project-template)
 
 - [Daytona Documentation](https://www.daytona.io/dotfiles/the-ultimate-guide-to-managing-python-environments)
