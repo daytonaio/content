@@ -46,14 +46,7 @@ Daytona creates a controlled [development environment](/definitions/20240819_def
 
 [Docker](/definitions/20240819_definition_docker.md) is a platform that allows you to automate the deployment of applications inside lightweight, portable containers. These containers include everything needed to run the application, such as the code, runtime, libraries, and dependencies, ensuring consistency across different environments.
 
-If [Docker](/definitions/20240819_definition_docker.md) isn't already installed on your system, follow these steps:
-
-```bash
-# Update package lists and install Docker
-sudo apt-get update
-sudo apt-get install docker.io
-sudo systemctl start docker
-```
+If [Docker](/definitions/20240819_definition_docker.md) isn't already installed on your system, follow the [steps in their documentation](https://docs.docker.com/get-started/get-docker/).
 
 ### NVIDIA Container Toolkit Installation
 
@@ -61,25 +54,28 @@ The NVIDIA Container Toolkit is essential for enabling GPU support in [Docker](/
 
 ![nvidia diagram](assets/20240820_gpu_utilization_img2.jpg)
 
-To enable GPU support in [Docker](/definitions/20240819_definition_docker.md) containers, you need to install the NVIDIA Container Toolkit:
+To enable GPU support in [Docker](/definitions/20240819_definition_docker.md) containers, you need to install the NVIDIA Container Toolkit on your system machine. The toolkit is available for Linux and Windows.
+
+#### Linux
+
+To install the GPU driver for a compatible Linux distribution, follow the steps [in this guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for your respective package manager.
+
+After it's installed, you can configure Docker to use the driver with the following commands:
 
 ```bash
-# Configure the production repository
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-# Install the NVIDIA Container Toolkit
-sudo apt-get update
-sudo apt-get install -y nvidia-container-toolkit
-
-# Configure the container runtime
 sudo nvidia-ctk runtime configure --runtime=docker
-
-# Restart Docker to apply changes
 sudo systemctl restart docker
 ```
+
+#### Windows
+
+To enable NVIDIA CUDA on Windows, you can follow the [guide on Microsoft's website](https://learn.microsoft.com/en-us/windows/ai/directml/gpu-cuda-in-wsl).
+
+You need to use a Windows Subsystem for Linux (WSL) instance for Linux compatibility. Details on that can be found [here](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+#### macOS
+
+The toolkit cannot be installed on macOS. A Linux-compatible system is required.
 
 ### Verify GPU Configuration
 
@@ -97,10 +93,51 @@ With your GPU-enabled [Docker](/definitions/20240819_definition_docker.md) envir
 
 ### Create Daytona Workspace
 
-Before starting, make sure to create a Daytona workspace to set up a development environment:
+To make it easier to set up the development environment in the future, we'll be creating a Daytona workspace.
+
+First, create a new Github repository. Add the following configuration to `.devcontainer/devcontainer.json`:
+
+```json
+{
+  "name": "GPU LLM Container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
+        "python.formatting.blackPath": "/usr/local/bin/black",
+        "python.formatting.yapfPath": "/usr/local/bin/yapf",
+        "python.linting.banditPath": "/usr/local/bin/bandit",
+        "python.linting.flake8Path": "/usr/local/bin/flake8",
+        "python.linting.mypyPath": "/usr/local/bin/mypy",
+        "python.linting.pycodestylePath": "/usr/local/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/usr/local/bin/pydocstyle",
+        "python.linting.pylintPath": "/usr/local/bin/pylint"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "postCreateCommand": "pip3 install -r requirements.txt"
+}
+```
+
+Then, add the required Python dependencies to `requirements.txt`:
+
+```
+torch==2.4.0
+transformers==4.44.2
+```
+
+Once the repository is set up, create the workspace with your respective username and repo name.
 
 ```bash
-daytona create https://github.com/giraffekey/gpu-container-example
+daytona create https://github.com/<username>/<repository>
 ```
 
 This will create a controlled environment with the required Python dependencies installed.
@@ -113,7 +150,7 @@ daytona code
 
 ### Download the GPT-2 Model
 
-There should be this script in your opened workspace:
+To download the GPT-2 model and tokenizer, use the following script:
 
 ```python
 # download.py
@@ -139,7 +176,7 @@ You should see `gpt2_model` and `gpt2_tokenizer` directories.
 
 ### Test the Model
 
-This is the script we will be using to generate text with the model:
+Now, create a script to generate text using the downloaded GPT-2 model:
 
 ```python
 # inference.py
@@ -147,11 +184,11 @@ This is the script we will be using to generate text with the model:
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
+def generate_text(prompt, max_length=50):
     # Check if GPU is available and set device accordingly
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # Load pre-trained GPT-2 model and tokenizer
+    # Load downloaded GPT-2 model and tokenizer
     model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
     tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
     
@@ -169,11 +206,7 @@ def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
         inputs,
         max_length=max_length, 
         attention_mask=attention_mask,
-        pad_token_id=tokenizer.eos_token_id,
-        do_sample=True,  # Enable sampling
-        top_k=top_k,     # Top-k sampling
-        top_p=top_p,     # Nucleus (top-p) sampling
-        temperature=temperature  # Adjust temperature
+        pad_token_id=tokenizer.eos_token_id
     )
 
     # Decode the generated text
@@ -185,7 +218,7 @@ if __name__ == "__main__":
     print(generated_text)
 ```
 
-This script loads the model and tokenizer, performs text generation with advanced sampling techniques, and prints the output.
+This script loads the model and tokenizer, performs text generation, and prints the output.
 
 You can test the script in your workspace with the following command:
 
@@ -199,7 +232,7 @@ Which should output generated text like so:
 
 ### Create a Docker Container
 
-To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, we'll be using the following Dockerfile:
+To run this script in a [Docker](/definitions/20240819_definition_docker.md) container, create a `Dockerfile` that includes all necessary dependencies, such as PyTorch and the Transformers library:
 
 ```Dockerfile
 FROM nvidia/cuda:12.6.0-base-ubuntu24.04
@@ -270,24 +303,56 @@ The temperature parameter controls the randomness of predictions by scaling the 
 
 ### Configuring the Script
 
-In the `inference.py` script, you can experiment with these values in order to tamper with the text output.
+Here's how to integrate these techniques into the text generation script:
 
 ```python
 # inference.py
 
-...
+import torch
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+def generate_text(prompt, max_length=50, top_k=50, top_p=0.9, temperature=0.8):
+    # Check if GPU is available and set device accordingly
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
+    # Load pre-trained GPT-2 model and tokenizer
+    model = GPT2LMHeadModel.from_pretrained("./gpt2_model")
+    tokenizer = GPT2Tokenizer.from_pretrained("./gpt2_tokenizer", clean_up_tokenization_spaces=True)
+    
+    # Move model to the GPU
+    model.to(device)
+
+    # Encode the input prompt
+    inputs = tokenizer.encode(prompt, return_tensors="pt").to(device)
+
+    # Create attention mask
+    attention_mask = torch.ones(inputs.shape, device=inputs.device)
+
+    # Generate text with advanced sampling techniques
+    outputs = model.generate(
+        inputs,
+        max_length=max_length, 
+        attention_mask=attention_mask,
+        pad_token_id=tokenizer.eos_token_id,
+        do_sample=True,  # Enable sampling
+        top_k=top_k,     # Top-k sampling
+        top_p=top_p,     # Nucleus (top-p) sampling
+        temperature=temperature  # Adjust temperature
+    )
+
+    # Decode the generated text
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 if __name__ == "__main__":
     prompt = "Once upon a time in a land far, far away"
-    generated_text = generate_text(prompt, top_k=50, top_p=0.9, temperature=2.0)
+    generated_text = generate_text(prompt)
     print(generated_text)
 ```
 
-By increasing the temperature all the way to 2.0, the generated text becomes more creative and often less coherent.
+
+The output should now be more coherent and varied.
 
 ![docker run output](assets/20240820_gpu_utilization_img6.jpg)
-
-It's important to play around with these values in order to achieve the preferred output.
 
 ## Monitoring and Optimizing Performance
 
