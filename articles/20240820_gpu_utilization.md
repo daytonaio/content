@@ -356,19 +356,21 @@ The output should now be more coherent and varied.
 
 ## Monitoring and Optimizing Performance
 
-After running the script, it's crucial to monitor performance and optimize as needed. You can use `nvidia-smi` for real-time GPU monitoring and the Python `time` module for performance benchmarking.
+After running the script, it's crucial to monitor performance and optimize as needed. This involves tracking GPU utilization, measuring execution time, and fine-tuning parameters for better efficiency. Tools like `nvidia-smi` and Python's `time` module can assist in these tasks.
 
 ### Monitoring GPU Utilization
 
-To monitor real-time GPU usage, run:
+To ensure your GPU is being effectively utilized during inference or training, you can use the NVIDIA System Management Interface (`nvidia-smi`). It provides real-time metrics, including memory usage, GPU load, and power consumption. Execute the following command:
 
 ```bash
 nvidia-smi
 ```
 
+This will display a dashboard showing all running processes on your GPU, making it easier to identify bottlenecks or underutilization. For continuous monitoring, consider combining `nvidia-smi` with logging tools or exporting data for analysis using the `--query-gpu` and `--format=csv` options.
+
 ### Benchmarking and Performance Tuning
 
-To measure the script's execution time and evaluate GPU utilization, consider using the benchmarking script:
+Benchmarking helps evaluate the script's efficiency, including GPU utilization, latency, and resource allocation. To benchmark the code, create the following script:
 
 ```python
 # benchmark.py
@@ -414,7 +416,7 @@ python3 benchmark.py
 
 ![docker run output](assets/20240820_gpu_utilization_img7.jpg)
 
-Running this script will help you assess the performance of your model and guide optimization efforts.
+Running the benchmark script not only measures the performance of your model but also helps identify areas where tuning and optimization can yield significant improvements.
 
 ## Optimization and Troubleshooting
 
