@@ -10,7 +10,7 @@ tags: ['Daytona', 'FastHTML', 'Dub.co', 'Link Shortener']
 
 # Introduction
 
-Development environments play a crucial role in software development. Developers need developments environments to experiment
+Development environments play a crucial role in software development. Developers need development environments to experiment
 with new ideas and debug them without impacting existing products. When working on web applications, the ability to rapidly prototype,
 isolate dependencies, and seamlessly integrate APIs can significantly enhance productivity.
 
@@ -116,6 +116,115 @@ Dub.co supports custom branding, analytics, and scalability, making it a top cho
 
 Check out Dub.co: [Dub.co API Documentation](https://dub.co/docs/quickstart/python)
 
+
+**Setting Up Your Project Environment**
+
+Before diving into the development of your link shortener, it's essential to set up a proper project environment.
+This includes creating a project directory, managing dependencies, and configuring your development container. In this section,
+we will guide you through the steps to set up your project environment from scratch, ensuring you have a solid foundation for your project.
+
+**Step 1: Create a Project Directory**:
+   Open your terminal and create a new directory for your project using the following command:
+   ```bash
+   mkdir dub-fasthtml-shortener
+   ```
+
+**Step 2: Change into the Project Directory**:
+   Navigate into the newly created directory:
+   ```bash
+   cd dub-fasthtml-shortener
+   ```
+
+**Step 3: Create a requirements.txt File**:
+   Create a `requirements.txt` file to manage project dependencies. You can use the following command:
+   ```bash
+   touch requirements.txt
+   ```
+   For Windows users using WSL, use `wsl touch requirements.txt`.
+
+**Step 4: Add Dependencies to requirements.txt**:
+   Open the `requirements.txt` file and add the necessary dependencies for your project.
+   ```
+   python-fasthtml
+dub
+python-dotenv
+   ```
+
+**Step 5: Create a main.py File**:
+   Create a `main.py` file to serve as the entry point for your application:
+   ```bash
+   touch main.py
+   ```
+   For Windows users using WSL, use `wsl touch main.py`.
+
+**Step 6: Create a .env File**:
+   Create a `.env` file to manage environment variables:
+   ```bash
+   touch .env
+   ```
+   For Windows users using WSL, use `wsl touch .env`.
+
+**Step 7: Create a .devcontainer Folder and devcontainer.json File**:
+   Create a `.devcontainer` folder and a `devcontainer.json` file to configure your development container:
+   ```bash
+   mkdir .devcontainer
+   touch .devcontainer/devcontainer.json
+   ```
+   For Windows users using WSL, use `mkdir .devcontainer` and `wsl touch .devcontainer/devcontainer.json`.
+
+**Step 8: Add Devcontainer Configuration**:
+   Add the following configuration to the `devcontainer.json` file:
+   ```json
+   {
+       "name": "Python - fasthtml Project",
+       "image": "mcr.microsoft.com/devcontainers/python:3.11",
+       "features": {},
+       "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+       "forwardPorts": [8000],
+       "remoteUser": "vscode",
+       "customizations": {
+           "vscode": {
+               "extensions": [
+                   "ms-python.python",
+                   "ms-python.vscode-pylance",
+                   "ms-toolsai.jupyter"
+               ]
+           }
+       }
+   }
+   ```
+
+**Step 9: Create a GitHub Repository and Push Your Project**:
+   Create a GitHub repository for your project and push your local project to the remote repository:
+   ```bash
+   # Initialize a git repository
+   git init
+
+   # Create a .gitignore file and add .env and .sesskey to it
+   touch .gitignore 
+   # For powershell, you can use this command
+   wsl touch .gitignore
+  
+  # Add the variable that you don't ant pushed to the git ignore file
+  .env
+  .sesskey
+
+   # Add all files to the staging area
+   git add .
+
+   # Commit the changes
+   git commit -m "Initial commit"
+
+   # Add the remote repository
+   git remote add origin <your_github_repository_url>
+
+   # Push the changes to the remote repository
+   git push -u origin master
+   ```
+
+By following these steps, you have successfully set up your project from scratch.
+
+
 # Setting up Daytona development environment
 
 To set up your Daytona development environment and integrate it with your IDE (such as VSCode, IntelliJ, or Cursor) and Git providers
@@ -160,6 +269,7 @@ To set up your Daytona development environment and integrate it with your IDE (s
    daytona create <github_url>
    ```
    ![Terminal after creating workspace](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_5.png)
+   ![Terminal when installing dependencies](assets/20241205_building_a_link_shortener_with_fasthtml_and_dub.co_img_18.png)
 
 The workspace will be opened in your ide using SSH from daytona. You can start experimenting in your development environment
 
@@ -181,17 +291,8 @@ After successfully registering, you will be directed to the dashboard. In the si
 
 In this section, we will install the necessary dependencies for our project and set up the environment variables required for integration with the Dub.co API. We will also create a main entry point for our application.
 
-**Step 1: Install Dependencies**
+**Step 1: Create a .env File and Add the Environmental Variable**
 
-To begin, we need to install the required Python packages. Open your terminal and run the following command:
-
-```
-pip install python-fasthtml dub python-dotenv
-```
-
-**Step 2: Create a .env File and Add the Environmental Variable**
-
-1. Create a file named `.env`.
 2. Add the following line to the file, replacing `your_api_key_here` with your actual API key:
    ```
    DUB_API_KEY=your_api_key_here
@@ -204,9 +305,16 @@ In this section, we will guide you through the process of building a link shorte
 **Step 1: Create the Application Structure**
 
 Organize your project as follows:
-fasthtml-link-shortener
-  ├── main.py          # Application logic
-  └── .env             # API key
+```
+dub-fasthtml-shortener/
+│
+├── .devcontainer/
+│   └── devcontainer.json
+├── .env
+├── .gitignore
+├── main.py
+└── requirements.txt
+```
 
 **Step 2: Implement main.py**
 
