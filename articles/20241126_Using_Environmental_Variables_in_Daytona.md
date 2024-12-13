@@ -10,26 +10,26 @@ tags: ['Environment Variables', 'Development Environment', 'Daytona Workspaces']
 
 ## Introduction
 
-[Environmental variables]('/definitions/20241126_definition_environment_variables.md') are important for configuring development environments and storing sensitive information. They provide a flexible way to control application behavior without hardcoding values directly into the source code. Daytona offers a streamlined method for setting, managing, and using environmental variables across various workspaces using the `daytona env` command. This simplifies configuration and enhances security especially when collaborating on projects.
+Environmental variables are important for configuring development environments and storing sensitive information. They provide a flexible way to control application behavior without hardcoding values directly into the source code.
 
-This article will explain using the `daytona env` command to set and manage environmental variables within Daytona workspaces. You will learn how to set variables, create a workspace, and access these variables within a workspace.
+Daytona offers a streamlined method for setting, managing, and using environmental variables across various workspaces using the `daytona env` command. This simplifies configuration and enhances security especially when collaborating on projects.
+
+This article will explain using the `daytona env` command to set and manage [environmental variables]('/definitions/20241126_definition_environment_variables.md') within Daytona workspaces. You will learn how to set variables, create a workspace, and access these variables within a workspace.
 
 ### TL;DR
 
-- **What**: Learn to use `daytona env set` for managing workspace environmental variables
-
-- **Why**: Simplify configuration and securely manage development environment settings
-
-- **How**:
-  - Set variables using `daytona env set key=value`
-  - Create a workspace with `daytona create --code`
-  - Verify variables with `daytona env list`
+- Simplify credential management using daytona env Commands
+- Manage workspace configurations securely without hardcoding
+- Access environment variables across multiple containers and development tools
+- Create flexible development environments with dynamic configuration
 
 ## Prerequisites
 
-- Daytona installed on your system
-- Docker
-- Visual Studio Code (VSCode)
+To successfully follow this tutorial, ensure the following tools are installed and properly set up on your system:
+
+- [Daytona](https://github.com/daytonaio/daytona/blob/main/README.md): A tool for streamlined development workflows.
+- [Docker](https://www.docker.com/products/docker-desktop/): For containerization and managing application dependencies.
+- [Visual Studio Code](https://code.visualstudio.com/download): A code editor with support for extensions and debugging.
 
 ## Set Environmental Variables
 
@@ -39,13 +39,26 @@ Before adding an environment variable to Daytona, ensure that Docker and your se
 daytona server
 ```
 
-Then use `daytona env set` to define environmental variables:
+Using the Command Line Interface (CLI), run the following command to define your environmental variables:
 
 ```bash
 daytona env set USERNAME=JohnDoe PASSWORD=123456
 ```
 
-This command allows you to set multiple environmental variables in a single operation.
+This will allow you to set multiple environmental variables in a single operation. You can also use the Text User Interface (TUI) by running:
+
+```bash
+daytona env set
+```
+This command will launch the TUI interface. Proceed to enter your environment variables in the following format:
+
+```bash
+USERNAME=JohnDoe
+PASSWORD=123456
+```
+After entering the variables, press Enter on your keyboard to save them.
+
+![Screenshot example of Daytona env set TUI ](assets/20241126_Using_Environmental_Variables_in_Daytona_3.png)
 
 ### How `daytona env set` Works
 
@@ -106,6 +119,8 @@ Your output should look like this:
 ![Result of running python script](assets/20241126_Using_Environmental_Variables_in_Daytona_2.png)
 
 ### Best Practices
+
+When working with environmental variables, it's important to follow best practices to protect sensitive information and maintain an organized development environment. The following guidelines will help you manage environmental variables more securely across your projects.
 
 1. **Security**:
 
