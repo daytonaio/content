@@ -26,13 +26,13 @@ In this article, we will explore the process of setting up prebuilds in Daytona,
 
 - Managing Prebuilds
 
-- Benifits of Daytona Prebuilds
+- Benefits of Daytona Prebuilds
 
 ## Overview of Prebuilds
 
 Prebuilds are designed to accelerate development by pre-building your Workspace.
 When you start a Workspace, the prebuilt environment is used, ensuring that the
-Workspace is initiated almost instantly.Prebuilds achieve this by setting up a
+Workspace is initiated almost instantly. Prebuilds achieve this by setting up a
 project configuration that monitors changes in the connected Git Provider’s repository.
 
 Prebuilds work by registering a listener for webhook events from the Git Provider.
@@ -50,14 +50,14 @@ which the Git Provider uses to send these requests.
 
 ## Setting up a Project Configuration
 
-Before setting up Prebuilds for your project, you need to set up a [Project Configuration](https://www.daytona.io/docs/usage/projects/#project-configuration).
+Before setting up Prebuilds for your project, you must set up a [Project Configuration](https://www.daytona.io/docs/usage/projects/#project-configuration).
 
 A project configuration contains all necessary properties to define and manage projects within a Workspace.
 It stores information such as the repository URL, build configuration, and environment variables. 
 This allows for easy reuse of previously set configurations, ensuring a consistent and reproducible
 setup across multiple Workspaces.
 
-Follow the below steps to setup:
+Follow the below steps:
 
 - **Step 1:** Start Daytona Server
 
@@ -88,7 +88,7 @@ the list.
 
 Select the repository URL of the project you want to configure from your GitHub.
 
-In my case I've selected [pyhton-dev-env](https://github.com/Kiran1689/python-dev-env)
+In my case, I've selected [pyhton-dev-env](https://github.com/Kiran1689/python-dev-env)
 repository from my GitHub account for configuration.
 
 ![Repository](./assets/20241212_Prebuilds_in_Daytona_img3.png)
@@ -117,9 +117,9 @@ Enter a name for the Project Configuration.
 
 ![project config name](./assets/20241212_Prebuilds_in_Daytona_img6.png)
 
-Now, you have successfully setup your project configurations.
+Now, you have successfully set up your project configurations.
 
-You can checkout the list of a Project Configurations you added by running the below command:
+You can check the list of Project Configurations you added by running the below command:
 
 ```bash
 daytona project-config list
@@ -153,20 +153,20 @@ For instance, if you specify a commit interval of 2, the Prebuild will run after
 
 - **Trigger Files**
 
-Enter the files path whose changes you want to immediately trigger a Prebuild, without having to wait for the commit interval. 
+Enter the file path whose changes you want to immediately trigger a Prebuild, without having to wait for the commit interval. 
 
 - **Retention**
 
 Define how many successful builds you want Daytona to remember (defaults to 3).
 
-Select `Yes` to Run the build once submit
+Select `Yes` to Run the build once submit.
 
 ![prebuilds config](./assets/20241212_Prebuilds_in_Daytona_img9.png)
 
-Once you added a Prebuild, it becomes active immediately based on the project configuration you provided and 
+Once you add a Prebuild, it becomes active immediately based on the project configuration you provided and 
 a build process will automatically start in the background. 
 
-You can checkout the progress of the build by running the command:
+You can check the progress of the build by running the command:
 
 ```bash
 daytona build logs
@@ -185,7 +185,7 @@ The Workspace will then use this Prebuild, significantly speeding up the setup p
 
 Now, you have successfully configured Prebuild for your project. The Prebuild will automatically run whenever the specified
 conditions are met, such as when the defined number of commits is reached or Trigger files are modified and subsequent 
-`daytona create` calls willautomatically detect the most recent existing build and use it to create the project.
+`daytona create` calls will automatically detect the most recent existing build and use it to create the project.
 
 ## Managing Prebuilds
 
