@@ -32,10 +32,8 @@ In this article, we will explore the process of setting up prebuilds in Daytona,
 
 Prebuilds are designed to accelerate development by pre-building your Workspace.
 When you start a Workspace, the prebuilt environment is used, ensuring that the
-Workspace is initiated almost instantly.
-
-Prebuilds achieve this by setting up a project configuration that monitors changes
-in the connected Git Provider’s repository.
+Workspace is initiated almost instantly.Prebuilds achieve this by setting up a
+project configuration that monitors changes in the connected Git Provider’s repository.
 
 Prebuilds work by registering a listener for webhook events from the Git Provider.
 A public [API](../definitions/20241212_definition_api.md) endpoint is provided,
@@ -69,6 +67,8 @@ Start the daytona server by running the command:
 daytona server
 ```
 
+![Daytona server](./assets/20241212_Prebuilds_in_Daytona_img1.png)
+
 - **Step 2:** Add a new Project Configuration
 
 Run the following command to add a new Project Configuration:
@@ -82,12 +82,16 @@ daytona project-config add
 You will be prompted to choose a provider. Select `GitHub` from
 the list.
 
+![Daytona project config](./assets/20241212_Prebuilds_in_Daytona_img2.png)
+
 - **Step 4:** Select repository URL
 
 Select the repository URL of the project you want to configure from your GitHub.
 
 In my case I've selected [pyhton-dev-env](https://github.com/Kiran1689/python-dev-env)
 repository from my GitHub account for configuration.
+
+![Repository](./assets/20241212_Prebuilds_in_Daytona_img3.png)
 
 - **Step 5:** Choose a build configuration
 
@@ -96,24 +100,32 @@ a container image with the necessary tools and configurations for your Project.
 
 Read more about Builders and how to choose one for your project [here](https://www.daytona.io/docs/usage/builders/)
 
+![builder](./assets/20241212_Prebuilds_in_Daytona_img4.png)
+
 - **Step 6:** Enter the environment variables
 
 Enter environment variables in the format KEY=VALUE
 To pass machine env variables at runtime, use $VALUE
 
-Leave blank, if there are no environment variables for your project
+Leave blank, if there are no environment variables for your project.
+
+![env](./assets/20241212_Prebuilds_in_Daytona_img5.png)
 
 - **Step 7:** Provide name
 
 Enter a name for the Project Configuration.
 
-Now, you have successfully setup your project configurations. 
+![project config name](./assets/20241212_Prebuilds_in_Daytona_img6.png)
+
+Now, you have successfully setup your project configurations.
 
 You can checkout the list of a Project Configurations you added by running the below command:
 
 ```bash
 daytona project-config list
 ```
+
+![project-config list](./assets/20241212_Prebuilds_in_Daytona_img7.png)
 
 Now, let's move to setting up prebuild for your project.
 
@@ -127,12 +139,12 @@ Run the following command to add a new Prebuild:
 daytona prebuilds add
 ```
 
-Upon running the above command, You will be prompted to enter several configuration options. 
+Upon running the above command, Select a project configuration you plan to work on.
+
+![prebuilds add](./assets/20241212_Prebuilds_in_Daytona_img8.png)
+
+After that, Daytona will prompt you to enter several configuration options. 
 Here's an overview:
-
-- **Select a Project Config To Prebuild**
-
-Select a project configuration you plan to work on. Select the one you added earlier.
 
 - **Commit interval**
 
@@ -149,6 +161,8 @@ Define how many successful builds you want Daytona to remember (defaults to 3).
 
 Select `Yes` to Run the build once submit
 
+![prebuilds config](./assets/20241212_Prebuilds_in_Daytona_img9.png)
+
 Once you added a Prebuild, it becomes active immediately based on the project configuration you provided and 
 a build process will automatically start in the background. 
 
@@ -157,6 +171,8 @@ You can checkout the progress of the build by running the command:
 ```bash
 daytona build logs
 ```
+
+![build logs](./assets/20241212_Prebuilds_in_Daytona_img10.png)
 
 Once the build process is complete, run the following command to create a Workspace using the configured project configuration:
 
@@ -173,7 +189,7 @@ conditions are met, such as when the defined number of commits is reached or Tri
 
 ## Managing Prebuilds
 
-Daytona allows you to manage your Prebuilds through Daytona CLI
+Daytona allows you to manage your Prebuilds through Daytona CLI.
 
 ### List Prebuilds
 
@@ -188,6 +204,8 @@ Upon running this command, Daytona will display a list of your Prebuilds.
 You will be able to view the project configuration, the branch it is linked to,
 the commit interval, the trigger files, and the build retention.
 
+![prebuilds list](./assets/20241212_Prebuilds_in_Daytona_img11.png)
+
 ### Prebuilds Information
 
 Daytona allows you to view detailed information of a Prebuild, providing you with an overview of the properties stored within it.
@@ -200,9 +218,13 @@ daytona prebuilds info
 
 It will prompt you to select the Prebuild you want to view. 
 
+![prebuilds info](./assets/20241212_Prebuilds_in_Daytona_img12.png)
+
 Upon selecting the Prebuild, Daytona will display the details of the selected Prebuild.
 You will be able to view the Prebuild ID, the project configuration, the branch it is linked to,
 the commit interval, the trigger files, and the build retention.
+
+![prebuilds info](./assets/20241212_Prebuilds_in_Daytona_img13.png)
 
 ### Update Prebuilds
 
@@ -216,7 +238,11 @@ daytona prebuilds update
 
 - **Step 2:** Select the Prebuild you want to update
 
+![prebuilds update](./assets/20241212_Prebuilds_in_Daytona_img14.png)
+
 Upon selecting the Prebuild, Daytona will prompt you to update the Prebuild commit interval, trigger files, and build retention.
+
+![prebuilds update](./assets/20241212_Prebuilds_in_Daytona_img15.png)
 
 Upon updating the Prebuild configuration, Daytona will display a success message.
 
@@ -231,6 +257,8 @@ daytona prebuilds delete
 ```
 
 It will prompt you to select the Prebuild you want to delete. 
+
+![prebuilds delete](./assets/20241212_Prebuilds_in_Daytona_img16.png)
 
 Upon selecting the Prebuild, Daytona will delete that Prebuild.
 
