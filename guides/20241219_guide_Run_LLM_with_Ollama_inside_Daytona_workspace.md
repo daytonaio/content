@@ -35,9 +35,6 @@ To follow this guide, you'll need to have the following:
 Now, we're going to create a dev container using a **devcontainer.json** configuration file also, 
 writing project files like `ollama_chat.py` and `requirements-dev.txt`.
 
-By defining a `devcontainer.json` file in your project, you can specify the exact environment configuration, including the operating system, tools, and dependencies needed for development. 
-This ensures that every developer on your team can work in the same environment, regardless of their local machine setup.
-
 Here is the step-by-step guide:
 
 - **Step 1**: Create a new directory
@@ -299,5 +296,9 @@ This workflow ensures consistency, simplicity, and efficiency in managing Python
 
 ## References
 
-- [Daytona Documentation](https://www.daytona.io/dotfiles/the-ultimate-guide-to-managing-python-environments)
+- [Daytona Documentation](https://www.daytona.io/docs/)
+
+- [GitHub Repository](https://github.com/Kiran1689/ollama-llm-env)
+
+- [Ollama Official Site](https://ollama.com/)
 
