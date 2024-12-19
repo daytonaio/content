@@ -84,6 +84,12 @@ the list.
 
 ![Daytona project config](./assets/20241212_Prebuilds_in_Daytona_img2.png)
 
+If you haven't added GitHub as a provider, you can do so by running the below command:
+
+```bash
+daytona git-providers add
+```
+
 - **Step 4:** Select repository URL
 
 Select the repository URL of the project you want to configure from your GitHub.
