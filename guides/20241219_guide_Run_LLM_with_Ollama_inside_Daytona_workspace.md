@@ -13,7 +13,7 @@ tags: ["ollama", "daytona"]
 Large Language Models (LLMs) are revolutionizing industries with their powerful capabilities.
 Using Ollama to harness these models in a robust, reproducible development environment can significantly improve productivity. 
 
-This guide demonstrates how to set up and run LLM with ollama inside Daytona workspace.
+This guide demonstrates how to set up and run LLM with Ollama inside Daytona workspace.
 
 ## TL;DR
 
@@ -108,7 +108,7 @@ environment variables, and even custom scripts to run during setup.
 
 - **Step 4**: Add the Chat Script `ollama_chat.py`
 
-Create a ollama_chat.py file in the root of your project directory. 
+Create an ollama_chat.py file in the root of your project directory. 
 
 ```python
 #import openai
@@ -146,11 +146,11 @@ while True:
     print(bot_response)
 ```
 
-This code sets up an interactive chatbot using a AI model `phi3:mini`.
+This code sets up an interactive chatbot using an AI model `phi3:mini`.
 It allows the user to type questions in a loop, sends these questions to the AI model, and displays the AI's responses.
 If you want to run a model other than `phi3:mini`, change the `MODEL_NAME`
 
-You can check the available ollama models [here](https://ollama.com/search)
+You can check the available Ollama models [here](https://ollama.com/search)
 
 
 - **Step 5**: Create a `requirements-dev.txt` file
@@ -161,7 +161,7 @@ openai
 ollama
 ```
 
-- **Step 6**: Initialize, Commit and Create a GitHub repository
+- **Step 6**: Initialize, Commit, and Create a GitHub repository
 
 Now initialize git and commit all the changes you made to your directory.
 
@@ -183,7 +183,7 @@ You can check out my repository [here](https://github.com/Kiran1689/ollama-llm-e
 
 ## Running LLM with Ollama in Daytona
 
-Here you are going to use Daytona to run LLM, using Github as a Provider and 
+Here you are going to use Daytona to run LLM, using GitHub as a Provider, and 
 open a workspace in VS Code. You should ensure `daytona` is installed on your machine before proceeding.
 
 ### Step 1: Start Daytona Server
