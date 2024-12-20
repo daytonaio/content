@@ -146,8 +146,8 @@ we will guide you through the steps to set up your project environment from scra
    Open the `requirements.txt` file and add the necessary dependencies for your project.
    ```
    python-fasthtml
-dub
-python-dotenv
+   dub
+   python-dotenv
    ```
 
 **Step 5: Create a main.py File**:
