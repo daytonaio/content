@@ -291,3 +291,5 @@ and optimizing your environment setup for success.
 
 - [Daytona Documentation](https://www.daytona.io/docs)
 
+- [Boost Your Workspace Creation with Prebuilds](https://www.daytona.io/dotfiles/boost-your-workspace-creation-with-prebuilds)
+
