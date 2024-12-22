@@ -12,5 +12,3 @@ certain other noncommercial uses permitted by copyright law.
 
 For permission requests, please contact Daytona Platforms Inc. at
 support@daytona.io.
-
-#test2
