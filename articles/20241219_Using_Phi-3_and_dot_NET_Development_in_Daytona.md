@@ -79,40 +79,7 @@ git --version
 ```
 
 ### 2. Daytona Installation and Configuration
-
-1. **Install Daytona CLI**
-   Follow the [Daytona Installation Guide](https://daytona.io/docs/getting-started/installation) for your operating system.
-
-2. **Configure Cloud Provider**
-
-   ```bash
-   # Initialize Daytona with your preferred provider
-   daytona provider add aws    # For AWS
-   # OR
-   daytona provider add azure  # For Azure
-   # OR
-   daytona provider add gcp    # For GCP
-   ```
-
-3. **Set Up Workspace**
-
-   ```bash
-   # Create a Daytona workspace
-   daytona workspace create phi3-workspace
-
-   # List available workspaces
-   daytona workspace list
-   ```
-
-4. **Verify Installation**
-
-   ```bash
-   # Check Daytona status
-   daytona status
-
-   # View available providers
-   daytona provider list
-   ```
+ Follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
 
 ## Setting Up the Development Environment
 
@@ -186,8 +153,9 @@ obj/
 ### 3. Launch Daytona Environment
 
 ```bash
-# Initialize Daytona project, e.g, 
-daytona create phi3-demo
+# Initialize Daytona project, 
+daytona create your-repo-url
+# e.g daytona create https://github.com/oreoluwa212/phi-3_devcontainer
 
 # Start the development environment
 daytona serve
