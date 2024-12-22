@@ -64,6 +64,12 @@ daytona create https://github.com/nkkko/history
 
 This command clones the [repository](/definitions/20240819_definition_repository.md) and sets up the necessary environment. Daytona manages dependencies and configurations, ensuring that your environment is set up correctly for running the project scripts.
 
+You can open the workspace in your IDE with the following command:
+
+```bash
+daytona code
+```
+
 ### Set Up OpenAI Service (Optional)
 
 There are many hosted models compatible with the OpenAI API. Here's a basic rundown of available services:
