@@ -111,6 +111,14 @@ AZURE_OPENAI_API_KEY=<your_azure_api_key>
 
 ## Embedding and Searching Your Browser History
 
+In order to use the script, the `sentence_transformers` module is required to be installed on the user device.
+
+You can install the dependency with the following command:
+
+```bash
+pip install sentence_transformers
+```
+
 ### Embedding
 
 With your [development environment](</definitions/20240819_definition_development environment.md>) ready, you can now embed your browser history into ChromaDB.
