@@ -82,6 +82,9 @@ You are going to create a `devcontainer.json` file with the following code. This
     }
 },
 "postStartCommand": "pip3 install --user -r requirements-dev.txt",
+"hostRequirements": {
+        "memory": "16gb"
+},
 "remoteUser": "vscode"
 }
 ```
@@ -97,6 +100,7 @@ Let's break down the `devcontainer.json` file.
 - **files.exclude**: Hides specified files and folders (e.g., `__pycache__`) from the VS Code file explorer.
 - **extensions**: Lists extensions to be installed automatically in the container.
 - **postStartCommand**: Installs Python packages from requirements-dev.txt (`pip3 install --user -r requirements-dev.txt`).
+- **hostRequirements**: This specifies the minimum host system requirements for the container. Adjust the memory value according to the model you plan to use. Smaller models may require less memory, while larger models may need more.
 - **remoteUser**: sets `vscode` as the non-root default user.
 
 By including a `devcontainer.json` file in your project repository, you can specify not just
