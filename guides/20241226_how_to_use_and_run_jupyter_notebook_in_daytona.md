@@ -10,7 +10,10 @@ tags: ["jupyter notebook", "data analysis", "python"]
 
 ## Introduction
 
-*[Write at least two paragraphs introducing the topic and what the guide will help the reader accomplish. Include any prerequisites. Use inline links for definitions where appropriate, e.g., [term](/definitions/term.md).]*
+Jupyter Notebook is a very powerful and useful tool every data scientists, AI engineers, AI researchers and other professionals use in their work and personal projects. Knowledge about and how to use it's very necessary.
+
+With the power of Daytona Dev Environment and Jupyter Notebook, our work can be as smooth and streamlined as possible.
+In this comprehensive guide, we're going to deep dive into everything you need to get started with using Jupyter Notebook in a Daytona playground, hands-on experience with a real world practical project and much more.
 
 ### TL;DR
 
@@ -26,33 +29,41 @@ tags: ["jupyter notebook", "data analysis", "python"]
 
 ## What's Jupyter Notebook and Everything to Know to Get Started
 
+### Introduction
+
+Jupyter Notebook is a powerful opensource interactive web-based application for interactive computing. It offers a simple, streamlined, document centric experience. It supports a wide range of programming languages such as Python, R and Julia.
+
+### Features
+
+### Usage
+
 ## Why use Daytona
 
-## Setting Up Daytona Playground for Jupyter Notebook
+## Setting Up Jupyter Notebook in Daytona
 
 Alright, that's enough reading, now let us start writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development%20environment.md) in a [Daytona workspace](20240819_definition_daytona%20workspace.md). Let’s begin.
 
 ### Step 1: Create a GitHub Repository
 
-First head to the GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-duckdb`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-duckdb`
+First head to the GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-jupyter-notebook`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-jupyter-notebook`
 
 ### Step 2: Clone the repository using Git
 
 After creating the repository, the next step is to clone the repository into your local PC or Mac. To clone the repository, open your terminal and run this command `git clone https://github.com/USERNAME/REPOSITORY-NAME` but replace the placeholders with your GitHub username and repository name you chose in step 1.
 
-In my case, it’s `git clone https://github.com/c0d33ngr/playground-duckdb`
+In my case, it’s `git clone https://github.com/c0d33ngr/playground-jupyter-notebook`
 
 ### Step 3: Prepare your `devcontainer.json` file and dataset in CSV format
 
-Run the command to move into your cloned repository but don’t forget to replace `playground-duckdb` with the repository name you created if yours isn’t the same as mine.
+Run the command to move into your cloned repository but don’t forget to replace `playground-jupyter-notebook` with the repository name you created if yours isn’t the same as mine.
 
 ```bash
-cd playground-duckdb
+cd playground-jupyter-notebook
 ```
 
 Download the bank campaign dataset you are going to perform data tasks on which is in CSV format, from the GitHub repo [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv).
 
-Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-duckdb`.
+Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-jupyter-notebook`.
 
 Now, let us proceed to the next step.
 
@@ -76,21 +87,20 @@ Paste this code into your `devcontainer.json` file.
 
 ```yaml
 {
-    "name": "DuckDB Playground",
+    "name": "Jupyter Notebook Playground",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
         "ghcr.io/devcontainers/features/python:1": {}
     },
-    "postCreateCommand": "pip install duckdb matplotlib pandas"
+    "postCreateCommand": "pip install notebook"
 }
 ```
 
-The `devcontainer.json` content contains configurations to start your DuckDB environment in a [Daytona workspace](20240819_definition_daytona%20workspace.md).
+The `devcontainer.json` content contains configurations to start your Jupyter Notebook environment in a [Daytona workspace](20240819_definition_daytona%20workspace.md).
 
-- `name`: This sets the name of the development container environment to `DuckDB Playground`.
+- `name`: This sets the name of the development container environment to `Jupyter Notebook Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
-- `features`: This configuration adds DuckDB installation and Python setups in the Daytona workspace
+- `features`: This configuration adds Python setups in the Daytona workspace
 - `postCreateComand`: This installs the Python packages needed for this guide into the workspace.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below.
@@ -109,7 +119,7 @@ git commit -m “add devcontainer.json file”
 git push
 ```
 
-Now, you have successfully pushed our updated repository, which contains our configuration file (`devcontainer.json`) for our DuckDB environment.
+Now, you have successfully pushed our updated repository, which contains our configuration file (`devcontainer.json`) for our Jupyter Notebook environment.
 
 ### Step 5: Verify Daytona Installation
 
@@ -121,7 +131,7 @@ daytona –-version
 
 You should see your version of `daytona` installed.
 
-### Step 6: Create a Daytona Workspace with DuckDB Playground Environment in it
+### Step 6: Create a Daytona Workspace with Jupyter Notebook Environment in it
 
 Let’s start the daytona server by running the command.
 
@@ -144,18 +154,18 @@ daytona create https://github.com/USERNAME/REPOSITORY-NAME
 In my case, it's this.
 
 ```bash
-daytona create https://github.com/c0d33ngr/playground-duckdb
+daytona create https://github.com/c0d33ngr/playground-jupyter-notebook
 ```
 
-After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the DuckDB environment is running.
+After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the Jupyter Notebook environment is running.
 
-You can now run this command to open the DuckDB [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
+You can now run this command to open the Jupyter Notebook [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
 
 ```bash
 daytona code WORKSPACE-NAME
 ```
 
-That’s it. Daytona will create a DuckDB playground environment for you and open it in the default IDE you set.
+That’s it. Daytona will create a Jupyter Notebook environment for you and open it in the default IDE you set.
 
 ## Demo: Exploring the Jupyter Notebook UI
 
