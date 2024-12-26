@@ -18,21 +18,29 @@ In this article, you will learn how to build a codespace-like experience using D
 
 - **Automated Development Environments**: *Automated environments save time and reduce errors by providing a consistent setup for all team members. Automated environments are crucial for agile development, enabling quick switching between projects and minimizing setup frustrations.*
 
-- **Daytona Overview**: *Daytona automates environment setups using simple configuration files, supports multiple IDEs and integrates seamlessly with GitLab. Daytona allows teams to spin up standardized development environments tailored to project needs easily.*
+- **Daytona Overview**: *Daytona automates environment setups through various methods, supports multiple IDEs, and integrates seamlessly with GitLab. Daytona allows teams to spin up standardized development environments tailored to project needs easily.*
 
 - **Integrating Daytona with GitLab**: *Daytona can be integrated with GitLab to create development environments based on branches, tags, or merge requests. The integration of Daytona with Gitlab can be triggered manually or automated as part of the CI/CD pipeline.*
 
-- **Methods for Setting Up Environments**: *Three methods of environment setup are covered: Using GitPod, the Daytona CLI, and the Daytona API. Each method offers flexibility in creating environments based on project requirements.*
+- **Method for Setting Up Environments**: *A method of environment setup is covered: Using the Daytona CLI. This method offers flexibility in creating environments based on project requirements.*
 
 - **Customizable and Collaborative Features**: *Daytona environments support custom configurations, public ports for sharing, and integration with various tools and services, enhancing collaboration and productivity.*
 
 - **Conclusion**: *Integrating Daytona with GitLab creates a codespace-like experience that improves development efficiency, reduces errors, and supports agile workflows.*
 
+## Prerequisites
+
+To follow along with this article, you must have the following:
+
+- Daytona installed and running on your system. You can check this [guide](https://www.daytona.io/docs/installation/installation/) for the installation.
+
+- Docker installed and running (e.g. Docker Desktop)
+
 ## The Importance of Automated Development Environments
 
-It is important to understand why automated development environments are crucial in today’s development landscape is important. Traditionally, setting up a development environment involves a series of manual steps: installing dependencies, configuring tools, setting up databases, and ensuring that components work together seamlessly. This process is not only time-consuming but also error-prone.
+It is important to understand why automated development environments are crucial in today’s development landscape. Traditionally, setting up a development environment involves a series of manual steps: installing dependencies, configuring tools, setting up databases, and ensuring that components work together seamlessly. This process is not only time-consuming but also error-prone.
 
-Different team members might use different versions of a dependency, leading to subtle bugs that are difficult to diagnose. Similarly, new developers in the team might struggle to get their environment up and running, which may delay their ability to contribute to the project. Automated development environments solve these problems by providing a consistent, repeatable setup process. The environment setup can be defined in a configuration file and automatically created whenever needed. This ensures that all team members work in the same environment, reducing the risk of errors and improving overall productivity.
+Different team members might use different versions of a dependency, leading to subtle bugs that are difficult to diagnose. Similarly, new developers in the team might struggle to get their environment up and running, which may delay their ability to contribute to the project. Automated development environments solve these problems by providing a consistent, repeatable setup process. The environment setup can be automatically created by Daytona based on the project dependencies. This ensures that all team members work in the same environment, reducing the risk of errors and improving overall productivity.
 
 Moreover, automated environments are particularly beneficial for teams working on multiple projects. Developers on those teams can switch between projects without worrying about conflicting dependencies or configurations. This flexibility is important in agile development environments, where teams may need to pivot quickly between different tasks.
 
@@ -42,190 +50,152 @@ Moreover, automated environments are particularly beneficial for teams working o
 
 Daytona is a software tool designed to automate and standardize software teams’ development environments. Daytona allows developers to create isolated environments tailored to specific projects, ensuring everyone on the team works with the same setup. Daytona supports various programming languages, tools, and services, which makes it a versatile solution for teams working on diverse projects.
 
-A key feature of Daytona is its ability to automate the environment creation process. Developers can define the environment configuration in a simple YAML file, which Daytona uses to create the environment automatically. It ensures a consistent environment with the project’s requirements without requiring manual setup steps.
-
-Daytona also offers flexibility in how environments are accessed. Developers can choose their preference from browser-based IDEs, Visual Studio Code, JetBrains IDEs, or SSH access. This flexibility makes Daytona a great fit for teams with diverse toolchains and workflows.
+A key feature of Daytona is its ability to automate the environment creation process. Daytona also offers flexibility in how environments are accessed. Developers can choose their preference from browser-based IDEs, Visual Studio Code, JetBrains IDEs, or SSH access. This flexibility makes Daytona a great fit for teams with diverse toolchains and workflows.
 
 ### How Daytona Integrates with GitLab
 
 Many development teams use GitLab. It is a popular version control system and CI/CD platform. You can automate the creation of development environments based on a project’s [repository](https://www.daytona.io/definitions/r/repository) by integrating Daytona with GitLab. This integration allows developers to quickly spin up environments for specific branches, tags, or merge requests, making it easier to work on different features or review changes.
 
-To integrate Daytona with Gitlab, Daytona’s API can create environments based on a GitLab repository’s configuration. This can then be triggered manually via a command or automated as part of the CI/CD pipeline. For example, a developer can create an environment for a feature branch directly from GitLab’s interface or through a CLI command, allowing them to start working on the feature immediately.
+To integrate Daytona with GitLab, you can add your GitLab account to Daytona by using the Daytona Git Providers. You can then create a development environment (workspace) using the CLI. For example, developers can create an environment for a GitLab's repository after integrating their GitLab account with Daytona, allowing them to start working on the repository immediately.
 
-This integration is particularly useful for teams working in an agile environment, where developers need to quickly switch between different tasks or projects. By automating the environment setup process, Daytona and GitLab ensure that developers can focus on writing code, rather than configuring their tools.
+This integration is particularly useful for teams working in an agile environment, where developers need to quickly switch between different tasks or projects. By automating the environment setup process, Daytona and GitLab ensure that developers can focus on writing code rather than configuring their tools.
 
-## Setting Up a Development Environment with Daytona and GitLab
+## Setting Up a Development Environment with Daytona and GitLab Using Datona CLI
 
-You can set up your development environment with Daytona and Gitlab using different methods. In this article, you will learn three methods you can use to set up your development environment with Daytona and GitLab. The methods are:
+Daytona has a CLI that provides an efficient way to manage environments for developers who prefer working in the terminal. The CLI allows developers to create, delete, or switch between environments with a few simple commands. To integrate Daytona with GitLab, you have to first set up your GitLab repository.
 
-- Setting up a development environment with Gitpod (daytona gp)
-- Setting up a development environment with the Daytona CLI
-- Setting up a development environment with Daytona API
+### Setting Up your GitLab repository
 
-### Setting up a Development Environment with Gitpod (daytona gp)
+In this article, you will use the Starlight project as a sample to set up your development environment with Daytona and GitLab. The Starlight project is hosted on GitHub, [here](https://github.com/withastro/starlight). You will have to fork the GitHub repository to your personal GitHub account, then import it as a new project on your GitLab account.
 
-The Starlight project that will be used as an example is hosted on Github, [here](https://github.com/withastro/starlight). You will have to fork the GitHub repository to your personal GitHub account, then, import it as a new project on your Gitlab account. 
+![Create new project](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img1.png)
 
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img1.png)
+![Import Project1](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img2.png)
 
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img2.png)
+![Import Project2](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img3.png)
 
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img3.png)
+![Import Project3](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img4.png)
 
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img4.png)
+### Adding your GitLab to Daytona
 
-You can then create a Daytona configuration file in the root folder of your Starlight Gitlab project. The Daytona configuration file defines the specifications of the development environment, such as the programming languages, tools, and dependencies required for the project, and is written in YAML, making it easy to read and modify.
-
-You can create the Daytona configuration file by clicking on the plus icon at the top of the project, which displays a dropdown. Then click on "new file" in the options present in the dropdown to create a new file.
-
-![Creating a New file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img5.png)
-
-Name the file `.daytona.yml` and specify the following configuration in the file:
-
-```yml
-# .daytona.yml
-
-image:
-  file: .gitpod.Dockerfile  # Optional: If using a custom Dockerfile similar to the base image in .daytona.yml
-
-# Commands to run at the beginning
-tasks:
-  - init: |
-      npm install -g pnpm@8.7.4 # Install pnpm if not in Dockerfile
-      pnpm install # Install dependencies
-    command: |
-      pnpm run format # Format code
-      pnpm run typecheck # Type-checking using Astro
-
-# Ports to expose
-ports:
-  - port: 3000
-    onOpen: open-preview
-
-# Environment variables
-env:
-  NODE_ENV: development
-
-# Prebuild to speed up workspace start times
-github:
-  prebuilds:
-    master: true
-    branches: true
-    pullRequests: true
-```
-
-The configuration above defines the commands, ports, images, and prebuilds to use when creating or running the environment for your project. The content of your `.daytona.yml` file will depend on your project's needs.
-
-![Naming the file and adding configurations](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img6.png)
-
-After adding the configurations to your Daytona configuration file, click the commit button beneath the input area to commit it to your project.
-
-![Commiting the file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img7.png)
-
-Next, create a file named `.gitpod.yml` that points Gitpod to the Daytona configuration file when setting up the environment. Add these configurations to your `.gitpod.yml` file:
-
-```yml
-tasks:
-  - init: |
-      cp .daytona.yml /workspace
-      pnpm install
-    command: pnpm start
-```
-
-![Creating Gitpod configuration file](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img8.png)
-
-After specifying the configurations for the Daytona and Gitpod, you can create the environment by opening the Gitlab project on Gitpod.
-
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img9.png)
-
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img10.png)
-
-![Creating the Environment on Gitpod](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img11.png)
-
-### Setting up a Development Environment with the Daytona CLI
-
-Daytona has a CLI that provides an efficient way to manage environments, for developers who prefer working in the terminal. The CLI allows developers to create, delete, or switch between environments with a few simple commands. You can use the command below to create an environment with the Daytona CLI:
+To add your GitLab account to Daytona, you will go to your terminal and use this command.
 
 ```bash
-daytona create --repository https://gitlab.com/your-repo/starlight --branch main
+daytona git-providers add
 ```
 
-You can use this command to switch between environments:
+Then, you will be given a prompt to select the Git Provider you will be adding, in this case, GitLab. After selecting GitLab as your Git Provider, click on the enter button to proceed.
+
+![Select Git Provider](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img5.png)
+
+After that, you will be taken to another prompt to add your GitLab's personal access token. You can follow this [guide](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token) to learn how to create your personal access token, then copy the token and paste it in your terminal.
+
+![Add Personal Access Token](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img6.png)
+
+And Lastly, you will be taken to some other prompts to add your alias and your commit signing method. You can select none if you currently don't have any commit signing method for your GitLab account.
+
+![Add Alias](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img7.png)
+
+![Add Commit Signing Method](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img8.png)
+
+When you are done adding GitLab as a Git Provider, you can use this command to list out the Git Providers you have added to Daytona.
 
 ```bash
-daytona switch --environment my-environment
+daytona git-providers list
 ```
 
-The Daytona CLI is particularly useful for developers who work on multiple projects or need to quickly switch between different tasks.
+![Git Providers List](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img9.png)
 
-### Setting up a Development Environment with Daytona API
+### Creating your workspace
 
-Daytona provides an API that allows developers to create environments based on the project’s configuration. The Daytona API can be used to create environments from specific branches, tags, or even merge requests. This flexibility is particularly useful for teams working on multiple features or reviewing changes before merging them into the main branch.
+You can create your workspace using the Daytona CLI in two ways:
 
-To create a build (environment) using Daytona's API, you need to make a POST request to the /build endpoint. This request will include a `createBuildDto` in the body, which contains the necessary information, such as the repository and branch or merge request details, to define the build. You can use this command to create an environment from the main branch of the Starlight project:
+- From a Git Repository
+- From a Git URL
+
+#### From a Git Repository
+
+To create a workspace from a Git repository, you will use this command.
 
 ```bash
-curl -X POST [your_daytona_api_url/build] \
--H "Content-Type: application/json" \
--d '{
-    "createBuildDto": {
-        "repository": "https://gitlab.com/your-repo/starlight",
-        "branch": "main"
-    }
-}'
+daytona create
 ```
 
-The command above sends a POST request to Daytona’s API, specifying the repository and branch from which the environment should be created. Daytona will then automatically create the environment based on the configuration defined in the `.daytona.yml` file.
+After running the command, you will be shown a prompt to choose a Git Provider. Choose GitLab and click the enter button to continue.
 
-You can also create environments for different branches and merge requests. This is particularly useful when working on new features or reviewing changes, as it allows developers to test their code in an isolated environment without affecting the main branch.
+![Choose Git Providers](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img10.png)
 
-You can use this command to create an environment for a feature branch:
+Then, it will take you to another prompt that displays a list of your GitLab repositories. Click on the enter button to select the repository you want to create a workspace for.
+
+![Choose Gitlab Repository](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img11.png)
+
+After that, it will display some other prompts that allow you to name your workspace and select a target for your workspace. You can select any target for your workspace, but to follow along with this article, you should select the local Docker provider.
+
+![Name your Workspace](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img12.png)
+
+![Select a Target](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img13.png)
+
+With that done, Daytona will help you spin up a workspace for your repository.
+
+![Spinning up your Workspace](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img14.png)
+
+![Daytona Workspace](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img15.png)
+
+#### From a Git URL
+
+You can also create a workspace with Daytona by using the URL of your git repository. To do this, you will add your repository URL to the ```daytona create``` command:
 
 ```bash
-curl -X POST [your_daytona_api_url/build] \
--H "Content-Type: application/json" \
--d '{
-    "createBuildDto": {
-        "repository": "https://gitlab.com/your-repo/starlight",
-        "branch": "feature-branch"
-    }
-}'
+daytona create https://gitlab.com/Musab1258/starlight
 ```
 
-Similarly, you can create an environment for a specific merge request, with this command:
+You can also create workspaces for different branches and merge requests. This is particularly useful when working on new features or reviewing changes, as it allows developers to test their code in an isolated environment without affecting the main branch. For instance, these two commands create a workspace for the dev branch and also for the merge request, ```27``` respectively.
 
 ```bash
-curl -X POST [your_daytona_api_url/build] \
--H "Content-Type: application/json" \
--d '{
-    "createBuildDto": {
-        "repository": "https://gitlab.com/your-repo/starlight",
-        "merge_request": "123"
-    }
-}'
+daytona create https://gitlab.com/Musab1258/starlight/-/tree/dev
 ```
 
-In both cases, Daytona will create the environment based on the specified branch or merge request, ensuring the environment is consistent with the project’s requirements.
+```bash
+daytona create https://gitlab.com/Musab1258/starlight/-/merge_requests/27
+```
+
+In both of these cases, Daytona will create the environment based on the specified branch or merge request, ensuring the environment is consistent with the project’s requirements.
 
 This feature is valuable for teams that use feature branches or have a rigorous code review process. Development teams can ensure their code is thoroughly tested before merging it into the main branch by creating isolated environments for each branch or merge requests.
 
 ## Exploring the Created Environment
 
-After creating the environment, you can access it, explore its features, or customize the environment.
+After creating the environment, you can access it, explore its features, or customize it.
 
 ### Accessing the Environment
 
-Developers can access the created environment using their preferred IDE or toolchain. Daytona supports a variety of access methods, including browser-based IDEs, Visual Studio Code, JetBrains IDEs, and SSH access.
+Developers can access the created environment using their preferred IDE or toolchain.
 
-For example, if you prefer working in Visual Studio Code, you can use the Remote - SSH extension to connect to the environment. This ensures that your code, dependencies, and tools are consistent with the project’s configuration, reducing the risk of errors.
+To access a workspace, you can use this command:
 
-You can connect to your created environment using Visual Studio Code by following these steps:
+```bash
+daytona code
+```
 
-- Install the Remote - SSH extension in Visual Studio Code.
-- Open the Command Palette `(Ctrl+Shift+P)` and select “Remote-SSH: Connect to Host…”.
-- Enter the SSH address of the environment provided by Daytona.
+It will display a prompt that will ask you to select the workspace you want to open.
 
-After these steps, Visual Studio Code will connect to the environment, allowing you to start coding immediately.
+![Open a Workspace](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img16.png)
+
+### Setting a Default IDE
+
+Daytona supports a variety of access methods, including Visual Studio Code, Visual Studio Code - Browser, CLion, Terminal SSH, and so on.
+
+To change your default IDE, you can use this command.
+
+```bash
+daytona ide
+```
+
+It will display a prompt that will ask you to select the IDE you want to set as your default IDE.
+
+![Choose Default IDE](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img17.png)
+
+![Default IDE](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img18.png)
 
 ### Exploring Environment Features
 
@@ -235,10 +205,13 @@ Furthermore, Daytona supports using public ports, allowing developers to share t
 You can share a public port with this command:
 
 ```bash
-daytona share 8080
+daytona forward 4321 starlight2 --public
+# Where starlight2 is the workspace name
 ```
 
 The command above makes Daytona generate a URL that allows teammates to access the environment in real-time. This feature is invaluable for teams that work remotely or have members in different time zones, as it facilitates seamless collaboration.
+
+![Public Port Forwarding](./assets/20240911_Building_a_Codespaces-like_Experience_with_Daytona_and_GitLab_img19.png)
 
 ### Environment Customization
 
@@ -254,10 +227,8 @@ By automating the environment creation process, Daytona eliminates the need for 
 
 The integration with GitLab further enhances this process, allowing developers to create environments directly from the project’s repository. Whether working on a new feature, reviewing a merge request, or testing code in isolation, Daytona and GitLab provide the tools needed to create a seamless development experience.
 
-The combination of Daytona and GitLab offers a flexible, powerful, and user-friendly solution for automating development environments. By following the steps outlined in this guide, teams can create a standardized, quick-to-setup development environment that enhances collaboration, reduces setup time, and improves overall productivity.
+The combination of Daytona and GitLab offers a flexible, powerful, and user-friendly solution for automating development environments. By following the steps outlined in this guide, software development teams can create a standardized, quick-to-setup development environment that enhances collaboration, reduces setup time, and improves overall productivity.
 
 ## References
 
 Daytona Documentation - Explore the full range of Daytona’s features and its API by visiting the [Daytona Documentation.](https://www.daytona.io/docs/)
-
-Visual Studio Code Remote - SSH Extension - Find out how to use the Visual Studio Code Remote - SSH extension for connecting to remote environments on the [Visual Studio Code documentation.](https://code.visualstudio.com/docs/remote/ssh)
