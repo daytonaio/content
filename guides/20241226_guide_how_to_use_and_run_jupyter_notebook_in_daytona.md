@@ -61,7 +61,7 @@ Run the command to move into your cloned repository but don’t forget to replac
 cd playground-jupyter-notebook
 ```
 
-Download the bank campaign dataset you are going to perform data tasks on which is in CSV format, from the GitHub repo [here](https://github.com/c0d33ngr/playground-duckdb/blob/main/bank_marketing.csv).
+Download the airplane crash dataset you are going to perform some data visualization tasks on which is in CSV format, from the GitHub repo [here](https://github.com/c0d33ngr/playground-jupyter-notebook/blob/main/Airplane_Crashes_and_Fatalities_Since_1908.csv).
 
 Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-jupyter-notebook`.
 
@@ -111,7 +111,7 @@ cd ..
 
 ### Step 4: Create `requirements.txt` file
 
-In the root directory, create a `requirements.txt` file to specify the Python libraries you’ll use. Add the following content to the file:
+In the root directory, create a `requirements.txt` file to specify the Python libraries you want pre-installed in the Jupyter Notebook environment. Add the following content to the file:
 
 ```bash
 pandas
