@@ -197,6 +197,112 @@ That’s it. Daytona will create a Jupyter Notebook environment for you and open
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
 
+### Step 1: Import libraries needed
+
+```bash
+#importing the libraries and data
+import numpy as np 
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
+from datetime import date, timedelta, datetime
+
+Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv')
+```
+
+### Step 2: Look through some of the data records
+
+```bash
+np.random.seed(42) 
+obs, feat = Data.shape
+Data.sample(5)
+```
+
+### Step 3:
+
+```bash
+print(str("Dataset consist of " + str(obs) + " observations (crashes) and " + str(feat) + " features. Features are following:"))
+print(",\n".join(Data.columns))
+```
+
+### Step 4:
+
+```bash
+Data.isnull().sum() #calculating missing values in rows
+```
+
+### Step 5:
+
+```bash
+#cleaning up
+Data['Time'] = Data['Time'].replace(np.nan, '00:00') 
+Data['Time'] = Data['Time'].str.replace('c: ', '')
+Data['Time'] = Data['Time'].str.replace('c:', '')
+Data['Time'] = Data['Time'].str.replace('c', '')
+Data['Time'] = Data['Time'].str.replace('12\'20', '12:20')
+Data['Time'] = Data['Time'].str.replace('18.40', '18:40')
+Data['Time'] = Data['Time'].str.replace('0943', '09:43')
+Data['Time'] = Data['Time'].str.replace('22\'08', '22:08')
+Data['Time'] = Data['Time'].str.replace('114:20', '00:00') #is it 11:20 or 14:20 or smth else? 
+
+Data['Time'] = Data['Date'] + ' ' + Data['Time'] #joining two rows
+def todate(x):
+    return datetime.strptime(x, '%m/%d/%Y %H:%M')
+Data['Time'] = Data['Time'].apply(todate) #convert to date type
+print('Date ranges from ' + str(Data.Time.min()) + ' to ' + str(Data.Time.max()))
+
+Data.Operator = Data.Operator.str.upper() #just to avoid duplicates like 'British Airlines' and 'BRITISH Airlines'
+```
+
+### Step 6:
+
+```bash
+Temp = Data.groupby(Data.Time.dt.year)[['Date']].count() #Temp is going to be temporary data frame 
+Temp = Temp.rename(columns={"Date": "Count"})
+
+plt.figure(figsize=(12,6))
+plt.style.use('bmh')
+plt.plot(Temp.index, 'Count', data=Temp, color='red', marker = ".", linewidth=1)
+plt.xlabel('Year', fontsize=10)
+plt.ylabel('Count', fontsize=10)
+plt.title('Count of accidents by Year', loc='Center', fontsize=14)
+plt.show()
+```
+
+### Step 7:
+
+```bash
+Data.Operator = Data.Operator.str.upper()
+Data.Operator = Data.Operator.replace('A B AEROTRANSPORT', 'AB AEROTRANSPORT')
+
+Total_by_Op = Data.groupby('Operator')[['Operator']].count()
+Total_by_Op = Total_by_Op.rename(columns={"Operator": "Count"})
+Total_by_Op = Total_by_Op.sort_values(by='Count', ascending=False).head(15)
+
+plt.figure(figsize=(12,6))
+sns.barplot(y=Total_by_Op.index, x="Count", data=Total_by_Op, palette="gist_heat", orient='h', hue=Total_by_Op.index)
+plt.xlabel('Count', fontsize=11)
+plt.ylabel('Operator', fontsize=11)
+plt.title('Total Count by Opeartor', loc='Center', fontsize=14)
+plt.show()
+```
+
+### Step 8:
+
+```bash
+Prop_by_Op = Data.groupby('Operator')[['Fatalities']].sum()
+Prop_by_Op = Prop_by_Op.rename(columns={"Operator": "Fatalities"})
+Prop_by_Op = Prop_by_Op.sort_values(by='Fatalities', ascending=False)
+Prop_by_OpTOP = Prop_by_Op.head(15)
+
+plt.figure(figsize=(12,6))
+sns.barplot(y=Prop_by_OpTOP.index, x="Fatalities", data=Prop_by_OpTOP, palette="gist_heat", orient='h', hue=Total_by_Op.index)
+plt.xlabel('Fatalities', fontsize=11)
+plt.ylabel('Operator', fontsize=11)
+plt.title('Total Fatalities by Opeartor', loc='Center', fontsize=14)
+plt.show()
+```
+
 ## Common Issues and Troubleshooting
 
 *[List common problems and their solutions.]*
