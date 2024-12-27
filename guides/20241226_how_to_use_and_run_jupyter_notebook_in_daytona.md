@@ -92,7 +92,7 @@ Paste this code into your `devcontainer.json` file.
     "features": {
         "ghcr.io/devcontainers/features/python:1": {}
     },
-    "postCreateCommand": "pip install notebook"
+    "postCreateCommand": "pip install -r requirements.txt && jupyter notebook"
 }
 ```
 
@@ -101,15 +101,41 @@ The `devcontainer.json` content contains configurations to start your Jupyter No
 - `name`: This sets the name of the development container environment to `Jupyter Notebook Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
 - `features`: This configuration adds Python setups in the Daytona workspace
-- `postCreateComand`: This installs the Python packages needed for this guide into the workspace.
+- `postCreateComand`: This installs the Python packages needed for this guide into the workspace and spin up the notebook server.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below.
 
 ```bash
-cd ../..
+cd ..
 ```
 
-### Step 4: Commit and Push Changes to GitHub
+### Step 4: Create `requirements.txt` file
+
+In the root directory, create a `requirements.txt` file to specify the Python libraries you’ll use. Add the following content to the file:
+
+```bash
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+scikit-learn
+tensorflow
+keras
+torch
+scipy
+statsmodels
+dask
+pyspark
+nltk
+spacy
+ipython
+requests
+opencv-python
+beautifulsoup4
+```
+
+### Step 5: Commit and Push Changes to GitHub
 
 Run these commands to push your changes to GitHub.
 
@@ -121,7 +147,7 @@ git push
 
 Now, you have successfully pushed our updated repository, which contains our configuration file (`devcontainer.json`) for our Jupyter Notebook environment.
 
-### Step 5: Verify Daytona Installation
+### Step 6: Verify Daytona Installation
 
 Run this command to check `daytona` is properly installed on your PC or Mac.
 
@@ -131,7 +157,7 @@ daytona –-version
 
 You should see your version of `daytona` installed.
 
-### Step 6: Create a Daytona Workspace with Jupyter Notebook Environment in it
+### Step 7: Create a Daytona Workspace with Jupyter Notebook Environment in it
 
 Let’s start the daytona server by running the command.
 
