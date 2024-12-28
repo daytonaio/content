@@ -92,7 +92,7 @@ Paste this code into your `devcontainer.json` file.
     "features": {
         "ghcr.io/devcontainers/features/python:1": {}
     },
-    "postCreateCommand": "pip install -r requirements.txt && jupyter notebook"
+    "postCreateCommand": "pip install -r requirements.txt"
 }
 ```
 
@@ -101,7 +101,7 @@ The `devcontainer.json` content contains configurations to start your Jupyter No
 - `name`: This sets the name of the development container environment to `Jupyter Notebook Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
 - `features`: This configuration adds Python setups in the Daytona workspace
-- `postCreateComand`: This installs the Python packages needed for this guide into the workspace and spin up the notebook server.
+- `postCreateComand`: This installs some Python packages needed for this guide and commonly used into the workspace.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below.
 
@@ -189,6 +189,16 @@ You can now run this command to open the Jupyter Notebook [environment](20240819
 
 ```bash
 daytona code WORKSPACE-NAME
+```
+
+### Step 8: Set Password and Run the Jupyter Notebook
+
+```bash
+jupyter seever password
+```
+
+```bash
+jupyter notebook
 ```
 
 That’s it. Daytona will create a Jupyter Notebook environment for you and open it in the default IDE you set.
@@ -319,6 +329,10 @@ Throughout the example project, we applied Jupyter's features to clean, analyze,
 
 ## References
 
-*[Cite any sources or references used in the guide.]*
+* [Official Jupyter Notebook Website](https://www.jupyter.org)
 
-*[Add links to related guides or further reading that might interest the reader.]*
+* [Jupyter Notebook Guide](https://12ft.io/proxy?q=https%3A%2F%2Fwww.techtarget.com%2Fsearchenterpriseai%2Ftutorial%2FHow-to-use-and-run-Jupyter-Notebook-A-beginners-guide)
+
+* [Kaggle dataset](https://www.kaggle.com/datasets/imtkaggleteam/airplane-crashes)
+
+* [Kaggle Data Visualization Project](https://www.kaggle.com/code/ruslankl/airplane-crashes-data-visualization#)
