@@ -331,8 +331,8 @@ Throughout the example project, we applied Jupyter's features to clean, analyze,
 
 * [Official Jupyter Notebook Website](https://www.jupyter.org)
 
-* [Jupyter Notebook Guide](https://12ft.io/proxy?q=https%3A%2F%2Fwww.techtarget.com%2Fsearchenterpriseai%2Ftutorial%2FHow-to-use-and-run-Jupyter-Notebook-A-beginners-guide)
+* [Guide About Jupyter Notebook](https://12ft.io/proxy?q=https%3A%2F%2Fwww.techtarget.com%2Fsearchenterpriseai%2Ftutorial%2FHow-to-use-and-run-Jupyter-Notebook-A-beginners-guide)
 
-* [Kaggle dataset](https://www.kaggle.com/datasets/imtkaggleteam/airplane-crashes)
+* [Kaggle Airplane Crashes dataset](https://www.kaggle.com/datasets/imtkaggleteam/airplane-crashes)
 
 * [Kaggle Data Visualization Project](https://www.kaggle.com/code/ruslankl/airplane-crashes-data-visualization#)
