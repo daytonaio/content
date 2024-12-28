@@ -197,7 +197,7 @@ That’s it. Daytona will create a Jupyter Notebook environment for you and open
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
 
-### Step 1: Import libraries needed
+### Step 1: Import Libraries and Load the Dataset
 
 ```bash
 #importing the libraries and data
@@ -210,7 +210,7 @@ from datetime import date, timedelta, datetime
 Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv')
 ```
 
-### Step 2: Look through some of the data records
+### Step 2: Explore the Dataset
 
 ```bash
 np.random.seed(42) 
@@ -218,20 +218,20 @@ obs, feat = Data.shape
 Data.sample(5)
 ```
 
-### Step 3:
+### Step 3: Summarize Dataset Dimensions and Features
 
 ```bash
 print(str("Dataset consist of " + str(obs) + " observations (crashes) and " + str(feat) + " features. Features are following:"))
 print(",\n".join(Data.columns))
 ```
 
-### Step 4:
+### Step 4: Calculate Missing Values in the Dataset
 
 ```bash
 Data.isnull().sum() #calculating missing values in rows
 ```
 
-### Step 5:
+### Step 5: Clean and Format Time and Operator Data
 
 ```bash
 #cleaning up
@@ -254,7 +254,7 @@ print('Date ranges from ' + str(Data.Time.min()) + ' to ' + str(Data.Time.max())
 Data.Operator = Data.Operator.str.upper() #just to avoid duplicates like 'British Airlines' and 'BRITISH Airlines'
 ```
 
-### Step 6:
+### Step 6: Analyze and Visualize Accident Trends Over the Years
 
 ```bash
 Temp = Data.groupby(Data.Time.dt.year)[['Date']].count() #Temp is going to be temporary data frame 
@@ -269,7 +269,7 @@ plt.title('Count of accidents by Year', loc='Center', fontsize=14)
 plt.show()
 ```
 
-### Step 7:
+### Step 7: Standardize Operator Names and Visualize Top Operators by Accident Count
 
 ```bash
 Data.Operator = Data.Operator.str.upper()
@@ -287,7 +287,7 @@ plt.title('Total Count by Opeartor', loc='Center', fontsize=14)
 plt.show()
 ```
 
-### Step 8:
+### Step 8: Analyze and Visualize Fatalities by Operator
 
 ```bash
 Prop_by_Op = Data.groupby('Operator')[['Fatalities']].sum()
@@ -313,15 +313,12 @@ plt.show()
 
 ## Conclusion
 
-*[Summarize what was accomplished by following the guide. Optionally, suggest further actions or related guides.]*
+In this guide, we covered how to effectively use Jupyter Notebook, a powerful open-source tool for interactive computing. Jupyter provides a simple, document-centric interface that supports various programming languages, including Python, R, and Julia, making it a versatile tool for data analysis, machine learning, and more. We also walked through setting up Jupyter Notebook in Daytona, demonstrating its ease of setup and practical benefits.
+
+Throughout the example project, we applied Jupyter's features to clean, analyze, and visualize airplane crash data, using Python libraries like Pandas and Matplotlib. The combination of Jupyter's interactive environment and Python’s powerful data processing capabilities allowed us to efficiently uncover key trends and insights.
 
 ## References
 
 *[Cite any sources or references used in the guide.]*
 
 *[Add links to related guides or further reading that might interest the reader.]*
-
-<!-- Note on Definitions -->
-<!-- Throughout this guide, link relevant terms to their definitions using inline Markdown links. -->
-<!-- Format: [term](/definitions/term.md) -->
-<!-- If a definition doesn't exist, create it in the definitions directory and link to it. -->
