@@ -273,6 +273,10 @@ These options ensure that users can efficiently organize and interact with their
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
 
+In this section, you'll do some data analysis and visualization in Jupyter Notebook using the "Airplane Crashes and Fatalities Since 1908" dataset. You'll begin by importing essential libraries, cleaning the data to handle missing and inconsistent values, and transforming columns for consistency and ease of analysis. This process includes merging date and time fields, standardizing operator names, and preparing the dataset for exploration.
+
+Next, you'll analyze temporal trends in airplane crashes, visualize yearly crash counts, and identify key operators with the most crashes and fatalities. By following this guide, you'll gain hands-on experience in building, analyzing, and visualizing data projects in Jupyter Notebook. Let’s begin!
+
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_13.png)
 
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
