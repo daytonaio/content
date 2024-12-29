@@ -71,7 +71,7 @@ cd playground-jupyter-notebook
 
 Download the airplane crash dataset you are going to perform some data visualization tasks on which is in CSV format, from the GitHub repo [here](https://github.com/c0d33ngr/playground-jupyter-notebook/blob/main/Airplane_Crashes_and_Fatalities_Since_1908.csv).
 
-Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-jupyter-notebook`.
+*Note: It has to be in the directory of your clone repository. In my case, it's inside `playground-jupyter-notebook`.*
 
 Now, let us proceed to the next step.
 
@@ -213,6 +213,20 @@ That’s it. Daytona will create a Jupyter Notebook environment for you and open
 
 ## Demo: Exploring the Jupyter Notebook UI
 
+### Demo: Exploring the Jupyter Notebook UI
+
+When you log in to the Jupyter server, the top of the interface provides a streamlined menu bar with essential options to navigate and manage your environment.
+
+The **File** menu allows you to create new notebooks, text files, or folders, as well as upload existing files from your local system.
+
+The **View** menu helps you toggle different layout elements, such as the toolbar or header, for a personalized experience.
+
+The **Settings** menu provides configuration options for themes and additional customization.
+
+The **Help** menu offers quick access to Jupyter documentation and community resources.
+
+These options ensure that users can efficiently organize and interact with their projects right from the home interface. The screenshots of the UI are below
+
 ![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
 
 ![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_9.png)
@@ -233,6 +247,8 @@ That’s it. Daytona will create a Jupyter Notebook environment for you and open
 
 ### Step 1: Import Libraries and Load the Dataset
 
+To begin the data visualization, we need to import the necessary libraries and load the dataset into a Pandas DataFrame. Copy and paste the code below in the Jupyter Notebook cell
+
 ```bash
 #importing the libraries and data
 import numpy as np 
@@ -244,15 +260,29 @@ from datetime import date, timedelta, datetime
 Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv')
 ```
 
+*Note: Repace `/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv` with your own path to your `.csv` file from your PC. It should be enclosed in single or double quotation marks.*
+
 ![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
+
+Click the little play button at the tpp to run the cell.
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_17.png)
 
+You can also click **Run selected cell** from the **Run** menu.
+
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_18.png)
+
+If you prefer to use just your keybaord to run the cell like me, press `Shift` + `Enter`.
+
+After running the cell, you should see similar display
 
 ![screenshot after running step 1 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_19.png)
 
 ### Step 2: Explore the Dataset
+
+The code below set a random seed and display a random sample of the data so we can understand it
+
+Copy and paste the code below in the new cell created automatically below the previous code in the Jupyter Notebook and run the cell. Use your prefered way - mine is `Shift` + `Enter`
 
 ```bash
 np.random.seed(42) 
@@ -260,26 +290,44 @@ obs, feat = Data.shape
 Data.sample(5)
 ```
 
+You should see similar output
+
 ![screenshot after running step 2 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_20.png)
 
 ### Step 3: Summarize Dataset Dimensions and Features
+
+Next, we summarize the dataset by displaying its dimensions (number of observations and features) and listing the column names. This gives us an overview of the dataset's structure and the available features for analysis.
+
+Cppy and paste the code below in the new cell and run it to see it output.
 
 ```bash
 print(str("Dataset consist of " + str(obs) + " observations (crashes) and " + str(feat) + " features. Features are following:"))
 print(",\n".join(Data.columns))
 ```
 
+Yours should be simiiar to mine below
+
 ![screenshot after running step 3 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_21.png)
 
 ### Step 4: Calculate Missing Values in the Dataset
+
+Before proceeding with any visualization, it’s important to check for missing values in the dataset. We calculate the number of missing values for each column to identify any potential data quality issues that may need to be addressed.
+
+The code below does that. Cppy and paste it in a new cell and run it to see it's output.
 
 ```bash
 Data.isnull().sum() #calculating missing values in rows
 ```
 
+Your output should be similar to mine
+
 ![screenshot after running step 4 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_22.png)
 
 ### Step 5: Clean and Format Time and Operator Data
+
+In this step, we will clean the time-related data by replacing incorrect or missing values, standardizing time formats, and combining date and time columns into a single datetime column. Additionally, we will also standardize operator names to avoid inconsistencies such as different capitalizations.
+
+The code below deos exactly that. Copy and paste it in a new cell and run it
 
 ```bash
 #cleaning up
@@ -306,6 +354,10 @@ Data.Operator = Data.Operator.str.upper() #just to avoid duplicates like 'Britis
 
 ### Step 6: Analyze and Visualize Accident Trends Over the Years
 
+In this step, we will group the data by year and plot the number of accidents per year to visualize trends over time. This helps us identify any significant changes or patterns in the frequency of accidents across different years.
+
+Copy and paste the code below and run it to see the visualization.
+
 ```bash
 Temp = Data.groupby(Data.Time.dt.year)[['Date']].count() #Temp is going to be temporary data frame 
 Temp = Temp.rename(columns={"Date": "Count"})
@@ -319,9 +371,15 @@ plt.title('Count of accidents by Year', loc='Center', fontsize=14)
 plt.show()
 ```
 
+Your visualization should be similar to mine.
+
 ![screenshot after running step 6 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_24.png)
 
 ### Step 7: Standardize Operator Names and Visualize Top Operators by Accident Count
+
+Here, we will clean up operator names and then visualize the top 15 operators by the number of accidents. By creating a horizontal bar plot, we can quickly identify which operators are most frequently involved in accidents.
+
+Cppy and paste code in new cell and run it.
 
 ```bash
 Data.Operator = Data.Operator.str.upper()
@@ -339,9 +397,15 @@ plt.title('Total Count by Opeartor', loc='Center', fontsize=14)
 plt.show()
 ```
 
+Your visualization should be similar to mine
+
 ![screenshot after running step 7 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_25.png)
 
 ### Step 8: Analyze and Visualize Fatalities by Operator
+
+In this our final step, we will analyze the total fatalities by operator and visualize the top 15 operators with the highest fatality counts. This provides insight into which operators are associated with the most severe accidents.
+
+The code below does. Copy and paste it in a new cell and run it
 
 ```bash
 Prop_by_Op = Data.groupby('Operator')[['Fatalities']].sum()
@@ -359,21 +423,23 @@ plt.show()
 
 ![screenshot after running step 8 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_26.png)
 
+There are multiple ways to save a Jupyter Notebook file but I'l lsave mine with `Ctrl` + `Shift` + `S`.
+
+A pop up simialr to the screenshot below should display. Replace the **Untitled** with your prefered file name. I replaced mine with **data_visualization**.
+
 ![screenshot of saving the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_27.png)
+
+One other way to save the file is to click the **Save Notebook As...** from the **File** menu. Screenshot below
 
 ![screenshot of saving the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_28.png)
 
+*Note: You can get more resources about using Jupyter Notebook and more from the **Help** menu*
+
 ![screenshot of getting help from the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_29.png)
 
+When done, you can shut down Jupyter Notebook environment by clicking the **Shut Down** from the **File** menu.
+
 ![screenshot to log out/shut down the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_30.png)
-
-## Common Issues and Troubleshooting
-
-*[List common problems and their solutions.]*
-
-**Problem:** *[Description of the problem]*
-
-**Solution:** *[Description of the solution]*
 
 ## Conclusion
 
