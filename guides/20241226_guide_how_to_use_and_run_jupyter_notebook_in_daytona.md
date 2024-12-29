@@ -27,6 +27,14 @@ In this comprehensive guide, we're going to deep dive into everything you need t
 
 ## Prerequisites
 
+To follow along with a hands-on guide about Jupyter Notebook in Daytona, you'll need to have the following;
+
+- An [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
+- [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click here for more info.
+- Daytona installation on your PC or Mac. Click here for more info.
+- A GitHub account to create a [repository](20240819_definition_repository.md). Link here to create one, if you don’t have one.
+- Basic knowledge of [Git](20240819_definition_git.md) and GitHub.
+
 ## What's Jupyter Notebook and Everything to Know to Get Started
 
 ### Introduction
@@ -185,7 +193,7 @@ daytona create https://github.com/c0d33ngr/playground-jupyter-notebook
 
 After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the Jupyter Notebook environment is running.
 
-You can now run this command to open the Jupyter Notebook [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-duckdb`).
+You can now run this command to open the Jupyter Notebook [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -204,6 +212,15 @@ jupyter notebook
 That’s it. Daytona will create a Jupyter Notebook environment for you and open it in the default IDE you set.
 
 ## Demo: Exploring the Jupyter Notebook UI
+
+![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
+
+![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_9.png)
+
+![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_10.png)
+
+![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_11.png)
+
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
 
