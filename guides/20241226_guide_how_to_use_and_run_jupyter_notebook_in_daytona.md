@@ -213,16 +213,23 @@ That’s it. Daytona will create a Jupyter Notebook environment for you and open
 
 ## Demo: Exploring the Jupyter Notebook UI
 
-![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
+![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
 
-![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_9.png)
+![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_9.png)
 
-![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_10.png)
+![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_10.png)
 
-![screenshot of jupyter notebook ui](assets/20241226_guide_how_to_use_and_run_jupyter_notebook_in_daytona_img_11.png)
+![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_11.png)
 
+![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_12.png)
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
+
+![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_13.png)
+
+![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
+
+![screenshot of a new jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_15.png)
 
 ### Step 1: Import Libraries and Load the Dataset
 
@@ -237,6 +244,14 @@ from datetime import date, timedelta, datetime
 Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv')
 ```
 
+![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
+
+![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_17.png)
+
+![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_18.png)
+
+![screenshot after running step 1 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_19.png)
+
 ### Step 2: Explore the Dataset
 
 ```bash
@@ -245,6 +260,8 @@ obs, feat = Data.shape
 Data.sample(5)
 ```
 
+![screenshot after running step 2 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_20.png)
+
 ### Step 3: Summarize Dataset Dimensions and Features
 
 ```bash
@@ -252,11 +269,15 @@ print(str("Dataset consist of " + str(obs) + " observations (crashes) and " + st
 print(",\n".join(Data.columns))
 ```
 
+![screenshot after running step 3 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_21.png)
+
 ### Step 4: Calculate Missing Values in the Dataset
 
 ```bash
 Data.isnull().sum() #calculating missing values in rows
 ```
+
+![screenshot after running step 4 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_22.png)
 
 ### Step 5: Clean and Format Time and Operator Data
 
@@ -281,6 +302,8 @@ print('Date ranges from ' + str(Data.Time.min()) + ' to ' + str(Data.Time.max())
 Data.Operator = Data.Operator.str.upper() #just to avoid duplicates like 'British Airlines' and 'BRITISH Airlines'
 ```
 
+![screenshot after running step 5 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_23.png)
+
 ### Step 6: Analyze and Visualize Accident Trends Over the Years
 
 ```bash
@@ -295,6 +318,8 @@ plt.ylabel('Count', fontsize=10)
 plt.title('Count of accidents by Year', loc='Center', fontsize=14)
 plt.show()
 ```
+
+![screenshot after running step 6 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_24.png)
 
 ### Step 7: Standardize Operator Names and Visualize Top Operators by Accident Count
 
@@ -314,6 +339,8 @@ plt.title('Total Count by Opeartor', loc='Center', fontsize=14)
 plt.show()
 ```
 
+![screenshot after running step 7 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_25.png)
+
 ### Step 8: Analyze and Visualize Fatalities by Operator
 
 ```bash
@@ -329,6 +356,16 @@ plt.ylabel('Operator', fontsize=11)
 plt.title('Total Fatalities by Opeartor', loc='Center', fontsize=14)
 plt.show()
 ```
+
+![screenshot after running step 8 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_26.png)
+
+![screenshot of saving the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_27.png)
+
+![screenshot of saving the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_28.png)
+
+![screenshot of getting help from the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_29.png)
+
+![screenshot to log out/shut down the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_30.png)
 
 ## Common Issues and Troubleshooting
 
