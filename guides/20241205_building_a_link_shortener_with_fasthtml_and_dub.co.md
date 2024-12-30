@@ -10,42 +10,32 @@ tags: ['Daytona', 'FastHTML', 'Dub.co', 'Link Shortener']
 
 # Introduction
 
-Daytona enables developers to create development environments tailored for prototyping and debugging.
-It provides isolated, containerized workspaces that ensure consistency and simplify collaboration. By leveraging Daytona,
-developers can concentrate on building impactful solutions without dealing with setup complexities.
+Link shorteners are essential tools in modern web development that transform lengthy, complex URLs into concise, memorable links while providing valuable analytics and tracking capabilities.
 
-In this guide, you will learn how to build a link shortener using **FastHTML**, a Python library for server-rendered applications,
-and the **Dub.co API** for managing shortened links. You will configure a Daytona workspace, build a landing page with FastHTML,
-integrate external APIs, and deploy the application to a production environment.
+This guide shows how to build one using FastHTML (a Python web framework) and Dub.co's API, covering setup, implementation and deployment.
 
-Before you begin, ensure you have the following:
+## Prerequisites
 
-- **[Daytona](https://docs.daytona.dev/getting-started)** installed.
-- **[Docker](https://docs.docker.com/get-docker/)** running.
-- **[Python 3.10](https://www.python.org/downloads/)** or later.
-- An **IDE** like **[VS Code](https://code.visualstudio.com/)**, **[PyCharm](https://www.jetbrains.com/pycharm/)**.
-- A **[GitHub](https://github.com/)** account.
-- Basic familiarity with **[Python](https://docs.python.org/3/tutorial/)**.
+Before diving into the implementation, ensure you have the following prerequisites in place:
 
-The code for this guide is available on GitHub [here](https://github.com/Titre123/fast-link-shortner).
+- **[Daytona](https://docs.daytona.dev/getting-started)**: Install Daytona to manage your development environments.
+- **[Docker](https://docs.docker.com/get-docker/)**: Ensure Docker is running to support containerized workspaces.
+- **[Python 3.10](https://www.python.org/downloads/)** or later: Required for running FastHTML and related scripts.
+- An **IDE**: Use an integrated development environment like **[VS Code](https://code.visualstudio.com/)** or **[PyCharm](https://www.jetbrains.com/pycharm/)** for coding.
+- Basic familiarity with **[Python](https://docs.python.org/3/tutorial/)**
 
-Let's get started!
-
----
+The complete code for this guide is available on GitHub [here](https://github.com/Titre123/fast-link-shortner).
 
 ## TL;DR
 
-- **Daytona Setup**: Configure a Daytona workspace for isolated and efficient development environments.
+- Configure a Daytona workspace for isolated and efficient development environments.
 
-- **FastHTML Integration**: Build a clean and responsive landing page using FastHTML.
+- Build a clean and responsive landing page using FastHTML.
 
-- **Dub.co API Integration**: Incorporate external API calls to generate and manage shortened links with Dub.co.
+- Incorporate external API calls to generate and manage shortened links with Dub.co.
 
-- **Deployment**: Deploy the final application to a production-ready environment like Render.
+- Deploy the final application to a production-ready environment like Render.
 
----
-
-With this guide, you'll have a working link shortener in no time while mastering the tools to create efficient, collaborative development workflows.
 
 ## Overview of Daytona
 
