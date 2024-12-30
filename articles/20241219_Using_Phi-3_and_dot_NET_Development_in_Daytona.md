@@ -10,9 +10,9 @@ tags: ["Phi-3 Labs", "Daytona", ".NET", "AI Development", "devcontainer"]
 
 ## Introduction
 
-With the release of Phi-3.5, the Phi-3 Labs project has introduced advanced features and enhancements for AI and machine learning applications. The Phi-3.5 update brings significant improvements over its predecessors, offering enhanced capabilities for researchers and developers working with language models.
+With the release of [Phi-3.5](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/4225280), the [Phi-3 Labs](https://github.com/microsoft/Phi-3CookBook) project has introduced advanced features and enhancements for [AI and machine learning](https://en.wikipedia.org/wiki/Artificial_intelligence). The Phi-3.5 update brings significant improvements over its predecessors, offering enhanced capabilities for researchers and developers working with [language models](https://en.wikipedia.org/wiki/Large_language_model).
 
-Daytona, a cloud-based development environment, provides a powerful platform for managing dependencies and configurations, making it ideal for developing, testing, and deploying AI models. This guide provides a comprehensive walkthrough for setting up and running Phi-3.5 Labs samples in a Daytona environment using .NET, ensuring a streamlined development experience.
+[Daytona](https://www.daytona.io), a cloud-based development environment, provides a powerful platform for managing dependencies and configurations, making it ideal for developing, testing, and deploying AI models. This guide provides a comprehensive walkthrough for setting up and running Phi-3.5 Labs samples in a Daytona environment using .NET, ensuring a streamlined development experience.
 
 ### TL;DR
 
@@ -59,8 +59,7 @@ Before proceeding, ensure you have the following installed:
 ```bash
 # Verify Docker installation
 docker --version
-
-### 2. Daytona Installation and Configuration
+```
 
 Follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
 ![Daytona Installed](assets/20241224_Daytona_installed.jpg)
@@ -116,16 +115,12 @@ cd phi-3_devcontainer
    ```dockerfile
    FROM mcr.microsoft.com/dotnet/sdk:7.0
    WORKDIR /app
+   COPY Samples/Phi3Sample.csproj ./Samples/
+   RUN dotnet restore ./Samples/Phi3Sample.csproj
    COPY . .
-   RUN apt-get update && apt-get install -y \
-    wget \
-    libfoo-dev \
-    libbar-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    dotnet restore
-   RUN dotnet publish -c Release -o out
+   RUN dotnet publish ./Samples/Phi3Sample.csproj -c Release -o out
    WORKDIR /app/out
-   CMD ["dotnet", "SampleProject.dll"]
+   CMD ["dotnet", "Phi3Sample.dll"]
    ```
 
 5. **Download Phi-3.5 Models**: Use a script to download and set up Phi-3.5 models. Add below to the `setup.sh` script:
@@ -136,41 +131,49 @@ cd phi-3_devcontainer
    wget -O /models/phi-3/phi-3.5-model.bin https://example.com/phi-3.5-model.bin
    ```
 
+6. **Add the `.csproj` File**  
+    Create the `Phi3Sample.csproj` file in the `Samples` directory and configure it as follows:
+
+   ```xml
+   <Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+   </PropertyGroup>
+   <ItemGroup>
+    <Compile Include="Phi3Sample.cs" />
+   </ItemGroup>
+   </Project>
+   ```
+
 ### 3. Launch Daytona Environment
 
-```bash
-# Start the development environment
-daytona serve
-```
+1. **Start the development environment, Daytona will now be ready to manage the project.**
 
-Daytona will now be ready to manage the project.
-![Daytona Environment Launch](assets/20241219_Daytona_start.PNG)
+   ```bash
+   daytona serve
+   ```
 
-```bash
-# Initialize Daytona project,
-daytona create your-repo-url
-# e.g daytona create https://github.com/oreoluwa212/phi-3_devcontainer
-```
+   ![Daytona Environment Launch](assets/20241219_Daytona_start.PNG)
 
-![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url.jpg)
-![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url2.jpg)
-![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
-![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url4.jpg)
+2. **Initialize Daytona project**
 
+   ```bash
+   daytona create your-repo-url
+   ```
 
-## Running and Testing Phi-3.5 Labs Samples
+   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url.jpg)
+   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url2.jpg)
+   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
+   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url4.jpg)
 
-To run and test Phi-3.5 Labs samples:
+3. **Execute the Sample Project**:
 
-1. **Execute the Sample Project**: Navigate to your project directory and run the sample project:
+   ```bash
+   dotnet run --project Samples/Phi3Sample.csproj
+   ```
 
-    ```bash
-    dotnet run --project Samples/Phi3Sample.csproj
-    ```
-
-2. **Verify Execution**: Ensure that the samples run correctly and test various functionalities.
-
-### Code Example
+4. **Verify Execution**: Ensure that the samples run correctly and test various functionalities.
 
 ```csharp
 // Phi3Sample.cs
@@ -184,27 +187,28 @@ class Program
     }
 }
 ```
+
 ## Advantages for Collaborative Development
 
-### 1. Consistent Environments
+#### 1. Consistent Environments
 
 - Every team member works with identical configurations
 - No "works on my machine" issues
 - Simplified onboarding for new team members
 
-### 2. Resource Optimization
+#### 2. Resource Optimization
 
 - Cloud-based resources scale as needed
 - No need for powerful local hardware
 - Efficient model sharing and versioning
 
-### 3. Enhanced Collaboration
+#### 3. Enhanced Collaboration
 
 - Real-time code sharing and pair programming
 - Integrated version control
 - Easy environment replication
 
-### 4. Streamlined Workflow
+#### 4. Streamlined Workflow
 
 - Automatic dependency management
 - Integrated debugging tools
@@ -212,13 +216,13 @@ class Program
 
 ## Best Practices
 
-### 1. Resource Management
+#### 1. Resource Management
 
 - Monitor memory usage when running models
 - Use appropriate instance sizes
 - Clean up unused resources
 
-### 2. Version Control
+#### 2. Version Control
 
 - Keep models and code versioned
 - Document environment changes
@@ -228,14 +232,16 @@ class Program
 
 Common issues and solutions:
 
-### 1. Connectivity Issues
+#### 1. Connectivity Issues
+
 If your VPN is configured to handle all IP traffic or if your Firewall is configured to block certain IP addresses, they may prevent Daytona from successfully connecting to our reverse proxy service.
 
 To work around this issue, you may need to add the following IP address exceptions to your VPN or Firewall:
- - <span style="color:green">35.198.165.62</span> - Europe-based reverse proxy  
- - <span style="color:green">34.133.75.4</span> - US-based reverse proxy
 
-### 2. Model Loading Problems
+- <span style="color:green">35.198.165.62</span> - Europe-based reverse proxy
+- <span style="color:green">34.133.75.4</span> - US-based reverse proxy
+
+#### 2. Model Loading Problems
 
 - Check memory allocation
 - Verify model path
