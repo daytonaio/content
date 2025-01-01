@@ -58,7 +58,7 @@ Before proceeding with the setup, ensure you have Docker installed on your syste
 docker --version
 ```
 
-For detailed installation instructions, , follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
+For detailed installation instructions, follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
 
 ## Setting Up the Development Environment
 
