@@ -52,21 +52,21 @@ Daytona is an open-source platform that transforms cloud-based development envir
 
 ## Prerequisites and Initial Setup
 
-### 1. Core Dependencies
-
-Before proceeding, ensure you have the following installed:
+Before proceeding with the setup, ensure you have Docker installed on your system. You can verify the installation by running:
 
 ```bash
-# Verify Docker installation
 docker --version
 ```
 
-Follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
-![Daytona Installed](assets/20241224_Daytona_installed.jpg)
+For detailed installation instructions, , follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
 
 ## Setting Up the Development Environment
 
+Let's walk through the process of setting up your development environment for Phi-3 and .NET development.
+
 ### 1. Project Initialization
+
+First, create a new directory for your project:
 
 ```bash
 # Create project directory
@@ -76,14 +76,16 @@ cd phi-3_devcontainer
 
 ### 2. Development Container Setup
 
-1. **Create Container Configuration Directory**
+The development container configuration involves creating necessary configuration files and setting up the environment.
+
+1. **Create Container Configuration Directory:**
 
    ```bash
    mkdir .devcontainer
    cd .devcontainer
    ```
 
-2. **Create Configuration Files**
+2. **Create the required configuration directories and files:**
 
    ```bash
    touch devcontainer.json
@@ -91,7 +93,7 @@ cd phi-3_devcontainer
    touch setup.sh
    ```
 
-3. **Configure devcontainer.json**
+3. **Configure your development container by adding the following content to devcontainer.json**
 
    ```json
    {
@@ -110,7 +112,7 @@ cd phi-3_devcontainer
    }
    ```
 
-4. **Create Dockerfile**
+4. **Set up your Dockerfile with the necessary .NET configuration:**
 
    ```dockerfile
    FROM mcr.microsoft.com/dotnet/sdk:7.0
@@ -123,7 +125,7 @@ cd phi-3_devcontainer
    CMD ["dotnet", "Phi3Sample.dll"]
    ```
 
-5. **Download Phi-3.5 Models**: Use a script to download and set up Phi-3.5 models. Add below to the `setup.sh` script:
+5. **Create a script to download and set up Phi-3.5 models. e.g `setup.sh`**
 
    ```bash
    #!/bin/bash
@@ -131,8 +133,7 @@ cd phi-3_devcontainer
    wget -O /models/phi-3/phi-3.5-model.bin https://example.com/phi-3.5-model.bin
    ```
 
-6. **Add the `.csproj` File**  
-    Create the `Phi3Sample.csproj` file in the `Samples` directory and configure it as follows:
+6. **Configure your project file by creating, e.g `Phi3Sample.csproj` in the `Samples` directory:**
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -148,32 +149,30 @@ cd phi-3_devcontainer
 
 ### 3. Launch Daytona Environment
 
-1. **Start the development environment, Daytona will now be ready to manage the project.**
+After setting up your configuration files, you can now launch your Daytona environment:
+
+1. **Start the Daytona server:**
 
    ```bash
    daytona serve
    ```
 
-   ![Daytona Environment Launch](assets/20241219_Daytona_start.PNG)
-
-2. **Initialize Daytona project**
+2. **Initialize your project by creating a new Daytona workspace:**
 
    ```bash
    daytona create your-repo-url
    ```
 
-   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url.jpg)
-   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url2.jpg)
    ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
    ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url4.jpg)
 
-3. **Execute the Sample Project**:
+3. **Once the environment is ready, you can run your sample project:**:
 
    ```bash
    dotnet run --project Samples/Phi3Sample.csproj
    ```
 
-4. **Verify Execution**: Ensure that the samples run correctly and test various functionalities.
+Here's a basic sample to verify your setup:
 
 ```csharp
 // Phi3Sample.cs
@@ -230,7 +229,7 @@ class Program
 
 ## Troubleshooting
 
-Common issues and solutions:
+Here are common issues while setting up your Daytona project and possible solutions:
 
 #### 1. Connectivity Issues
 
