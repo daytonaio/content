@@ -85,7 +85,7 @@ By using Daytona for your Jupyter Notebook environment, you create a portable, s
 
 ## Setting Up Jupyter Notebook in Daytona
 
-Alright, that's enough reading, now let us start writing codes. To do so you will need to set up a DuckDB [environment](20240819_definition_development%20environment.md) in a [Daytona workspace](20240819_definition_daytona%20workspace.md). Let’s begin.
+Time to roll up our sleeves and get hands-on. We’ll kick things off by setting up a Jupyter Notebook [environment](20240819_definition_development%20environment.md) in a [Daytona workspace](20240819_definition_daytona%20workspace.md). Let’s get started.
 
 ### Step 1: Create a GitHub Repository
 
