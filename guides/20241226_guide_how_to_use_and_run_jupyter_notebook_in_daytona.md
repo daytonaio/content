@@ -17,7 +17,7 @@ In this comprehensive guide, we'll explore everything you need to get started us
 
 ### TL;DR
 
-- Prerequisites.
+- Prerequisites
 - What's Jupyter Notebook and Everything to Know to Get Started
 - Why use Daytona
 - Setting Up Daytona Playground for Jupyter Notebook
@@ -30,9 +30,9 @@ In this comprehensive guide, we'll explore everything you need to get started us
 To follow along with a hands-on guide about Jupyter Notebook in Daytona, you'll need to have the following;
 
 - An [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
-- [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click here for more info.
-- Daytona installation on your PC or Mac. Click here for more info.
-- A GitHub account to create a [repository](20240819_definition_repository.md). Link here to create one, if you don’t have one.
+- [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click [here](https://docker.com) for more info.
+- Daytona installation on your PC or Mac. Click [here](https://www.daytona.io/) for more info.
+- A GitHub account to create a [repository](20240819_definition_repository.md). Link [here](https://github.com/) to create one, if you don’t have one.
 - Basic knowledge of [Git](20240819_definition_git.md) and GitHub.
 
 ## What's Jupyter Notebook and Everything to Know to Get Started
@@ -245,7 +245,10 @@ jupyter seever password
 jupyter notebook
 ```
 
-That’s it. Daytona will create a Jupyter Notebook environment for you and open it in the default IDE you set.
+That’s it. Daytona already created the workspace from previous command where the Jupyter Notebook environment for you and open it in the default web browser.
+It will then open your default web browser to this URL.
+
+When the notebook opens in your browser, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
 
 ![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
 
@@ -298,7 +301,7 @@ from datetime import date, timedelta, datetime
 Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv')
 ```
 
-*Note: Repace `/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv` with your own path to your `.csv` file from your PC. It should be enclosed in single or double quotation marks.*
+*Note: Repace `/workspaces/playground-jupyter-notebook/Airplane_Crashes_and_Fatalities_Since_1908.csv` with your own path to your `.csv` file from your PC. It should be enclosed in single or double quotation marks. Just in case you missed where to download the dataset, it can be found  [here](https://github.com/c0d33ngr/playground-jupyter-notebook/blob/main/Airplane_Crashes_and_Fatalities_Since_1908.csv).*
 
 ![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
 
