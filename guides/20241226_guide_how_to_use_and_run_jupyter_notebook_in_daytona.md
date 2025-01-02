@@ -10,19 +10,19 @@ tags: ["jupyter notebook", "data analysis", "python"]
 
 ## Introduction
 
-Jupyter Notebook is a very powerful and useful tool every data scientists, AI engineers, AI researchers and other professionals use in their work and personal projects. Knowledge about and how to use it's very necessary.
+Jupyter Notebook is a powerful and useful tool for data scientists, AI engineers, AI researchers, and other professionals in their work and personal projects. Knowledge about and how to use it is essential.
 
 With the power of Daytona Dev Environment and Jupyter Notebook, our work can be as smooth and streamlined as possible.
-In this comprehensive guide, we're going to deep dive into everything you need to get started with using Jupyter Notebook in a Daytona playground, hands-on experience with a real world practical project and much more.
+In this comprehensive guide, we'll explore everything you need to get started using Jupyter Notebook in a Daytona playground, including hands-on experience with a real-world practical project.
 
 ### TL;DR
 
-- What you need to follow along with the guide.
-- What's Jupyter Notebook and Everything to Know to get Started
+- Prerequisites.
+- What's Jupyter Notebook and Everything to Know to Get Started
+- Why use Daytona
 - Setting Up Daytona Playground for Jupyter Notebook
 - Demo: Exploring the Jupyter Notebook UI
 - Building a Jupyter Notebook Project in the Daytona Playground
-- Common Issues and Troubleshooting
 - Conclusion
 
 ## Prerequisites
@@ -39,7 +39,7 @@ To follow along with a hands-on guide about Jupyter Notebook in Daytona, you'll 
 
 ### Introduction
 
-Jupyter Notebook is a powerful open-source, interactive, web-based application designed to facilitate interactive computing. It offers a simple, streamlined, and document-centric experience, making it an essential tool for a wide range of applications such as data analysis and visualization, machine learning, scientific research, and education.  
+Jupyter Notebook is a powerful open-source, interactive, web-based application that facilitates interactive computing. It offers a simple, streamlined, and document-centric experience, making it an essential tool for a wide range of applications such as data analysis and visualization, machine learning, scientific research, and education.  
 
 It enables users to create and share documents that include live code, equations, visualizations, and narrative text. It supports multiple programming languages such as Python, R, Julia, and more, thanks to its extensible kernel architecture. This versatility makes it a preferred choice for data scientists, researchers, educators, and developers.  
 
@@ -75,11 +75,11 @@ Running Jupyter Notebook in a containerized development environment like Daytona
 
 - **Portability**: You can share your dev environment effortlessly by distributing the configuration file(s) like the `.devcontainer/devcontainer;json` file . Team members can replicate the setup on any system, regardless of its underlying operating system.
 
-- **Security**: Daytona act as sandboxes, restricting access to your host system and reducing the risk of accidental modifications or security vulnerabilities.
+- **Security**: Daytona acts as a sandbox, restricting access to your host system and reducing the risk of accidental modifications or security vulnerabilities.
 
-- **Ease of Setup**: You can use a pre-configured Jupyter Notebook Environment playground from Daytona which eliminates the need to manually setup one, providing a ready-to-use environment. *Note: In this guide, we'll create one.*
+- **Ease of Setup**: You can use a pre-configured Jupyter Notebook Environment playground from Daytona which eliminates the need to manually set up one, providing a ready-to-use environment. *Note: In this guide, we'll create one.*
 
-- **Flexibility**: You can create custom `.devcontainer/devcontainer.json` config file to suit your needs, or run multiple workspaces simultaneously for different configurations and use cases.
+- **Flexibility**: You can create a custom `.devcontainer/devcontainer.json` config file to suit your needs, or run multiple workspaces simultaneously for different configurations and use cases.
 
 By using Daytona for your Jupyter Notebook environment, you create a portable, secure, and consistent workspace that simplifies experimentation, collaboration, and deployment.
 
@@ -201,7 +201,7 @@ daytona –-version
 
 You should see your version of `daytona` installed.
 
-### Step 7: Create a Daytona Workspace with Jupyter Notebook Environment in it
+### Step 7: Create a Daytona Workspace with a Jupyter Notebook Environment in it
 
 Let’s start the daytona server by running the command.
 
@@ -302,7 +302,7 @@ Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and
 
 ![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
 
-Click the little play button at the tpp to run the cell.
+Click the little play button at the top to run the cell.
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_17.png)
 
@@ -310,15 +310,15 @@ You can also click **Run selected cell** from the **Run** menu.
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_18.png)
 
-If you prefer to use just your keybaord to run the cell like me, press `Shift` + `Enter`.
+If you prefer to use just your keyboard to run the cell like me, press `Shift` + `Enter`.
 
-After running the cell, you should see similar display
+After running the cell, you should see a similar display
 
 ![screenshot after running step 1 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_19.png)
 
 ### Step 2: Explore the Dataset
 
-The code below set a random seed and display a random sample of the data so we can understand it
+The code below sets a random seed and displays a random sample of the data so we can understand it
 
 Copy and paste the code below in the new cell created automatically below the previous code in the Jupyter Notebook and run the cell. Use your prefered way - mine is `Shift` + `Enter`
 
@@ -336,14 +336,14 @@ You should see similar output
 
 Next, we summarize the dataset by displaying its dimensions (number of observations and features) and listing the column names. This gives us an overview of the dataset's structure and the available features for analysis.
 
-Cppy and paste the code below in the new cell and run it to see it output.
+Copy and paste the code below in the new cell and run it to see its output.
 
 ```bash
 print(str("Dataset consist of " + str(obs) + " observations (crashes) and " + str(feat) + " features. Features are following:"))
 print(",\n".join(Data.columns))
 ```
 
-Yours should be simiiar to mine below
+Yours should be similar to mine below
 
 ![screenshot after running step 3 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_21.png)
 
@@ -363,9 +363,9 @@ Your output should be similar to mine
 
 ### Step 5: Clean and Format Time and Operator Data
 
-In this step, we will clean the time-related data by replacing incorrect or missing values, standardizing time formats, and combining date and time columns into a single datetime column. Additionally, we will also standardize operator names to avoid inconsistencies such as different capitalizations.
+In this step, we will clean the time-related data by replacing incorrect or missing values, standardizing time formats, and combining date and time columns into a single column. Additionally, we will also standardize operator names to avoid inconsistencies such as different capitalizations.
 
-The code below deos exactly that. Copy and paste it in a new cell and run it
+The code below does exactly that. Copy and paste it into a new cell and run it
 
 ```bash
 #cleaning up
@@ -417,7 +417,7 @@ Your visualization should be similar to mine.
 
 Here, we will clean up operator names and then visualize the top 15 operators by the number of accidents. By creating a horizontal bar plot, we can quickly identify which operators are most frequently involved in accidents.
 
-Cppy and paste code in new cell and run it.
+Copy and paste the code into a new cell and run it.
 
 ```bash
 Data.Operator = Data.Operator.str.upper()
@@ -436,15 +436,15 @@ plt.show()
 ```
 
 Your visualization should be similar to mine
-
+.
 ![screenshot after running step 7 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_25.png)
 
 ### Step 8: Analyze and Visualize Fatalities by Operator
 
-In this our final step, we will analyze the total fatalities by operator and visualize the top 15 operators with the highest fatality counts. This provides insight into which operators are associated with the most severe accidents.
+In this final step, we will analyze the total fatalities by operator and visualize the top 15 operators with the highest fatality counts. This provides insight into which operators are associated with the most severe accidents.
 
-The code below does. Copy and paste it in a new cell and run it
-
+The code below does. Copy and paste it into a new cell and run it
+.
 ```bash
 Prop_by_Op = Data.groupby('Operator')[['Fatalities']].sum()
 Prop_by_Op = Prop_by_Op.rename(columns={"Operator": "Fatalities"})
@@ -461,9 +461,9 @@ plt.show()
 
 ![screenshot after running step 8 in the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_26.png)
 
-There are multiple ways to save a Jupyter Notebook file but I'l lsave mine with `Ctrl` + `Shift` + `S`.
+There are multiple ways to save a Jupyter Notebook file but I'll save mine with `Ctrl` + `Shift` + `S`.
 
-A pop up simialr to the screenshot below should display. Replace the **Untitled** with your prefered file name. I replaced mine with **data_visualization**.
+A pop-up similar to the screenshot below should be displayed. Replace the **Untitled** with your preferred file name. I replaced mine with **data_visualization**.
 
 ![screenshot of saving the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_27.png)
 
