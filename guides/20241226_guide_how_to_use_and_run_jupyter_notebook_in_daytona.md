@@ -49,7 +49,7 @@ Whether you're building machine learning models, performing exploratory data ana
 
 ### Usage
 
-Jupyter Notebook is a powerful, interactive computing tool that supports data analysis, visualization, and code execution in an easy-to-use web-based interface. Here's why and how it's commonly used:
+Now, you know what Jupyter Notebook is. Below you will find out why and how it's commonly used:
 
 - **Interactive Code Execution**: Write and execute code in individual cells, allowing for iterative development and real-time feedback. Supports multiple programming languages (e.g., Python, R, Julia), with Python being the most commonly used.
 
@@ -187,6 +187,8 @@ Now, your directory tree should look like this below
 
 0 directories, 2 files
 ```
+
+*Note: `.devcontainer/` is not found there with it's content because it's a hidden directory.*
 
 ### Step 5: Commit and Push Changes to GitHub
 
