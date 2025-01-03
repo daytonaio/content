@@ -248,15 +248,21 @@ daytona code WORKSPACE-NAME
 
 ### Step 8: Set Password and Run the Jupyter Notebook
 
+Run the command below to set a password to access the Jupyter Notebook dashboard.
+
 ```bash
 jupyter server password
 ```
+
+Run the command below to start the Jupyter Notebook on localhost.
 
 ```bash
 jupyter notebook
 ```
 
-That’s it. It will then open your default web browser to the Jupyter Notebook URL running on localhost.
+That’s it. It will then open your default web browser to the Jupyter Notebook dashboard URL running on localhost - on port `8888` by default.
+
+Type in your password to login to the dashboard.
 
 When the notebook opens in your browser, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
 
@@ -300,7 +306,7 @@ Select the **Python 3 ipykernel** from the pop up window
 
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
 
-Now, you should have a blank notebook file with an empty cell and file name **Untitled.ipynb**
+Now, you should have a blank notebook file named **Untitled.ipynb** with an empty cell.
 
 ![screenshot of a new jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_15.png)
 
