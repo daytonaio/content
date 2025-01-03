@@ -240,7 +240,7 @@ daytona create https://github.com/c0d33ngr/playground-jupyter-notebook
 
 After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the Jupyter Notebook environment is running.
 
-You can now run this command to open the Jupyter Notebook [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
+You can now run this command below to open a terminal shell [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -260,11 +260,11 @@ Run the command below to start the Jupyter Notebook on localhost.
 jupyter notebook
 ```
 
-That’s it. It will then open your default web browser to the Jupyter Notebook dashboard URL running on localhost - on port `8888` by default.
+That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on localhost - on port `8888` by default.
 
 Type in your password to login to the dashboard.
 
-When the notebook opens in your browser, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
+After you login, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
 
 *Note: Yours would not have `LICENSE` and `README.md` files in yours as it wasn't included in the steps above cause it isn't neccessary in setting up Daytona playground.*
 
@@ -272,7 +272,7 @@ When the notebook opens in your browser, you will see the Notebook Dashboard, wh
 
 ## Demo: Exploring the Jupyter Notebook UI
 
-When you log in to the Jupyter server, the top of the interface provides a streamlined menu bar with essential options to navigate and manage your environment.
+When you log in to the Jupyter Notebook Dashboard, the top of the interface provides a streamlined menu bar with essential options to navigate and manage your environment.
 
 The **File** menu allows you to create new notebooks, text files, or folders, as well as upload existing files from your local system.
 
