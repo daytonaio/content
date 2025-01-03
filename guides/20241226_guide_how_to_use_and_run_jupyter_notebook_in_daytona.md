@@ -1,6 +1,6 @@
 ---
 title: "How to Use and Run Jupyter Notebook in Daytona."
-description: "A brief description of what the guide covers. The description should be a maximum of 160 characters."
+description: "Learn how to set up and run Jupyter Notebook in Daytona, including installation, configuration, and building a hands-on data visualization project."
 date: 2024-12-26
 author: "Jeffrey Whewhetu"
 tags: ["jupyter notebook", "data analysis", "python"]
@@ -12,7 +12,7 @@ tags: ["jupyter notebook", "data analysis", "python"]
 
 Jupyter Notebook is a powerful and useful tool for data scientists, AI engineers, AI researchers, and other professionals in their work and personal projects. Knowledge about and how to use it is essential.
 
-With the power of Daytona Dev Environment and Jupyter Notebook, our work can be as smooth and streamlined as possible.
+With the power of Daytona Dev Environment and Jupyter Notebook, our workflow can be as smooth and streamlined as possible.
 In this comprehensive guide, we'll explore everything you need to get started using Jupyter Notebook in a Daytona playground, including hands-on experience with a real-world practical project.
 
 ### TL;DR
@@ -179,6 +179,15 @@ opencv-python
 beautifulsoup4
 ```
 
+Now, your directory tree should look like this below
+
+```
+├── Airplane_Crashes_and_Fatalities_Since_1908.csv
+└── requirements.txt
+
+0 directories, 2 files
+```
+
 ### Step 5: Commit and Push Changes to GitHub
 
 Run these commands to push your changes to GitHub.
@@ -238,17 +247,18 @@ daytona code WORKSPACE-NAME
 ### Step 8: Set Password and Run the Jupyter Notebook
 
 ```bash
-jupyter seever password
+jupyter server password
 ```
 
 ```bash
 jupyter notebook
 ```
 
-That’s it. Daytona already created the workspace from previous command where the Jupyter Notebook environment for you and open it in the default web browser.
-It will then open your default web browser to this URL.
+That’s it. It will then open your default web browser to the Jupyter Notebook URL running on localhost.
 
 When the notebook opens in your browser, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
+
+*Note: Yours would not have `LICENSE` and `README.md` files in yours as it wasn't included in the steps above cause it isn't neccessary in setting up Daytona playground.*
 
 ![screenshot of jupyter notebook ui](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_8.png)
 
@@ -276,13 +286,19 @@ These options ensure that users can efficiently organize and interact with their
 
 ## Building a Jupyter Notebook Project in the Daytona Playground
 
-In this section, you'll do some data analysis and visualization in Jupyter Notebook using the "Airplane Crashes and Fatalities Since 1908" dataset. You'll begin by importing essential libraries, cleaning the data to handle missing and inconsistent values, and transforming columns for consistency and ease of analysis. This process includes merging date and time fields, standardizing operator names, and preparing the dataset for exploration.
+In this section, you'll do some data analysis and visualization in Jupyter Notebook using the "**Airplane Crashes and Fatalities Since 1908**" dataset downloaded above in previous steps. You'll begin by importing essential libraries, cleaning the data to handle missing and inconsistent values, and transforming columns for consistency and ease of analysis. This process includes merging date and time fields, standardizing operator names, and preparing the dataset for exploration.
 
 Next, you'll analyze temporal trends in airplane crashes, visualize yearly crash counts, and identify key operators with the most crashes and fatalities. By following this guide, you'll gain hands-on experience in building, analyzing, and visualizing data projects in Jupyter Notebook. Let’s begin!
 
+Click the **Notebook** from the **File** menu option at the top bar to create an empty notebook file.
+
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_13.png)
 
+Select the **Python 3 ipykernel** from the pop up window
+
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
+
+Now, you should have a blank notebook file with an empty cell and file name **Untitled.ipynb**
 
 ![screenshot of a new jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_15.png)
 
