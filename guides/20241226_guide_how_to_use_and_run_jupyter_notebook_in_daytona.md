@@ -29,11 +29,11 @@ In this comprehensive guide, we'll explore everything you need to get started us
 
 To follow along with a hands-on guide about Jupyter Notebook in Daytona, you'll need to have the following;
 
-- An [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
-- [Docker](20240819_definition_docker.md) installation on your PC or Mac. Click [here](https://docker.com) for more info.
+- An [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
+- [Docker](/definitions/20240819_definition_docker.md) installation on your PC or Mac. Click [here](https://docker.com) for more info.
 - Daytona installation on your PC or Mac. Click [here](https://www.daytona.io/) for more info.
-- A GitHub account to create a [repository](20240819_definition_repository.md). Link [here](https://github.com/) to create one, if you don’t have one.
-- Basic knowledge of [Git](20240819_definition_git.md) and GitHub.
+- A GitHub account to create a [repository](/definitions/20240819_definition_repository.md). Link [here](https://github.com/) to create one, if you don’t have one.
+- Basic knowledge of [Git](/definitions/20240819_definition_git.md) and GitHub.
 
 ## What's Jupyter Notebook and Everything to Know to Get Started
 
@@ -85,11 +85,11 @@ By using Daytona for your Jupyter Notebook environment, you create a portable, s
 
 ## Setting Up Jupyter Notebook in Daytona
 
-Time to roll up our sleeves and get hands-on. We’ll kick things off by setting up a Jupyter Notebook [environment](20240819_definition_development%20environment.md) in a [Daytona workspace](20240819_definition_daytona%20workspace.md). Let’s get started.
+Time to roll up our sleeves and get hands-on. We’ll kick things off by setting up a Jupyter Notebook [environment](/definitions/20240819_definition_development%20environment.md) in a [Daytona workspace](/definitions/20240819_definition_daytona%20workspace.md). Let’s get started.
 
 ### Step 1: Create a GitHub Repository
 
-First head to the GitHub website and create a [repository](20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-jupyter-notebook`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-jupyter-notebook`
+First head to the GitHub website and create a [repository](/definitions/20240819_definition_repository.md) with the name of your choice. For my repository name, I’ll use `playground-jupyter-notebook`. The full URL path to the repository is `https://github.com/c0d33ngr/playground-jupyter-notebook`
 
 ### Step 2: Clone the repository using Git
 
@@ -140,14 +140,14 @@ Paste this code into your `devcontainer.json` file.
 }
 ```
 
-The `devcontainer.json` content contains configurations to start your Jupyter Notebook environment in a [Daytona workspace](20240819_definition_daytona%20workspace.md).
+The `devcontainer.json` content contains configurations to start your Jupyter Notebook environment in a [Daytona workspace](/definitions/20240819_definition_daytona%20workspace.md).
 
 - `name`: This sets the name of the development container environment to `Jupyter Notebook Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
 - `features`: This configuration adds Python setups in the Daytona workspace
 - `postCreateComand`: This installs some Python packages needed for this guide and commonly used into the workspace.
 
-After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](20240819_definition_repository.md). For me, I run the command below.
+After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](/definitions/20240819_definition_repository.md). For me, I run the command below.
 
 ```bash
 cd ..
@@ -228,7 +228,7 @@ You should see logs like my screenshot.
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
-Run the command below in a new tab of your terminal and follow the prompt instructions. It would ask you for a [workspace](20240819_definition_daytona%20workspace.md) name to use, choose the default.
+Run the command below in a new tab of your terminal and follow the prompt instructions. It would ask you for a [workspace](/definitions/20240819_definition_daytona%20workspace.md) name to use, choose the default.
 
 Replace `USERNAME` and `REPOSITORY-NAME` with your username for GitHub and the repository name you created earlier.
 
@@ -248,7 +248,7 @@ After you successfully run the above command you should see a screenshot like mi
 
 ![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_4.png)
 
-You can now run this command below to open a terminal shell [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
+You can now run this command below to open a terminal shell [environment](/definitions/20240819_definition_development%20environment.md) in your default [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -266,7 +266,7 @@ When you are typing your password, it won't be visible.
 
 ![screenshot of password prompt](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_5.png)
 
-Run the command below to start the Jupyter Notebook on [localhost](definitions/20241226_definition_localhost.md).
+Run the command below to start the Jupyter Notebook on [localhost](/definitions/20241226_definition_localhost.md).
 
 ```bash
 jupyter notebook
@@ -274,7 +274,7 @@ jupyter notebook
 
 ![screenshot of running jupyter notebook command](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_6.png)
 
-That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on [localhost](definitions/20241226_definition_localhost.md) - on port `8888` by default.
+That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on [localhost](/definitions/20241226_definition_localhost.md) - on port `8888` by default.
 
 ![screenshot of Jupyter Notebook login page](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_7.png)
 
@@ -322,13 +322,13 @@ Select the **Python 3 ipykernel** from the pop up window
 
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
 
-Now, you should have a blank [notebook](definitions/20241226_definition_notebook.md) file named **Untitled.ipynb** with an empty [cell](definitions/20241226_definition_notebook_cell.md).
+Now, you should have a blank [notebook](/definitions/20241226_definition_notebook.md) file named **Untitled.ipynb** with an empty [cell](/definitions/20241226_definition_notebook_cell.md).
 
 ![screenshot of a new jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_15.png)
 
 ### Step 1: Import Libraries and Load the Dataset
 
-To begin the data visualization, we need to import the necessary libraries and load the dataset into a Pandas DataFrame. Copy and paste the code below in the Jupyter Notebook [cell](definitions/20241226_definition_notebook_cell.md)
+To begin the data visualization, we need to import the necessary libraries and load the dataset into a Pandas DataFrame. Copy and paste the code below in the Jupyter Notebook [cell](/definitions/20241226_definition_notebook_cell.md)
 
 ```bash
 #importing the libraries and data
@@ -345,7 +345,7 @@ Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and
 
 ![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
 
-Click the little play button at the top to run the [cell](definitions/20241226_definition_notebook_cell.md).
+Click the little play button at the top to run the [cell](/definitions/20241226_definition_notebook_cell.md).
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_17.png)
 
@@ -394,7 +394,7 @@ Yours should be similar to mine below
 
 Before proceeding with any visualization, it’s important to check for missing values in the dataset. We calculate the number of missing values for each column to identify any potential data quality issues that may need to be addressed.
 
-The code below does that. Cppy and paste it in a new [cell](definitions/20241226_definition_notebook_cell.md) and run it to see it's output.
+The code below does that. Cppy and paste it in a new [cell](/definitions/20241226_definition_notebook_cell.md) and run it to see it's output.
 
 ```bash
 Data.isnull().sum() #calculating missing values in rows
@@ -460,7 +460,7 @@ Your visualization should be similar to mine.
 
 Here, we will clean up operator names and then visualize the top 15 operators by the number of accidents. By creating a horizontal bar plot, we can quickly identify which operators are most frequently involved in accidents.
 
-Copy and paste the code into a new [cell](definitions/20241226_definition_notebook_cell.md) and run it.
+Copy and paste the code into a new [cell](/definitions/20241226_definition_notebook_cell.md) and run it.
 
 ```bash
 Data.Operator = Data.Operator.str.upper()
