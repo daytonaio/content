@@ -212,6 +212,8 @@ daytona –-version
 
 You should see your version of `daytona` installed.
 
+![screenshot of my daytona version](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_1.png)
+
 ### Step 7: Create a Daytona Workspace with a Jupyter Notebook Environment in it
 
 Let’s start the daytona server by running the command.
@@ -221,6 +223,8 @@ daytona serve
 ```
 
 You should see logs like my screenshot.
+
+![screenshot of my daytona running the server in foreground](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_2.png)
 
 Open a new tab in your terminal, for Linux its `Shift + Ctrl + T`
 
@@ -239,6 +243,10 @@ daytona create https://github.com/c0d33ngr/playground-jupyter-notebook
 ```
 
 After you successfully run the above command you should see a screenshot like mine showing your Daytona workspace that contains the Jupyter Notebook environment is running.
+
+![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_3.png)
+
+![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_4.png)
 
 You can now run this command below to open a terminal shell [environment](20240819_definition_development%20environment.md) in your default [IDE](20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
 
