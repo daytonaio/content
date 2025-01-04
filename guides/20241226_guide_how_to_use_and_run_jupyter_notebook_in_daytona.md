@@ -262,13 +262,21 @@ Run the command below to set a password to access the Jupyter Notebook dashboard
 jupyter server password
 ```
 
+When you are typing your password, it won't be visible.
+
+![screenshot of password prompt](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_5.png)
+
 Run the command below to start the Jupyter Notebook on localhost.
 
 ```bash
 jupyter notebook
 ```
 
+![screenshot of running jupyter notebook command](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_6.png)
+
 That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on localhost - on port `8888` by default.
+
+![screenshot of Jupyter Notebook login page](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_7.png)
 
 Type in your password to login to the dashboard.
 
