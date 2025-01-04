@@ -266,7 +266,7 @@ When you are typing your password, it won't be visible.
 
 ![screenshot of password prompt](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_5.png)
 
-Run the command below to start the Jupyter Notebook on localhost.
+Run the command below to start the Jupyter Notebook on [localhost](definitions/20241226_definition_localhost.md).
 
 ```bash
 jupyter notebook
@@ -274,13 +274,13 @@ jupyter notebook
 
 ![screenshot of running jupyter notebook command](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_6.png)
 
-That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on localhost - on port `8888` by default.
+That’s it. It will then open your default web browser to the Jupyter Notebook login URL running on [localhost](definitions/20241226_definition_localhost.md) - on port `8888` by default.
 
 ![screenshot of Jupyter Notebook login page](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_7.png)
 
 Type in your password to login to the dashboard.
 
-After you login, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the notebook server was started. In our case, it is similar to this screenshot below.
+After you login, you will see the Notebook Dashboard, which will show a list of the notebooks, files, and subdirectories in the directory where the Notebook server was started. In our case, it is similar to this screenshot below.
 
 *Note: Yours would not have `LICENSE` and `README.md` files in yours as it wasn't included in the steps above cause it isn't neccessary in setting up Daytona playground.*
 
@@ -314,7 +314,7 @@ In this section, you'll do some data analysis and visualization in Jupyter Noteb
 
 Next, you'll analyze temporal trends in airplane crashes, visualize yearly crash counts, and identify key operators with the most crashes and fatalities. By following this guide, you'll gain hands-on experience in building, analyzing, and visualizing data projects in Jupyter Notebook. Let’s begin!
 
-Click the **Notebook** from the **File** menu option at the top bar to create an empty notebook file.
+Click the **Notebook** from the **File** menu option at the top bar to create an empty [notebook](definitions/20241226_definition_notebook.md) file.
 
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_13.png)
 
@@ -322,13 +322,13 @@ Select the **Python 3 ipykernel** from the pop up window
 
 ![screenshot of creating a jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_14.png)
 
-Now, you should have a blank notebook file named **Untitled.ipynb** with an empty cell.
+Now, you should have a blank [notebook](definitions/20241226_definition_notebook.md) file named **Untitled.ipynb** with an empty [cell](definitions/20241226_definition_notebook_cell.md).
 
 ![screenshot of a new jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_15.png)
 
 ### Step 1: Import Libraries and Load the Dataset
 
-To begin the data visualization, we need to import the necessary libraries and load the dataset into a Pandas DataFrame. Copy and paste the code below in the Jupyter Notebook cell
+To begin the data visualization, we need to import the necessary libraries and load the dataset into a Pandas DataFrame. Copy and paste the code below in the Jupyter Notebook [cell](definitions/20241226_definition_notebook_cell.md)
 
 ```bash
 #importing the libraries and data
@@ -345,11 +345,11 @@ Data = pd.read_csv('/workspaces/playground-jupyter-notebook/Airplane_Crashes_and
 
 ![screenshot of importing libraries and load dataset](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_16.png)
 
-Click the little play button at the top to run the cell.
+Click the little play button at the top to run the [cell](definitions/20241226_definition_notebook_cell.md).
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_17.png)
 
-You can also click **Run selected cell** from the **Run** menu.
+You can also click **Run Selected Cell** from the **Run** menu.
 
 ![screenshot of running the jupyter notebook](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_18.png)
 
@@ -394,7 +394,7 @@ Yours should be similar to mine below
 
 Before proceeding with any visualization, it’s important to check for missing values in the dataset. We calculate the number of missing values for each column to identify any potential data quality issues that may need to be addressed.
 
-The code below does that. Cppy and paste it in a new cell and run it to see it's output.
+The code below does that. Cppy and paste it in a new [cell](definitions/20241226_definition_notebook_cell.md) and run it to see it's output.
 
 ```bash
 Data.isnull().sum() #calculating missing values in rows
@@ -460,7 +460,7 @@ Your visualization should be similar to mine.
 
 Here, we will clean up operator names and then visualize the top 15 operators by the number of accidents. By creating a horizontal bar plot, we can quickly identify which operators are most frequently involved in accidents.
 
-Copy and paste the code into a new cell and run it.
+Copy and paste the code into a new [cell](definitions/20241226_definition_notebook_cell.md) and run it.
 
 ```bash
 Data.Operator = Data.Operator.str.upper()
