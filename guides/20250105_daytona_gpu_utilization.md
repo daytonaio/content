@@ -160,7 +160,7 @@ Container Toolkit installation status.
   ```
   You should get an output resembling the below image
 
-  ![image of nvidia-smi output](assets/20250105_daytona_gpu_utilization_img_1.png)
+  ![image of nvidia-smi output](assets/20250105_daytona_gpu_utilization_img_1.PNG)
 
   If you do not have drivers installed get them from [here](https://www.nvidia.com/en-us/drivers/)
   depending on your OS and GPU,If drivers are installled open your WSL2 distribution and check if
