@@ -124,7 +124,7 @@ GPU for the purpose of LLM Fine-Tuning and LLM Inference. Before you get started
 [Docker](https://docs.docker.com/get-started/get-docker/) installed, an IDE like [VS Code](https://code.visualstudio.com/download) or
 [JetBrains](https://www.jetbrains.com/idea/download/),
 [Daytona](https://www.daytona.io/docs/installation/installation/), [CUDA-enabled GPU](https://developer.nvidia.com/cuda-gpus), [Nvidia GPU Driver](https://www.nvidia.com/en-us/drivers/) and WSL(Window Sub-System for Linux) and a Linux Distribution like Ubuntu. Both Window and Linux users can follow
-this guide, the only difference is driver installation which will be clarified later on in this guide.
+this guide, the only difference is potential driver installations which will be clarified later on in this guide.
 
 ## TL;DR
 
@@ -167,7 +167,9 @@ Container Toolkit installation status.
 
   ![image of github provider](assets/20250105_daytona_gpu_utilization_img_1.png)
 
-  Open your WSL distribution and check if the Nvidia Container Toolkit is installed with
+  If you do not have drivers installed get them from [here](https://www.nvidia.com/en-us/drivers/)
+  depending on your OS and GPU,If drivers are installled open your WSL distribution and check if
+  the Nvidia Container Toolkit is installed with
 
   ```bash
     dpkg -l | grep nvidia-container-toolkit
@@ -189,6 +191,11 @@ Container Toolkit installation status.
   ```bash
     docker run --gpus all nvidia/cuda:12.0-base nvidia-smi
   ```
-  Ensure that the Windows/Linux drivers are compatible with the CUDA version in your Docker image
-  i.e A driver version of 12.5 should be used with a CUDA docker image of version 12.5 or less
-  since there is backward compatibilty between them
+  Ensure that the Windows/Linux drivers are compatible with the CUDA version in your Docker image,
+  i.e a driver version of 12.5 should be used with a CUDA docker image of version 12.5 or less
+  since there is backward compatibilty between them.
+
+  > **Important Note:** For windows users If you have Nvidia GPU drivers already installed on their
+  >system, CUDA becomes available within WSL2. The CUDA driver installed on windows will be stubbed
+  >inside the WSL2, therefore users must not install any Nvidia GPU Linux driver within WSL2 to
+  >avoid conflicts.
