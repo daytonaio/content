@@ -142,7 +142,7 @@ this guide, the only difference is potential driver installations which will be 
   WSL2 and CUDA Compatible GPU and its drivers.
 
 You can find the Github repository where my devcontainer configuration files
-which i used for this guide
+which I used for this guide
 [here](https://github.com/stdthoth/daytona-gpu-utilization).
 
 ## Installation and Verification of Nvidia Drivers and Toolkit
@@ -268,8 +268,8 @@ You will create a Dockerfile in the same directory
   ```
   Let's breakdown the `Dockerfile`
 
-- `FROM nvidia/cuda:12.3.2-cudnn9-runtime-ubuntu22.04`: This is the image provided by Nvidia which ensures
-  GPU accelerated computations and provides optimized libraries for deep learning workloads.
+- `FROM nvidia/cuda:12.3.2-cudnn9-runtime-ubuntu22.04`: This is the image provided by Nvidia which ensures GPU accelerated computations and provides optimized libraries for deep learning workloads. You may choose to use other image tags like `base`or `devel`
+depending on your specific need or complexity of operation
 - `RUN apt-get update && apt-get install -y \python3-pip`: Installs Python3 and `pip` Python's package
   manager. The flag `-y` automatically confirms prompts during installation.
 - `WORKDIR /workspace`: Sets the default working directory inside the container to `/workspace`, any subsequent
