@@ -199,8 +199,8 @@ Container Toolkit installation status.
   
   Create a Dev Container configuration
   
-  Here, you're going to create a dev container using a `devcontainer.json` file, a
-  `Dockerfile` and a `docker-compose.yml` file.  
+  Here, you're going to create a dev container consisting of a `devcontainer.json` file, a
+  `Dockerfile` and Python Scripts.  
   
   Create a new directory and move inside of it
 
