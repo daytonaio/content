@@ -93,7 +93,7 @@ Dub.co supports custom branding, analytics, and scalability, making it a top cho
 Check out Dub.co: [Dub.co API Documentation](https://dub.co/docs/quickstart/python)
 
 
-**Setting Up Your Project Environment**
+## Setting Up Your Project Environment
 
 Before diving into the development of your link shortener, it's essential to set up a proper project environment.
 This includes creating a project directory, managing dependencies, and configuring your development container. In this section,
