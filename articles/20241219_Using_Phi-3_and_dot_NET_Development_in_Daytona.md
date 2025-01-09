@@ -113,7 +113,7 @@ The development container configuration involves creating necessary configuratio
    }
    ```
 
-4. **Set up your Dockerfile with the necessary .NET configuration:** Define the base image and install necessary dependencies:
+4. **Set up the `Dockerfile` with the necessary .NET configuration:** Define the base image and install necessary dependencies:
 
    ```dockerfile
    FROM mcr.microsoft.com/dotnet/aspnet:7.0
@@ -121,24 +121,6 @@ The development container configuration involves creating necessary configuratio
    COPY . .
    RUN dotnet restore
    ```
-
-### 3. Launch Daytona Environment
-
-After setting up your configuration files, you can now launch your Daytona environment:
-
-1. **Start the Daytona server:**
-
-   ```bash
-   daytona serve
-   ```
-
-2. **Initialize your project by creating a new Daytona workspace:**
-
-   ```bash
-   daytona create your-repo-url
-   ```
-
-   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
 
 With the .NET environment in place, you need to configure it for Phi-3.5 Labs.
 
@@ -172,13 +154,10 @@ With the .NET environment in place, you need to configure it for Phi-3.5 Labs.
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
    </PropertyGroup>
-   <ItemGroup>
-    <Compile Include="Phi3Sample.cs" />
-   </ItemGroup>
    </Project>
    ```
 
-4. **To run and test Phi-3.5 Labs samples, navigate to your project directory and run the sample project:**:
+4. **To run and test Phi-3.5 Labs samples, navigate to your project directory on your terminal and run the sample project:**:
 
    ```bash
    dotnet run --project Phi3Sample.csproj
@@ -198,6 +177,26 @@ class Program
     }
 }
 ```
+
+![Daytona Create RepoUrl](assets/20250109_final_dotnet_run.jpg)
+
+### 3. Launch Daytona Environment
+
+After setting up your configuration files and pushing to a new repository, you can now launch your Daytona environment by following these steps:
+
+1. **Start the Daytona server:**
+
+   ```bash
+   daytona serve
+   ```
+
+2. **Initialize your project by creating a new Daytona workspace:**
+
+   ```bash
+   daytona create your-repo-url
+   ```
+
+   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
 
 ## Advantages for Collaborative Development
 
