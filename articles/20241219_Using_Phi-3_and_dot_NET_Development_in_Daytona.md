@@ -62,14 +62,14 @@ For detailed installation instructions, follow the [Daytona Installation Guide](
 
 ## Setting Up the Development Environment
 
-Let's walk through the process of setting up your development environment for Phi-3 and .NET development.
+Let's walk through the process of setting up your development environment for Phi-3 and .NET development using `devcontainer.json`.
 
 ### 1. Project Initialization
 
 First, create a new directory for your project:
 
 ```bash
-# Create project directory
+# Create project directory, e.g,
 mkdir phi-3_devcontainer
 cd phi-3_devcontainer
 ```
@@ -78,7 +78,7 @@ cd phi-3_devcontainer
 
 The development container configuration involves creating necessary configuration files and setting up the environment.
 
-1. **Create Container Configuration Directory:**
+1. **Create Container Configuration Directory:** In your project root, create a `.devcontainer` directory if it doesn’t already exist.
 
    ```bash
    mkdir .devcontainer
@@ -90,61 +90,36 @@ The development container configuration involves creating necessary configuratio
    ```bash
    touch devcontainer.json
    touch Dockerfile
-   touch setup.sh
    ```
 
-3. **Configure your development container by adding the following content to devcontainer.json**
+3. **Configure your development container by adding the following content to the `devcontainer.json`:**
 
    ```json
    {
-     "version": "2",
      "name": "Daytona .NET Environment",
      "dockerFile": "Dockerfile",
-     "extensions": [
-       "ms-dotnettools.csharp",
-       "ms-vscode.vscode-node-azure-pack"
-     ],
-     "settings": {
-       "terminal.integrated.shell.linux": "/bin/bash"
+     "customizations": {
+       "vscode": {
+         "extensions": [
+           "ms-dotnettools.csharp",
+           "ms-vscode.vscode-node-azure-pack"
+         ],
+         "settings": {
+           "terminal.integrated.shell.linux": "/bin/bash"
+         }
+       }
      },
-     "postCreateCommand": ["dotnet restore", "./setup.sh"],
-     "remoteUser": "vscode"
+     "postCreateCommand": "dotnet restore"
    }
    ```
 
-4. **Set up your Dockerfile with the necessary .NET configuration:**
+4. **Set up your Dockerfile with the necessary .NET configuration:** Define the base image and install necessary dependencies:
 
    ```dockerfile
-   FROM mcr.microsoft.com/dotnet/sdk:7.0
+   FROM mcr.microsoft.com/dotnet/aspnet:7.0
    WORKDIR /app
-   COPY Samples/Phi3Sample.csproj ./Samples/
-   RUN dotnet restore ./Samples/Phi3Sample.csproj
    COPY . .
-   RUN dotnet publish ./Samples/Phi3Sample.csproj -c Release -o out
-   WORKDIR /app/out
-   CMD ["dotnet", "Phi3Sample.dll"]
-   ```
-
-5. **Create a script to download and set up Phi-3.5 models. e.g `setup.sh`**
-
-   ```bash
-   #!/bin/bash
-   mkdir -p /models/phi-3
-   wget -O /models/phi-3/phi-3.5-model.bin https://example.com/phi-3.5-model.bin
-   ```
-
-6. **Configure your project file by creating, e.g `Phi3Sample.csproj` in the `Samples` directory:**
-
-   ```xml
-   <Project Sdk="Microsoft.NET.Sdk">
-   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-   </PropertyGroup>
-   <ItemGroup>
-    <Compile Include="Phi3Sample.cs" />
-   </ItemGroup>
-   </Project>
+   RUN dotnet restore
    ```
 
 ### 3. Launch Daytona Environment
@@ -164,15 +139,52 @@ After setting up your configuration files, you can now launch your Daytona envir
    ```
 
    ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
-   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url4.jpg)
 
-3. **Once the environment is ready, you can run your sample project:**:
+With the .NET environment in place, you need to configure it for Phi-3.5 Labs.
 
-   ```bash
-   dotnet run --project Samples/Phi3Sample.csproj
+1. **Install Dependencies**: Add any required dependencies to your `Dockerfile` or install them manually in the Daytona container.
+
+   ```dockerfile
+   RUN apt-get update && apt-get install -y \
+       libfoo-dev \
+       libbar-dev
    ```
 
-Here's a basic sample to verify your setup:
+2. **Download Phi-3.5 Models**: Use a script to download and set up Phi-3.5 models. Create a `setup.sh` script:
+
+   ```bash
+   #!/bin/bash
+   mkdir -p /models/phi-3
+   wget -O /models/phi-3/phi-3.5-model.bin https://example.com/phi-3.5-model.bin
+   ```
+
+   Add this script to your `postCreateCommand` in `devcontainer.json`:
+
+   ```json
+   "postCreateCommand": "./setup.sh"
+   ```
+
+3. **Configure your project file by creating a `Phi3Sample.csproj` file and adding the following script:**
+
+   ```xml
+   <Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+   </PropertyGroup>
+   <ItemGroup>
+    <Compile Include="Phi3Sample.cs" />
+   </ItemGroup>
+   </Project>
+   ```
+
+4. **To run and test Phi-3.5 Labs samples, navigate to your project directory and run the sample project:**:
+
+   ```bash
+   dotnet run --project Phi3Sample.csproj
+   ```
+
+Ensure that the samples run correctly and test various functionalities. Here's a basic sample to verify your setup:
 
 ```csharp
 // Phi3Sample.cs
