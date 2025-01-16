@@ -446,3 +446,11 @@ In conclusion, by following this guide, you've successfully set up a Daytona GPU
 With a reproducible and isolated environment at your disposal, you can now experiment, test, and
 develop and run different LLM workflows without affecting any of your other projects.
 This setup not only streamlines your workflow but also allows you to explore new ideas and technologies.
+
+## References
+
+- [GitHub Repository](https://github.com/stdthoth/daytona-gpu-utilization)
+
+- [Daytona Documentation](https://www.daytona.io/docs)
+
+- [Nvidia CUDA Toolkit Documentation](https://docs.nvidia.com/cuda)
