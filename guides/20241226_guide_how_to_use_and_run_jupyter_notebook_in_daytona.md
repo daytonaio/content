@@ -132,11 +132,18 @@ Paste this code into your `devcontainer.json` file.
 ```yaml
 {
     "name": "Jupyter Notebook Playground",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/anaconda",
     "features": {
-        "ghcr.io/devcontainers/features/python:1": {}
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "latest"
+        }
     },
-    "postCreateCommand": "pip install -r requirements.txt"
+    "runArgs": [
+        "-p",
+        "5000:5000",
+        "-p",
+        "8888:8888"
+    ]
 }
 ```
 
@@ -144,8 +151,8 @@ The `devcontainer.json` content contains configurations to start your Jupyter No
 
 - `name`: This sets the name of the development container environment to `Jupyter Notebook Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
-- `features`: This configuration adds Python setups in the Daytona workspace
-- `postCreateComand`: This installs some Python packages needed for this guide and commonly used into the workspace.
+- `features`: This configuration adds Nodejs setups in the Daytona workspace
+- `runArgs`: This section exposes two ports in the development container - port 8888 for Jupyter Notebook and 5000 for Flask in Python.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](/definitions/20240819_definition_repository.md). For me, I run the command below.
 
@@ -153,44 +160,17 @@ After creating and saving the `devcontainer.json` file, move up back to the root
 cd ..
 ```
 
-### Step 4: Create `requirements.txt` file
-
-In the root directory, create a `requirements.txt` file to specify the Python libraries you want pre-installed in the Jupyter Notebook environment. Add the following content to the file:
-
-```bash
-pandas
-numpy
-matplotlib
-seaborn
-plotly
-scikit-learn
-tensorflow
-keras
-torch
-scipy
-statsmodels
-dask
-pyspark
-nltk
-spacy
-ipython
-requests
-opencv-python
-beautifulsoup4
-```
-
 Now, your directory tree should look like this below
 
 ```
 ├── Airplane_Crashes_and_Fatalities_Since_1908.csv
-└── requirements.txt
 
-0 directories, 2 files
+0 directories, 1 files
 ```
 
 *Note: `.devcontainer/` is not found there with it's content because it's a hidden directory.*
 
-### Step 5: Commit and Push Changes to GitHub
+### Step 4: Commit and Push Changes to GitHub
 
 Run these commands to push your changes to GitHub.
 
@@ -202,7 +182,7 @@ git push
 
 Now, you have successfully pushed our updated repository, which contains our configuration file (`devcontainer.json`) for our Jupyter Notebook environment.
 
-### Step 6: Verify Daytona Installation
+### Step 5: Verify Daytona Installation
 
 Run this command to check `daytona` is properly installed on your PC or Mac.
 
@@ -214,7 +194,7 @@ You should see your version of `daytona` installed.
 
 ![screenshot of my daytona version](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_1.png)
 
-### Step 7: Create a Daytona Workspace with a Jupyter Notebook Environment in it
+### Step 6: Create a Daytona Workspace with a Jupyter Notebook Environment in it
 
 Let’s start the daytona server by running the command.
 
@@ -254,12 +234,36 @@ You can now run this command below to open a terminal shell [environment](/defin
 daytona code WORKSPACE-NAME
 ```
 
+### Step 7: Set up Permission
+
+When inside the dev environment, permission to have write access to the workspace is required.
+
+Run command to get full path to workspace directory.
+
+``bash
+pwd
+```
+
+My full path is `/workspaces/playground-jupyter-notebook`
+
+And the command to setup write access permission
+
+```bash
+sudo chown -R vscode:vscode /workspaces/playground-jupyter-notebook
+```
+
 ### Step 8: Set Password and Run the Jupyter Notebook
+
+Run command below to generate Jupyter config file which contains configurations for Jupyter Notebook.
+
+```bash
+jupyter notebook --generate-config
+```
 
 Run the command below to set a password to access the Jupyter Notebook dashboard.
 
 ```bash
-jupyter server password
+jupyter notebook password
 ```
 
 When you are typing your password, it won't be visible.
@@ -269,7 +273,7 @@ When you are typing your password, it won't be visible.
 Run the command below to start the Jupyter Notebook on [localhost](/definitions/20241226_definition_localhost.md).
 
 ```bash
-jupyter notebook
+jupyter notebook --ip 0.0.0.0 --allow-root
 ```
 
 ![screenshot of running jupyter notebook command](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_6.png)
