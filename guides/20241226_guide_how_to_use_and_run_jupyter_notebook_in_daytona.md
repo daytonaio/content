@@ -226,8 +226,6 @@ After you successfully run the above command you should see a screenshot like mi
 
 ![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_3.png)
 
-![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_4.png)
-
 You can now run this command below to open a terminal shell [environment](/definitions/20240819_definition_development%20environment.md) in your default [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
 
 ```bash
@@ -240,7 +238,7 @@ When inside the dev environment, permission to have write access to the workspac
 
 Run command to get full path to workspace directory.
 
-``bash
+```bash
 pwd
 ```
 
