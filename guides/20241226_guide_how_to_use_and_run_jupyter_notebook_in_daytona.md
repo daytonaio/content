@@ -226,11 +226,11 @@ After you successfully run the above command you should see a screenshot like mi
 
 ![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_3.png)
 
-You can now run this command below to open a terminal shell [environment](/definitions/20240819_definition_development%20environment.md) in your default [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).
+![screenshot of my daytona create command running](assets/20241226_how_to_use_and_run_jupyter_notebook_in_daytona_img_4.png)
 
-```bash
-daytona code WORKSPACE-NAME
-```
+Your default IDE configured in Daytona should open automatically after the creation process is complete.
+
+*Note: Just in case for some reason your configured IDE did not opened automatically,You can run the command `daytona code WORKSPACE-NAME` to open the [environment](/definitions/20240819_definition_development%20environment.md) in your default [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).*
 
 ### Step 7: Set up Permission
 
