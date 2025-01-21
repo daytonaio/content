@@ -229,6 +229,12 @@ Generate a new .NET console application named `MyApp`:
 dotnet new console -n MyApp
 ```
 
+Ensure that you are in the `MyApp` directory on your terminal by running the command:
+
+```bash
+cd MyApp/
+```
+
 ### 3. Restore Dependencies
 
 Restore the project dependencies using:
