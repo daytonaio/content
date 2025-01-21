@@ -29,9 +29,9 @@ In this comprehensive guide, you will learn how to prepare personal loan marketi
 To follow along with a hands-on guide about DuckDB Playground in Daytona, you'll need to have the following;
 
 - An [IDE](/definition/20240819_definition_integrated%20development%20environment%20_ide_.md)(It could be VS Code, or JetBrains) or just a terminal.
-- [Docker](/definition/20240819_definition_docker.md) installation on your PC or Mac. Click here for more info.
-- Daytona installation on your PC or Mac. Click here for more info.
-- A GitHub account to create a [repository](/definition/20240819_definition_repository.md). Link here to create one, if you don’t have one.
+- [Docker](/definition/20240819_definition_docker.md) installation on your PC or Mac. Click [here](https://docker.com) for more info.
+- Daytona installation on your PC or Mac. Click [here](https://www.daytona.io/) for more info.
+- A GitHub account to create a [repository](/definition/20240819_definition_repository.md). Link [here](https://github.com/) to create one, if you don’t have one.
 - Basic knowledge of [Git](/definition/20240819_definition_git.md) and GitHub.
 
 ## What's DuckDB and Why Use it
@@ -118,7 +118,7 @@ The `devcontainer.json` content contains configurations to start your DuckDB env
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](/definition/20240819_definition_repository.md). For me, I run the command below.
 
 ```bash
-cd ../..
+cd ..
 ```
 
 ### Step 4: Commit and Push Changes to GitHub
