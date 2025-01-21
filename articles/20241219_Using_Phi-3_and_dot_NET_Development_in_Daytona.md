@@ -25,21 +25,22 @@ With the release of Phi-3.5, Phi-3 Labs has introduced advanced features for AI 
 
 ## Setting Up the Development Environment
 
-### 1. Initialize the Project
+### 1. Creating a Starter Repository
 
-Start by creating a new directory for your project:
+1. **Create a GitHub Repository**: Start by creating a new GitHub repository for your .NET project.
 
-```bash
-# Create project directory
-mkdir phi-3_devcontainer
-cd phi-3_devcontainer
+2. **Clone the Repository** to your local machine:
+
+ ```bash
+git clone https://github.com/<your-username>/Phi3-Daytona.git
+cd Phi3-Daytona
 ```
 
 ### 2. Create the Development Container
 
 #### 2.1. Set Up the `.devcontainer` Directory
 
-Create the `.devcontainer` folder in your project root:
+In the root of your repository, create a `.devcontainer` directory:
 
 ```bash
 mkdir .devcontainer
@@ -159,33 +160,7 @@ class Program
 
 #### 4.3. Commit the Project to a GitHub Repository
 
-Before launching the Daytona server, ensure your project is pushed to a GitHub repository. Follow these steps:
-
-1. **Initialize a Git Repository**:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit for Phi-3 and .NET setup"
-   ```
-
-2. **Create a GitHub Repository**:
-
-   - Log in to your GitHub account.
-   - Create a new repository, for example, `Phi3-Daytona`.
-
-3. **Add the Remote Repository**:
-
-   ```bash
-   git remote add origin https://github.com/<your-username>/Phi3-Daytona.git
-   ```
-
-4. **Push the Code**:
-
-   ```bash
-   git branch -M main
-   git push -u origin main
-   ```
+Before launching the Daytona server, ensure your project updates are pushed to your GitHub repository.
 
 ### 5. Launch the Daytona Environment
 
@@ -200,12 +175,8 @@ daytona serve
 #### 5.2. Create a New Daytona Workspace
 
 ```bash
-daytona create your-repo-url
+daytona create https://github.com/<your-username>/Phi3-Daytona.git
 ```
-
-This will set up the Daytona workspace and ensure your container is ready to go. You can now run the .NET project with Phi-3.5 Labs samples inside the Daytona environment.
-
----
 
 ## Running and Testing the Sample
 
