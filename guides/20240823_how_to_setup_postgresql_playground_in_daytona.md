@@ -13,11 +13,11 @@ tags: ['Daytona', 'PostgreSQL', 'dev container']
 # Introduction
 
 This guide will walk you through how to set up
-[PostgresQL](definitions/20240823_definitions_postgresql.md) database playground
-in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md)
+[PostgresQL](/definitions/20240823_definitions_postgresql.md) database playground
+in a [Daytona workspace](/definitions/20240819_definition_daytona workspace.md)
 which is a development environment management platform. In a world where
 companies want to increase development,
-[productivity](definitions/20240819_definition_productivity.md) and individual
+[productivity](/definitions/20240819_definition_productivity.md) and individual
 developers want to start coding immediately, Daytona is the best option.
 
 ## TL;DR
@@ -34,7 +34,7 @@ developers want to start coding immediately, Daytona is the best option.
 To follow this guide, you’ll need the software installations below on your PC or
 Mac.
 
-- An [IDE](definitions/20240819*definition_integrated development environment
+- An [IDE](/definitions/20240819*definition_integrated development environment
   \_ide*.md) like VS Code, link to install it
   [here](https://code.visualstudio.com/download) or just a terminal
 - Docker, link to it [here](https://docs.docker.com/engine/install/)
@@ -43,7 +43,7 @@ Mac.
 
 ## Overview of PostgreSQL
 
-[PostgreSQL](definitions/20240823_definitions_postgresql.md) also known as
+[PostgreSQL](/definitions/20240823_definitions_postgresql.md) also known as
 Postgres is the world’s most advanced open-source relational database system
 that has been in use by the developer community for over 35 years with so much
 great love shown to it because of its strong reputation for reliability, feature
@@ -52,7 +52,7 @@ robustness and performance.
 PostgreSQL has so many benefits as to why one should use it some are highlighted
 below:
 
-- [Open Source](definitions/20240819_definition_open source.md) and Free: It’s
+- [Open Source](/definitions/20240819_definition_open%source.md) and Free: It’s
   completely free software to install and use and also its source code is freely
   available online to see how it’s implemented under the hood. You don’t have to
   spend more to purchase a license which might be very expensive
@@ -66,7 +66,7 @@ below:
 ## Overview of Daytona
 
 Daytona is a self-hosted and secure [open
-source](definitions/20240819_definition_open source.md) development environment
+source](/definitions/20240819_definition_open%source.md) development environment
 manager that uses configurations from a project's repository to build a
 workspace and provision the workspace in a platform of your choice. It's
 innovative and incredibly easy for all levels, including beginners, to get
@@ -78,8 +78,8 @@ levels.
 
 Some of the features it boasts of include:
 
-- It has support for popular [IDE](definitions/20240819*definition_integrated
-  development environment \_ide*.md) like VS Code and JetBrains
+- It has support for popular [IDE](/definitions/20240819_definition_integrated
+  development%environment%_ide*.md) like VS Code and JetBrains
 - It connects with repository providers like GitHub, GitLab, BitBucket, and
   Gitea
 - It's very secure. It uses a VPN connection to make that possible
@@ -89,16 +89,16 @@ For more info about Daytona and its features, check [here](https://daytona.io)
 
 ## Creating a DevContainer for PostgreSQL
 
-A [development container](definitions/20240819_definition_development
+A [development container](/definitions/20240819_definition_development
 container.md) (or a devcontainer for short) allows you to use a
-[docker](definitions/20240819_definition_docker.md) container as a full-featured
+[docker](/definitions/20240819_definition_docker.md) container as a full-featured
 development environment. It can be configured to meet your development
 environment needs. It could include tools and runtimes like npm,
-[git](definitions/20240819_definition_git.md), maven,
-[Golang](definitions/20240819_definition_golang.md) compiler and others too.
+[git](/definitions/20240819_definition_git.md), maven,
+[Golang](/definitions/20240819_definition_golang.md) compiler and others too.
 
 For this guide, we will create a
-[devcontainer](definitions/20240819_definition_development container.md) for
+[devcontainer](/definitions/20240819_definition_development container.md) for
 PostgreSQL using a config file. The file is always named `devcontainer.json` and
 has code syntax following the correct config specifications. It is a norm to
 keep the file in a hidden directory call `.devcontainer`
@@ -405,7 +405,7 @@ By following the steps above, you should have learned how to set up a working
 PostgreSQL playground running on Daytona so you could start building or
 practicing with PostgreSQL. From here, you could continue to explore the
 opportunities of using Daytona as your [dev
-environment](definitions/20240819_definition_development environment.md) that
+environment](/definitions/20240819_definition_development environment.md) that
 suit your needs.
 
 ## References
