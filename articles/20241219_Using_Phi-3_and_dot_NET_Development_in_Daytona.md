@@ -1,172 +1,151 @@
 ---
-title: "Using Phi-3 and .NET Development in Daytona"
-description: "Learn how to configure and run Phi-3 Labs samples in a Daytona environment using .NET and devcontainer.json."
-date: 2024-12-24
-author: "Oreoluwa Ajayi"
-tags: ["Phi-3 Labs", "Daytona", ".NET", "AI Development", "devcontainer"]
+
+**Title**: _Using Phi-3 and .NET Development in Daytona_  
+**Description**: _Learn how to configure and run Phi-3 Labs samples in a Daytona environment using .NET and devcontainer.json._  
+**Date**: _2024-12-24_  
+**Author**: _Oreoluwa Ajayi_  
+**Tags**: _["Phi-3 Labs", "Daytona", ".NET", "AI Development", "devcontainer"]_
+
 ---
 
-# Using Phi-3 and .NET Development in Daytona: A Comprehensive Guide
+## Using Phi-3 and .NET Development in Daytona: A Comprehensive Guide
 
-## Introduction
+### Introduction
 
-With the release of [Phi-3.5](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/4225280), the [Phi-3 Labs](https://github.com/microsoft/Phi-3CookBook) project has introduced advanced features and enhancements for [AI and machine learning](https://en.wikipedia.org/wiki/Artificial_intelligence). The Phi-3.5 update brings significant improvements over its predecessors, offering enhanced capabilities for researchers and developers working with [language models](https://en.wikipedia.org/wiki/Large_language_model).
-
-[Daytona](https://www.daytona.io), a cloud-based development environment, provides a powerful platform for managing dependencies and configurations, making it ideal for developing, testing, and deploying AI models. This guide provides a comprehensive walkthrough for setting up and running Phi-3.5 Labs samples in a Daytona environment using .NET, ensuring a streamlined development experience.
+With the release of Phi-3.5, Phi-3 Labs has introduced advanced features for AI and machine learning research. This guide walks you through how to configure and run Phi-3.5 Labs samples in a Daytona environment using .NET, ensuring a seamless development experience.
 
 ### TL;DR
 
-- **Set up Daytona with .NET**: Configure a complete Daytona development environment with .NET
-- **Integrate Phi-3.5 Labs**: Incorporate the latest Phi-3.5 models into your development workflow.
+- **Set up Daytona with .NET**: Configuring a Daytona environment with .NET
+- **Integrate Phi-3.5 Labs**: Incorporate Phi-3.5 models into your development workflow.
 - **Run and Test Samples**: Execute and test Phi-3.5 Labs samples within Daytona.
-- **Best Practices**: Optimize your AI development workflow
+- **Best Practices**: Optimize your AI development workflow.
 
-## Overview of Daytona
-
-Daytona is an open-source platform that transforms cloud-based development environments. It provides developers with consistent, reproducible, and efficient workspaces across various cloud providers.
-
-### Key Benefits of Daytona
-
-1. **Cloud Provider Flexibility**
-
-   - Supports major cloud providers (AWS, GCP, Azure)
-   - Local development support
-   - Easy migration between providers
-
-2. **Development Environment Management**
-
-   - Automated environment setup
-   - Consistent configurations across team members
-   - Version-controlled development environments
-
-3. **Resource Optimization**
-
-   - Dynamic resource allocation
-   - Cost-effective cloud usage
-   - Efficient workspace management
-
-4. **Enhanced Collaboration**
-   - Shared development environments
-   - Real-time collaboration features
-   - Integrated version control
-
-## Prerequisites and Initial Setup
-
-Before proceeding with the setup, ensure you have Docker installed on your system. You can verify the installation by running:
-
-```bash
-docker --version
-```
-
-For detailed installation instructions, follow the [Daytona Installation Guide](https://daytona.io/docs) for your operating system.
+---
 
 ## Setting Up the Development Environment
 
-Let's walk through the process of setting up your development environment for Phi-3 and .NET development using `devcontainer.json`.
+### 1. Initialize the Project
 
-### 1. Project Initialization
-
-First, create a new directory for your project:
+Start by creating a new directory for your project:
 
 ```bash
-# Create project directory, e.g,
+# Create project directory
 mkdir phi-3_devcontainer
 cd phi-3_devcontainer
 ```
 
-### 2. Development Container Setup
+### 2. Create the Development Container
 
-The development container configuration involves creating necessary configuration files and setting up the environment.
+#### 2.1. Set Up the `.devcontainer` Directory
 
-1. **Create Container Configuration Directory:** In your project root, create a `.devcontainer` directory if it doesn’t already exist.
+Create the `.devcontainer` folder in your project root:
 
-   ```bash
-   mkdir .devcontainer
-   cd .devcontainer
-   ```
+```bash
+mkdir .devcontainer
+cd .devcontainer
+```
 
-2. **Create the required configuration directories and files:**
+#### 2.2. Configure `devcontainer.json`
 
-   ```bash
-   touch devcontainer.json
-   touch Dockerfile
-   ```
+In your `.devcontainer` folder, create a `devcontainer.json` file with the following content:
 
-3. **Configure your development container by adding the following content to the `devcontainer.json`:**
+```json
+{
+  "name": "Daytona .NET Environment for Phi-3",
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-vscode.cpptools",
+        "visualstudioexptteam.vscodeintellicode"
+      ]
+    }
+  },
+  "postCreateCommand": "dotnet restore Phi3Sample.csproj"
+}
+```
 
-   ```json
-   {
-     "name": "Daytona .NET Environment",
-     "dockerFile": "Dockerfile",
-     "customizations": {
-       "vscode": {
-         "extensions": [
-           "ms-dotnettools.csharp",
-           "ms-vscode.vscode-node-azure-pack"
-         ],
-         "settings": {
-           "terminal.integrated.shell.linux": "/bin/bash"
-         }
-       }
-     },
-     "postCreateCommand": "dotnet restore"
-   }
-   ```
+#### 2.3. Configure Dockerfile
 
-4. **Set up the `Dockerfile` with the necessary .NET configuration:** Define the base image and install necessary dependencies:
+In your `.devcontainer` folder,, create a `Dockerfile` with the following content to configure the development environment:
 
-   ```dockerfile
-   FROM mcr.microsoft.com/dotnet/aspnet:7.0
-   WORKDIR /app
-   COPY . .
-   RUN dotnet restore
-   ```
+```dockerfile
+# Use the ASP.NET 7.0 runtime as the base image
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
 
-With the .NET environment in place, you need to configure it for Phi-3.5 Labs.
+# Set the working directory
+WORKDIR /app
 
-1. **Install Dependencies**: Add any required dependencies to your `Dockerfile` or install them manually in the Daytona container.
+# Copy the project file and restore dependencies
+COPY Phi3Sample.csproj ./
+RUN dotnet restore
 
-   ```dockerfile
-   RUN apt-get update && apt-get install -y \
-       libfoo-dev \
-       libbar-dev
-   ```
+# Copy the rest of the application files
+COPY . ./
 
-2. **Download Phi-3.5 Models**: Use a script to download and set up Phi-3.5 models. Create a `setup.sh` script:
+# Optional: Build the application
+RUN dotnet build --configuration Release
+```
 
-   ```bash
-   #!/bin/bash
-   mkdir -p /models/phi-3
-   wget -O /models/phi-3/phi-3.5-model.bin https://example.com/phi-3.5-model.bin
-   ```
+### 3. Set Up `setup.sh`
 
-   Add this script to your `postCreateCommand` in `devcontainer.json`:
+Create a `setup.sh` file in the root of your project by running the command below on your terminal:
 
-   ```json
-   "postCreateCommand": "./setup.sh"
-   ```
+```bash
+touch setup.sh
+```
 
-3. **Configure your project file by creating a `Phi3Sample.csproj` file and adding the following script:**
+Add the following script to your file:
 
-   ```xml
-   <Project Sdk="Microsoft.NET.Sdk">
-   <PropertyGroup>
+```bash
+#!/bin/bash
+
+# Ensure .NET dependencies are restored
+dotnet restore Phi3Sample.csproj
+
+# Add any other setup tasks here
+echo "Setup completed successfully!"
+```
+
+### 4. Create the .NET Project
+
+#### 4.1. Create `Phi3Sample.csproj`
+
+In the root of your project, create the following `.NET` project file (`Phi3Sample.csproj`) by running the command on terminal:
+
+```bash
+touch Phi3Sample.csproj
+```
+
+Add this script to the new .NET project file:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-   </PropertyGroup>
-   </Project>
-   ```
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
 
-4. **To run and test Phi-3.5 Labs samples, navigate to your project directory on your terminal and run the sample project:**:
+</Project>
+```
 
-   ```bash
-   dotnet run --project Phi3Sample.csproj
-   ```
+#### 4.2. Create `Phi3Sample.cs`
 
-Ensure that the samples run correctly and test various functionalities. Here's a basic sample to verify your setup:
+Create the ``Phi3Sample.cs` file in your project root by running the command below in your terminal:
+
+```bash
+touch Phi3Sample.cs
+```
+
+Add this script to test the environment setup:
 
 ```csharp
-// Phi3Sample.cs
 using System;
 
 class Program
@@ -178,91 +157,139 @@ class Program
 }
 ```
 
-![Daytona Create RepoUrl](assets/20250109_final_dotnet_run.jpg)
+#### 4.3. Commit the Project to a GitHub Repository
 
-### 3. Launch Daytona Environment
+Before launching the Daytona server, ensure your project is pushed to a GitHub repository. Follow these steps:
 
-After setting up your configuration files and pushing to a new repository, you can now launch your Daytona environment by following these steps:
-
-1. **Start the Daytona server:**
+1. **Initialize a Git Repository**:
 
    ```bash
-   daytona serve
+   git init
+   git add .
+   git commit -m "Initial commit for Phi-3 and .NET setup"
    ```
 
-2. **Initialize your project by creating a new Daytona workspace:**
+2. **Create a GitHub Repository**:
+
+   - Log in to your GitHub account.
+   - Create a new repository, for example, `Phi3-Daytona`.
+
+3. **Add the Remote Repository**:
 
    ```bash
-   daytona create your-repo-url
+   git remote add origin https://github.com/<your-username>/Phi3-Daytona.git
    ```
 
-   ![Daytona Create RepoUrl](assets/20241224_Daytona_create_repo_url3.jpg)
+4. **Push the Code**:
 
-## Advantages for Collaborative Development
+   ```bash
+   git branch -M main
+   git push -u origin main
+   ```
 
-#### 1. Consistent Environments
+### 5. Launch the Daytona Environment
 
-- Every team member works with identical configurations
-- No "works on my machine" issues
-- Simplified onboarding for new team members
+Once you've committed your project files to your repository, follow these steps to launch the Daytona environment:
 
-#### 2. Resource Optimization
+#### 5.1. Start the Daytona Server
 
-- Cloud-based resources scale as needed
-- No need for powerful local hardware
-- Efficient model sharing and versioning
+```bash
+daytona serve
+```
 
-#### 3. Enhanced Collaboration
+#### 5.2. Create a New Daytona Workspace
 
-- Real-time code sharing and pair programming
-- Integrated version control
-- Easy environment replication
+```bash
+daytona create your-repo-url
+```
 
-#### 4. Streamlined Workflow
+This will set up the Daytona workspace and ensure your container is ready to go. You can now run the .NET project with Phi-3.5 Labs samples inside the Daytona environment.
 
-- Automatic dependency management
-- Integrated debugging tools
-- Quick iteration cycles
+---
+
+## Running and Testing the Sample
+
+Once the Daytona environment is ready, navigate to your project folder and run the sample:
+
+Thank you for the clarification. Based on the sequence you provided, here is the exact step-by-step process that was followed in your environment to run a .NET console application:
+
+### 1. Verify .NET Version
+
+Check the installed .NET version to ensure everything is up to date:
+
+```bash
+dotnet --version
+```
+
+### 2. Create a New Console Application
+
+Generate a new .NET console application named `MyApp`:
+
+```bash
+dotnet new console -n MyApp
+```
+
+### 3. Restore Dependencies
+
+Restore the project dependencies using:
+
+```bash
+dotnet restore
+```
+
+This will fetch and restore the necessary NuGet packages specified in the project.
+
+### 4. Run the Application
+
+Finally, run the application to see the output:
+
+```bash
+dotnet run
+```
+
+![Dotnet run](assets/20250109_final_dotnet_run.jpg)
 
 ## Best Practices
 
-#### 1. Resource Management
+### 1. Resource Management
 
 - Monitor memory usage when running models
-- Use appropriate instance sizes
-- Clean up unused resources
+- Optimize instance sizes in Daytona based on your workload
+- Clean up unused resources regularly
 
-#### 2. Version Control
+### 2. Version Control
 
-- Keep models and code versioned
-- Document environment changes
-- Use branching for experiments
+- Keep all code and models under version control
+- Use branching for experimenting with different models and configurations
+- Regularly commit changes to ensure team collaboration remains synchronized
 
-## Troubleshooting
+### 3. Troubleshooting
 
-Here are common issues while setting up your Daytona project and possible solutions:
+#### 1. Model Loading Problems
 
-#### 1. Connectivity Issues
+- Ensure memory allocation is sufficient
+- Verify the model path and download status
 
-If your VPN is configured to handle all IP traffic or if your Firewall is configured to block certain IP addresses, they may prevent Daytona from successfully connecting to our reverse proxy service.
+#### 2. Connectivity Issues
 
-To work around this issue, you may need to add the following IP address exceptions to your VPN or Firewall:
+- If you encounter issues connecting to Daytona’s reverse proxy, check firewall or VPN configurations. Ensure that the following IP addresses are whitelisted:
+  - `35.198.165.62` (Europe-based reverse proxy)
+  - `34.133.75.4` (US-based reverse proxy)
 
-- <span style="color:green">35.198.165.62</span> - Europe-based reverse proxy
-- <span style="color:green">34.133.75.4</span> - US-based reverse proxy
-
-#### 2. Model Loading Problems
-
-- Check memory allocation
-- Verify model path
-- Update dependencies
+---
 
 ## References
 
 - [Daytona Documentation](https://daytona.io/docs)
-- [.NET Installation Guide](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
-- [Microsoft Phi-3.5 Documentation](https://learn.microsoft.com/en-us/ai/phi-3.5)
+- [.NET Installation Guide](https://learn.microsoft.com/en-us/dotnet/?WT.mc_id=dotnet-35129-website)
+- [Microsoft Phi-3.5-mini-guide](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
+
+---
 
 ## Conclusion
 
-Integrating Phi-3 Labs with a Daytona environment using .NET can significantly enhance your development experience. By leveraging the power of Daytonas cloud-based development environment, you can streamline your projects, making it easier to manage dependencies and collaborate with team members.
+This guide walks through setting up a Phi-3 and .NET environment in Daytona, allowing you to run and test Phi-3.5 Labs samples with ease. By using Daytona’s cloud-based workspace management, you can enhance collaboration, streamline workflows, and ensure consistent environments across teams.
+
+```
+
+```
