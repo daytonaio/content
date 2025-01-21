@@ -49,7 +49,13 @@ cd .devcontainer
 
 #### 2.2. Configure `devcontainer.json`
 
-In your `.devcontainer` folder, create a `devcontainer.json` file with the following content:
+In your `.devcontainer` folder, create a `devcontainer.json` file
+
+```bash
+touch devcontainer.json
+```
+
+Add the script below to your `devcontainer.json` to configure the development environment:
 
 ```json
 {
@@ -73,7 +79,13 @@ In your `.devcontainer` folder, create a `devcontainer.json` file with the follo
 
 #### 2.3. Configure Dockerfile
 
-In your `.devcontainer` folder,, create a `Dockerfile` with the following content to configure the development environment:
+In your `.devcontainer` folder, create a `Dockerfile` by running the command:
+
+```bash
+touch Dockerfile
+```
+
+Add the script below to your `Dockerfile` to configure the development environment:
 
 ```dockerfile
 # Use the ASP.NET 7.0 runtime as the base image
