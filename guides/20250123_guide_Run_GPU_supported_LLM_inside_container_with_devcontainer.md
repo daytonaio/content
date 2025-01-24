@@ -1,6 +1,6 @@
 ---
 title: "Run GPU supported LLM inside container with devcontainer"
-description: "A step-by-step guide to run Mamba-Codestral-7B LLM inside container with devcontainer"
+description: "A step-by-step guide to run Mamba-Codestral-7B LLM inside a container with dev container"
 date: 2025-01-23
 author: "Kiran Naragund"
 tags: ["huggingface", "daytona", "llm"]
@@ -60,7 +60,7 @@ You need to create a Hugging Face Token to access or download the model, follow 
 
   - If you don’t already have an account, sign up for free.
 
-- **Step 1.2.2**: Generate an Access Token
+- **Step 1.1.2**: Generate an Access Token
   
   - Navigate to your profile by clicking on your avatar in the top-right corner.
 
@@ -74,7 +74,7 @@ You need to create a Hugging Face Token to access or download the model, follow 
 
   - Click Generate Token.
 
-- **Step 1.2.3**: Save the Token
+- **Step 1.1.3**: Save the Token
   
   - Copy the token and save it securely. You’ll use it later when accessing the model.
 
@@ -85,7 +85,7 @@ Follow the below steps to install the NVIDIA Container Toolkit.
 
 - **Step 1.2.1**: NVIDIA Drivers
   
-  - Ensure the NVIDIA GPU drivers are installed on your host machine by running below command
+  - Ensure the NVIDIA GPU drivers are installed on your host machine by running the below command
 
   ```bash
   nvidia-smi
@@ -97,7 +97,7 @@ Follow the below steps to install the NVIDIA Container Toolkit.
 
 - **Step 1.2.2**: Configure the production repository to install NVIDIA Container Toolkit
 
-  - Run the below commands on your linux machine
+  - Run the below commands on your Linux machine
 
   ```bash
   curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
@@ -106,20 +106,20 @@ Follow the below steps to install the NVIDIA Container Toolkit.
     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
   ```
 
-- **Step 1.2.2**: Update the packages list from the repository
+- **Step 1.2.3**: Update the packages list from the repository
 
   ```bash
   sudo apt-get update
   ```
 
-- **Step 1.2.3**: Install the NVIDIA Container Toolkit packages
+- **Step 1.2.4**: Install the NVIDIA Container Toolkit packages
 
   ```bash
   sudo apt-get install -y nvidia-container-toolkit
   sudo systemctl restart docker
   ```
 
-- **Step 1.2.4**: Verify installation
+- **Step 1.2.5**: Verify installation
   
   ```bash
   docker run --rm --gpus all nvidia/cuda:12.6.0-base-ubuntu24.04 nvidia-smi
@@ -133,7 +133,7 @@ Follow the below steps to install the NVIDIA Container Toolkit.
 ## Step 2: Setting Up the Dev container and project repository
 
 Now, we're going to create a dev container using a **devcontainer.json** configuration file also, 
-writing writing several python scripts and required files.
+writing several [Python](../definitions/20240820_defintion_python.md) scripts and required files.
 
 - **Step 2.1**: Create a new directory
 
@@ -198,7 +198,7 @@ environment variables, and even custom scripts to run during setup.
  
 - **Step 2.4**: Add the Script `download_model.py`
 
-Now we are going to create a script to download the Mamba-Codestral-7B-v0.1 model from Hugging Face.
+Now we will create a script to download the Mamba-Codestral-7B-v0.1 model from Hugging Face.
 
 ```python
 from huggingface_hub import snapshot_download
@@ -227,13 +227,13 @@ print(f"Model downloaded successfully")
 ```
 
 This script uses the Hugging Face `snapshot_download` method to download the `Mamba-Codestral-7B-v0.1` model files.
-It authenticates using a Hugging Face `access token` and saves the model files in a specified directory (`mistral_models`) 
-The script ensures the directory exists, downloads all files from the model repository, and provides status messages
-to confirm the download process.
+It authenticates using a Hugging Face `access token`(make sure to replace with your token) and saves the model files
+in a specified directory (`mistral_models`) The script ensures the directory exists, downloads all files from the model repository,
+and provides status messages to confirm the download process.
 
 - **Step 2.5**: Add the Script `generate_text.py`
 
-Now we are going to create a script to generate the text from Mamba-Codestral-7B-v0.1 model.
+Now we will create a script to generate the text from Mamba-Codestral-7B-v0.1 model.
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -291,7 +291,7 @@ print("Generated text: ", generated_text)
 
 - **Step 2.6**: Add the Script `generate_code.py`
 
-Now we are going to create a script to generate the code from Mamba-Codestral-7B-v0.1 model.
+Now we will create a script to generate the code from Mamba-Codestral-7B-v0.1 model.
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -349,7 +349,7 @@ print("Generated Code:\n", generated_code)
 
 - **Step 2.7**: Add the Script `bug_finder.py`
 
-Now we are going to create a script to find the bugs in the code from Mamba-Codestral-7B-v0.1 model.
+Now we will create a script to find the bugs in the code from Mamba-Codestral-7B-v0.1 model.
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
