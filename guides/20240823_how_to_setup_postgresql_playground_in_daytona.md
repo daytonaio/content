@@ -34,7 +34,7 @@ developers want to start coding immediately, Daytona is the best option.
 To follow this guide, you’ll need the software installations below on your PC or
 Mac.
 
-- An [IDE](/definitions/20240819_definition_integrated%20development environment%20_ide.md) like VS Code, link to install it
+- An [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide.md) like VS Code, link to install it
   [here](https://code.visualstudio.com/download) or just a terminal
 - Docker, link to it [here](https://docs.docker.com/engine/install/)
 - Daytona, link to install it
@@ -107,10 +107,10 @@ commands should work fine on the Mac terminal or the Windows PowerShell.
 ### **Step 1**: Create a Directory
 
 Create a directory with any name of your choice and go into it. I use the name
-`postgresql-playground-in-daytona` and move into the directory.
+`playground-postgresql` and move into the directory.
 
 ```bash
-mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
+mkdir playground-postgresql && cd playground-postgresql
 ```
 
 ### **Step 2**: Create the `.devcontainer` directory
@@ -151,7 +151,7 @@ Your directory structure should look like mine below if you follow along using
 the same directory name as I did earlier.
 
 ```
-postgresql-playground-in-daytona/
+playground-postgresql/
 ├── .devcontainer/
 │   ├── devcontainer.json
 ```
@@ -189,7 +189,7 @@ git commit -m "inital commit"
 
 Create a repository without README, LICENSE, or .gitignore files from GitHub web
 using the name of the directory you created. Mine is
-`postgresql-playground-in-daytona`.
+`playground-postgresql`.
 
 You should see a code block similar to this on your GitHub web page. Copy it and
 paste it to your terminal or Windows Powershell for Windows PC users(Git must be
@@ -206,7 +206,7 @@ password.
 
 You can find the GitHub repository where my devcontainer config is located which
 I used for this guide
-[here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later
+[here](https://github.com/c0d33ngr/playground-postgresql). I later
 added a README and LICENSE files which weren't necessary to follow along with
 this guide.
 
@@ -257,7 +257,7 @@ daytona ide
 Modified the terminal command below to create the dev environment of the
 repository you created in GitHub and follow the prompts after you run it. Don't
 forget to use the correct GitHub URL, in my case it's
-`https://github.com/c0d33ngr/postgresql-playground-in-daytona.git`
+`https://github.com/c0d33ngr/playground-postgresql.git`
 
 ```bash
 daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
@@ -279,7 +279,7 @@ You should see that the workspace is running.
 Run this command to open the workspace in the IDE you selected when setting up
 your preferred one. The name of the workspace is usually the repository name if
 you didn't modify it when prompted in the creation of the workspace. In my case,
-it's `postgresql-playground-in-daytona`
+it's `playground-postgresql`
 
 ```bash
 daytona code WORKSPACE-NAME
