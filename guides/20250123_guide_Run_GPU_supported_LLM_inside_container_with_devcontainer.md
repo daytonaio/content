@@ -17,6 +17,21 @@ can unlock countless possibilities.
 This guide will walk you through how to set up and run the Mamba-Codestral-7B-v0.1 model,
 hosted on [Hugging Face](https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1), within a container with [devcontainer](../definitions/20240819_definition_development%20container.md).
 
+## TL;DR
+
+- Required tools and knowledge for hands-on learning.
+- Setting up a project template.
+- Creating and running project workspace in Daytona.
+- Conclusion
+
+## Prerequisites
+
+To follow this guide, you'll need to have the following:
+- Understanding of [Python](../definitions/20240820_defintion_python.md), [LLMs](../definitions/20241219_definition_llm.md), [Development Environment](../definitions/20240819_definition_development%20environment.md) and [Dev Containers](../definitions/20240819_definition_development%20container.md)
+- An IDE (like [VS Code](https://code.visualstudio.com/))
+- Docker (download from [here](https://www.docker.com/))
+- Daytona latest version (install from [here](https://www.daytona.io/docs/installation/installation/))
+
 ## Overview of Mamba-Codestral-7B
 
 Mamba-Codestral-7B-v0.1 is a powerful 7-billion parameter large language model ([LLM](../definitions/20241219_definition_llm.md)) 
