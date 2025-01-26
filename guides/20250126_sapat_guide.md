@@ -5,7 +5,7 @@ description:
   maximum of 160 characters.'
 date: 2025-01-26
 author: 'Jeffrey Whewhetu'
-tags: ['one', 'two', 'three']
+tags: ['transcription tool', 'transcribe', 'video transcription']
 ---
 
 # Guide to Using Sapat: The Video Transcription Tool  
@@ -18,17 +18,29 @@ This guide will walk you through Sapat's features, setup process, and best pract
 
 ## TL;DR
 - Prerequisites
--
+- What's Sapat
+- Features
+- How it Works
+- How to Transcribe a Video file with Sapat
+- How to Transcribe an Audio file with Sapat
+- Tips and Best Practices
+- Common issues and Troubleshootings
+- Conclusion
+- References
 
 ## Prerequisites
 
 Before using Sapat, ensure you have the following:  
-- **Python 3.6+** installed on your system.  
-- **ffmpeg** installed and added to your system's PATH.  
-- **API access** for one or more supported services:  
+
+- **Python 3.6+** installed on your system.
+
+- **ffmpeg** installed and added to your system's PATH.
+
+- **API access** for one or more supported services:
   - Azure OpenAI  
   - Groq Cloud  
-  - OpenAI  
+  - OpenAI
+
 - A valid `.env` file with your API credentials.  
 
 ## What's Sapat?  
@@ -37,19 +49,27 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 ## Features
 
-- **Video-to-Audio Conversion**: Converts video files into MP3 format using ffmpeg for transcription.  
-- **Multi-API Support**: Works with Azure OpenAI, Groq, and OpenAI APIs.  
-- **Batch Processing**: Handles individual files or entire directories for transcription.  
-- **Customizable Parameters**: Adjust language, audio quality, temperature, and prompts to guide transcription models.  
-- **Temporary File Cleanup**: Automatically removes intermediate MP3 files after transcription.  
+- **Video-to-Audio Conversion**: Converts video files into MP3 format using ffmpeg for transcription.
+
+- **Multi-API Support**: Works with Azure OpenAI, Groq, and OpenAI APIs.
+
+- **Batch Processing**: Handles individual files or entire directories for transcription.
+
+- **Customizable Parameters**: Adjust language, audio quality, temperature, and prompts to guide transcription models.
+
+- **Temporary File Cleanup**: Automatically removes intermediate MP3 files after transcription.
 
 ## How It Works  
 
-1. **Input File**: Sapat accepts video or audio files as input.  
-2. **Audio Conversion**: Videos are converted to MP3 format using ffmpeg.  
-3. **API Transcription**: The audio file is sent to the selected API for transcription.  
-4. **Output**: The transcription is saved as a `.txt` file in the same directory as the input file.  
-5. **Cleanup**: Temporary files (e.g., MP3) are deleted after transcription.  
+1. **Input File**: Sapat accepts video or audio files as input.
+
+2. **Audio Conversion**: Videos are converted to MP3 format using ffmpeg.
+
+3. **API Transcription**: The audio file is sent to the selected API for transcription.
+
+4. **Output**: The transcription is saved as a `.txt` file in the same directory as the input file.
+
+5. **Cleanup**: Temporary files (e.g., MP3) are deleted after transcription.
 
 ## How to Transcribe a Video File with Sapat  
 
@@ -85,10 +105,13 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 - **Choose the Right API**: Use the API that suits your transcription needs:  
   - Azure OpenAI for enterprise solutions.  
   - Groq for faster processing.  
-  - OpenAI for general transcription.  
-- **Optimize Audio Quality**: For best results, use high-quality audio (`--quality H`).  
-- **Leverage Prompts**: Provide a `--prompt` to guide the transcription model for specific contexts or terminology.  
-- **Batch Process**: Save time by processing an entire directory instead of individual files.  
+  - OpenAI for general transcription.
+
+- **Optimize Audio Quality**: For best results, use high-quality audio (`--quality H`).
+
+- **Leverage Prompts**: Provide a `--prompt` to guide the transcription model for specific contexts or terminology.
+
+- **Batch Process**: Save time by processing an entire directory instead of individual files.
 
 ## Common Issues and Troubleshooting  
 
@@ -102,8 +125,9 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 ### Issue: API Errors
 
-- **Rate Limits**: Ensure your API account has sufficient credits or quotas.  
-- **Invalid Keys**: Double-check your API keys in the `.env` file.  
+- **Rate Limits**: Ensure your API account has sufficient credits or quotas.
+
+- **Invalid Keys**: Double-check your API keys in the `.env` file.
 
 ### Issue: Poor Transcription Accuracy
 
@@ -119,3 +143,5 @@ Sapat is a powerful tool that simplifies the transcription of video and audio fi
 For more advanced configurations or support, consult the README or reach out to the developer community. Happy transcribing!  
 
 ## References
+
+_[Source Cdoe Repository for Sapat Transcription Tool](https://github.com/nkkko/sapat)_
