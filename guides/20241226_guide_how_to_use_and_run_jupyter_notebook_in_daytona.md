@@ -15,7 +15,7 @@ Jupyter Notebook is a powerful and useful tool for data scientists, AI engineers
 With the power of Daytona Dev Environment and Jupyter Notebook, our workflow can be as smooth and streamlined as possible.
 In this comprehensive guide, we'll explore everything you need to get started using Jupyter Notebook in a Daytona playground, including hands-on experience with a real-world practical project.
 
-### TL;DR
+## TL;DR
 
 - Prerequisites
 - What's Jupyter Notebook and Everything to Know to Get Started
@@ -24,6 +24,7 @@ In this comprehensive guide, we'll explore everything you need to get started us
 - Demo: Exploring the Jupyter Notebook UI
 - Building a Jupyter Notebook Project in the Daytona Playground
 - Conclusion
+- References
 
 ## Prerequisites
 
