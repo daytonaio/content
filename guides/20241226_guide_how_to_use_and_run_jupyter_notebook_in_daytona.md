@@ -539,3 +539,5 @@ Throughout the example project, we applied Jupyter's features to clean, analyze,
 * [Kaggle Airplane Crashes dataset](https://www.kaggle.com/datasets/imtkaggleteam/airplane-crashes)
 
 * [Kaggle Data Visualization Project](https://www.kaggle.com/code/ruslankl/airplane-crashes-data-visualization#)
+
+* [Source Code Repository for Jupyter Notebook Playground](https://github.com/c0d33ngr/playground-jupyter-notebook)
