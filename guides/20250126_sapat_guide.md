@@ -18,8 +18,9 @@ This guide will walk you through Sapat's features, setup process, and best pract
 
 ## TL;DR
 - Prerequisites
+- What's Trancription and it's Use Cases
 - What's Sapat
-- Features
+- Features of Sapat
 - How it Works
 - How to Transcribe a Video file with Sapat
 - How to Transcribe an Audio file with Sapat
