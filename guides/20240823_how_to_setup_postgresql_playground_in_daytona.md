@@ -196,7 +196,7 @@ paste it to your terminal or Windows Powershell for Windows PC users(Git must be
 installed in it)
 
 ```bash
-git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME.git
+git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME
 git branch -M main
 git push -u origin main
 ```
@@ -257,10 +257,10 @@ daytona ide
 Modified the terminal command below to create the dev environment of the
 repository you created in GitHub and follow the prompts after you run it. Don't
 forget to use the correct GitHub URL, in my case it's
-`https://github.com/c0d33ngr/playground-postgresql.git`
+`https://github.com/c0d33ngr/playground-postgresql`
 
 ```bash
-daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
+daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
 ```
 
 ### Step 5
