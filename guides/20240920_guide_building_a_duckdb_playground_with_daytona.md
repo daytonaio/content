@@ -465,3 +465,4 @@ Throughout this guide, you have gained practical experience in:
 - [DuckDB Python Examples](https://github.com/duckdb/duckdb/blob/main/examples/python/duckdb-python.py)
 - [DuckDB Wikipedia Page](https://en.wikipedia.org/wiki/DuckDB)
 - [DataCamp Data Project](https://www.datacamp.com/projects/1613)
+- [Source Code Repository for DuckDB Playground in Daytona](https://github.com/c0d33ngr/playground-duckdb)
