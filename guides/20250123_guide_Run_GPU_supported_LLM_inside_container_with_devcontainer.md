@@ -10,18 +10,21 @@ tags: ["huggingface", "daytona", "llm"]
 
 # Introduction
 
-The world of AI and large language models ([LLMs](../definitions/20241219_definition_llm.md)) is expanding rapidly,
-and integrating these cutting-edge tools into your development environment
-can unlock countless possibilities. 
+Large language models ([LLMs](../definitions/20241219_definition_llm.md)) are becoming increasingly important in AI and software development.
+They are great for tasks like code generation, debugging, and creating natural language responses.
+Running these models in a containerized environment makes them easier to set up, portable, and GPU-accelerated.
 
 This guide will walk you through how to set up and run the Mamba-Codestral-7B-v0.1 model,
 hosted on [Hugging Face](https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1), within a container with [devcontainer](../definitions/20240819_definition_development%20container.md).
 
 ## TL;DR
 
-- Required tools and knowledge for hands-on learning.
-- Setting up a project template.
-- Creating and running project workspace in Daytona.
+- Required tools and knowledge for hands-on learning
+- Overview of Mamba-Codestral-7B
+- Preparations
+- Setting Up the Dev container and project repository
+- Running LLM in Daytona with dev container
+- Confirmation
 - Conclusion
 
 ## Prerequisites
@@ -31,6 +34,8 @@ To follow this guide, you'll need to have the following:
 - An IDE (like [VS Code](https://code.visualstudio.com/))
 - Docker (download from [here](https://www.docker.com/))
 - Daytona latest version (install from [here](https://www.daytona.io/docs/installation/installation/))
+
+**Note:** _[In this guide, Linux Operating System is used]_
 
 ## Overview of Mamba-Codestral-7B
 
@@ -108,7 +113,7 @@ Follow the below steps to install the NVIDIA Container Toolkit.
 
   This should display information about your GPU.
 
-  If you do not have drivers installed, check out [here](https://www.nvidia.com/en-us/drivers/) to install depending on your Operating System and GPU.
+  If you do not have drivers installed, check out [here](https://www.nvidia.com/en-us/drivers/) to install depending on your Operating System(Windows/Linux) and GPU.
 
 - **Step 1.2.2**: Configure the production repository to install NVIDIA Container Toolkit
 
@@ -128,6 +133,8 @@ Follow the below steps to install the NVIDIA Container Toolkit.
   ```
 
 - **Step 1.2.4**: Install the NVIDIA Container Toolkit packages
+
+  - Run the below commands on your Linux machine
 
   ```bash
   sudo apt-get install -y nvidia-container-toolkit
