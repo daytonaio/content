@@ -12,7 +12,7 @@ tags: ["huggingface", "daytona", "llm"]
 
 Large language models ([LLMs](../definitions/20241219_definition_llm.md)) are becoming increasingly important in AI and software development.
 They are great for tasks like code generation, debugging, and creating natural language responses.
-Running these models in a containerized environment makes them easier to set up, portable, and GPU-accelerated.
+Running these models in a [containerized](../definitions/20240819_definition_containerization.md) environment makes them easier to set up, portable, and GPU-accelerated.
 
 This guide will walk you through how to set up and run the Mamba-Codestral-7B-v0.1 model,
 hosted on [Hugging Face](https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1), within a container with [devcontainer](../definitions/20240819_definition_development%20container.md).
