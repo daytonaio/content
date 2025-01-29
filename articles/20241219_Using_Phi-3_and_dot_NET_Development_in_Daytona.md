@@ -172,7 +172,7 @@ class Program
 
 #### 4.3. Commit the Project to a GitHub Repository
 
-Before launching the Daytona server, ensure your project updates are pushed to your GitHub repository.
+Before launching the Daytona server, ensure your project updates are pushed to the GitHub repository.
 
 ### 5. Launch the Daytona Environment
 
