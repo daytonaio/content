@@ -148,7 +148,7 @@ Paste this code into your `devcontainer.json` file.
     "onCreateCommand": {
       "update": "sudo apt update && sudo apt upgrade -y",
       "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
-    },
+    }
 }
 ```
 
