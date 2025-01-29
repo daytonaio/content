@@ -144,7 +144,11 @@ Paste this code into your `devcontainer.json` file.
         "5000:5000",
         "-p",
         "8888:8888"
-    ]
+    ],
+    "onCreateCommand": {
+      "update": "sudo apt update && sudo apt upgrade -y",
+      "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
+    },
 }
 ```
 
@@ -154,6 +158,7 @@ The `devcontainer.json` content contains configurations to start your Jupyter No
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
 - `features`: This configuration adds Nodejs setups in the Daytona workspace
 - `runArgs`: This section exposes two ports in the development container - port 8888 for Jupyter Notebook and 5000 for Flask in Python.
+- `onCreateCommand`: This section update and upgrade the system packages in the environment and also give the `$USER` ownership to the workspace directory.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](/definitions/20240819_definition_repository.md). For me, I run the command below.
 
@@ -233,25 +238,7 @@ Your default IDE configured in Daytona should open automatically after the creat
 
 *Note: Just in case for some reason your configured IDE did not opened automatically,You can run the command `daytona code WORKSPACE-NAME` to open the [environment](/definitions/20240819_definition_development%20environment.md) in your default [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide_.md) you choose when installing Daytona (Replace `WORKSPACE-NAME` with the name you used when creating the workspace above, in my case it's `playground-jupyter-notebook`).*
 
-### Step 7: Set up Permission
-
-When inside the dev environment, permission to have write access to the workspace is required.
-
-Run command to get full path to workspace directory.
-
-```bash
-pwd
-```
-
-My full path is `/workspaces/playground-jupyter-notebook`
-
-And the command to setup write access permission
-
-```bash
-sudo chown -R vscode:vscode /workspaces/playground-jupyter-notebook
-```
-
-### Step 8: Set Password and Run the Jupyter Notebook
+### Step 7: Set Password and Run the Jupyter Notebook
 
 Run command below to generate Jupyter config file which contains configurations for Jupyter Notebook.
 
