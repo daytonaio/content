@@ -31,6 +31,8 @@ hosted on [Hugging Face](https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.
 
 To follow this guide, you'll need to have the following:
 - Understanding of [Python](../definitions/20240820_defintion_python.md), [LLMs](../definitions/20241219_definition_llm.md), [Development Environment](../definitions/20240819_definition_development%20environment.md) and [Dev Containers](../definitions/20240819_definition_development%20container.md)
+- A Linux machine with the following specifications
+  - Minimum: 32GB RAM, 8 CPUs, and a GPU with at least 16GB VRAM for optimal performance.
 - An IDE (like [VS Code](https://code.visualstudio.com/))
 - Docker (download from [here](https://www.docker.com/))
 - Daytona latest version (install from [here](https://www.daytona.io/docs/installation/installation/))
@@ -113,7 +115,16 @@ Follow the below steps to install the NVIDIA Container Toolkit.
 
   This should display information about your GPU.
 
-  If you do not have drivers installed, check out [here](https://www.nvidia.com/en-us/drivers/) to install depending on your Operating System(Windows/Linux) and GPU.
+  If you do not have drivers installed run the below commands:
+
+  ```bash
+  sudo apt update
+  sudo apt install -y nvidia-driver-550
+  sudo reboot
+  ```
+  
+  You can replace `550` with the appropriate version compatible with your CUDA version.
+  check out [here](https://www.nvidia.com/en-us/drivers/) to install depending on your Operating System(Windows/Linux) and GPU.
 
 - **Step 1.2.2**: Configure the production repository to install NVIDIA Container Toolkit
 
