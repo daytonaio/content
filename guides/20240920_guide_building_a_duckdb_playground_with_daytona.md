@@ -104,6 +104,10 @@ Paste this code into your `devcontainer.json` file.
         "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
         "ghcr.io/devcontainers/features/python:1": {}
     },
+    "onCreateCommand": {
+      "update": "sudo apt update && sudo apt upgrade -y",
+      "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
+    },
     "postCreateCommand": "pip install duckdb matplotlib pandas"
 }
 ```
@@ -113,6 +117,7 @@ The `devcontainer.json` content contains configurations to start your DuckDB env
 - `name`: This sets the name of the development container environment to `DuckDB Playground`.
 - `image`: This uses a base Ubuntu image from the Microsoft image repository.
 - `features`: This configuration adds DuckDB installation and Python setups in the Daytona workspace
+- `onCreateCommand`: This sectiion update and upgrade the system packages in the environment and also give the `$USER` ownership to the workspace directory.
 - `postCreateComand`: This installs the Python packages needed for this guide into the workspace.
 
 After creating and saving the `devcontainer.json` file, move up back to the root directory of your clone [repository](/definitions/20240819_definition_repository.md). For me, I run the command below.

@@ -135,6 +135,10 @@ it, and then save it.
     "ghcr.io/itsmechlark/features/postgresql:1": {
       "version": "latest"
     }
+  },
+  "onCreateCommand": {
+      "update": "sudo apt update && sudo apt upgrade -y",
+      "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
   }
 }
 ```
@@ -146,6 +150,7 @@ development container environment.
   `PostgreSQL Dev Container Playground`.
 - **`image`:** This uses a base Ubuntu image from Microsoft image repository.
 - **`features`:** This configuration adds PostgreSQL setup in the environment.
+- **onCreateCommand:** This section update and upgrade the system packages in the environment and also give the `$USER` ownership to the workspace directory.
 
 Your directory structure should look like mine below if you follow along using
 the same directory name as I did earlier.
