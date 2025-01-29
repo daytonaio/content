@@ -2,7 +2,7 @@
 
 **Title**: _Using Phi-3 and .NET Development in Daytona_  
 **Description**: _Learn how to configure and run Phi-3 Labs samples in a Daytona environment using .NET and devcontainer.json._  
-**Date**: _2024-12-24_  
+**Date**: _2025-01-29_  
 **Author**: _Oreoluwa Ajayi_  
 **Tags**: _["Phi-3 Labs", "Daytona", ".NET", "AI Development", "devcontainer"]_
 
@@ -190,9 +190,7 @@ daytona create https://github.com/<your-username>/Phi3-Daytona.git
 
 ## Running and Testing the Sample
 
-Once the Daytona environment is ready, navigate to your project folder and run the sample:
-
-Thank you for the clarification. Based on the sequence you provided, here is the exact step-by-step process that was followed in your environment to run a .NET console application:
+Once the Daytona environment is ready, navigate to your project folder and follow the steps below:
 
 ### 1. Verify .NET Version
 
@@ -275,7 +273,7 @@ dotnet run
 
 ## Conclusion
 
-This guide walks through setting up a Phi-3 and .NET environment in Daytona, allowing you to run and test Phi-3.5 Labs samples with ease. By using Daytona’s cloud-based workspace management, you can enhance collaboration, streamline workflows, and ensure consistent environments across teams.
+This guide walks through setting up a Phi-3 and .NET environment in Daytona, allowing you to run and test Phi-3.5 Labs samples with ease. By using Daytona's cloud-based workspace management, you can enhance collaboration, streamline workflows, and ensure consistent environments across teams.
 
 ```
 
