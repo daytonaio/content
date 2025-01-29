@@ -72,7 +72,7 @@ In your `.devcontainer` folder, create a `devcontainer.json` file with the follo
 
 #### 2.3. Configure Dockerfile
 
-In your `.devcontainer` folder,, create a `Dockerfile` with the following content to configure the development environment:
+In your `.devcontainer` folder, create a `Dockerfile` with the following content to configure the development environment:
 
 ```dockerfile
 # Use the ASP.NET 7.0 runtime as the base image
@@ -94,7 +94,7 @@ RUN dotnet build --configuration Release
 
 ### 3. Set Up `setup.sh`
 
-Create a `setup.sh` file in the root of your project by running the command below on your terminal:
+Create a `setup.sh` file in your `.devcontainer` folder, by running the command below on your terminal:
 
 ```bash
 touch setup.sh
@@ -159,7 +159,7 @@ class Program
 
 #### 4.3. Commit the Project to a GitHub Repository
 
-Before launching the Daytona server, ensure your project is pushed to a GitHub repository. Follow these steps:
+Before launching the Daytona server, ensure your project is pushed to a GitHub repository. Run these commands in your terminal, also ensure to be in your project terminal:
 
 1. **Initialize a Git Repository**:
 
