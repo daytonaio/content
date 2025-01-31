@@ -1,39 +1,17 @@
 {
   "default": true,
+  "MD013": {
+    "line_length": 300,
+    "ignore_code_blocks": true
+  },
+  "MD033": {
+    "allowed_elements": ["img"]
+  },
   "ignores": [
-    "node_modules/**",
-    "dist/**",
-    "build/**",
-    "coverage/**",
+    "**/node_modules/**",
+    "**/dist/**",
     "**/CHANGELOG.md",
-    "**/LICENSE.md",
+    "**/LICENSE*",
     "**/README.md"
-  ],
-  "MD001": { "level": 1 },
-  "MD002": { "level": 1 },
-  "MD003": { "style": "atx" },
-  "MD004": { "style": "dash" },
-  "MD005": false,
-  "MD013": { "line_length": 300 },
-  "MD022": true,
-  "MD023": true,
-  "MD025": false,
-  "MD026": false,
-  "MD031": false,
-  "MD032": false,
-  "MD033": false,
-  "MD034": true,
-  "MD035": { "style": "---" },
-  "MD036": false,
-  "MD037": true,
-  "MD038": true,
-  "MD039": true,
-  "MD040": false,
-  "MD041": false,
-  "MD042": false,
-  "MD043": false,
-  "MD045": false,
-  "MD046": { "style": "fenced" },
-  "MD047": false,
-  "MD048": false
+  ]
 }
