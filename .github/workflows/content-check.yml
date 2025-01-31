@@ -22,17 +22,17 @@ jobs:
         contributor_login=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
         pr_branch=$(jq -r '.pull_request.head.ref' "$GITHUB_EVENT_PATH")
         
-        # Fetch open PRs from the BASE repository
-        open_prs=$(gh pr list --repo $GITHUB_REPOSITORY --state open --json number,author,headRefName)
+        # Fetch open PRs from the repository
+        open_prs=$(gh pr list --repo $GITHUB_REPOSITORY --state open --json author,headRefName)
         echo "All open PRs: $open_prs"
         
-        # Filter PRs by author
-        contributor_prs=$(echo "$open_prs" | jq -c --arg login "$contributor_login" '.[] | select(.author.login == $login)')
-        echo "Contributor's PRs: $contributor_prs"
+        # Filter PRs by author and convert to array
+        contributor_prs=$(echo "$open_prs" | jq --arg login "$contributor_login" '[.[] | select(.author.login == $login)]')
+        echo "Filtered PRs: $contributor_prs"
         
-        pr_count=$(echo "$contributor_prs" | jq -s 'length')
+        pr_count=$(echo "$contributor_prs" | jq 'length')
         echo "PR count: $pr_count"
-
+    
         if [ "$pr_count" -gt 1 ]; then
           echo "has_open_prs=true" >> "$GITHUB_OUTPUT"
         elif [ "$pr_count" -eq 1 ]; then
