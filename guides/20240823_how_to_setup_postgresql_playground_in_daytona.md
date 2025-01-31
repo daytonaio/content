@@ -13,11 +13,11 @@ tags: ['Daytona', 'PostgreSQL', 'dev container']
 # Introduction
 
 This guide will walk you through how to set up
-[PostgresQL](definitions/20240823_definitions_postgresql.md) database playground
-in a [Daytona workspace](definitions/20240819_definition_daytona workspace.md)
+[PostgresQL](/definitions/20240823_definition_postgresql.md) database playground
+in a [Daytona workspace](/definitions/20240819_definition_daytona%20workspace.md)
 which is a development environment management platform. In a world where
 companies want to increase development,
-[productivity](definitions/20240819_definition_productivity.md) and individual
+[productivity](/definitions/20240819_definition_productivity.md) and individual
 developers want to start coding immediately, Daytona is the best option.
 
 ## TL;DR
@@ -34,8 +34,7 @@ developers want to start coding immediately, Daytona is the best option.
 To follow this guide, you’ll need the software installations below on your PC or
 Mac.
 
-- An [IDE](definitions/20240819*definition_integrated development environment
-  \_ide*.md) like VS Code, link to install it
+- An [IDE](/definitions/20240819_definition_integrated%20development%20environment%20_ide.md) like VS Code, link to install it
   [here](https://code.visualstudio.com/download) or just a terminal
 - Docker, link to it [here](https://docs.docker.com/engine/install/)
 - Daytona, link to install it
@@ -43,7 +42,7 @@ Mac.
 
 ## Overview of PostgreSQL
 
-[PostgreSQL](definitions/20240823_definitions_postgresql.md) also known as
+[PostgreSQL](/definitions/20240823_definition_postgresql.md) also known as
 Postgres is the world’s most advanced open-source relational database system
 that has been in use by the developer community for over 35 years with so much
 great love shown to it because of its strong reputation for reliability, feature
@@ -52,7 +51,7 @@ robustness and performance.
 PostgreSQL has so many benefits as to why one should use it some are highlighted
 below:
 
-- [Open Source](definitions/20240819_definition_open source.md) and Free: It’s
+- [Open Source](/definitions/20240819_definition_open%20source.md) and Free: It’s
   completely free software to install and use and also its source code is freely
   available online to see how it’s implemented under the hood. You don’t have to
   spend more to purchase a license which might be very expensive
@@ -66,7 +65,7 @@ below:
 ## Overview of Daytona
 
 Daytona is a self-hosted and secure [open
-source](definitions/20240819_definition_open source.md) development environment
+source](/definitions/20240819_definition_open%20source.md) development environment
 manager that uses configurations from a project's repository to build a
 workspace and provision the workspace in a platform of your choice. It's
 innovative and incredibly easy for all levels, including beginners, to get
@@ -78,8 +77,8 @@ levels.
 
 Some of the features it boasts of include:
 
-- It has support for popular [IDE](definitions/20240819*definition_integrated
-  development environment \_ide*.md) like VS Code and JetBrains
+- It has support for popular [IDE](/definitions/20240819_definition_integrated
+  development%20environment%20_ide.md) like VS Code and JetBrains
 - It connects with repository providers like GitHub, GitLab, BitBucket, and
   Gitea
 - It's very secure. It uses a VPN connection to make that possible
@@ -89,16 +88,15 @@ For more info about Daytona and its features, check [here](https://daytona.io)
 
 ## Creating a DevContainer for PostgreSQL
 
-A [development container](definitions/20240819_definition_development
-container.md) (or a devcontainer for short) allows you to use a
-[docker](definitions/20240819_definition_docker.md) container as a full-featured
+A [development container](/definitions/20240819_definition_development%20container.md) (or a devcontainer for short) allows you to use a
+[docker](/definitions/20240819_definition_docker.md) container as a full-featured
 development environment. It can be configured to meet your development
 environment needs. It could include tools and runtimes like npm,
-[git](definitions/20240819_definition_git.md), maven,
-[Golang](definitions/20240819_definition_golang.md) compiler and others too.
+[git](/definitions/20240819_definition_git.md), maven,
+[Golang](/definitions/20240819_definition_golang.md) compiler and others too.
 
 For this guide, we will create a
-[devcontainer](definitions/20240819_definition_development container.md) for
+[devcontainer](/definitions/20240819_definition_development%20container.md) for
 PostgreSQL using a config file. The file is always named `devcontainer.json` and
 has code syntax following the correct config specifications. It is a norm to
 keep the file in a hidden directory call `.devcontainer`
@@ -109,10 +107,10 @@ commands should work fine on the Mac terminal or the Windows PowerShell.
 ### **Step 1**: Create a Directory
 
 Create a directory with any name of your choice and go into it. I use the name
-`postgresql-playground-in-daytona` and move into the directory.
+`playground-postgresql` and move into the directory.
 
 ```bash
-mkdir postgresql-playground-in-daytona && cd postgresql-playground-in-daytona
+mkdir playground-postgresql && cd playground-postgresql
 ```
 
 ### **Step 2**: Create the `.devcontainer` directory
@@ -137,6 +135,10 @@ it, and then save it.
     "ghcr.io/itsmechlark/features/postgresql:1": {
       "version": "latest"
     }
+  },
+  "onCreateCommand": {
+      "update": "sudo apt update && sudo apt upgrade -y",
+      "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
   }
 }
 ```
@@ -148,12 +150,13 @@ development container environment.
   `PostgreSQL Dev Container Playground`.
 - **`image`:** This uses a base Ubuntu image from Microsoft image repository.
 - **`features`:** This configuration adds PostgreSQL setup in the environment.
+- **onCreateCommand:** This section update and upgrade the system packages in the environment and also give the `$USER` ownership to the workspace directory.
 
 Your directory structure should look like mine below if you follow along using
 the same directory name as I did earlier.
 
 ```
-postgresql-playground-in-daytona/
+playground-postgresql/
 ├── .devcontainer/
 │   ├── devcontainer.json
 ```
@@ -191,14 +194,14 @@ git commit -m "inital commit"
 
 Create a repository without README, LICENSE, or .gitignore files from GitHub web
 using the name of the directory you created. Mine is
-`postgresql-playground-in-daytona`.
+`playground-postgresql`.
 
 You should see a code block similar to this on your GitHub web page. Copy it and
 paste it to your terminal or Windows Powershell for Windows PC users(Git must be
 installed in it)
 
 ```bash
-git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME.git
+git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-DIRECTORY-NAME
 git branch -M main
 git push -u origin main
 ```
@@ -208,7 +211,7 @@ password.
 
 You can find the GitHub repository where my devcontainer config is located which
 I used for this guide
-[here](https://github.com/c0d33ngr/postgresql-playground-in-daytona). I later
+[here](https://github.com/c0d33ngr/playground-postgresql). I later
 added a README and LICENSE files which weren't necessary to follow along with
 this guide.
 
@@ -259,10 +262,10 @@ daytona ide
 Modified the terminal command below to create the dev environment of the
 repository you created in GitHub and follow the prompts after you run it. Don't
 forget to use the correct GitHub URL, in my case it's
-`https://github.com/c0d33ngr/postgresql-playground-in-daytona.git`
+`https://github.com/c0d33ngr/playground-postgresql`
 
 ```bash
-daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME.git
+daytona create https://github.com/YOUR-USERNAME/YOUR-DIRECTORY-NAME
 ```
 
 ### Step 5
@@ -281,7 +284,7 @@ You should see that the workspace is running.
 Run this command to open the workspace in the IDE you selected when setting up
 your preferred one. The name of the workspace is usually the repository name if
 you didn't modify it when prompted in the creation of the workspace. In my case,
-it's `postgresql-playground-in-daytona`
+it's `playground-postgresql`
 
 ```bash
 daytona code WORKSPACE-NAME
@@ -405,7 +408,7 @@ By following the steps above, you should have learned how to set up a working
 PostgreSQL playground running on Daytona so you could start building or
 practicing with PostgreSQL. From here, you could continue to explore the
 opportunities of using Daytona as your [dev
-environment](definitions/20240819_definition_development environment.md) that
+environment](/definitions/20240819_definition_development%20environment.md) that
 suit your needs.
 
 ## References
@@ -415,3 +418,5 @@ _[Daytona](https://daytona.io)_
 _[PostgreSQL](https://postgresql.org)_
 
 _[DevContainer](https://containers.dev)_
+
+_[Source Code Repository for PostgreSQL Playground in Daytona](https://github.com/c0d33ngr/playground-postgresql)_
