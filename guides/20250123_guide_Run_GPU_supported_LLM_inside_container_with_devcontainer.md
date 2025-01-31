@@ -10,22 +10,20 @@ tags: ["huggingface", "daytona", "llm"]
 
 # Introduction
 
-Large language models ([LLMs](../definitions/20241219_definition_llm.md)) are becoming increasingly important in AI and software development.
-They are great for tasks like code generation, debugging, and creating natural language responses.
-Running these models in a [containerized](../definitions/20240819_definition_containerization.md) environment makes them easier to set up, portable, and GPU-accelerated.
+Running large language models ([LLMs](../definitions/20241219_definition_llm.md)) inside a [containerized](../definitions/20240819_definition_containerization.md) environment provides flexibility, portability, and GPU acceleration, making it easier to manage dependencies and optimize performance.
 
 This guide will walk you through how to set up and run the Mamba-Codestral-7B-v0.1 model,
 hosted on [Hugging Face](https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1), within a container with [devcontainer](../definitions/20240819_definition_development%20container.md).
 
 ## TL;DR
 
-- Required tools and knowledge for hands-on learning
-- Overview of Mamba-Codestral-7B
-- Preparations
-- Setting Up the Dev container and project repository
-- Running LLM in Daytona with dev container
-- Confirmation
-- Conclusion
+- **Required Tools & Knowledge**: Tools and skills needed for hands on learning.
+- **Overview of Mamba-Codestral-7B**: Overview and  Key features of Mamba-Codestral-7B model.
+- **Preparation Steps**: What needs to be set up before starting the guide.
+- **Setting Up the Dev Container & Project Repository**: Detailed steps for preparing the development environment.
+- **Running LLM in Daytona**: Running the model within the Daytona workspace using the dev container.
+- **Confirmation**: confirming everything is working as expected.
+- **Conclusion**: Key takeaways.
 
 ## Prerequisites
 
