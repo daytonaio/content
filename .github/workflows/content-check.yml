@@ -27,14 +27,25 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         contributor_login=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
+        pr_branch=$(jq -r '.pull_request.head.ref' "$GITHUB_EVENT_PATH")
         echo "Contributor login: $contributor_login"
+        echo "PR Branch: $pr_branch"
         
         # Fetch open PRs from the repository
-        open_prs=$(gh pr list --state open --json title,author --jq '.[] | select(.author.login=="'"$contributor_login"'")')
+        open_prs=$(gh pr list --state open --json number,title,author,headRefName --jq '.[] | select(.author.login=="'"$contributor_login"'")')
         echo "Open PRs by contributor: $open_prs"
 
-        if [ -n "$open_prs" ]; then
+        pr_count=$(echo "$open_prs" | jq 'length')
+
+        if [ "$pr_count" -gt 1 ]; then
           echo "has_open_prs=true" >> "$GITHUB_OUTPUT"
+        elif [ "$pr_count" -eq 1 ]; then
+          existing_branch=$(echo "$open_prs" | jq -r '.[0].headRefName')
+          if [ "$existing_branch" != "$pr_branch" ]; then
+            echo "has_open_prs=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_open_prs=false" >> "$GITHUB_OUTPUT"
+          fi
         else
           echo "has_open_prs=false" >> "$GITHUB_OUTPUT"
         fi
