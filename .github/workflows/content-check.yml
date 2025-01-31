@@ -14,6 +14,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+
     - name: Check for existing open PRs
       id: check-prs
       env:
@@ -52,9 +61,38 @@ jobs:
         echo "::error::Our policy allows only one active PR per contributor. Please complete existing work before submitting new changes."
         exit 1
 
-    - name: File Naming Compliance
+    - name: File Naming and Folder Structure Compliance
       run: |
-        # ... (keep existing file validation logic) ...
-        
-    - name: Markdown Lint
-      run: npx markdownlint '**/*.md' --ignore node_modules
+        files_invalid=false
+        for file in $(git diff --name-only origin/main...HEAD)
+        do
+          if [[ $file == articles/* || $file == guides/* ]]
+          then
+            if ! [[ $file =~ ^(articles|guides)/[0-9]{8}_[a-z0-9_]+\.md$ ]]
+            then
+              echo "Error: File \"$file\" does not follow the naming convention YYYYMMDD_title_of_the_article.md in 'articles' or 'guides' folder" >&2
+              files_invalid=true
+            fi
+          fi
+
+          if [[ $file == assets/* ]]
+          then
+            if ! [[ $file =~ ^assets/[0-9]{8}_[a-z0-9_]+_img[0-9]+\.png$ ]]
+            then
+              echo "Error: File \"$file\" does not follow the naming convention YYYYMMDD_title_of_the_article_imgN.png in 'assets' folder" >&2
+              files_invalid=true
+            fi
+          fi
+        done
+        if [ $files_invalid = true ]; then
+          exit 1
+        fi
+
+    - name: Install markdownlint
+      run: npm install -g markdownlint-cli
+
+    - name: Run Markdown Lint
+      run: |
+          markdownlint '**/*.md' \
+          --ignore node_modules \
+          --config .markdownlint.json
