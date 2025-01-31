@@ -24,32 +24,24 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         contributor_login=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
-        new_pr_branch=$(jq -r '.pull_request.head.ref' "$GITHUB_EVENT_PATH")
         echo "Contributor login: $contributor_login"
-        echo "New PR branch: $new_pr_branch"
         
         # Fetch open PRs from the repository
-        open_prs=$(gh pr list --state open --json title,author,headRefName --jq '.[] | select(.author.login=="'"$contributor_login"'")')
+        open_prs=$(gh pr list --state open --json title,author --jq '.[] | select(.author.login=="'"$contributor_login"'")')
         echo "Open PRs by contributor: $open_prs"
 
-        matching_pr=$(echo "$open_prs" | jq -r 'select(.headRefName == "'"$new_pr_branch"'")')
-
-        if [ -z "$open_prs" ]; then
-          echo "::set-output name=has-open-prs::false"
-        elif [ -n "$matching_pr" ]; then
-          echo "New PR is related to an existing branch: $matching_pr"
-          echo "::set-output name=related-to-existing-pr::true"
+        if [ -n "$open_prs" ]; then
+          echo "has_open_prs=true" >> "$GITHUB_OUTPUT"
         else
-          echo "::set-output name=related-to-existing-pr::false"
-          echo "::set-output name=has-open-prs::true"
+          echo "has_open_prs=false" >> "$GITHUB_OUTPUT"
         fi
 
-    - name: Comment and Fail If Contributor Has Unrelated Open PRs
-      if: steps.check-prs.outputs.has-open-prs == 'true' && steps.check-prs.outputs.related-to-existing-pr != 'true'
+    - name: Comment and Fail If Contributor Has Any Open PRs
+      if: steps.check-prs.outputs.has_open_prs == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh pr comment ${{ github.event.pull_request.number }} --body "Hi @${{ github.event.pull_request.user.login }}, our policy allows contributors to work on one issue at a time. Please complete or close your existing pull requests before creating a new one. If this PR is related to an existing PR, please ensure it uses the same branch."
+        gh pr comment ${{ github.event.pull_request.number }} --body "Hi @${{ github.event.pull_request.user.login }}, our policy allows contributors to work on one issue at a time. Please complete or close your existing pull requests before creating a new one."
         exit 1
 
     - name: File Naming and Folder Structure Compliance
