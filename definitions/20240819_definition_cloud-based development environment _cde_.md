@@ -1,10 +1,10 @@
 ---
-title: 'Cloud-Based Development Environment (CDE)'
+title: "Cloud-Based Development Environment (CDE)"
 description:
-  'A cloud-based development environment (CDE) provides developers access to a
+  "A cloud-based development environment (CDE) provides developers access to a
   virtual development environment hosted in the cloud. Rather than developing
   locally on their own machines, developers code in the CDE and access resources
-  over the internet.'
+  over the internet."
 ---
 
 # Cloud-Based Development Environment (CDE)

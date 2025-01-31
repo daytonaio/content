@@ -1,10 +1,10 @@
 ---
-title: 'Integrated Development Environment (IDE)'
+title: "Integrated Development Environment (IDE)"
 description:
-  'An IDE (Integrated Development Environment) is a software application that
+  "An IDE (Integrated Development Environment) is a software application that
   provides a comprehensive set of tools and features to support the entire
   software development process. It is designed to enhance developer productivity
-  by providing a centralized platform for writing, testing, and debugging code.'
+  by providing a centralized platform for writing, testing, and debugging code."
 ---
 
 # Integrated Development Environment (IDE)

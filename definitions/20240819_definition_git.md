@@ -1,11 +1,11 @@
 ---
-title: 'Git'
+title: "Git"
 description:
-  'Git is a widely used distributed version control system that developers use
+  "Git is a widely used distributed version control system that developers use
   to manage and track changes to code. It enables team collaboration and version
   control, allowing multiple developers to work on the same codebase
   simultaneously and keeping track of all modifications made throughout the
-  development process.'
+  development process."
 ---
 
 # Git

@@ -1,8 +1,8 @@
 ---
-title: 'API (Application Programming Interface)'
-description: 'A set of rules and protocols that allow different software applications to communicate with each other.'
+title: "API (Application Programming Interface)"
+description: "A set of rules and protocols that allow different software applications to communicate with each other."
 date: 2024-12-12
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # API (Application Programming Interface)
@@ -11,7 +11,7 @@ author: 'Kiran Naragund'
 
 An API (Application Programming Interface) is a set of rules and protocols
 that allow different software applications to communicate with each other.
-It specifies how software components should interact, making it easier for 
+It specifies how software components should interact, making it easier for
 developers to integrate and extend functionality across different systems and services.
 
 ## Context and Usage

@@ -1,10 +1,10 @@
 ---
-title: 'Standardized Development Environment (SDE)'
+title: "Standardized Development Environment (SDE)"
 description:
-  'A Standardized Development Environment (SDE) is a consistent and uniform
+  "A Standardized Development Environment (SDE) is a consistent and uniform
   workspace for software developers that adheres to defined standards and
   configurations. It provides a platform where developers can write, test, and
-  debug code efficiently and effectively.'
+  debug code efficiently and effectively."
 ---
 
 # Standardized Development Environment (SDE)

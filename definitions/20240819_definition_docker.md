@@ -1,12 +1,12 @@
 ---
-title: 'Docker'
+title: "Docker"
 description:
-  'Docker is an open-source platform that automates the deployment, scaling, and
+  "Docker is an open-source platform that automates the deployment, scaling, and
   management of applications using containerization. It provides developers with
   a standardized and consistent environment to run their applications. By
   packaging software into containers, Docker ensures that every container has
   all the dependencies and resources needed to run the application, regardless
-  of the underlying infrastructure.'
+  of the underlying infrastructure."
 ---
 
 # Docker

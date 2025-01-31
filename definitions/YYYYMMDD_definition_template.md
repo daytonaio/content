@@ -1,8 +1,8 @@
 ---
-title: '[Term to be Defined]'
-description: 'A brief description of the term'
+title: "[Term to be Defined]"
+description: "A brief description of the term"
 date: YYYY-MM-DD
-author: 'Author Name'
+author: "Author Name"
 ---
 
 # [Term to be Defined]

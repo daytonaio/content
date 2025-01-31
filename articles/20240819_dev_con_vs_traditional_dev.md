@@ -1,18 +1,18 @@
 ---
-title: 'Dev Containers vs. Traditional Development Environments: Pros and Cons'
+title: "Dev Containers vs. Traditional Development Environments: Pros and Cons"
 description:
-  'Compare containerized vs. traditional dev environments: explore consistency,
+  "Compare containerized vs. traditional dev environments: explore consistency,
   onboarding ease, and challenges like complexity and performance. Includes
-  examples like Daytona.'
-author: 'Johnnie Oduro Jnr'
-date: '2024-08-19'
+  examples like Daytona."
+author: "Johnnie Oduro Jnr"
+date: "2024-08-19"
 tags:
   [
-    'Dev Containers',
-    'Traditional Environments',
-    'Development Setup',
-    'Onboarding',
-    'Daytona',
+    "Dev Containers",
+    "Traditional Environments",
+    "Development Setup",
+    "Onboarding",
+    "Daytona",
   ]
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: 'AWS IAM (Identity and Access Management)'
-description: 'A service for managing access to AWS resources securely.'
+title: "AWS IAM (Identity and Access Management)"
+description: "A service for managing access to AWS resources securely."
 date: 2024-09-04
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # AWS IAM (Identity and Access Management)

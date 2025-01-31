@@ -14,11 +14,13 @@ An environment variable is a dynamic-named value stored in the operating system'
 Environment variables serve multiple critical purposes in computer systems and software development:
 
 1. **Configuration Management**
+
    - Provide runtime configuration for applications
    - Store sensitive information like API keys or database credentials
    - Enable flexible software deployment across different environments
 
 2. **System and Application Behavior**
+
    - Modify program execution paths
    - Set language and locale preferences
    - Define system-wide or user-specific settings
@@ -29,6 +31,7 @@ Environment variables serve multiple critical purposes in computer systems and s
    - Enable secure and flexible software deployment strategies
 
 **Common Examples**:
+
 - `PATH`: Specifies directories where executable programs are located
 - `HOME`: Indicates the current user's home directory
 - `LANG`: Sets the default language and localization settings

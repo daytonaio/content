@@ -1,12 +1,12 @@
 ---
-title: 'Software as a Service (SaaS)'
+title: "Software as a Service (SaaS)"
 description:
-  'Software as a Service (SaaS) is a software licensing and delivery model in
+  "Software as a Service (SaaS) is a software licensing and delivery model in
   which software is provided on a subscription basis and is centrally hosted. It
   is a way of delivering software applications over the internet, without the
   need for users to install or maintain the software themselves. SaaS allows
   users to access software applications using a thin client via a web browser,
-  eliminating the need for software installation on individual devices.'
+  eliminating the need for software installation on individual devices."
 ---
 
 # Software as a Service (SaaS)

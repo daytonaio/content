@@ -1,9 +1,8 @@
 ---
-title: 'PostgreSQL'
-description:
-  'A powerful, open-source object-relational database management system'
+title: "PostgreSQL"
+description: "A powerful, open-source object-relational database management system"
 date: 2024-08-23
-author: 'Jeffrey Whewhetu'
+author: "Jeffrey Whewhetu"
 ---
 
 # PostgreSQL

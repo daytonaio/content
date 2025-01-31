@@ -1,10 +1,10 @@
 ---
-title: 'DevOps Automation Tool'
+title: "DevOps Automation Tool"
 description:
-  'A DevOps automation tool is a software application or suite designed to
+  "A DevOps automation tool is a software application or suite designed to
   automate the processes involved in the delivery and operations of software
   development, thereby enhancing efficiency and reducing the likelihood of human
-  error.'
+  error."
 ---
 
 # DevOps Automation Tool

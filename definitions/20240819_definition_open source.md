@@ -1,12 +1,12 @@
 ---
-title: 'Open Source'
+title: "Open Source"
 description:
-  'Open source refers to software for which the original source code is made
+  "Open source refers to software for which the original source code is made
   freely available and may be redistributed and modified. The core ethos of
   open-source software revolves around collaboration, transparency, and
   community-driven improvement. This approach allows developers to examine,
   alter, and enhance the software, resulting in rapid innovation and widespread
-  adoption across the industry.'
+  adoption across the industry."
 ---
 
 # Open Source

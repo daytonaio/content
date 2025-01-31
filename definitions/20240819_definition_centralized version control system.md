@@ -1,13 +1,13 @@
 ---
-title: 'Centralized Version Control System'
+title: "Centralized Version Control System"
 description:
-  'A centralized version control system (CVCS) is a system used in software
+  "A centralized version control system (CVCS) is a system used in software
   development to manage and track changes to codebases. Unlike distributed
   version control systems (DVCS) where each user has a complete copy of the
   repository, in a CVCS, there is a single central repository that stores all
   versions of files. Users check out files from this central repository to work
   on them locally, and then they commit their changes back to the repository to
-  make them available to other users.'
+  make them available to other users."
 ---
 
 # Centralized Version Control System

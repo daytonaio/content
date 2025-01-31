@@ -1,9 +1,9 @@
 ---
-title: 'Using Environmental Variables in Daytona'
-description: 'Learn how to set, manage, and use environmental variables in Daytona workspaces with a simple Python project for demonstration.'
+title: "Using Environmental Variables in Daytona"
+description: "Learn how to set, manage, and use environmental variables in Daytona workspaces with a simple Python project for demonstration."
 date: 2024-11-26
-author: 'Busayo Samuel'
-tags: ['Environment Variables', 'Development Environment', 'Daytona Workspaces']
+author: "Busayo Samuel"
+tags: ["Environment Variables", "Development Environment", "Daytona Workspaces"]
 ---
 
 # Using Environmental Variables in Daytona
@@ -50,12 +50,14 @@ This will allow you to set multiple environmental variables in a single operatio
 ```bash
 daytona env set
 ```
+
 This command will launch the TUI interface. Proceed to enter your environment variables in the following format:
 
 ```bash
 USERNAME=JohnDoe
 PASSWORD=123456
 ```
+
 After entering the variables, press Enter on your keyboard to save them.
 
 ![Screenshot example of Daytona env set TUI ](assets/20241126_Using_Environmental_Variables_in_Daytona_3.png)

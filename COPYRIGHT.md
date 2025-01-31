@@ -11,6 +11,6 @@ Inc., except in the case of brief quotations embodied in critical reviews and
 certain other noncommercial uses permitted by copyright law.
 
 For permission requests, please contact Daytona Platforms Inc. at
-support@daytona.io.
+<support@daytona.io>.
 
-#test2
+# test2

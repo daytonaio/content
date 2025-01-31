@@ -1,8 +1,8 @@
 ---
-title: 'AWS (Amazon Web Services)'
-description: 'A comprehensive cloud computing platform provided by Amazon.'
+title: "AWS (Amazon Web Services)"
+description: "A comprehensive cloud computing platform provided by Amazon."
 date: 2024-09-04
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # AWS (Amazon Web Services)

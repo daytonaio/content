@@ -1,12 +1,12 @@
 ---
-title: 'Immutable Infrastructure'
+title: "Immutable Infrastructure"
 description:
-  'Immutable Infrastructure is an infrastructure architecture approach in which
+  "Immutable Infrastructure is an infrastructure architecture approach in which
   components and configurations are never modified in place. Instead of making
   changes directly to existing infrastructure elements, any modifications result
   in the creation of a new, immutable instance. This approach ensures
   consistency, simplifies management, and reduces the risk of configuration
-  drift.'
+  drift."
 ---
 
 # Immutable Infrastructure

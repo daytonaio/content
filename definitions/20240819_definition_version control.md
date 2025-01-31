@@ -1,9 +1,9 @@
 ---
-title: 'Version Control'
+title: "Version Control"
 description:
-  'Version control is a system that records changes to a file or set of files
+  "Version control is a system that records changes to a file or set of files
   over time. It allows developers to recall specific versions later and track
-  changes made by different team members.'
+  changes made by different team members."
 ---
 
 # Version Control

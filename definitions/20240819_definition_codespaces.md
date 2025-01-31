@@ -1,10 +1,10 @@
 ---
-title: 'Codespaces'
+title: "Codespaces"
 description:
-  'GitHub Codespaces is a cloud-based development environment integrated into
+  "GitHub Codespaces is a cloud-based development environment integrated into
   GitHub that enables developers to code, build, test, and debug applications
   directly from their browser or through supported code editors like Visual
-  Studio Code.'
+  Studio Code."
 ---
 
 # Codespaces

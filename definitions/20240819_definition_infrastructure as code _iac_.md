@@ -1,13 +1,13 @@
 ---
-title: 'Infrastructure as Code (IaC)'
+title: "Infrastructure as Code (IaC)"
 description:
-  'Infrastructure as Code (IaC) is the process of managing and provisioning
+  "Infrastructure as Code (IaC) is the process of managing and provisioning
   infrastructure through machine-readable definition files and scripts rather
   than manual configuration. This practice enables automation and consistency in
   managing infrastructure. It involves using configuration files, such as YAML
   or JSON, to describe the desired state of infrastructure resources, such as
   servers, networks, and storage, and using tools to deploy and manage these
-  resources automatically.'
+  resources automatically."
 ---
 
 # Infrastructure as Code (IaC)

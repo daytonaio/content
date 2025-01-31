@@ -1,11 +1,11 @@
 ---
-title: 'Containerization'
+title: "Containerization"
 description:
-  'Containerization is the practice of packaging software code, along with its
+  "Containerization is the practice of packaging software code, along with its
   libraries, configurations, and dependencies, into a standardized unit called a
   container. Containers provide a lightweight and portable runtime environment
   that ensures code runs reliably and consistently across different computing
-  environments.'
+  environments."
 ---
 
 # Containerization

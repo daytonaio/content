@@ -1,11 +1,11 @@
 ---
-title: 'Term Sheet'
+title: "Term Sheet"
 description:
-  'A term sheet is a non-binding document that outlines the fundamental terms
+  "A term sheet is a non-binding document that outlines the fundamental terms
   and conditions under which an investment will be made. It acts as a blueprint
   for the final legal agreement and serves to ensure that both the entrepreneur
   and the investors are in agreement on key aspects of the deal before
-  significant legal expenses are incurred.'
+  significant legal expenses are incurred."
 ---
 
 # Term Sheet

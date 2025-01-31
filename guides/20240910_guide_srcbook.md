@@ -46,6 +46,7 @@ This section covers creating a starter repository, setting up a `devcontainer.js
 
 1. **Create a GitHub Repository**: Start by creating a new GitHub repository for your Srcbook project.
 2. **Clone the Repository** to your local machine:
+
    ```bash
    git clone https://github.com/<your-username>/srcbook-project.git
    cd srcbook-project
@@ -83,9 +84,11 @@ Now, open the `devcontainer.json` file and add the following configuration:
 
 2. **Start Daytona**:
    Once inside the development container, start Daytona by running:
+
    ```bash
    daytona serve
    ```
+
    Daytona will now be ready to manage the Srcbook project.
 
 ### Step 2.4: Creating a New Srcbook Project

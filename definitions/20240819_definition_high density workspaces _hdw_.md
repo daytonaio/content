@@ -1,7 +1,7 @@
 ---
-title: 'High Density Workspaces (HDW)'
+title: "High Density Workspaces (HDW)"
 description:
-  'High density workspaces, also known as HD workspaces or HDW, involve the
+  "High density workspaces, also known as HD workspaces or HDW, involve the
   efficient utilization of resources to accommodate a large number of employees
   within a shared development environment. These workspaces prioritize
   maximizing productivity, collaboration, and efficiency by providing an
@@ -16,7 +16,7 @@ description:
   With the flexibility to scale up or down, high density workspaces empower
   organizations to adapt to changing work dynamics and demands. These workspaces
   are instrumental in creating collaborative and dynamic environments that
-  foster enhanced communication and teamwork among employees.'
+  foster enhanced communication and teamwork among employees."
 ---
 
 # High Density Workspaces (HDW)

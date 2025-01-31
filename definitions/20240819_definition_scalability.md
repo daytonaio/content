@@ -1,10 +1,10 @@
 ---
-title: 'Scalability'
+title: "Scalability"
 description:
-  'Scalability refers to the ability of a system, network, or process to handle
+  "Scalability refers to the ability of a system, network, or process to handle
   a growing amount of work or its potential to be enlarged to accommodate that
   growth. It is a crucial characteristic for businesses and technologies that
-  are experiencing rapid growth or expecting increased demand in the future.'
+  are experiencing rapid growth or expecting increased demand in the future."
 ---
 
 # Scalability

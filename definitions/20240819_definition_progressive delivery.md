@@ -1,13 +1,13 @@
 ---
-title: 'Progressive Delivery'
+title: "Progressive Delivery"
 description:
-  'Progressive Delivery is an approach in software development that focuses on
+  "Progressive Delivery is an approach in software development that focuses on
   gradually and incrementally delivering new software features or changes to
   users. It allows for the controlled rollout of updates, providing teams with
   the ability to manage who sees what and when. This approach minimizes risks
   associated with large-scale deployments by offering mechanisms such as feature
   flags, canary releases, A/B testing, observability, and rollbacks/roll
-  forwards.'
+  forwards."
 ---
 
 # Progressive Delivery

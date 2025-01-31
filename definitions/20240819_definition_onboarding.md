@@ -1,5 +1,5 @@
 ---
-title: 'Onboarding'
+title: "Onboarding"
 description:
   "Onboarding in the context of software development is a comprehensive process
   aimed at integrating new developers into an existing team, acquainting them

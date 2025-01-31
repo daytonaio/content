@@ -1,14 +1,14 @@
 ---
-title: 'Ephemeral Environment'
+title: "Ephemeral Environment"
 description:
-  'An ephemeral environment refers to a temporary and disposable environment
+  "An ephemeral environment refers to a temporary and disposable environment
   that is created on-demand and exists only for a short duration to fulfill a
   specific purpose or execute a particular function. In the context of software
   development, ephemeral environments are commonly utilized in containerized or
   cloud-based setups. These environments provide developers with the flexibility
   to dynamically allocate and efficiently utilize computing resources as and
   when needed, without incurring extra costs or maintaining long-term
-  infrastructure.'
+  infrastructure."
 ---
 
 # Ephemeral Environment

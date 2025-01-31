@@ -1,12 +1,12 @@
 ---
-title: 'Configuration Drift'
+title: "Configuration Drift"
 description:
-  'Configuration drift refers to the phenomenon in which there is a gradual
+  "Configuration drift refers to the phenomenon in which there is a gradual
   accumulation of unapproved or unintended changes to a system over time,
   leading to configuration inconsistencies and outdated settings. It is a common
   problem in software development environments where multiple developers work on
   a shared codebase or where different environments (e.g., development, staging,
-  production) are not kept in sync.'
+  production) are not kept in sync."
 ---
 
 # Configuration Drift

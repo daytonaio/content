@@ -98,13 +98,14 @@ Paste this code into your `devcontainer.json` file.
 
 ```yaml
 {
-    "name": "DuckDB Playground",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
-        "ghcr.io/devcontainers/features/python:1": {}
+  "name": "DuckDB Playground",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features":
+    {
+      "ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {},
+      "ghcr.io/devcontainers/features/python:1": {},
     },
-    "postCreateCommand": "pip install duckdb matplotlib pandas"
+  "postCreateCommand": "pip install duckdb matplotlib pandas",
 }
 ```
 
@@ -222,21 +223,21 @@ Run the following SQL query to export client data to a CSV file named `client.cs
 
 ```sql
 COPY (
-    SELECT 
+    SELECT
         client_id,
         age,
         REPLACE(job, '.', '_') AS job,
         marital,
         REPLACE(education, '.', '_') AS education,
-        CASE 
-            WHEN credit_default = 'yes' THEN 1 
-            ELSE 0 
+        CASE
+            WHEN credit_default = 'yes' THEN 1
+            ELSE 0
         END AS credit_default,
-        CASE 
-            WHEN mortgage = 'yes' THEN 1 
-            ELSE 0 
+        CASE
+            WHEN mortgage = 'yes' THEN 1
+            ELSE 0
         END AS mortgage
-    FROM 
+    FROM
         bank_marketing
 ) TO 'client.csv' (DELIMITER ',', HEADER TRUE);
 ```
@@ -271,7 +272,7 @@ Run the following SQL query to export campaign data to a CSV file named `campaig
 
 ```sql
 COPY (
-  SELECT 
+  SELECT
       client_id,
       number_contacts,
       contact_duration,
@@ -286,7 +287,7 @@ COPY (
       END AS campaign_outcome,
       MAKE_DATE(
           2022,
-          CASE 
+          CASE
             WHEN LOWER(month) = 'jan' THEN 1
             WHEN LOWER(month) = 'feb' THEN 2
             WHEN LOWER(month) = 'mar' THEN 3
@@ -315,7 +316,7 @@ Run the following SQL query to export economics data to a CSV file named `econom
 
 ```sql
 COPY (
-    SELECT 
+    SELECT
         client_id,
         cons_price_idx,
         euribor_three_months
@@ -426,7 +427,7 @@ import matplotlib.pyplot as plt
 
 result = duckdb.sql(
     """
-    SELECT 
+    SELECT
         contact_duration,
         campaign_outcome
     FROM 'campaign.csv';

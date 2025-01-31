@@ -1,5 +1,5 @@
 ---
-title: 'Infrastructure as a Service (IaaS)'
+title: "Infrastructure as a Service (IaaS)"
 description:
   "Infrastructure as a Service (IaaS) refers to a cloud computing model where
   organizations can access and utilize virtualized infrastructure resources

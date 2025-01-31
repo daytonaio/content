@@ -1,14 +1,14 @@
 ---
-title: 'Devfile'
+title: "Devfile"
 description:
-  'A Devfile is a YAML-based configuration file used to define and describe the
+  "A Devfile is a YAML-based configuration file used to define and describe the
   components, tools, and settings required for a specific development
   environment. It serves as a standardized and portable definition for
   developers, allowing them to easily set up and share their development
   configurations across different IDEs, editors, and container platforms.
   Devfiles enhance the portability and replicability of development
   environments, making it easier for developers to quickly spin up a consistent
-  development environment tailored to their project requirements.'
+  development environment tailored to their project requirements."
 ---
 
 # Devfile

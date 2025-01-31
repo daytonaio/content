@@ -1,5 +1,5 @@
 ---
-title: 'Automated Provisioning'
+title: "Automated Provisioning"
 description:
   "Automated Provisioning refers to the streamlined process of automatically
   creating and configuring computing resources, such as servers, virtual

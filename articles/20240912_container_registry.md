@@ -1,13 +1,12 @@
 ---
-title: 'Daytona container-registry feature explained'
-description:
-  'Learn how Daytona’s container registry enables reusable project
+title: "Daytona container-registry feature explained"
+description: "Learn how Daytona’s container registry enables reusable project
   configurations across multiple workspaces, using Docker to ensure consistency
-  and speed up development environments.'
+  and speed up development environments."
 date: 2024-09-12
-author: 'Oreoluwa Ajayi'
+author: "Oreoluwa Ajayi"
 tags:
-  ['Dev Containers', 'Container registry', 'Daytona', 'Docker', 'Development']
+  ["Dev Containers", "Container registry", "Daytona", "Docker", "Development"]
 ---
 
 # Daytona container-registry feature explained
@@ -121,10 +120,10 @@ command:
    seconds, complete with all the dependencies and configurations.
    ![Select Workspace](/articles/assets/20240912_daytona_container_registry_img12.png)
 
-    By leveraging this feature, you can instantly launch any containerized
-    workspace, reducing the time it takes to set up and manage environments, which is particularly useful for teams working across multiple projects.
+   By leveraging this feature, you can instantly launch any containerized
+   workspace, reducing the time it takes to set up and manage environments, which is particularly useful for teams working across multiple projects.
 
- 4. Type the following command to view registry:
+4. Type the following command to view registry:
 
    ```bash
    daytona list

@@ -1,10 +1,10 @@
 ---
-title: 'Droplets'
+title: "Droplets"
 description:
-  'Virtual private servers (VPS) provided by DigitalOcean for deploying
-  applications and services.'
+  "Virtual private servers (VPS) provided by DigitalOcean for deploying
+  applications and services."
 date: 2024-09-10
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # Droplets

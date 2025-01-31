@@ -1,11 +1,11 @@
 ---
-title: 'Software Development Life Cycle (SDLC)'
+title: "Software Development Life Cycle (SDLC)"
 description:
-  'The Software Development Life Cycle (SDLC) refers to a structured and
+  "The Software Development Life Cycle (SDLC) refers to a structured and
   systematic approach used by software development teams to create high-quality
   software systems. It encompasses the entire process, from the initial
   requirements gathering stage to the continuous maintenance and support of the
-  deployed software.'
+  deployed software."
 ---
 
 # Software Development Life Cycle (SDLC)

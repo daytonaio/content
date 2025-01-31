@@ -4,6 +4,8 @@
     "line_length": 300,
     "ignore_code_blocks": true
   },
+  "MD025": false, 
+  "MD036": false, 
   "MD033": {
     "allowed_elements": ["img"]
   },
@@ -12,6 +14,7 @@
     "**/dist/**",
     "**/CHANGELOG.md",
     "**/LICENSE*",
-    "**/README.md"
+    "**/README.md",
+    "authors/**" 
   ]
 }

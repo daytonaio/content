@@ -1,11 +1,11 @@
 ---
-title: 'How to Setup PostgreSQL Playground in Daytona.'
+title: "How to Setup PostgreSQL Playground in Daytona."
 description:
-  'Learn how to create a PostgreSQL playground in Daytona and interact with it
-  hands-on in your favorite IDE terminal'
+  "Learn how to create a PostgreSQL playground in Daytona and interact with it
+  hands-on in your favorite IDE terminal"
 date: 2024-08-23
-author: 'Jeffrey Whewhetu'
-tags: ['Daytona', 'PostgreSQL', 'dev container']
+author: "Jeffrey Whewhetu"
+tags: ["Daytona", "PostgreSQL", "dev container"]
 ---
 
 # How to Setup PostgreSQL Playground in Daytona
@@ -410,8 +410,8 @@ suit your needs.
 
 ## References
 
-_[Daytona](https://daytona.io)_
+*[Daytona](https://daytona.io)*
 
-_[PostgreSQL](https://postgresql.org)_
+*[PostgreSQL](https://postgresql.org)*
 
-_[DevContainer](https://containers.dev)_
+*[DevContainer](https://containers.dev)*

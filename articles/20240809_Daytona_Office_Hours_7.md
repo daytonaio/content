@@ -1,12 +1,13 @@
 ---
-title: 'Daytona Community Hours #7'
+title: "Daytona Community Hours #7"
 description:
-  ' A detailed summary of the new releases, patches, and updates that were
-  mentioned during the Daytona Community Hours #7 YouTube video.'
+  " A detailed summary of the new releases, patches, and updates that were
+  mentioned during the Daytona Community Hours #7 YouTube video."
 date: 2024-08-09
-author: 'Team Daytona'
-tags: ['News', 'Update', 'Project Configs']
+author: "Team Daytona"
+tags: ["News", "Update", "Project Configs"]
 ---
+
 # Daytona Office Hours #7
 
 As always, in our recent community hours, we reviewed the latest developments

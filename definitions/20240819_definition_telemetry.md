@@ -1,12 +1,12 @@
 ---
-title: 'Telemetry'
+title: "Telemetry"
 description:
-  'Telemetry refers to the automated process of collecting, transmitting, and
+  "Telemetry refers to the automated process of collecting, transmitting, and
   analyzing data from remote sources to monitor and manage systems, especially
   within the context of a development environment. In software development,
   telemetry enables continuous observation of the performance, behavior, and
   usage of applications and systems by capturing real-time metrics and logs.
-  This data helps developers to:'
+  This data helps developers to:"
 ---
 
 # Telemetry

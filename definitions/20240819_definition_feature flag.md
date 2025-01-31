@@ -1,13 +1,13 @@
 ---
-title: 'Feature Flag'
+title: "Feature Flag"
 description:
-  'A feature flag is a powerful technique that allows developers to control the
+  "A feature flag is a powerful technique that allows developers to control the
   release and activation of features or code paths in a software application. It
   provides a way to toggle functionalities on or off, giving developers the
   ability to control which features are active for specific users or
   environments. By incorporating feature flags into their development process,
   teams can release new features gradually, allowing for a smoother deployment
-  and better risk management.'
+  and better risk management."
 ---
 
 # Feature Flag

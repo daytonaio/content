@@ -1,12 +1,12 @@
 ---
-title: 'Vendor agnostic'
+title: "Vendor agnostic"
 description:
-  'Vendor agnostic, also known as vendor neutral, refers to the approach of
+  "Vendor agnostic, also known as vendor neutral, refers to the approach of
   selecting or designing a product, service, or solution that is independent and
   impartial towards any specific vendor or supplier. In a vendor-agnostic
   environment, the product, service, or solution is designed to work seamlessly
   and effectively with multiple vendors or suppliers, without being bound to any
-  particular brand or proprietary technology.'
+  particular brand or proprietary technology."
 ---
 
 # Vendor agnostic

@@ -1,8 +1,8 @@
 ---
-title: 'ssh'
+title: "ssh"
 description:
-  'SSH (Secure Shell) is a cryptographic network protocol employed for secure
-  access to network services over an unsecured network.'
+  "SSH (Secure Shell) is a cryptographic network protocol employed for secure
+  access to network services over an unsecured network."
 ---
 
 # ssh

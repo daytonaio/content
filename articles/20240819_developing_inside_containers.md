@@ -1,13 +1,13 @@
 ---
 title: "A Beginner's Guide to Developing Inside Containers with VSCode"
 description:
-  'Step-by-step guide on setting up a development environment inside a container
+  "Step-by-step guide on setting up a development environment inside a container
   using VSCode. Learn the basics of containerization, common pitfalls, and how
-  Daytona does it'
-author: 'Johnnie Oduro Jnr'
-date: '2024-08-20'
+  Daytona does it"
+author: "Johnnie Oduro Jnr"
+date: "2024-08-20"
 tags:
-  ['Containerization', 'VSCode', 'Development Environment', 'Docker', 'Daytona']
+  ["Containerization", "VSCode", "Development Environment", "Docker", "Daytona"]
 ---
 
 # TL;DR

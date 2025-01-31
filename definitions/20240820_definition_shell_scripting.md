@@ -1,10 +1,10 @@
 ---
-title: 'Shell Scripting'
+title: "Shell Scripting"
 description:
-  'Shell scripting involves writing scripts for a command-line interpreter, such
+  "Shell scripting involves writing scripts for a command-line interpreter, such
   as Bash, to automate tasks on Unix-like operating systems. Shell scripts can
   perform a variety of operations, from simple command execution to complex
-  workflows involving conditionals and loops.'
+  workflows involving conditionals and loops."
 ---
 
 # Shell Scripting

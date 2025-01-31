@@ -1,8 +1,8 @@
 ---
-title: 'EC2 Instances (Amazon Elastic Compute Cloud)'
-description: 'Virtual servers in the AWS cloud used for running applications.'
+title: "EC2 Instances (Amazon Elastic Compute Cloud)"
+description: "Virtual servers in the AWS cloud used for running applications."
 date: 2024-09-04
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # EC2 Instances (Amazon Elastic Compute Cloud)

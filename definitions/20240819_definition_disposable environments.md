@@ -1,7 +1,7 @@
 ---
-title: 'Disposable Environments'
+title: "Disposable Environments"
 description:
-  'A disposable environment refers to a standalone, self-contained environment
+  "A disposable environment refers to a standalone, self-contained environment
   that can be easily created, utilized for its intended purpose, and
   subsequently permanently destroyed as desired. This approach is often employed
   in software development and testing, where it allows developers and quality
@@ -12,7 +12,7 @@ description:
   confidently experiment, modify, and test their code without causing
   disruptions or permanent changes to the production environment. Furthermore,
   disposable environments foster agility and facilitate rapid iteration by
-  streamlining the process of setting up and tearing down testing environments.'
+  streamlining the process of setting up and tearing down testing environments."
 ---
 
 # Disposable Environments

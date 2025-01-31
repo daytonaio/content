@@ -1,5 +1,5 @@
 ---
-title: 'Cloud-agnostic'
+title: "Cloud-agnostic"
 description:
   "Cloud-agnostic refers to the ability of a software application, development
   environment, or service to operate seamlessly across different cloud service

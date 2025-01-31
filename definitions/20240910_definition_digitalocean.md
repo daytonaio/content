@@ -1,10 +1,10 @@
 ---
-title: 'DigitalOcean'
+title: "DigitalOcean"
 description:
-  'A cloud infrastructure provider offering scalable compute, storage, and
-  networking services.'
+  "A cloud infrastructure provider offering scalable compute, storage, and
+  networking services."
 date: 2024-09-10
-author: 'Kiran Naragund'
+author: "Kiran Naragund"
 ---
 
 # DigitalOcean

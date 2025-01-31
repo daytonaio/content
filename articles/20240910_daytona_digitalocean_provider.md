@@ -1,11 +1,11 @@
 ---
-title: 'Setting Up Daytona DigitalOcean Provider'
+title: "Setting Up Daytona DigitalOcean Provider"
 description:
-  'A step-by-step guide to setting up and configuring the Daytona DigitalOcean
-  Provider for managing workspace projects on DigitalOcean droplets.'
+  "A step-by-step guide to setting up and configuring the Daytona DigitalOcean
+  Provider for managing workspace projects on DigitalOcean droplets."
 date: 2024-09-10
-author: 'Kiran Naragund'
-tags: ['digitalocean', 'droplets', 'daytona']
+author: "Kiran Naragund"
+tags: ["digitalocean", "droplets", "daytona"]
 ---
 
 # Setting Up Daytona DigitalOcean Provider

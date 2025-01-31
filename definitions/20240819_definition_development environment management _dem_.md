@@ -1,14 +1,14 @@
 ---
-title: 'Development Environment Management (DEM)'
+title: "Development Environment Management (DEM)"
 description:
-  'Development Environment Management (DEM) refers to the practice of creating,
+  "Development Environment Management (DEM) refers to the practice of creating,
   managing, and optimizing development environments for software development
   teams within an organization. DEM involves providing the necessary tools,
   configurations, and infrastructure required by the development team to work
   efficiently and effectively. It includes tasks such as provisioning and
   configuring development environments, deploying necessary software and tools,
   automating repetitive tasks, and ensuring consistency across different
-  projects and teams.'
+  projects and teams."
 ---
 
 # Development Environment Management (DEM)

@@ -1,11 +1,11 @@
 ---
-title: 'React'
+title: "React"
 description:
-  'React is a widely used, open-source JavaScript library for building user
+  "React is a widely used, open-source JavaScript library for building user
   interfaces or UI components. It facilitates the creation of interactive,
   stateful, and reusable UI components. Developed and maintained by Facebook,
   the React framework emphasizes the development of rich web applications with
-  optimal performance and efficiency.'
+  optimal performance and efficiency."
 ---
 
 # React

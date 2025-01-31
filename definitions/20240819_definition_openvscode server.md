@@ -1,13 +1,13 @@
 ---
-title: 'OpenVSCode Server'
+title: "OpenVSCode Server"
 description:
-  'OpenVSCode Server is an open-source project that enables developers to run
+  "OpenVSCode Server is an open-source project that enables developers to run
   Visual Studio Code (VS Code) in a web browser. Leveraging the power of remote
   development, it allows coders to access, edit, and manage their codebase from
   any device with internet connectivity, without the need to install Visual
   Studio Code locally. This server-based implementation of VS Code provides a
   familiar, feature-rich development environment accessible through a browser,
-  facilitating a seamless coding experience.'
+  facilitating a seamless coding experience."
 ---
 
 # OpenVSCode Server

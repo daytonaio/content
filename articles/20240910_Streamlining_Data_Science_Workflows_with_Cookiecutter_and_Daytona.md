@@ -1,11 +1,11 @@
 ---
-title: 'Streamlining Data Science Workflows with Cookiecutter and Daytona'
+title: "Streamlining Data Science Workflows with Cookiecutter and Daytona"
 description:
   "Learn how to enhance your data science projects using Cookiecutter templates
   and Daytona's dev container features."
 date: 2024-09-10
-author: 'Busayo Samuel'
-tags: ['Data Science', 'dev container', 'cookiecutter']
+author: "Busayo Samuel"
+tags: ["Data Science", "dev container", "cookiecutter"]
 ---
 
 # Streamlining Data Science Workflows with Cookiecutter and Daytona
@@ -330,45 +330,45 @@ Now that you've set up your environment, let's explore some best practices.
 These will help you make the most of your Cookiecutter and Daytona setup.
 
 1. **USE VERSION CONTROL** Always use version control (like Git) for your
-    projects. This allows you to track changes, collaborate with others, and
-    roll back if needed. Remember to:
+   projects. This allows you to track changes, collaborate with others, and
+   roll back if needed. Remember to:
 
-      - Create a .gitignore file to exclude large data files, sensitive information, and environment-specific files.
-      - Commit early and often with meaningful commit messages.
+   - Create a .gitignore file to exclude large data files, sensitive information, and environment-specific files.
+   - Commit early and often with meaningful commit messages.
 
 2. **DOCUMENT YOUR WORK**
 
-    - Maintain a comprehensive README.md file that explains the project's
-      purpose, setup instructions, and usage guidelines.
-    - Use docstrings in your Python functions and classes.
-    - Keep a change log to track major updates to your project.
+   - Maintain a comprehensive README.md file that explains the project's
+     purpose, setup instructions, and usage guidelines.
+   - Use docstrings in your Python functions and classes.
+   - Keep a change log to track major updates to your project.
 
 3. **MANAGE DEPENDENCIES**
 
-    - Use virtual environments (like venv or conda) to isolate project
-      dependencies.
-    - Maintain a requirements.txt file or use tools like Poetry or Pipenv for
-      more advanced dependency management.
+   - Use virtual environments (like venv or conda) to isolate project
+     dependencies.
+   - Maintain a requirements.txt file or use tools like Poetry or Pipenv for
+     more advanced dependency management.
 
 4. **FOLLOW CODING BEST PRACTICES**
 
-    - Follow PEP 8 style guidelines for Python code.
-    - Use meaningful variable and function names.
-    - Write modular, reusable code.
-    - Include unit tests for your functions.
+   - Follow PEP 8 style guidelines for Python code.
+   - Use meaningful variable and function names.
+   - Write modular, reusable code.
+   - Include unit tests for your functions.
 
 5. **ENSURE REPRODUCIBILITY**
 
-    - Use random seeds when necessary to ensure consistent results.
-    - Document the steps to reproduce your analysis, including data
-      preprocessing.
-    - Consider using tools like DVC (Data Version Control) for managing large
-      datasets.
+   - Use random seeds when necessary to ensure consistent results.
+   - Document the steps to reproduce your analysis, including data
+     preprocessing.
+   - Consider using tools like DVC (Data Version Control) for managing large
+     datasets.
 
 6. **SECURE SENSITIVE INFORMATION**
-    - Never commit sensitive information (like API keys or passwords) to version
-      control.
-    - Use environment variables or dedicated config files for managing secrets.
+   - Never commit sensitive information (like API keys or passwords) to version
+     control.
+   - Use environment variables or dedicated config files for managing secrets.
 
 ## Common Issues and Troubleshooting
 

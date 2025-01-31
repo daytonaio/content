@@ -1,13 +1,12 @@
 ---
-title:
-  'Daytona Ecosystem: Server Port Notifications, Latest Developments And
-  Improvements'
+title: "Daytona Ecosystem: Server Port Notifications, Latest Developments And
+  Improvements"
 description:
-  'The latest updates, major fixes, upcoming developments, and highlights
-  discussed during Daytona Office Hours 8 YouTube video.'
+  "The latest updates, major fixes, upcoming developments, and highlights
+  discussed during Daytona Office Hours 8 YouTube video."
 date: 2024-08-21
-author: 'Team Daytona'
-tags: ['Update', 'News', 'Release', 'DOH']
+author: "Team Daytona"
+tags: ["Update", "News", "Release", "DOH"]
 ---
 
 At Daytona, we're excited to announce that this week's release includes progress

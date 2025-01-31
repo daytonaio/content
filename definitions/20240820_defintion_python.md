@@ -1,10 +1,10 @@
 ---
-title: 'Python'
+title: "Python"
 description:
-  'Python is a high-level, interpreted programming language known for its
+  "Python is a high-level, interpreted programming language known for its
   readability and ease of use. It supports multiple programming paradigms,
   including procedural, object-oriented, and functional programming, making it
-  versatile for a wide range of applications.'
+  versatile for a wide range of applications."
 ---
 
 # Python

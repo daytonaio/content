@@ -1,5 +1,5 @@
 ---
-title: 'Developer Experience (DevEx)'
+title: "Developer Experience (DevEx)"
 description:
   "Developer experience (DevEx) refers to the overall experience a developer has
   while using an organization's APIs, tools, documentation, and resources to

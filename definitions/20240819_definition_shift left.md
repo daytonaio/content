@@ -1,13 +1,13 @@
 ---
-title: 'Shift Left'
+title: "Shift Left"
 description:
-  'Shift Left is a software development practice that aims to enhance the
+  "Shift Left is a software development practice that aims to enhance the
   efficiency and quality of the development process by establishing a proactive
   approach to identifying and addressing potential issues. Traditionally,
   software testing, security evaluations, and quality assurance activities were
   performed towards the end of the development lifecycle. However, this
   sequential approach often resulted in delays, increased costs, and lower
-  software quality.'
+  software quality."
 ---
 
 # Shift Left

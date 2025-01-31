@@ -1,13 +1,13 @@
 ---
-title: 'DevTools'
+title: "DevTools"
 description:
-  'DevTools, short for Developer Tools, encompasses a range of software
+  "DevTools, short for Developer Tools, encompasses a range of software
   utilities and services designed to assist developers in creating, testing,
   debugging, and optimizing applications and environments. They include, but are
   not limited to, code editors, integrated development environments (IDEs),
   debuggers, performance profiling tools, version control systems, continuous
   integration/continuous deployment (CI/CD) pipelines, and containerization
-  tools like Docker.'
+  tools like Docker."
 ---
 
 # DevTools

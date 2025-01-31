@@ -1,8 +1,8 @@
 ---
-title: 'Development Environment as a Service (DEaaS)'
+title: "Development Environment as a Service (DEaaS)"
 description:
-  'Development environment as a service (DEaaS) refers to platforms that provide
-  development environments to users on-demand via a subscription model.'
+  "Development environment as a service (DEaaS) refers to platforms that provide
+  development environments to users on-demand via a subscription model."
 ---
 
 # Development Environment as a Service (DEaaS)

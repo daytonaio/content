@@ -1,11 +1,11 @@
 ---
-title: 'Ephemerality'
+title: "Ephemerality"
 description:
-  'Ephemerality refers to the temporary and transient nature of an object,
+  "Ephemerality refers to the temporary and transient nature of an object,
   system, or process that exists only for a short duration. In the context of
   cloud development environments and software development, ephemeral
   environments are short-lived and disposable systems created on-demand for
-  temporary use.'
+  temporary use."
 ---
 
 # Ephemerality

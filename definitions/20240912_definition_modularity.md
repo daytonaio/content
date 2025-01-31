@@ -1,11 +1,11 @@
 ---
-title: 'Modularity'
+title: "Modularity"
 description:
-  'Modularity refers to the design principle where a system is divided into
+  "Modularity refers to the design principle where a system is divided into
   smaller, self-contained components, each serving a specific function while
-  remaining independent and reusable.'
+  remaining independent and reusable."
 date: 2024-09-12
-author: 'Oreoluwa Ajayi'
+author: "Oreoluwa Ajayi"
 ---
 
 # Modularity

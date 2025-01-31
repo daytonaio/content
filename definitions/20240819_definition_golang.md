@@ -1,10 +1,10 @@
 ---
-title: 'Golang'
+title: "Golang"
 description:
-  'Golang, also known simply as Go, is a statically typed, compiled programming
+  "Golang, also known simply as Go, is a statically typed, compiled programming
   language designed by Google. It is known for its simplicity, efficiency, and
   robust performance, making it an excellent choice for developing
-  high-performance applications.'
+  high-performance applications."
 ---
 
 # Golang

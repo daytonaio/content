@@ -1,5 +1,5 @@
 ---
-title: 'Repository'
+title: "Repository"
 description:
   "A repository refers to a virtual storage space where the Git version control
   system manages and tracks changes to a set of files. It is the core component

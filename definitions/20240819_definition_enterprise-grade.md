@@ -1,10 +1,10 @@
 ---
-title: 'Enterprise-grade'
+title: "Enterprise-grade"
 description:
-  'Enterprise-grade refers to a tool or application that meets the rigorous
+  "Enterprise-grade refers to a tool or application that meets the rigorous
   standards and requirements of large-scale enterprises or organizations. These
   tools are specifically designed to handle the complex needs and demands of
-  enterprise-level environments.'
+  enterprise-level environments."
 ---
 
 # Enterprise-grade

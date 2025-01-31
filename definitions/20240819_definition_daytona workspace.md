@@ -1,12 +1,12 @@
 ---
-title: 'Daytona Workspace'
+title: "Daytona Workspace"
 description:
-  'A Daytona Workspace refers to a highly configurable and sandboxed coding
+  "A Daytona Workspace refers to a highly configurable and sandboxed coding
   environment provided by the Daytona development environment management
   platform. This workspace is tailored to streamline the development process by
   offering an instantly accessible, pre-configured setup that integrates
   seamlessly with Visual Studio Code (VS Code) or any other IDEs such as
-  JetBrains suite of IDEs.'
+  JetBrains suite of IDEs."
 ---
 
 # Daytona Workspace

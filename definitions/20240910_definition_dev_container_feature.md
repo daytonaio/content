@@ -1,7 +1,6 @@
 ---
-title: 'Dev Container Feature'
-description:
-  'A modular, reusable component for customizing development containers'
+title: "Dev Container Feature"
+description: "A modular, reusable component for customizing development containers"
 ---
 
 # Dev Container Feature

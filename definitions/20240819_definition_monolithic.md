@@ -1,12 +1,12 @@
 ---
-title: 'Monolithic'
+title: "Monolithic"
 description:
-  'In the context of software architecture, monolithic refers to an approach
+  "In the context of software architecture, monolithic refers to an approach
   where an application is built as a single, unified unit rather than being
   divided into smaller, independent services. It describes a system design where
   all components and functionalities are tightly coupled and interdependent
   within a single codebase. Monolithic systems are traditionally characterized
-  by having a single large executable or deployment artifact.'
+  by having a single large executable or deployment artifact."
 ---
 
 # Monolithic

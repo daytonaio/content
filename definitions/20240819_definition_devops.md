@@ -1,12 +1,12 @@
 ---
-title: 'DevOps'
+title: "DevOps"
 description:
-  'DevOps is a software development methodology that integrates development
+  "DevOps is a software development methodology that integrates development
   (Dev) and operations (Ops) teams into a single unit. It aims to streamline the
   development cycle, increase deployment frequency, and ensure high-quality
   releases. DevOps emphasizes collaboration, automation, and continuous
   integration and delivery (CI/CD) to foster efficient and reliable software
-  development processes.'
+  development processes."
 ---
 
 # DevOps

@@ -1,12 +1,12 @@
 ---
-title: 'Kubernetes'
+title: "Kubernetes"
 description:
-  'Kubernetes is an open-source platform that automates the deployment, scaling,
+  "Kubernetes is an open-source platform that automates the deployment, scaling,
   and management of containerized applications. It is designed to manage
   clusters of containers, grouping them together for easy management and
   discovery. Kubernetes provides a robust set of tools and features for managing
   the lifecycle of applications, including automatic scaling, load balancing,
-  and self-healing capabilities.'
+  and self-healing capabilities."
 ---
 
 # Kubernetes

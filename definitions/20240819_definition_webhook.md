@@ -1,9 +1,9 @@
 ---
-title: 'Webhook'
+title: "Webhook"
 description:
-  'A webhook is an HTTP callback, a simple yet powerful mechanism that allows a
+  "A webhook is an HTTP callback, a simple yet powerful mechanism that allows a
   web application or service to provide real-time information to other
-  applications or services by pushing data to them.'
+  applications or services by pushing data to them."
 ---
 
 # Webhook

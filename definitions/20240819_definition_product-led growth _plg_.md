@@ -1,5 +1,5 @@
 ---
-title: 'Product-Led Growth (PLG)'
+title: "Product-Led Growth (PLG)"
 description:
   "Product-Led Growth (PLG) is a go-to-market strategy characterized by heavy
   reliance on the product itself to generate user interest, drive adoption, and

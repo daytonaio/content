@@ -1,10 +1,10 @@
 ---
-title: 'How to Create a Devcontainer Feature'
+title: "How to Create a Devcontainer Feature"
 description:
-  'A step-by-step guide to creating and enhancing a devcontainer feature,
-  focusing on the Hugging Face environment for ML and NLP tasks.'
+  "A step-by-step guide to creating and enhancing a devcontainer feature,
+  focusing on the Hugging Face environment for ML and NLP tasks."
 date: 2024-08-20
-author: 'Vamshi Maskuri'
+author: "Vamshi Maskuri"
 ---
 
 # How to Create a Devcontainer Feature

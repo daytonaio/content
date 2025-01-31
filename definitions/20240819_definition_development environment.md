@@ -1,11 +1,11 @@
 ---
-title: 'Development Environment'
+title: "Development Environment"
 description:
-  'A development environment is a workspace equipped with tools, configurations,
+  "A development environment is a workspace equipped with tools, configurations,
   and resources necessary for software developers to write, test, debug, and
   refine code before it is moved to staging or production environments. It
   traditionally includes integrated development environments (IDEs), libraries,
-  and other development tools specific to the task at hand.'
+  and other development tools specific to the task at hand."
 ---
 
 # Development Environment

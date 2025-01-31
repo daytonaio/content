@@ -1,5 +1,5 @@
 ---
-title: 'Docker Compose'
+title: "Docker Compose"
 description:
   "Docker Compose is a tool designed for defining and running multi-container
   Docker applications. It utilizes a YAML file to configure the application's

@@ -1,12 +1,12 @@
 ---
-title: 'Nix'
+title: "Nix"
 description:
-  'Nix is a purely functional package manager designed for reproducible and
+  "Nix is a purely functional package manager designed for reproducible and
   declarative software development and deployment. It provides a reliable and
   deterministic approach to managing software dependencies by utilizing a
   functional programming language. Nix ensures reproducibility and simplifies
   the process of creating consistent and self-contained development environments
-  for different projects.'
+  for different projects."
 ---
 
 # Nix

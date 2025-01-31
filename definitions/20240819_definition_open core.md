@@ -1,12 +1,12 @@
 ---
-title: 'Open Core'
+title: "Open Core"
 description:
-  'The open core model is a business strategy employed by companies engaged in
+  "The open core model is a business strategy employed by companies engaged in
   open source software development. Under this model, a company offers a
   foundational version of its software as open source, which can be freely
   accessed, used, and modified by the community. This core, open-source version
   includes essential features and capabilities but may lack more advanced
-  functionalities.'
+  functionalities."
 ---
 
 # Open Core

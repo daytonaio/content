@@ -1,10 +1,10 @@
 ---
-title: 'Continuous Integration (CI)'
+title: "Continuous Integration (CI)"
 description:
-  'Continuous Integration (CI) is a development practice in which developers
+  "Continuous Integration (CI) is a development practice in which developers
   frequently merge their code changes into a shared repository. This shared
   repository serves as a central location where all developers can access and
-  collaborate on the codebase.'
+  collaborate on the codebase."
 ---
 
 # Continuous Integration (CI)

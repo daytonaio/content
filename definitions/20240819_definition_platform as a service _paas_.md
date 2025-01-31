@@ -1,10 +1,10 @@
 ---
-title: 'Platform as a Service (PaaS)'
+title: "Platform as a Service (PaaS)"
 description:
-  'Platform as a Service (PaaS) is a cloud computing model where a third-party
+  "Platform as a Service (PaaS) is a cloud computing model where a third-party
   provider delivers hardware and software tools to users over the internet. This
   model has evolved from its initial focus on complex infrastructure management
-  to now prioritize simplification, value delivery, and user satisfaction.'
+  to now prioritize simplification, value delivery, and user satisfaction."
 ---
 
 # Platform as a Service (PaaS)

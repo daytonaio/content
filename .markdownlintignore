@@ -1,0 +1,22 @@
+# Ignore specific files
+COPYRIGHT.md
+README.md
+LICENSE*
+.github/
+CHANGELOG.md
+
+# Ignore directories
+authors/
+node_modules/
+dist/
+
+# Ignore specific files
+articles/20240819_dev_con_vs_traditional_dev.md
+articles/20240910_Daytona_Project_Config.md
+CONTRIBUTING.md
+definitions/20241126_definition_environment_variables.md
+guides/20240823_how_to_setup_postgresql_playground_in_daytona.md
+guides/20240827_setup_mongodb_daytona_playground.md
+guides/20240910_guide_srcbook.md
+guides/20240920_guide_building_a_duckdb_playground_with_daytona.md
+guides/20241121_guide_setting_up_a_python_dev_environment_with_devcontainers_and_daytona.md

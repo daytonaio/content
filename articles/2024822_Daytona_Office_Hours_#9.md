@@ -1,11 +1,11 @@
 ---
-title: 'Daytona Office Hours #9 - Pre-Builds Demo & Latest Fixes!'
+title: "Daytona Office Hours #9 - Pre-Builds Demo & Latest Fixes!"
 description:
-  'The recent updates and highlights shared during the Daytona Office Hours #9
-  and a special demo for Pre-Builds.'
+  "The recent updates and highlights shared during the Daytona Office Hours #9
+  and a special demo for Pre-Builds."
 date: 2024-8-22
-author: 'Daytona'
-tags: ['Office Hours', 'Prebuilds']
+author: "Daytona"
+tags: ["Office Hours", "Prebuilds"]
 ---
 
 # Daytona Office Hours #9 - Pre-Builds Demo & Latest Fixes

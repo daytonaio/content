@@ -1,11 +1,11 @@
 ---
-title: 'Setting Up a MongoDB Playground with Daytona'
+title: "Setting Up a MongoDB Playground with Daytona"
 description:
-  'Learn how to setup mongoDB playground with Daytona and with it using the
-  Terminal or the official MongoDB extension '
+  "Learn how to setup mongoDB playground with Daytona and with it using the
+  Terminal or the official MongoDB extension "
 date: 2024-08-27
-author: 'Tata Shalom'
-tags: ['daytona', 'devcontainer', 'mongoDB']
+author: "Tata Shalom"
+tags: ["daytona", "devcontainer", "mongoDB"]
 ---
 
 # Setting Up a MongoDB Playground with Daytona
@@ -130,12 +130,14 @@ container standard. You can find out more about Daytona Builders
   ```
 
   "service": "mongodb_playground", "workspaceFolder":
-    "/workspaces/${localWorkspaceFolderBasename}", "forwardPorts": [27017],
-    "customizations": { "vscode": { // Add the IDs of extensions you want installed
-    when the container is created. "extensions": [ "mongodb.mongodb-vscode" ] } } }
+  "/workspaces/${localWorkspaceFolderBasename}", "forwardPorts": [27017],
+  "customizations": { "vscode": { // Add the IDs of extensions you want installed
+  when the container is created. "extensions": [ "mongodb.mongodb-vscode" ] } } }
 
-    ```
-    Let's breakdown the `devcontainer.json` file
+  ```
+  Let's breakdown the `devcontainer.json` file
+
+  ```
 
 - **name**: Specifies the name of the development environment.
 - **dockerComposeFile**: points to the `docker-compose.yml` file we are going to
@@ -190,7 +192,7 @@ container standard. You can find out more about Daytona Builders
   You are going to create `docker-compose.yml` file in the same directory
 
   ```yml
-  version: '3.8'
+  version: "3.8"
 
   services:
     mongodb_playground:
@@ -205,7 +207,7 @@ container standard. You can find out more about Daytona Builders
       image: mongo:4.4
       restart: unless-stopped
       ports:
-        - '27017:27017'
+        - "27017:27017"
       volumes:
         - mongodb-data:/data/db
   volumes:
@@ -428,8 +430,8 @@ file.
   you did in the MongoDB Shell. For example
 
   ```javascript
-  use('test');
-  db.collection.insertOne({ name: 'Eliza', age: 40 });
+  use("test");
+  db.collection.insertOne({ name: "Eliza", age: 40 });
   ```
 
   You should get the same output below

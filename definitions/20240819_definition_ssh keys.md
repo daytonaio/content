@@ -1,11 +1,11 @@
 ---
-title: 'SSH keys'
+title: "SSH keys"
 description:
-  'SSH keys are a pair of cryptographic keys used for secure communication and
+  "SSH keys are a pair of cryptographic keys used for secure communication and
   authentication purposes in the context of SSH (Secure Shell) protocols. They
   ensure secure access to remote servers and systems by establishing a secure
   and encrypted connection over an insecure network. An SSH key pair consists of
-  two components:'
+  two components:"
 ---
 
 # SSH keys

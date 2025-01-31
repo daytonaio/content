@@ -1,11 +1,11 @@
 ---
-title: 'Continuous delivery (CD)'
+title: "Continuous delivery (CD)"
 description:
-  'Continuous delivery (CD) is a software engineering practice in which
+  "Continuous delivery (CD) is a software engineering practice in which
   incremental code changes are built, tested, and deployed automatically to
   production environments using progressive delivery techniques. It enables
   rapid delivery of features and fixes to users by reducing manual handoffs and
-  allowing for controlled, incremental releases.'
+  allowing for controlled, incremental releases."
 ---
 
 # Continuous delivery (CD)

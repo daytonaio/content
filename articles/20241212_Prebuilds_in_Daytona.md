@@ -1,10 +1,9 @@
 ---
-title: 'Prebuilds in Daytona'
-description:
-  'A comprehensive guide on using prebuilds in Daytona to streamline workspace creation and accelerate development.'
+title: "Prebuilds in Daytona"
+description: "A comprehensive guide on using prebuilds in Daytona to streamline workspace creation and accelerate development."
 date: 2024-12-12
-author: 'Kiran Naragund'
-tags: ['daytona', 'prebuilds']
+author: "Kiran Naragund"
+tags: ["daytona", "prebuilds"]
 ---
 
 # Prebuilds in Daytona
@@ -53,7 +52,7 @@ which the Git Provider uses to send these requests.
 Before setting up Prebuilds for your project, you must set up a [Project Configuration](https://www.daytona.io/docs/usage/projects/#project-configuration).
 
 A project configuration contains all necessary properties to define and manage projects within a Workspace.
-It stores information such as the repository URL, build configuration, and environment variables. 
+It stores information such as the repository URL, build configuration, and environment variables.
 This allows for easy reuse of previously set configurations, ensuring a consistent and reproducible
 setup across multiple Workspaces.
 
@@ -101,7 +100,7 @@ repository from my GitHub account for configuration.
 
 - **Step 5:** Choose a build configuration
 
-Choose your preferred builder for your project. Builders are responsible for creating 
+Choose your preferred builder for your project. Builders are responsible for creating
 a container image with the necessary tools and configurations for your Project.
 
 Read more about Builders and how to choose one for your project [here](https://www.daytona.io/docs/usage/builders/)
@@ -149,7 +148,7 @@ Upon running the above command, Select a project configuration you plan to work 
 
 ![prebuilds add](./assets/20241212_Prebuilds_in_Daytona_img8.png)
 
-After that, Daytona will prompt you to enter several configuration options. 
+After that, Daytona will prompt you to enter several configuration options.
 Here's an overview:
 
 - **Commit interval**
@@ -159,7 +158,7 @@ For instance, if you specify a commit interval of 2, the Prebuild will run after
 
 - **Trigger Files**
 
-Enter the file path whose changes you want to immediately trigger a Prebuild, without having to wait for the commit interval. 
+Enter the file path whose changes you want to immediately trigger a Prebuild, without having to wait for the commit interval.
 
 - **Retention**
 
@@ -169,8 +168,8 @@ Select `Yes` to Run the build once submit.
 
 ![prebuilds config](./assets/20241212_Prebuilds_in_Daytona_img9.png)
 
-Once you add a Prebuild, it becomes active immediately based on the project configuration you provided and 
-a build process will automatically start in the background. 
+Once you add a Prebuild, it becomes active immediately based on the project configuration you provided and
+a build process will automatically start in the background.
 
 You can check the progress of the build by running the command:
 
@@ -187,10 +186,10 @@ daytona create [PROJECT_CONFIG_NAME]
 ```
 
 Upon running this command, Daytona will detect the most recent Prebuild associated with the selected project configuration.
-The Workspace will then use this Prebuild, significantly speeding up the setup process. 
+The Workspace will then use this Prebuild, significantly speeding up the setup process.
 
 Now, you have successfully configured Prebuild for your project. The Prebuild will automatically run whenever the specified
-conditions are met, such as when the defined number of commits is reached or Trigger files are modified and subsequent 
+conditions are met, such as when the defined number of commits is reached or Trigger files are modified and subsequent
 `daytona create` calls will automatically detect the most recent existing build and use it to create the project.
 
 ## Managing Prebuilds
@@ -222,7 +221,7 @@ Run the following command to view the details of a Prebuild:
 daytona prebuilds info
 ```
 
-It will prompt you to select the Prebuild you want to view. 
+It will prompt you to select the Prebuild you want to view.
 
 ![prebuilds info](./assets/20241212_Prebuilds_in_Daytona_img12.png)
 
@@ -262,7 +261,7 @@ Run the following command to delete a Prebuild:
 daytona prebuilds delete
 ```
 
-It will prompt you to select the Prebuild you want to delete. 
+It will prompt you to select the Prebuild you want to delete.
 
 ![prebuilds delete](./assets/20241212_Prebuilds_in_Daytona_img16.png)
 
@@ -282,7 +281,7 @@ Upon selecting the Prebuild, Daytona will delete that Prebuild.
 
 Prebuilds in Daytona offer a powerful way to streamline workspace creation and boost development efficiency.
 By setting up prebuilds, you can ensure faster, more consistent, and resource-efficient workflows.
-To fully harness the power of prebuilds, start by configuring your projects, automating your build triggers, 
+To fully harness the power of prebuilds, start by configuring your projects, automating your build triggers,
 and optimizing your environment setup for success.
 
 ## References
@@ -292,4 +291,3 @@ and optimizing your environment setup for success.
 - [Daytona Documentation](https://www.daytona.io/docs)
 
 - [Boost Your Workspace Creation with Prebuilds](https://www.daytona.io/dotfiles/boost-your-workspace-creation-with-prebuilds)
-

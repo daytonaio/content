@@ -1,11 +1,11 @@
 ---
-title: 'Setting Up Daytona AWS Provider'
+title: "Setting Up Daytona AWS Provider"
 description:
-  'A step-by-step guide to setting up and configuring the Daytona AWS Provider
-  for managing workspace projects on Amazon EC2 instances.'
+  "A step-by-step guide to setting up and configuring the Daytona AWS Provider
+  for managing workspace projects on Amazon EC2 instances."
 date: 2024-09-04
-author: 'Kiran Naragund'
-tags: ['aws', 'ec2', 'daytona']
+author: "Kiran Naragund"
+tags: ["aws", "ec2", "daytona"]
 ---
 
 # Setting Up Daytona AWS Provider
