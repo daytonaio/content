@@ -14,7 +14,7 @@
   "MD003": { "style": "atx" },
   "MD004": { "style": "dash" },
   "MD005": false,
-  "MD013": { "line_length": 500 },
+  "MD013": { "line_length": 300 },
   "MD022": true,
   "MD023": true,
   "MD025": false,
