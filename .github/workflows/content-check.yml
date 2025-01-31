@@ -2,6 +2,9 @@ name: Content Compliance Check
 
 on: [pull_request]
 
+permissions:
+  pull-requests: write
+
 jobs:
   content-compliance:
     runs-on: ubuntu-latest
@@ -41,7 +44,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh pr comment ${{ github.event.pull_request.number }} --body "Hi @${{ github.event.pull_request.user.login }}, our policy allows contributors to work on one issue at a time. Please complete or close your existing pull requests before creating a new one."
+        curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+        -d '{"body": "Hi @${{ github.event.pull_request.user.login }}, our policy allows contributors to work on one issue at a time. Please complete or close your existing pull requests before creating a new one."}'
         exit 1
 
     - name: File Naming and Folder Structure Compliance
