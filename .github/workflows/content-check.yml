@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '20'
         cache: 'npm'
         
     - name: Install dependencies
@@ -89,7 +89,7 @@ jobs:
         fi
 
     - name: Install markdownlint
-      run: npm install -g markdownlint-cli
+      run:  npm install -g markdownlint-cli@0.37.0
 
     - name: Run Markdown Lint
       run: |
