@@ -1,5 +1,5 @@
 ---
-title: 'Title of the Guide. The title should be a max. of 55 characters.'
+title: 'Guide to Using Sapat: The Video Transcription Tool'
 description:
   'A brief description of what the guide covers. The description should be a
   maximum of 160 characters.'
@@ -8,7 +8,7 @@ author: 'Jeffrey Whewhetu'
 tags: ['transcription tool', 'transcribe', 'video transcription']
 ---
 
-# Guide to Using Sapat: The Video Transcription Tool  
+# Guide to Using Sapat: The Video Transcription Tool
 
 ## Introduction
 
@@ -70,13 +70,28 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
+1. Create a Daytona workspace with the command below. The IDE you set as default in Daytona shouldd open in a few second.
+
 ```
 daytona create https://github.com/nkkko/sapat
 ```
 
+2. Create a `.env` file in the project root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
+
+```
+# Groq
+GROQCLOUD_API_KEY=your_groq_api_key_here
+GROQCLOUD_MODEL=whisper-large-v3-turbo
+GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
+GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
+```
+
+3. Run this command to build a distribution. It would be be in the `dist` directory.
 ```
 python -m build
 ```
+
+4. Run the command to install the distribution wheel
 
 ```
 pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename displayed after previous command is ran
@@ -84,15 +99,11 @@ pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filenam
 
 ## How to Transcribe a Video File with Sapat  
 
-1. **Prepare the Environment**:  
-   - Ensure the `.env` file is configured with your API credentials.  
-   - Install Sapat by following the installation steps in the README.  
-
 1. **Run the Transcription Command**:  
    ```bash
    sapat my_video.mp4 --quality H --language en --api openai
    ```  
-   - Replace `my_video.mp4` with your video file.  
+   - Replace `my_video.mp4` with path to your video file.  
    - Use the `--quality` option to set MP3 quality (`L`, `M`, `H`).  
 
 2. **View Results**:  
@@ -105,7 +116,7 @@ pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filenam
    ```bash
    sapat my_audio.mp3 --language es --api azure --prompt "Focus on technical terms"
    ```  
-   - Replace `my_audio.mp3` with your audio file.  
+   - Replace `my_audio.mp3` with path to your audio file.  
    - Add a `--prompt` to guide the transcription model if needed.  
 
 2. **Output**:  
