@@ -68,20 +68,34 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 5. **Cleanup**: Temporary files (e.g., MP3) are deleted after transcription.
 
+## Setup Sapat in Daytona Workspace for Transcription
+
+```
+daytona create https://github.com/nkkko/sapat
+```
+
+```
+python -m build
+```
+
+```
+pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename displayed after previous command is ran
+```
+
 ## How to Transcribe a Video File with Sapat  
 
 1. **Prepare the Environment**:  
    - Ensure the `.env` file is configured with your API credentials.  
    - Install Sapat by following the installation steps in the README.  
 
-2. **Run the Transcription Command**:  
+1. **Run the Transcription Command**:  
    ```bash
    sapat my_video.mp4 --quality H --language en --api openai
    ```  
    - Replace `my_video.mp4` with your video file.  
    - Use the `--quality` option to set MP3 quality (`L`, `M`, `H`).  
 
-3. **View Results**:  
+2. **View Results**:  
    - A file named `my_video.txt` will be created in the same directory as the video file, containing the transcription.  
 
 
