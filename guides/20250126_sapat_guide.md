@@ -21,6 +21,7 @@ This guide will walk you through Sapat's features, setup process, and best pract
 - What's Trancription and it's Use Cases
 - What's Sapat, it's features and how it Works
 - How Whisper AI model powers Sapat
+- Installation of Sapat using Daytona
 - How to Transcribe a Video file with Sapat
 - How to Transcribe an Audio file with Sapat
 - Tips and Best Practices
@@ -32,9 +33,7 @@ This guide will walk you through Sapat's features, setup process, and best pract
 
 Before using Sapat, ensure you have the following:  
 
-- **Python 3.6+** installed on your system.
-
-- **ffmpeg** installed and added to your system's PATH.
+- [Daytona](https://daytona.io) installed on your system.
 
 - **API access** for one or more supported services:
   - Azure OpenAI  
@@ -140,4 +139,5 @@ Sapat is a powerful tool that simplifies the transcription of video and audio fi
 
 ## References
 
+_[Daytona Official Website](https://daytona.io)_
 _[Source Cdoe Repository for Sapat Transcription Tool](https://github.com/nkkko/sapat)_
