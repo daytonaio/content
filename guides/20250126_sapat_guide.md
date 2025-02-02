@@ -35,12 +35,10 @@ Before using Sapat, ensure you have the following:
 
 - [Daytona](https://daytona.io) installed on your system.
 
-- **API access** for one or more supported services:
+- **API access key** for any of the supported services:
   - Azure OpenAI  
   - Groq Cloud  
   - OpenAI
-
-- A valid `.env` file with your API credentials.  
 
 ## What's Sapat?  
 
@@ -118,10 +116,6 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 - Ensure the `.env` file is in the project root and contains valid API credentials.  
 
-### Issue: ffmpeg Not Found  
-
-- Install ffmpeg and add it to your system PATH. Verify the installation by running `ffmpeg -version` in your terminal.  
-
 ### Issue: API Errors
 
 - **Rate Limits**: Ensure your API account has sufficient credits or quotas.
@@ -139,5 +133,6 @@ Sapat is a powerful tool that simplifies the transcription of video and audio fi
 
 ## References
 
-_[Daytona Official Website](https://daytona.io)_
-_[Source Cdoe Repository for Sapat Transcription Tool](https://github.com/nkkko/sapat)_
+- _[Daytona Official Website](https://daytona.io)_
+
+- _[Source Cdoe Repository for Sapat Transcription Tool](https://github.com/nkkko/sapat)_
