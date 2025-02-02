@@ -42,7 +42,7 @@ Before using Sapat, ensure you have the following:
 
 ## What's Sapat?  
 
-Sapat (Synthesizing Audio Processing and Transcription Technology) is an automation tool designed to transcribe video and audio files into text using state-of-the-art AI models. By supporting multiple APIs, it gives users flexibility and reliability in generating transcriptions quickly and accurately.  
+Sapat is a transcriptoon tool designed to transcribe video and audio files using state-of-the-art AI models. By supporting multiple APIs, it gives users flexibility and reliability in generating transcriptions quickly and accurately.  
 
 ## Features
 
