@@ -70,13 +70,13 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
-1. Create a Daytona workspace with the command below. The IDE you set as default in Daytona shouldd open in a few second.
+1. Create a Daytona workspace with the command below. The IDE you set as default in Daytona should open in a few second after running the command.
 
 ```
 daytona create https://github.com/nkkko/sapat
 ```
 
-2. Create a `.env` file in the project root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
+2. Create a `.env` file in the workspace root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
 
 ```
 # Groq
@@ -101,9 +101,9 @@ pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filenam
 
 1. **Run the Transcription Command**:  
    ```bash
-   sapat my_video.mp4 --quality H --language en --api openai
+   sapat path/to/my_video.mp4 --quality H --language en --api groq
    ```  
-   - Replace `my_video.mp4` with path to your video file.  
+   - Replace `path/to/my_video.mp4` with path to your video file.  
    - Use the `--quality` option to set MP3 quality (`L`, `M`, `H`).  
 
 2. **View Results**:  
@@ -114,9 +114,9 @@ pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filenam
 
 1. **Run the Transcription Command**:  
    ```bash
-   sapat my_audio.mp3 --language es --api azure --prompt "Focus on technical terms"
+   sapat path/to/my_audio.mp3 --language es --api groq
    ```  
-   - Replace `my_audio.mp3` with path to your audio file.  
+   - Replace `path/to/my_audio.mp3` with path to your audio file.  
    - Add a `--prompt` to guide the transcription model if needed.  
 
 2. **Output**:  
