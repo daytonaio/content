@@ -76,7 +76,7 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 daytona create https://github.com/nkkko/sapat
 ```
 
-2. Create a `.env` file in the workspace root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
+2. Create a `.env` file in the project root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
 
 ```
 # Groq
