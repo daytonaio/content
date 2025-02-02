@@ -19,9 +19,8 @@ This guide will walk you through Sapat's features, setup process, and best pract
 ## TL;DR
 - Prerequisites
 - What's Trancription and it's Use Cases
-- What's Sapat
-- Features of Sapat
-- How it Works
+- What's Sapat, it's features and how it Works
+- How Whisper AI model powers Sapat
 - How to Transcribe a Video file with Sapat
 - How to Transcribe an Audio file with Sapat
 - Tips and Best Practices
@@ -118,21 +117,19 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 
 ### Issue: Missing `.env` File  
 
-**Solution**: Ensure the `.env` file is in the project root and contains valid API credentials.  
+- Ensure the `.env` file is in the project root and contains valid API credentials.  
 
 ### Issue: ffmpeg Not Found  
 
-**Solution**: Install ffmpeg and add it to your system PATH. Verify the installation by running `ffmpeg -version` in your terminal.  
+- Install ffmpeg and add it to your system PATH. Verify the installation by running `ffmpeg -version` in your terminal.  
 
 ### Issue: API Errors
 
 - **Rate Limits**: Ensure your API account has sufficient credits or quotas.
-
 - **Invalid Keys**: Double-check your API keys in the `.env` file.
 
 ### Issue: Poor Transcription Accuracy
 
-**Solution**:  
 - Use a clearer audio source.  
 - Specify the correct language using the `--language` option.  
 - Provide a contextual `--prompt` to improve transcription quality.  
@@ -140,8 +137,6 @@ Sapat (Synthesizing Audio Processing and Transcription Technology) is an automat
 ## Conclusion  
 
 Sapat is a powerful tool that simplifies the transcription of video and audio files using leading AI services. By following this guide, you can set up Sapat, transcribe files with ease, and troubleshoot common issues.  
-
-For more advanced configurations or support, consult the README or reach out to the developer community. Happy transcribing!  
 
 ## References
 
