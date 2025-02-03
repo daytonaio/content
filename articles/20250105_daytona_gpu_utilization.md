@@ -328,7 +328,7 @@ depending on your specific need or complexity of operation
   to manage datasets, `accelerate` is used to simplify distributed training and `torchmetrics` is used to provide metrics for
   evaluating PyTorch models.
 - `COPY *.py /workspace/`: Copies all Python files from the host directory into the container.
-- `COPY train.txt /workspace/`: Copies the `train.txt` file to your workspace.
+- `COPY data.txt /workspace/`: Copies the `train.txt` file to your workspace.
 - `CMD [ "bash" ]`: This opens up a shell prompt inside the container when you can execute your scripts manually.
 
 Navigate to the parent directory, you will create several files which will be used for the LLM fine-tuning and
@@ -364,7 +364,7 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArgume
 from datasets import load_dataset
 
 # Load dataset
-dataset = load_dataset("text", data_files={"train": "train.txt"})
+dataset = load_dataset("text", data_files={"train": "data.txt"})
 
 # Load tokenizer and model
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
