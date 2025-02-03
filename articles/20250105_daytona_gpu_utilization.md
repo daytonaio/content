@@ -22,6 +22,9 @@ GPUs handle intensive computations to update model weights, requiring high utili
 In inference, GPUs process model outputs in real-time, where balanced utilization ensures fast and
 reliable predictions.
 
+This guide you will walk you through setting up a Daytona environment for [LLM Fine-Tuning](/definitions/20250105_definition_llm_fine_tuning.md) and [LLM Inference](/definitions/20250105_definition_llm_inference.md). This article assumes you have a [CUDA-enabled GPU](https://developer.nvidia.com/cuda-gpus)
+,and a Linux based system(Windows users have to use WSL).You will use [Docker](https://docs.docker.com/get-started/get-docker/) containers, [Daytona](https://www.daytona.io/docs/installation/installation/) and an IDE like [VS Code](https://code.visualstudio.com/download).
+
 ## TL;DR
 
 - GPU utlization is the process of using a portion of the GPUs resources for special tasks
@@ -80,26 +83,107 @@ potentially support other configuration standards in the future, such as
 
 For more information about Daytona check out its [docs](https://daytona.io/docs)
 
-In this guide you will learn how to build an environment using Daytona in which you can utilize your powerful Nvidia
-GPU for the purpose of [LLM Fine-Tuning](/definitions/20250105_definition_llm_fine_tuning.md) and [LLM Inference](/definitions/20250105_definition_llm_inference.md). Before you get started make sure you have
-[Docker](https://docs.docker.com/get-started/get-docker/) installed, an IDE like [VS Code](https://code.visualstudio.com/download) or
-[JetBrains](https://www.jetbrains.com/idea/download/),
-[Daytona](https://www.daytona.io/docs/installation/installation/), [CUDA-enabled GPU](https://developer.nvidia.com/cuda-gpus), [Nvidia GPU Driver](https://www.nvidia.com/en-us/drivers/) and WSL2(Window Sub-System for Linux) and a Linux Distribution like Ubuntu. Both Window and Linux users can follow
-this guide, the only difference is potential driver installations which will be clarified later on in this guide.
-
 You can find the Github repository where my devcontainer configuration files
 which I used for this guide
 [here](https://github.com/stdthoth/daytona-gpu-utilization).
 
-## Installation and Verification of Nvidia Drivers and Toolkit
+## Prerequsites and System Architecture
 
-Before setting up the [dev container](/definitions/20240819_definition_development%20container.md) configuration you should verify if your GPU
-is CUDA compatible,if the drivers are installed on the host machine and the Nvidia
+Before starting the process for GPU-based LLM fine-tuning and
+inference with Daytona, ensure your system meets the following
+requirements:
+
+**Hardware**:
+- **CPU**: x86_64 (amd64) or ARM architecture(Nvidia Jetson devices)
+- **GPU**: CUDA-compatible NVIDIA GPU (e.g. RTX 20xx,30xx, Quadro series, Axx,Hxx)
+- **Memory**: Minimum of 4GB RAM recommended, 16GB or more for
+better performance
+
+**Software**:
+- **Operating System**: Linux debian based distro like Ubuntu and
+Windows via WSL2 Ubuntu distribution.
+- **Docker**: Must be instsalled and cofigured for running
+containers.
+- **Nvidia Drivers**: Ensure the correct GPU drivers for your
+GPU is installed. you can verify this by running `nvidia-smi`
+
+**Environment**:
+- **CUDA**: Install the correct version of the CUDA toolkit
+matching your GPU drivers. Ensure compatibility between Docker
+images and the driver version, Ideally you should use a docker image lower than the CUDA driver version i.e if your CUDA driver
+version is `12.4` you should use a docker image with `12.3.x` tag.
+- **WSL**: For windows users, ensure that WSL2 is properly
+configured to allow GPU access within Linux environments.
+
+## Installation and verification of all essential software
+
+For this setup I am currently using a hardware setup(Physical GPU device) but if you dont have that you can follow along by  getting a gpu enable VM from cloud providers.
+
+If you're using a GPU enabled Linux VM, install important
+programs like git and build essential by running
+
+```bash
+  sudo apt-get install -y git build-essential
+```
+
+Before setting up the [dev container](/definitions/20240819_definition_development%20container.md) configuration you should verify if your WSL,Docker,CUDA compatiblity,if the drivers are installed on the host machine and the Nvidia
 Container Toolkit installation status.
+  
+  You can verify if your Nvidia GPU is CUDA compatible by checking
+  if your GPU model is on the list located [here](https://developer.nvidia.com/cuda-gpus)
 
-  Verify [GPU driver](/definitions/20250105_definition_gpu_driver.md) status and install Nvidia Container Toolkit
+  For Windows Users, to verify if WSL is installed, Open up
+  Powershell and run :
+  
+  ```bash
+  wsl --status
+  ````
+  If WSL is installed it should show the default WSL version, kernel version and the default distribution. If WSL is not installed you can install it by running :
 
-  To verify your drver status open your terminal and run this command
+  ```bash
+  wsl --install
+  ```
+  To verify if Docker is installed and running:
+
+  Open up a terminal (Powershell, Linux shell e.t.c) and run
+  this command :
+  
+  ```bash
+  docker --version
+  ```
+  If Docker is installed it should output something like:
+
+  ```bash
+  Docker version 24.0.5, build a8a2b3b
+  ```
+  If Docker is not installed you can install it from [here](https://docs.docker.com/desktop/setup/install/windows-install/) on
+  Windows and on Ubuntu you can install it by running the following:
+
+  Set up Docker's apt repository
+  
+  ```bash
+  # Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+  ```
+  Install Docker's packages
+
+  ```bash
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  ```
+  To verify [GPU driver](/definitions/20250105_definition_gpu_driver.md) status and install Nvidia Container Toolkit
+
+  To verify your driver status open your terminal and run this command
 
   ```bash
   nvidia-smi
@@ -109,14 +193,26 @@ Container Toolkit installation status.
   ![image of nvidia-smi output](assets/20250105_daytona_gpu_utilization_img_1.PNG)
 
   If you do not have drivers installed get them from [here](https://www.nvidia.com/en-us/drivers/)
-  depending on your OS and GPU,If drivers are installled open your WSL2 distribution and check if
-  the Nvidia Container Toolkit is installed with
+  depending on your OS and GPU hardware,
+  
+  If drivers are installled open your shell(WSL foe windows users) and check if the Nvidia Container Toolkit is installed with:
 
   ```bash
     dpkg -l | grep nvidia-container-toolkit
   ```
-  If installed it will show the package version, if it isn't installed run this command
+  If installed it will show the package version, if it isn't installed run this command to add the production repository.
 
+  ```bash
+    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+  ```
+  Update the package list from the repository
+  ```bash
+    sudo apt-get update
+  ```
+  Install the NVIDIA Container Toolkit packages
   ```bash
     sudo apt-get install -y nvidia-container-toolkit
   ```
@@ -130,16 +226,21 @@ Container Toolkit installation status.
   this command
 
   ```bash
-    docker run --gpus all nvidia/cuda:12.0-base nvidia-smi
+    docker run --gpus all nvidia/cuda:12.0.1-base nvidia-smi
   ```
   Ensure that the Windows/Linux drivers are compatible with the CUDA version in your Docker image,
   i.e a driver version of 12.5 should be used with a CUDA docker image of version 12.5 or less
   since there is backward compatibilty between them.
 
-  > **Important Note:** For windows users If you have Nvidia GPU drivers already installed on their
-  >system, CUDA becomes available within WSL2. The CUDA driver installed on windows will be stubbed
-  >inside the WSL2, therefore users must not install any Nvidia GPU Linux driver within WSL2 to
-  >avoid conflicts.
+## Special Considerations for Windows Users
+
+- Window users should install drivers from Nvidia on their host machine and should not install them on the WSL distribution  
+- For Windows users, If you have Nvidia GPU drivers already installed on their
+  system, CUDA becomes available within WSL2. The CUDA driver installed on windows will be stubbed
+  inside the WSL2, therefore users must not install any Nvidia GPU Linux driver within WSL2 to
+  avoid conflicts.
+- Windows users should install Docker Desktop and run it by simply opening the desktop app on their host machine instead of installing the Docker engine in WSL to avoid
+issues using the Docker Daemon.
 
 ## Setup Dev Container Configuration for GPU Utilization
   
@@ -208,7 +309,7 @@ You will create a Dockerfile in the same directory
       && pip install torch torchvision torchaudio transformers datasets accelerate torchmetrics
 
   COPY *.py /workspace/
-  COPY train.txt /workspace/
+  COPY data.txt /workspace/
 
   CMD [ "bash" ]
   ```
@@ -353,8 +454,9 @@ Initialize,commmit and create a GitHub repository
 
 ## Setup workspace environment in Daytona
 
-Here you are going to use Daytona to build the playground using Github as a
-Provider and open a workspace in VS Code. You should ensure `daytona` is
+If you are using a Linux VM you will need to SSH into the server
+before attempting to build the workspace with Daytona. You can learn how to SSH into a Linux server [here](https://www.youtube.com/watch?v=QRlTJW8HYs4)
+You should ensure `daytona` is
 installed on you machine before proceeding.
 
 Execute the command provided below to start the `daytona` server daemon. when
