@@ -5,7 +5,7 @@ description:
   maximum of 160 characters.'
 date: 2025-01-26
 author: 'Jeffrey Whewhetu'
-tags: ['AI model', 'open source', 'transcription']
+tags: ['model', 'open source', 'transcription']
 ---
 
 # Guide to Whisper Model and Sapat: Simplifying Transcription with Whisper using Sapat
@@ -32,7 +32,7 @@ But how can you easily integrate Whisper into your workflows? That's where **Sap
 ## Prerequisites
 
 Before using Sapat, ensure you have:
-1. **Daytona**: Install Daytona from [daytona.io](https://daytona.io).
+1. **Daytona**: Install Daytona from [here](https://github.com/daytonaio/daytona).
 2. **API Access**: Obtain an API key for a Whisper-powered service (e.g., OpenAI, Groq, or Azure OpenAI).
 
 ## What is Whisper?
@@ -112,7 +112,7 @@ While Whisper is a powerful tool, using it directly can require technical expert
    Build and install the Sapat package:
    ```bash
    python -m build
-   pip install dist/sapat-0.1.1-py3-none-any.whl
+   pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename
    ```
 
 3. **Add API Credentials**:
