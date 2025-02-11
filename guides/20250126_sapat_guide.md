@@ -40,9 +40,11 @@ Before using Sapat, ensure you have the following:
 
 ## What's Sapat?  
 
-Sapat is a transcriptoon tool designed to transcribe video and audio files using state-of-the-art AI models. By supporting multiple APIs, it gives users flexibility and reliability in generating transcriptions quickly and accurately.  
+Sapat is a transcriptoon tool designed to transcribe video and audio files using state-of-the-art AI model - OpenAI's Whisper. By supporting multiple APIs, it gives users flexibility and reliability in generating transcriptions quickly and accurately.  
 
 ## Features
+
+Sapat offers a range of powerful features to simplify and enhance your transcription workflow. From built-in video-to-audio conversion to flexible multi-API support. Sapat provides everything you need for accurate and efficient transcriptions.
 
 - **Video-to-Audio Conversion**: Converts video files into MP3 format using ffmpeg for transcription.
 
@@ -56,6 +58,8 @@ Sapat is a transcriptoon tool designed to transcribe video and audio files using
 
 ## How It Works  
 
+Sapat's process is designed for ease of use and efficiency.  Simply provide your audio, video or even a directory containing your audio or video files, and Sapat handles the conversion, transcription, and cleanup, delivering a ready-to-use text file.
+
 1. **Input File**: Sapat accepts video or audio files as input.
 
 2. **Audio Conversion**: Videos are converted to MP3 format using ffmpeg.
@@ -66,9 +70,11 @@ Sapat is a transcriptoon tool designed to transcribe video and audio files using
 
 5. **Cleanup**: Temporary files (e.g., MP3) are deleted after transcription.
 
-## The AI model that powers Sapat: Whisper
+## The AI Model that powers Sapat: Whisper
 
 Whisper is an open-source automatic speech recognition (ASR) model developed by OpenAI. It is trained on a massive dataset of multilingual and multitask supervised data, making it one of the most robust and versatile transcription tools available today. Whisper can handle a wide range of audio inputs, from clear studio recordings to noisy, real-world environments.
+
+Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides redundancy and choice, allowing users to optimize for cost, performance, or availability.
 
 ### Features of Whisper
 
@@ -179,6 +185,8 @@ GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
 ## Conclusion  
 
 Sapat is a powerful tool that simplifies the transcription of video and audio files using leading AI services. By following this guide, you can set up Sapat, transcribe files with ease, and troubleshoot common issues.  
+
+Sapat offers a flexible and robust solution for all your transcription needs, leveraging the capabilities of Whisper model. With multi-API support and customizable parameters, Sapat adapts to your specific requirements, providing accurate and reliable transcriptions.
 
 ## References
 
