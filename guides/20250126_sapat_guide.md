@@ -100,7 +100,7 @@ Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflo
 - **Customizable Parameters**: Adjust language, audio quality, and prompts for better results.
 - **Temporary File Cleanup**: Automatically removes intermediate files after transcription.
 
-## How to Set Up Sapat with Whisper
+## How to Set Up Sapat
 
 1. **Create a Daytona Workspace**:
    ```bash
