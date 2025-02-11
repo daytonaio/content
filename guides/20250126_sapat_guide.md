@@ -5,7 +5,7 @@ description:
   maximum of 160 characters.'
 date: 2025-01-26
 author: 'Jeffrey Whewhetu'
-tags: ['transcription tool', 'transcribe', 'video transcription']
+tags: ['model', 'transcribe', 'video transcription']
 ---
 
 # Guide to Using Sapat: The Video Transcription Tool
@@ -18,12 +18,10 @@ This guide will walk you through Sapat's features, setup process, and best pract
 
 ## TL;DR
 - Prerequisites
-- What's Trancription and it's Use Cases
 - What's Sapat, it's features and how it Works
-- How Whisper AI model powers Sapat
+- The AI model that powers Sapat
 - Installation of Sapat using Daytona
-- How to Transcribe a Video file with Sapat
-- How to Transcribe an Audio file with Sapat
+- How to Transcribe with Sapat
 - Tips and Best Practices
 - Common issues and Troubleshootings
 - Conclusion
@@ -76,7 +74,18 @@ Sapat is a transcriptoon tool designed to transcribe video and audio files using
 daytona create https://github.com/nkkko/sapat
 ```
 
-2. Create a `.env` file in the project root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
+2. Run this command to build a distribution. It would be be in the `dist` directory.
+```
+python -m build
+```
+
+3. Run the command to install the distribution wheel
+
+```
+pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename displayed after previous command is ran
+```
+
+4. Create a `.env` file in the project root and add your API credentials. I use Groq Cloud API but you can use other supported APIs.
 
 ```
 # Groq
@@ -84,17 +93,6 @@ GROQCLOUD_API_KEY=your_groq_api_key_here
 GROQCLOUD_MODEL=whisper-large-v3-turbo
 GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
 GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
-```
-
-3. Run this command to build a distribution. It would be be in the `dist` directory.
-```
-python -m build
-```
-
-4. Run the command to install the distribution wheel
-
-```
-pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename displayed after previous command is ran
 ```
 
 ## How to Transcribe a Video File with Sapat  
@@ -144,7 +142,7 @@ pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filenam
 ### Issue: API Errors
 
 - **Rate Limits**: Ensure your API account has sufficient credits or quotas.
-- **Invalid Keys**: Double-check your API keys in the `.env` file.
+- **Invalid Keys**: Double-check your API credentials in the `.env` file.
 
 ### Issue: Poor Transcription Accuracy
 
