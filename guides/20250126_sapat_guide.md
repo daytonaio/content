@@ -5,7 +5,7 @@ description:
   maximum of 160 characters.'
 date: 2025-01-26
 author: 'Jeffrey Whewhetu'
-tags: ['model', 'transcribe', 'video transcription']
+tags: ['model', 'transcribe', 'video transcription', 'transcription tool']
 ---
 
 # Guide to Using Sapat: The Video Transcription Tool
@@ -68,9 +68,29 @@ Sapat is a transcriptoon tool designed to transcribe video and audio files using
 
 ## The AI model that powers Sapat: Whisper
 
-### What is Whisper
+Whisper is an open-source automatic speech recognition (ASR) model developed by OpenAI. It is trained on a massive dataset of multilingual and multitask supervised data, making it one of the most robust and versatile transcription tools available today. Whisper can handle a wide range of audio inputs, from clear studio recordings to noisy, real-world environments.
 
-## Features of Whisper
+### Features of Whisper
+
+### 1. **Multilingual Support**
+
+Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
+
+### 2. **Noise Robustness**
+
+Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
+
+### 3. **Contextual Understanding**
+
+Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
+
+### 4. **Open-Source and Customizable**
+
+Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
+
+### 5. **Scalability**
+
+Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
