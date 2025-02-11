@@ -121,6 +121,7 @@ While Whisper is a powerful tool, using it directly can require technical expert
    GROQCLOUD_API_KEY=your_groq_api_key_here
    GROQCLOUD_MODEL=whisper-large-v3-turbo
    GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
+   GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
    ```
 
 ## Transcribing Audio and Video Files with Sapat
