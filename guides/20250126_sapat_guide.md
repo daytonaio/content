@@ -74,29 +74,29 @@ Sapat's process is designed for ease of use and efficiency.  Simply provide your
 
 Whisper is an open-source automatic speech recognition (ASR) model developed by OpenAI. It is trained on a massive dataset of multilingual and multitask supervised data, making it one of the most robust and versatile transcription tools available today. Whisper can handle a wide range of audio inputs, from clear studio recordings to noisy, real-world environments.
 
-Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides redundancy and choice, allowing users to optimize for cost, performance, or availability.
-
 ### Features of Whisper
 
-### 1. **Multilingual Support**
+- **Multilingual Support**
 
 Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
 
-### 2. **Noise Robustness**
+- **Noise Robustness**
 
 Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
 
-### 3. **Contextual Understanding**
+- **Contextual Understanding**
 
 Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
 
-### 4. **Open-Source and Customizable**
+- **Open-Source and Customizable**
 
 Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
 
-### 5. **Scalability**
+- **Scalability**
 
 Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
+
+Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides redundancy and choice, allowing users to optimize for cost, performance, or availability.
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
@@ -184,9 +184,9 @@ GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
 
 ## Conclusion  
 
-Sapat is a powerful tool that simplifies the transcription of video and audio files using leading AI services. By following this guide, you can set up Sapat, transcribe files with ease, and troubleshoot common issues.  
-
 Sapat offers a flexible and robust solution for all your transcription needs, leveraging the capabilities of Whisper model. With multi-API support and customizable parameters, Sapat adapts to your specific requirements, providing accurate and reliable transcriptions.
+
+This guide has walked you through the process of using Sapat for transcription, including selecting Whisper as your transcription engine.  You now understand installation, file input, API selection, and output retrieval. With this information, you should be able to confidently transcribe your files and leverage Sapat's features.
 
 ## References
 
