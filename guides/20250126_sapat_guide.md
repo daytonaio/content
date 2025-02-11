@@ -1,14 +1,14 @@
 ---
-title: 'Guide to Whisper AI and Sapat: Simplifying Transcription with AI model using Sapat'
+title: 'Guide to Whisper Model and Sapat: Simplifying Transcription with Whisper using Sapat'
 description:
   'A brief description of what the guide covers. The description should be a
   maximum of 160 characters.'
 date: 2025-01-26
 author: 'Jeffrey Whewhetu'
-tags: ['AI model', 'whisper model', 'transcription']
+tags: ['AI model', 'open source', 'transcription']
 ---
 
-# Guide to Whisper AI and Sapat: Simplifying Transcription with AI model using Sapat
+# Guide to Whisper Model and Sapat: Simplifying Transcription with Whisper using Sapat
 
 ## Introduction
 
@@ -19,17 +19,23 @@ But how can you easily integrate Whisper into your workflows? That's where **Sap
 
 ## TL;DR
 
-- What is Whisper AI?
-- Key Features of Whisper
-- Use Cases for Whisper AI
-- Introducing Sapat: A Tool for Whisper-Powered Transcription
-- How to Set Up Sapat with Whisper
+- Prerequisites
+- Whisper Model: What is it, key features, and it use cases
+- Introducing Sapat: A Whisper-Powered transcription CLI tool
+- How to Set Up Sapat
 - Transcribing Audio and Video Files with Sapat
 - Tips for Maximizing Whisper's Potential with Sapat
+- Common issues and Troubleshootings
 - Conclusion
 - References
 
-## What is Whisper AI?
+## Prerequisites
+
+Before using Sapat, ensure you have:
+1. **Daytona**: Install Daytona from [daytona.io](https://daytona.io).
+2. **API Access**: Obtain an API key for a Whisper-powered service (e.g., OpenAI, Groq, or Azure OpenAI).
+
+## What is Whisper?
 
 Whisper is an open-source automatic speech recognition (ASR) model developed by OpenAI. It is trained on a massive dataset of multilingual and multitask supervised data, making it one of the most robust and versatile transcription tools available today. Whisper can handle a wide range of audio inputs, from clear studio recordings to noisy, real-world environments.
 
@@ -97,32 +103,24 @@ While Whisper is a powerful tool, using it directly can require technical expert
 
 ## How to Set Up Sapat with Whisper
 
-### Prerequisites
-
-Before using Sapat, ensure you have:
-1. **Daytona**: Install Daytona from [daytona.io](https://daytona.io).
-2. **API Access**: Obtain an API key for a Whisper-powered service (e.g., OpenAI, Groq, or Azure OpenAI).
-
-### Step-by-Step Setup
-
 1. **Create a Daytona Workspace**:
    ```bash
    daytona create https://github.com/nkkko/sapat
    ```
 
-2. **Add API Credentials**:
+2. **Install Sapat**:
+   Build and install the Sapat package:
+   ```bash
+   python -m build
+   pip install dist/sapat-0.1.1-py3-none-any.whl
+   ```
+
+3. **Add API Credentials**:
    Create a `.env` file in the project root and add your API key. For example, for Groq:
    ```
    GROQCLOUD_API_KEY=your_groq_api_key_here
    GROQCLOUD_MODEL=whisper-large-v3-turbo
    GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
-   ```
-
-3. **Install Sapat**:
-   Build and install the Sapat package:
-   ```bash
-   python -m build
-   pip install dist/sapat-0.1.1-py3-none-any.whl
    ```
 
 ## Transcribing Audio and Video Files with Sapat
@@ -142,7 +140,7 @@ Before using Sapat, ensure you have:
 
 1. Run the following command:
    ```bash
-   sapat path/to/my_audio.mp3 --language es --api groq
+   sapat path/to/my_audio.mp3 --api groq
    ```
    - Replace `path/to/my_audio.mp3` with the path to your audio file.
    - Use the `--prompt` flag to provide context or domain-specific terminology.
@@ -165,14 +163,22 @@ Before using Sapat, ensure you have:
      sapat path/to/audio_files/ --output path/to/transcriptions/ --api groq
      ```
 
-4. **Custom Post-Processing**:
-   - Clean up transcriptions by removing filler words or adding timestamps.
-   - Example:
-     ```python
-     def post_process(transcription):
-         transcription = transcription.replace("um", "").replace("uh", "")
-         return transcription
-     ```
+## Common Issues and Troubleshooting  
+
+### Issue: Missing `.env` File  
+
+- Ensure the `.env` file is in the project root and contains valid API credentials.  
+
+### Issue: API Errors
+
+- **Rate Limits**: Ensure your API account has sufficient credits or quotas.
+- **Invalid Keys**: Double-check your API keys in the `.env` file.
+
+### Issue: Poor Transcription Accuracy
+
+- Use a clearer audio source.  
+- Specify the correct language using the `--language` option.  
+- Provide a contextual `--prompt` to improve transcription quality.  
 
 ## Conclusion
 
