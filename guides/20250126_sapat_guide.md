@@ -19,7 +19,7 @@ This guide will walk you through Sapat's features, setup process, and best pract
 ## TL;DR
 - Prerequisites
 - What's Sapat, it's features and how it Works
-- The AI model that powers Sapat
+- The AI model that powers Sapat. Whisper, what is it and it's features
 - Installation of Sapat using Daytona
 - How to Transcribe with Sapat
 - Tips and Best Practices
@@ -65,6 +65,12 @@ Sapat is a transcriptoon tool designed to transcribe video and audio files using
 4. **Output**: The transcription is saved as a `.txt` file in the same directory as the input file.
 
 5. **Cleanup**: Temporary files (e.g., MP3) are deleted after transcription.
+
+## The AI model that powers Sapat: Whisper
+
+### What is Whisper
+
+## Features of Whisper
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
