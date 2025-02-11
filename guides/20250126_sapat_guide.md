@@ -12,7 +12,7 @@ tags: ['AI model', 'open source', 'transcription']
 
 ## Introduction
 
-Whisper AI, developed by OpenAI, is a groundbreaking automatic speech recognition (ASR) model designed to transcribe audio into text with unparalleled accuracy. Whether you're working with multilingual content, noisy audio, or domain-specific terminology, Whisper delivers reliable and scalable transcription capabilities.  
+Whisper model, developed by OpenAI, is a groundbreaking automatic speech recognition (ASR) model designed to transcribe audio into text with unparalleled accuracy. Whether you're working with multilingual content, noisy audio, or domain-specific terminology, Whisper delivers reliable and scalable transcription capabilities.  
 
 But how can you easily integrate Whisper into your workflows? That's where **Sapat** comes in. Sapat is a powerful tool that simplifies the process of using Whisper (and other AI models) for transcription tasks. This guide will explore Whisper's features, its use cases, and how Sapat makes it accessible for everyone—from AI engineers to content creators.
 
@@ -61,7 +61,7 @@ Whisper is open-source, allowing developers to fine-tune the model for specific 
 
 Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
-## Use Cases for Whisper AI
+## Use Cases for Whisper
 
 Whisper's versatility makes it suitable for a wide range of applications. Here are some common use cases:
 
@@ -90,7 +90,7 @@ Whisper's versatility makes it suitable for a wide range of applications. Here a
 - Use Whisper to transcribe large datasets for training custom ASR or NLP models.
 - Generate labeled data for machine learning pipelines.
 
-## Introducing Sapat: A Tool for Whisper-Powered Transcription
+## Introducing Sapat: A Whisper-Powered Transcription CLI Tool
 
 While Whisper is a powerful tool, using it directly can require technical expertise and setup. **Sapat** simplifies this process by providing a user-friendly interface and seamless integration with Whisper (and other AI models like OpenAI and Groq). Here's what Sapat offers:
 
@@ -160,7 +160,7 @@ While Whisper is a powerful tool, using it directly can require technical expert
 3. **Batch Processing**:
    - Save time by transcribing multiple files at once:
      ```bash
-     sapat path/to/audio_files/ --output path/to/transcriptions/ --api groq
+     sapat path/to/audio_files/ --api groq
      ```
 
 ## Common Issues and Troubleshooting  
@@ -172,7 +172,7 @@ While Whisper is a powerful tool, using it directly can require technical expert
 ### Issue: API Errors
 
 - **Rate Limits**: Ensure your API account has sufficient credits or quotas.
-- **Invalid Keys**: Double-check your API keys in the `.env` file.
+- **Invalid API Credentials**: Double-check your API credentials in the `.env` file.
 
 ### Issue: Poor Transcription Accuracy
 
@@ -182,11 +182,11 @@ While Whisper is a powerful tool, using it directly can require technical expert
 
 ## Conclusion
 
-Whisper AI is a game-changer for speech recognition, offering unparalleled accuracy, multilingual support, and scalability. With **Sapat**, you can easily integrate Whisper into your workflows, whether you're transcribing videos, preparing datasets, or building AI-powered applications. By following this guide, you can unlock the full potential of Whisper and Sapat for your transcription needs.
+Whisper is a game-changer for speech recognition, offering unparalleled accuracy, multilingual support, and scalability. With **Sapat**, you can easily integrate Whisper into your workflows, whether you're transcribing videos, preparing datasets, or building AI-powered applications. By following this guide, you can unlock the full potential of Whisper and Sapat for your transcription needs.
 
 ## References
 
-- _[Whisper AI by OpenAI](https://openai.com/research/whisper)_
+- _[Whisper by OpenAI](https://openai.com/research/whisper)_
 - _[Sapat GitHub Repository](https://github.com/nkkko/sapat)_
 - _[Daytona Official Website](https://daytona.io)_
 
