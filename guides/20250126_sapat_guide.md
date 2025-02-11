@@ -12,7 +12,7 @@ tags: ['model', 'transcribe', 'video transcription', 'transcription tool']
 
 ## Introduction
 
-Sapat is a versatile and efficient tool designed to simplify transcription workflows by leveraging powerful AI models. Whether you're a content creator, a researcher, or a developer, Sapat enables you to convert video and audio files into accurate transcriptions using services like Azure OpenAI, Groq, and OpenAI.  
+Sapat is a versatile and efficient tool designed to simplify transcription workflows by leveraging powerful AI model. Whether you're a content creator, a researcher, or a developer, Sapat enables you to convert video and audio files into accurate transcriptions using services like Azure OpenAI, Groq Cloud, and OpenAI.  
 
 This guide will walk you through Sapat's features, setup process, and best practices to help you make the most of this tool.  
 
@@ -29,7 +29,7 @@ This guide will walk you through Sapat's features, setup process, and best pract
 
 ## Prerequisites
 
-Before using Sapat, ensure you have the following:  
+Before you continue, ensure you have the following:  
 
 - [Daytona](https://daytona.io) installed on your system.
 
@@ -48,7 +48,7 @@ Sapat offers a range of powerful features to simplify and enhance your transcrip
 
 - **Video-to-Audio Conversion**: Converts video files into MP3 format using ffmpeg for transcription.
 
-- **Multi-API Support**: Works with Azure OpenAI, Groq, and OpenAI APIs.
+- **Multi-API Support**: Works with Azure OpenAI, Groq Cloud, and OpenAI APIs.
 
 - **Batch Processing**: Handles individual files or entire directories for transcription.
 
@@ -86,7 +86,7 @@ Whisper is an open-source automatic speech recognition (ASR) model developed by 
 
 - **Scalability**: Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
-Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides redundancy and choice, allowing users to optimize for cost, performance, or availability.
+Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides choice, allowing users to optimize for cost, performance, or availability.
 
 ## Setup Sapat in Daytona Workspace for Transcription
 
@@ -179,6 +179,8 @@ Sapat offers a flexible and robust solution for all your transcription needs, le
 This guide has walked you through the process of using Sapat for transcription, including selecting Whisper as your transcription engine.  You now understand installation, file input, API selection, and output retrieval. With this information, you should be able to confidently transcribe your files and leverage Sapat's features.
 
 ## References
+
+- _[Whisper by OpenAI](https://openai.com/research/whisper)_
 
 - _[Daytona Official Website](https://daytona.io)_
 
