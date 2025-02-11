@@ -76,25 +76,15 @@ Whisper is an open-source automatic speech recognition (ASR) model developed by 
 
 ### Features of Whisper
 
-- **Multilingual Support**
+- **Multilingual Support**: Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
 
-Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
+- **Noise Robustness**: Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
 
-- **Noise Robustness**
+- **Contextual Understanding**: Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
 
-Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
+- **Open-Source and Customizable**: Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
 
-- **Contextual Understanding**
-
-Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
-
-- **Open-Source and Customizable**
-
-Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
-
-- **Scalability**
-
-Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
+- **Scalability**: Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
 Sapat leverages the power of OpenAI's Whisper model to provide accurate and reliable transcriptions.  Sapat's multi-API architecture allows users to select Whisper through various providers, including OpenAI, Azure OpenAI, and Groq Cloud. This flexibility gives users access to this cutting-edge transcription technology through their preferred platform. By supporting multiple APIs, Sapat provides redundancy and choice, allowing users to optimize for cost, performance, or availability.
 
