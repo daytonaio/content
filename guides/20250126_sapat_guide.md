@@ -100,52 +100,126 @@ Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflo
 - **Customizable Parameters**: Adjust language, audio quality, and prompts for better results.
 - **Temporary File Cleanup**: Automatically removes intermediate files after transcription.
 
-## How to Set Up Sapat
+## Sapat
 
-1. **Create a Daytona Workspace**:
-   ```bash
-   daytona create https://github.com/nkkko/sapat
-   ```
+### Sapat Project Structure
 
-2. **Install Sapat**:
-   Build and install the Sapat package:
-   ```bash
-   python -m build
-   pip install dist/sapat-0.1.1-py3-none-any.whl  # Replace with the actual filename
-   ```
+```
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+└── src
+    ├── sapat
+        ├── __init__.py
+        ├── script.py
+        └── transcription
+            ├── azure.py
+            ├── base.py
+            ├── groq.py
+            ├── __init__.py
+            └── openai.py
+```
 
-3. **Add API Credentials**:
-   Create a `.env` file in the project root and add your API key. For example, for Groq:
-   ```
-   GROQCLOUD_API_KEY=your_groq_api_key_here
-   GROQCLOUD_MODEL=whisper-large-v3-turbo
-   GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
-   GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
-   ```
+### Dependencies Setup
 
-## Transcribing Audio and Video Files with Sapat
+Create `requirements.txt`
+```
+python-dotenv
+requests
+click
+openai
+groq
+build
+```
 
-### Transcribing a Video File
+### Dev Container Configuration
 
-1. Run the following command:
-   ```bash
-   sapat path/to/my_video.mp4 --quality H --language en --api groq
-   ```
-   - Replace `path/to/my_video.mp4` with the path to your video file.
-   - Use the `--quality` flag to set MP3 quality (`L`, `M`, `H`).
+Create `.devcontainer/devcontainer.json`
+```
+{
+    "name": "Video Transcription Tool",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "python.defaultInterpreterPath": "/usr/local/bin/python",
+          "python.linting.enabled": true,
+          "python.linting.pylintEnabled": true
+        },
+        "extensions": [
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "njpwerner.autodocstring"
+        ]
+      }
+    },
+    "mounts": [
+      {
+        "source": "${localEnv:HOME}",
+        "target": "${containerWorkspaceFolder}/con-home",
+        "type": "bind"
+      }
+    ],
+    "onCreateCommand": {
+      "update": "sudo apt update && sudo apt upgrade -y",
+      "ownership": "sudo chown -R $USER:$USER ${containerWorkspaceFolder}"
+    },
+    "postCreateCommand": {
+      "ffmpeg": "sudo apt install ffmpeg -y",
+      "requirements": "pip install -r requirements.txt"
+    }
+}
+```
 
-2. The transcription will be saved as `my_video.txt` in the same directory.
+### Add `.toml` file
 
-### Transcribing an Audio File
+Create a `pyproject.toml`
+```
+[project]
+name = "sapat"
+version = "0.1.2"
+description = "Video Transcription Tool using different APIs"
+requires-python = ">=3.6"
+dependencies = [
+    "click>=8.1.8",
+    "requests>=2.32.3",
+    "python-dotenv>=1.0.1",
+    "openai>=1.58.1",
+    "groq>=0.13.1"
+]
 
-1. Run the following command:
-   ```bash
-   sapat path/to/my_audio.mp3 --api groq
-   ```
-   - Replace `path/to/my_audio.mp3` with the path to your audio file.
-   - Use the `--prompt` flag to provide context or domain-specific terminology.
+[project.scripts]
+sapat = "sapat.script:main"
 
-2. The transcription will be saved as `my_audio.txt` in the same directory.
+[build-system]
+requires = ["wheel", "setuptools>=61.0"] # Ensure setuptools is recent enough
+build-backend = "setuptools.build_meta"
+```
+
+### Code Implementation
+
+
+### Add `.env`
+
+Create `.env`
+```
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_ENDPOINT=https://DEPLOYMENTENDPOINTNAME.openai.azure.com
+AZURE_OPENAI_DEPLOYMENT_NAME_WHISPER=whisper
+AZURE_OPENAI_API_VERSION_WHISPER=2024-06-01
+AZURE_OPENAI_DEPLOYMENT_NAME_CHAT=gpt-4o
+AZURE_OPENAI_API_VERSION_CHAT=2023-03-15-preview
+
+GROQCLOUD_API_KEY=
+GROQCLOUD_MODEL=whisper-large-v3-turbo
+GROQCLOUD_API_ENDPOINT=https://api.groq.com/openai/v1/audio/transcriptions
+GROQCLOUD_MODEL_NAME_CHAT=llama3-8b-8192
+
+OPENAI_API_KEY=
+OPENAI_MODEL=whisper-1
+OPENAI_API_ENDPOINT=https://api.openai.com/v1/audio/transcriptions
+OPENAI_MODEL_NAME_CHAT=gpt-4o
+```
 
 ## Tips for Maximizing Whisper's Potential with Sapat
 
@@ -162,23 +236,6 @@ Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflo
      ```bash
      sapat path/to/audio_files/ --api groq
      ```
-
-## Common Issues and Troubleshooting  
-
-### Issue: Missing `.env` File  
-
-- Ensure the `.env` file is in the project root and contains valid API credentials.  
-
-### Issue: API Errors
-
-- **Rate Limits**: Ensure your API account has sufficient credits or quotas.
-- **Invalid API Credentials**: Double-check your API credentials in the `.env` file.
-
-### Issue: Poor Transcription Accuracy
-
-- Use a clearer audio source.  
-- Specify the correct language using the `--language` option.  
-- Provide a contextual `--prompt` to improve transcription quality.  
 
 ## Conclusion
 
