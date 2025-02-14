@@ -1,5 +1,5 @@
 ---
-title: 'Guide to Whisper Model and Sapat: Simplifying Transcription with Whisper using Sapat'
+title: 'Building AI-Powered Tools: A Guide to Whisper and Sapat'
 description:
   'A brief description of what the guide covers. The description should be a
   maximum of 160 characters.'
@@ -8,29 +8,25 @@ author: 'Jeffrey Whewhetu'
 tags: ['model', 'open source', 'transcription']
 ---
 
-# Guide to Whisper Model and Sapat: Simplifying Transcription with Whisper using Sapat
+# Building AI-Powered Tools: A Guide to Whisper and Sapat
 
 ## Introduction
 
-Whisper model, developed by OpenAI, is a groundbreaking automatic speech recognition (ASR) model designed to transcribe audio into text with unparalleled accuracy. Whether you're working with multilingual content, noisy audio, or domain-specific terminology, Whisper delivers reliable and scalable transcription capabilities.  
+Artificial Intelligence (AI) is transforming how we build and interact with software tools. From automation to intelligent decision-making, AI-powered solutions can enhance efficiency, accuracy, and user experience. However, developing an AI-powered tool requires careful planning, iterative prototyping, and robust implementation.
 
-But how can you easily integrate Whisper into your workflows? That's where Sapat comes in. Sapat is a powerful tool that simplifies the process of using Whisper (and other AI models) for transcription tasks. This guide will explore Whisper's features, its use cases, and how Sapat makes it accessible.
+This guide walks you through the essential steps of prototyping and building an AI-powered tool using Whisper and Sapat as demo — from defining the problem and selecting the right AI models to testing, deployment, and optimization. This guide will help you navigate the process and create impactful AI-driven solutions.
 
 ## TL;DR
 
-- Prerequisites
-- Whisper Model: What is it, key features, and it use cases
-- Introducing Sapat: A Whisper-Powered transcription CLI tool
-- How to Set Up Sapat
-- Transcribing Audio and Video Files with Sapat
-- Tips for Maximizing Whisper's Potential with Sapat
-- Common issues and Troubleshootings
-- Conclusion
-- References
+- Prerequisites: Basic Python knowledge, Daytona installed, and an API key for Whisper model.
+- What is Whisper? It is an open-source automatic speech recognition (ASR) model by OpenAI. It supports over 100 languages, works well in noisy environments, understands context and accents, and scales for both small and large transcription tasks.
+- What is Sapat? It is the prototype and built AI-enabled tool that uses Whisper for transcription. It simplifies integration with multiple AI providers such as Groq Cloud, Azure OpenAI and OpenAI, Sapat ensures flexibility, scalability, and performance.
+- Why It Matters: This guide shows how to quickly prototype and build AI-powered tools using Whisper, making transcription accessible and scalable.
 
 ## Prerequisites
 
 Before using Sapat, ensure you have:
+1. Some level of Python programming experience.
 1. **Daytona**: Install Daytona from [here](https://github.com/daytonaio/daytona).
 2. **API Access**: Obtain an API key for a Whisper-powered service (e.g., OpenAI, Groq, or Azure OpenAI).
 
@@ -60,38 +56,11 @@ Whisper is open-source, allowing developers to fine-tune the model for specific 
 
 Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
-## Use Cases for Whisper
-
-Whisper's versatility makes it suitable for a wide range of applications. Here are some common use cases:
-
-### 1. **Content Creation**
-
-- Transcribe podcasts, interviews, or video content for blog posts, captions, or subtitles.
-- Generate summaries or highlights from long audio files.
-
-### 2. **Research and Academia**
-
-- Transcribe lectures, seminars, or interviews for research purposes.
-- Analyze spoken content for qualitative studies.
-
-### 3. **Accessibility**
-
-- Provide real-time transcription for live events or meetings to assist hearing-impaired individuals.
-- Create accessible content by adding captions to videos.
-
-### 4. **AI Assistants and Voice Applications**
-
-- Integrate Whisper into AI assistants for accurate voice-to-text conversion.
-- Build voice-controlled applications with reliable speech recognition.
-
-### 5. **Data Preparation for AI Models**
-
-- Use Whisper to transcribe large datasets for training custom ASR or NLP models.
-- Generate labeled data for machine learning pipelines.
-
 ## Introducing Sapat: A Whisper-Powered Transcription CLI Tool
 
 Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflow with a suite of valuable features.  From automatic video-to-audio conversion and flexible multi-API support (including OpenAI, Groq Cloud, and Azure OpenAI) to batch processing and customizable parameters, Sapat is designed for efficiency and control.  Whether you're transcribing a single file or managing a large batch, Sapat simplifies every step of the process, delivering accurate and reliable results.
+
+I’ll use Sapat as a case study to demonstrate the process of prototyping and building an AI-powered tool—from concept to implementation.
 
 ### Key Features of Sapat
 - **Video-to-Audio Conversion**: Automatically converts video files to MP3 format for transcription.
@@ -100,10 +69,9 @@ Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflo
 - **Customizable Parameters**: Adjust language, audio quality, and prompts for better results.
 - **Temporary File Cleanup**: Automatically removes intermediate files after transcription.
 
-## Sapat
+### Project Structure
 
-### Sapat Project Structure
-
+The project is organized as follows:
 ```
 ├── pyproject.toml
 ├── README.md
@@ -120,9 +88,9 @@ Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflo
             └── openai.py
 ```
 
-### Dependencies Setup
+### Dependencies
 
-Create `requirements.txt`
+The project relies on several Python packages, which are listed in `requirements.txt`:
 ```
 python-dotenv
 requests
@@ -132,9 +100,9 @@ groq
 build
 ```
 
-### Dev Container Configuration
+### Development Environment Setup
 
-Create `.devcontainer/devcontainer.json`
+To set up the development environment, we use a `.devcontainer/devcontainer.json` file to configure a Dev Container
 ```
 {
     "name": "Video Transcription Tool",
@@ -171,9 +139,9 @@ Create `.devcontainer/devcontainer.json`
 }
 ```
 
-### Add `.toml` file
+### Project Configuration
 
-Create a `pyproject.toml`
+The `pyproject.toml` file defines the project metadata and dependencies:
 ```
 [project]
 name = "sapat"
@@ -198,10 +166,59 @@ build-backend = "setuptools.build_meta"
 
 ### Code Implementation
 
+- **Main Script**
 
-### Add `.env`
+The main script, `src/sapat/script.py`, handles the transcription logic:
+```
+import click
+from pathlib import Path
+from .transcription.groq import GroqCloudTranscription
+from .transcription.azure import AzureTranscription
+from .transcription.openai import OpenAITranscription
 
-Create `.env`
+@click.command()
+@click.argument("input_path", type=click.Path(exists=True))
+@click.option("--language", "-l", default="en", help="Language of the audio (default: en)")
+@click.option("--prompt", "-p", help="Optional prompt to guide the model")
+@click.option("--temperature", "-t", type=float, default=0.3, help="Sampling temperature (default: 0.3)")
+@click.option("--quality", "-q", type=click.Choice(['L', 'M', 'H'], case_sensitive=False), default='M', help="Quality of the MP3 audio: 'L' for low, 'M' for medium, and 'H' for high (default: 'M')")
+@click.option("--correct", is_flag=True, help="Use LLM to correct the transcript")
+@click.option("--api", "-a", type=click.Choice(['openai', 'groq', 'azure'], case_sensitive=True), required=True, help="API to use for the transcription ('openai', 'groq' or 'azure')")
+def main(input_path, language, prompt, temperature, quality, correct, api):
+    """
+    Transcribe video files using different APIs.
+
+    INPUT_PATH is the path to the video file or directory containing video files.
+    """
+    # Initialize the correct transcription object
+    input_path = Path(input_path)
+
+    # Handle file processing based on API choice
+    if api.lower() == "groq":
+        transcriber = GroqCloudTranscription(temperature=temperature)
+    elif api.lower() == "azure":
+        transcriber = AzureTranscription(temperature=temperature)
+    elif api.lower() == "openai":
+        transcriber = OpenAITranscription(temperature=temperature)
+    else:
+        click.echo(f"Unsupported API: {api}")
+        return
+
+    if input_path.is_file():
+        transcriber.process_file(input_path, language, prompt, temperature, quality, correct)
+    elif input_path.is_dir():
+        for file in input_path.glob('*.mp4'):
+            transcriber.process_file(file, language, prompt, temperature, quality, correct)
+    else:
+        click.echo(f"{input_path} is not a valid file or directory.")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Environment Variables
+
+The `.env` file contains the necessary API keys and endpoints:
 ```
 AZURE_OPENAI_API_KEY=
 AZURE_OPENAI_ENDPOINT=https://DEPLOYMENTENDPOINTNAME.openai.azure.com
@@ -221,6 +238,12 @@ OPENAI_API_ENDPOINT=https://api.openai.com/v1/audio/transcriptions
 OPENAI_MODEL_NAME_CHAT=gpt-4o
 ```
 
+## Usage of Sapat
+
+### Installation
+
+### CLI Usage Example
+
 ## Tips for Maximizing Whisper's Potential with Sapat
 
 1. **Optimize Audio Quality**:
@@ -239,9 +262,7 @@ OPENAI_MODEL_NAME_CHAT=gpt-4o
 
 ## Conclusion
 
-Whisper is a groundbreaking advancement for speech recognition, offering unparalleled accuracy, multilingual support, and scalability. With Sapat, you can easily integrate Whisper into your workflows, whether you're transcribing videos, preparing datasets, or building AI-powered applications.
-
-From understanding Whisper's capabilities to mastering Sapat's practical application, this guide has covered everything you need to know for efficient and accurate transcription.  
+In conclusion, Sapat serves as a demo example of how simple it can be to prototype and build AI-enabled tools. By leveraging Whisper through AI providers like OpenAI, Groq Cloud, and Azure OpenAI, Sapat demonstrates how developers can quickly integrate advanced AI capabilities such as transcription into their applications. The process of building Sapat highlights the ease of working with modern AI platforms, where the heavy lifting of integration and scalability is handled seamlessly. This allows developers to focus on designing and refining their tools, rather than getting bogged down by technical complexities.
 
 ## References
 
