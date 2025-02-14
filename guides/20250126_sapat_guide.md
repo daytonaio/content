@@ -25,10 +25,10 @@ This guide walks you through the essential steps of prototyping and building an 
 
 ## Prerequisites
 
-Before using Sapat, ensure you have:
+Before continue your reading, ensure you have:
 1. Some level of Python programming experience.
 1. **Daytona**: Install Daytona from [here](https://github.com/daytonaio/daytona).
-2. **API Access**: Obtain an API key for a Whisper-powered service (e.g., OpenAI, Groq, or Azure OpenAI).
+2. **API Access**: Obtain an API key from any Whisper providers (e.g., OpenAI, Groq, or Azure OpenAI).
 
 ## What is Whisper?
 
@@ -122,7 +122,7 @@ build
 
 ### Step 3: Project Structure and Configuration
 
-Project structure. The project is organized as follows:
+- Project structure. The project is organized as follows:
 ```
 ├── pyproject.toml
 ├── README.md
@@ -139,7 +139,7 @@ Project structure. The project is organized as follows:
             └── openai.py
 ```
 
-Project Configuration. The `pyproject.toml` file defines the project metadata and dependencies:
+- Project Configuration. The `pyproject.toml` file defines the project metadata and dependencies:
 ```
 [project]
 name = "sapat"
@@ -162,9 +162,233 @@ requires = ["wheel", "setuptools>=61.0"] # Ensure setuptools is recent enough
 build-backend = "setuptools.build_meta"
 ```
 
-### Step 4: Implementate the Core Functionality
+- `src/sapat/` directory: Contains the main application code, including the CLI script and API implementations of each Whisper model providers.
 
-- **Main Script**. The main script, `src/sapat/script.py`, handles the transcription logic:
+### Step 4: Implementation of Core Features
+
+- **Base Class Implementation**. The `src/sapat/transcription/base.py` file defines a base class (`TranscriptionBase`) that provides common functionality for all transcription APIs, such as audio file conversion and processing. This ensures consistency and reduces code duplication across different API implementations.
+```
+from abc import ABC, abstractmethod
+from pathlib import Path
+import subprocess
+import click
+
+
+class TranscriptionBase(ABC):
+    """
+    Base class for transcription APIs.
+    """
+
+    @staticmethod
+    def convert_to_mp3(input_file: str, output_file: str, quality: str):
+        """
+        Converts an audio file to MP3 format using FFmpeg.
+
+        Parameters:
+        - input_file (str): Path to the input file.
+        - output_file (str): Path to the output MP3 file.
+        - quality (str): Desired audio quality ('L', 'M', 'H').
+        """
+        if quality == 'L':
+            ffmpeg_options = ['-ar', '22050', '-ac', '1', '-b:a', '96k']
+        elif quality == 'M':
+            ffmpeg_options = ['-ar', '44100', '-ac', '1', '-b:a', '96k']
+        elif quality == 'H':
+            ffmpeg_options = ['-ar', '44100', '-ac', '2', '-b:a', '192k']
+        else:
+            raise ValueError("Invalid quality option. Choose from 'L', 'M', 'H'.")
+
+        command = ['ffmpeg', '-i', input_file, '-vn'] + ffmpeg_options + [output_file]
+        subprocess.run(command, check=True)
+
+
+    def process_file(self, input_file, language, prompt, temperature, quality, correct):
+        input_path = Path(input_file)
+        mp3_file = input_path.with_suffix('.mp3')
+        txt_file = input_path.with_suffix('.txt')
+
+        click.echo(f"Processing {input_file}")
+
+        if not mp3_file.exists():
+            self.convert_to_mp3(str(input_path), str(mp3_file), quality)
+            click.echo("Conversion to MP3 completed")
+        else:
+            click.echo("MP3 file already exists, skipping conversion")
+
+        transcription_result = self.transcribe_audio(str(mp3_file), language=language, prompt=prompt, temperature=temperature)
+        click.echo("Transcription completed")
+
+        if correct:
+            system_prompt = "You are a helpful assistant. Your task is to correct any spelling discrepancies in the transcribed text. Make sure that the names of the following products are spelled correctly: {user provided prompt} Only add necessary punctuation such as periods, commas, and capitalization, and use only the context provided."
+            corrected_text = self.generate_corrected_transcript(str(mp3_file), 0.7, system_prompt)
+            click.echo("Correction completed")
+        else:
+            corrected_text = transcription_result
+
+        with open(txt_file, 'w', encoding='utf-8') as f:
+            if isinstance(corrected_text, dict):
+                f.write(corrected_text.get('text', ''))
+            else:
+                f.write(corrected_text)
+        click.echo(f"Transcription saved to {txt_file}")
+
+        mp3_file.unlink()
+
+    @abstractmethod
+    def transcribe_audio(self, audio_file: str, **kwargs):
+        """
+        Abstract method for transcribing audio files. Must be implemented by subclasses.
+
+        Parameters:
+        - audio_file (str): Path to the audio file to be transcribed.
+        - kwargs: Additional arguments for transcription.
+
+        Returns:
+        - The transcription result (implementation-specific).
+        """
+        pass
+
+    @staticmethod
+    def generate_corrected_transcript(audio_file, temperature, prompt):
+        """
+        Default implementation for generating corrected transcripts. Can be overridden by subclasses.
+        """
+        raise NotImplementedError("Correction not implemented for this API.")
+```
+
+- **Implementation of Groq Cloud Whisper API**. The `src/sapat/transcription/groq.py` file implements the `GroqCloudTranscription` class, which extends the `TranscriptionBase` class to provide transcription functionality using the Groq Cloud API.
+```
+import os
+import requests
+from dotenv import load_dotenv
+from groq import Groq
+from .base import TranscriptionBase
+
+# Load environment variables
+load_dotenv(".env")
+
+class GroqCloudTranscription(TranscriptionBase):
+    """
+    GroqCloud API implementation for transcription.
+    """
+
+    def __init__(self, temperature: float, response_format: str = "json"):
+        """
+        Initializes the GroqCloudTranscription class.
+
+        Parameters:
+        - temperature (float): Default temperature value for transcription.
+        - response_format (str): Default response format for transcription.
+        """
+        self.api_key = os.getenv('GROQCLOUD_API_KEY')
+        self.model = os.getenv('GROQCLOUD_MODEL')
+        self.endpoint = os.getenv('GROQCLOUD_API_ENDPOINT')
+        self.model_name_chat = os.getenv('GROQCLOUD_MODEL_NAME_CHAT')
+        self.temperature = temperature
+        self.response_format = response_format
+        self.max_file_size_mb = 25
+
+    def transcribe_audio(self, audio_file: str, **kwargs):
+        """
+        Transcribes an audio file using GroqCloud API.
+
+        Parameters:
+        - audio_file (str): Path to the audio file.
+        - kwargs: Additional parameters for transcription.
+
+        Returns:
+        - dict or str: The transcription result.
+        """
+        self._validate_audio_file(audio_file)
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+        }
+        data = {
+            "model": kwargs.get("model", self.model),
+            "response_format": kwargs.get("response_format", self.response_format),
+            "temperature": kwargs.get("temperature", self.temperature),
+        }
+
+        if "language" in kwargs:
+            data["language"] = kwargs["language"]
+        if "prompt" in kwargs:
+            data["prompt"] = kwargs["prompt"]
+
+        with open(audio_file, 'rb') as f:
+            files = {'file': f}
+            response = requests.post(self.endpoint, headers=headers, data=data, files=files)
+
+        if response.status_code == 200:
+            if data["response_format"] in ["json", "verbose_json"]:
+                return response.json()
+            return response.text
+        else:
+            raise Exception(f"Transcription failed: {response.text}")
+
+    def generate_corrected_transcript(self, audio_file: str, temperature: float, system_prompt: str):
+            """
+            Uses a chat API to correct the transcription text.
+
+            Parameters:
+            - audio_file (str): Path to the audio file for transcription.
+            - temperature (float): The sampling temperature for the chat API.
+            - system_prompt (str): The system prompt to guide the assistant.
+
+            Returns:
+            - str: The corrected transcription.
+            """
+            client = Groq(
+                api_key=self.api_key
+            )
+
+            # First, get the transcription text
+            transcription = self.transcribe_audio(audio_file)
+            transcription_text = transcription.get('text', '') if isinstance(transcription, dict) else transcription
+
+            # Use the chat API to correct the text
+            response = client.chat.completions.create(
+                model=self.model_name_chat,
+                temperature=temperature,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": system_prompt
+                    },
+                    {
+                        "role": "user",
+                        "content": transcription_text
+                    }
+                ]
+            )
+            return response.choices[0].message.content
+
+
+    def _validate_audio_file(self, audio_file: str):
+        """
+        Validates the audio file for size and format.
+
+        Parameters:
+        - audio_file (str): Path to the audio file.
+
+        Raises:
+        - Exception: If the file is invalid.
+        """
+    
+        # Ensure the converted value is a valid file path
+        if not os.path.exists(audio_file):
+            raise ValueError(f"File {audio_file} does not exist.")
+
+        file_size_mb = os.path.getsize(audio_file) / (1024 * 1024)
+        if file_size_mb > self.max_file_size_mb:
+            raise Exception(f"File size exceeds the maximum limit of {self.max_file_size_mb} MB.")
+
+        valid_extensions = ['.mp3', '.wav', '.flac']
+        if not any(str(audio_file).endswith(ext) for ext in valid_extensions):
+            raise ValueError(f"Unsupported audio file format: {audio_file}. Supported formats are {valid_extensions}.")
+```
+
+- **Main Script**. The main script `src/sapat/script.py`, handles the transcription logic:
 ```
 import click
 from pathlib import Path
@@ -238,14 +462,14 @@ OPENAI_MODEL_NAME_CHAT=gpt-4o
 
 ### CLI Usage Example
 
-Transcribe a single file using Groq Cloud:
-```
-sapat path/to/audio_files/ --api openai
-```
-
 Transcribe an entire directory using OpenAI:
 ```
-sapat path/to/audio.mp4 --api groq
+sapat path/to/video_files/ --quality H --api openai
+```
+
+Transcribe a single file using Groq Cloud:
+```
+sapat path/to/video.mp4 --quality --language en --api groq
 ```
 
 ## Tips for Maximizing Whisper's Potential with Sapat
