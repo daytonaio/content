@@ -14,7 +14,7 @@ tags: ['model', 'open source', 'transcription']
 
 Artificial Intelligence (AI) is transforming how we build and interact with software tools. From automation to intelligent decision-making, AI-powered solutions can enhance efficiency, accuracy, and user experience. However, developing an AI-powered tool requires careful planning, iterative prototyping, and robust implementation.
 
-This guide walks you through the essential steps of prototyping and building an AI-powered tool using Whisper and Sapat as demo — from defining the problem and selecting the right AI models to testing, deployment, and optimization. This guide will help you navigate the process and create impactful AI-driven solutions.
+This guide walks you through the essential steps of prototyping and building an AI-powered tool called Sapat using Whisper model — from defining the problem and selecting the right AI model for better performance and efficiency. This guide will help you navigate the process and creation of impactful AI-driven solution for transcription.
 
 ## TL;DR
 
@@ -50,7 +50,7 @@ Whisper is an open-source automatic speech recognition (ASR) model developed by 
 
 Sapat goes beyond simply wrapping Whisper; it enhances the transcription workflow with a suite of valuable features.  From automatic video-to-audio conversion and flexible multi-API support (including OpenAI, Groq Cloud, and Azure OpenAI) to batch processing and customizable parameters, Sapat is designed for efficiency and control.  Whether you're transcribing a single file or managing a large batch, Sapat simplifies every step of the process, delivering accurate and reliable results.
 
-I’ll use Sapat as a case study to demonstrate the process of prototyping and building an AI-powered tool—from concept to implementation.
+Sapat is used as a case study to demonstrate the process of prototyping and building an AI-powered tool—from concept to implementation.
 
 ### Key Features of Sapat
 - **Video-to-Audio Conversion**: Automatically converts video files to MP3 format for transcription.
@@ -72,7 +72,7 @@ Before diving into code, clearly define the problem you're solving. For Sapat, t
 ### Step 2: Set Up the Development Environment
 
 - Install Daytona: Follow the installation instructions [here](https://github.com/daytonaio/daytona).
-- Development Environment Setup: To set up the development environment, we use a `.devcontainer/devcontainer.json` file to configure a Dev Container
+- Development Environment Setup: To set up the development environment, we use a `.devcontainer/devcontainer.json` file to configure a Dev Container. It sets up a development environment with pre-installed tools and dependencies, ensuring a smooth development experience.
 
 ```
 {
@@ -162,7 +162,7 @@ requires = ["wheel", "setuptools>=61.0"] # Ensure setuptools is recent enough
 build-backend = "setuptools.build_meta"
 ```
 
-- `src/sapat/` directory: Contains the main application code, including the CLI script and API implementations of each Whisper model providers.
+- `src/sapat/` directory: Contains the main application code, including the CLI script and API implementations of each Whisper model providers can be found in `src/sapat/transcription` directory.
 
 ### Step 4: Implementation of Core Features
 
@@ -436,7 +436,7 @@ if __name__ == "__main__":
     main()
 ```
 
-- **Environment Variables**. The `.env` file contains the necessary API keys and endpoints:
+- **Environment Variables**. The `.env.example` file contains the necessary API keys and endpoints:
 ```
 AZURE_OPENAI_API_KEY=
 AZURE_OPENAI_ENDPOINT=https://DEPLOYMENTENDPOINTNAME.openai.azure.com
