@@ -34,27 +34,17 @@ Before using Sapat, ensure you have:
 
 Whisper is an open-source automatic speech recognition (ASR) model developed by OpenAI. It is trained on a massive dataset of multilingual and multitask supervised data, making it one of the most robust and versatile transcription tools available today. Whisper can handle a wide range of audio inputs, from clear studio recordings to noisy, real-world environments.
 
-## Key Features of Whisper
+### Key Features of Whisper
 
-### 1. **Multilingual Support**
+1. **Multilingual Support**: Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
 
-Whisper supports over 100 languages, making it ideal for global applications. Whether you're transcribing English, Spanish, Mandarin, or Swahili, Whisper delivers accurate results.
+2. **Noise Robustness**: Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
 
-### 2. **Noise Robustness**
+3. **Contextual Understanding**: Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
 
-Whisper excels in noisy environments. It can filter out background noise, overlapping speech, and other audio distortions, ensuring high-quality transcriptions even in challenging conditions.
+4. **Open-Source and Customizable**: Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
 
-### 3. **Contextual Understanding**
-
-Whisper is designed to understand context, accents, and dialects. This makes it suitable for transcribing domain-specific content, such as medical terminology, legal jargon, or technical discussions.
-
-### 4. **Open-Source and Customizable**
-
-Whisper is open-source, allowing developers to fine-tune the model for specific use cases. This flexibility makes it a popular choice for researchers and AI engineers.
-
-### 5. **Scalability**
-
-Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
+5. **Scalability**: Whisper can handle both small-scale and large-scale transcription tasks, making it ideal for individual projects or enterprise-level applications.
 
 ## Introducing Sapat: A Whisper-Powered Transcription CLI Tool
 
@@ -69,40 +59,21 @@ I’ll use Sapat as a case study to demonstrate the process of prototyping and b
 - **Customizable Parameters**: Adjust language, audio quality, and prompts for better results.
 - **Temporary File Cleanup**: Automatically removes intermediate files after transcription.
 
-### Project Structure
+## Prototyping and Building Sapat
 
-The project is organized as follows:
-```
-├── pyproject.toml
-├── README.md
-├── requirements.txt
-└── src
-    ├── sapat
-        ├── __init__.py
-        ├── script.py
-        └── transcription
-            ├── azure.py
-            ├── base.py
-            ├── groq.py
-            ├── __init__.py
-            └── openai.py
-```
+### Step 1: Define the Problem and Scope
 
-### Dependencies
+Before diving into code, clearly define the problem you're solving. For Sapat, the goal is to create a transcription tool that:
 
-The project relies on several Python packages, which are listed in `requirements.txt`:
-```
-python-dotenv
-requests
-click
-openai
-groq
-build
-```
+- Integrates with multiple Whisper-powered APIs.
+- Supports batch processing for efficiency.
+- Offers customizable parameters for better transcription results.
 
-### Development Environment Setup
+### Step 2: Set Up the Development Environment
 
-To set up the development environment, we use a `.devcontainer/devcontainer.json` file to configure a Dev Container
+- Install Daytona: Follow the installation instructions [here](https://github.com/daytonaio/daytona).
+- Development Environment Setup: To set up the development environment, we use a `.devcontainer/devcontainer.json` file to configure a Dev Container
+
 ```
 {
     "name": "Video Transcription Tool",
@@ -138,10 +109,37 @@ To set up the development environment, we use a `.devcontainer/devcontainer.json
     }
 }
 ```
+- Dependencies. The project relies on several Python packages, which are listed in `requirements.txt`:
 
-### Project Configuration
+```
+python-dotenv
+requests
+click
+openai
+groq
+build
+```
 
-The `pyproject.toml` file defines the project metadata and dependencies:
+### Step 3: Project Structure and Configuration
+
+Project structure. The project is organized as follows:
+```
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+└── src
+    ├── sapat
+        ├── __init__.py
+        ├── script.py
+        └── transcription
+            ├── azure.py
+            ├── base.py
+            ├── groq.py
+            ├── __init__.py
+            └── openai.py
+```
+
+Project Configuration. The `pyproject.toml` file defines the project metadata and dependencies:
 ```
 [project]
 name = "sapat"
@@ -164,11 +162,9 @@ requires = ["wheel", "setuptools>=61.0"] # Ensure setuptools is recent enough
 build-backend = "setuptools.build_meta"
 ```
 
-### Code Implementation
+### Step 4: Implementate the Core Functionality
 
-- **Main Script**
-
-The main script, `src/sapat/script.py`, handles the transcription logic:
+- **Main Script**. The main script, `src/sapat/script.py`, handles the transcription logic:
 ```
 import click
 from pathlib import Path
@@ -216,9 +212,7 @@ if __name__ == "__main__":
     main()
 ```
 
-### Environment Variables
-
-The `.env` file contains the necessary API keys and endpoints:
+- **Environment Variables**. The `.env` file contains the necessary API keys and endpoints:
 ```
 AZURE_OPENAI_API_KEY=
 AZURE_OPENAI_ENDPOINT=https://DEPLOYMENTENDPOINTNAME.openai.azure.com
@@ -243,6 +237,16 @@ OPENAI_MODEL_NAME_CHAT=gpt-4o
 ### Installation
 
 ### CLI Usage Example
+
+Transcribe a single file using Groq Cloud:
+```
+sapat path/to/audio_files/ --api openai
+```
+
+Transcribe an entire directory using OpenAI:
+```
+sapat path/to/audio.mp4 --api groq
+```
 
 ## Tips for Maximizing Whisper's Potential with Sapat
 
