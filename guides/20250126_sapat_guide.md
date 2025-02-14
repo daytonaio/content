@@ -21,7 +21,7 @@ This guide walks you through the essential steps of prototyping and building an 
 - Prerequisites: Basic Python knowledge, Daytona installed, and an API key for Whisper model.
 - What is Whisper? It is an open-source automatic speech recognition (ASR) model by OpenAI. It supports over 100 languages, works well in noisy environments, understands context and accents, and scales for both small and large transcription tasks.
 - What is Sapat? It is the prototype and built AI-enabled tool that uses Whisper for transcription. It simplifies integration with multiple AI providers such as Groq Cloud, Azure OpenAI and OpenAI, Sapat ensures flexibility, scalability, and performance.
-- Why It Matters: This guide shows how to quickly prototype and build AI-powered tools using Whisper, making transcription accessible and scalable.
+- Prototyping and Buiilding AI enabled tool with Whisper model. Learn how to leverage OpenAI, Groq Cloud, and Azure OpenAI APIs to convert video and/or audio to txt file, process files in batches, and fine-tune transcription with customizable parameters.
 
 ## Prerequisites
 
